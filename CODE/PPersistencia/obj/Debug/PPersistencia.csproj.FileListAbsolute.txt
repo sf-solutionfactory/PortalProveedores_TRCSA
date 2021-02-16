@@ -228,3 +228,13 @@ D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PPersistencia\obj
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Debug\PPersistencia.csproj.CopyComplete
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Debug\PPersistencia.dll
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Debug\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csproj.CopyComplete
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.pdb

@@ -280,3 +280,15 @@ D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PNegocio\obj\Debu
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PNegocio\obj\Debug\PNegocio.csproj.CopyComplete
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PNegocio\obj\Debug\PNegocio.dll
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\PNegocio\obj\Debug\PNegocio.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PNegocio.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PNegocio.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csproj.CopyComplete
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.pdb

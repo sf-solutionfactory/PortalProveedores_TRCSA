@@ -1202,3 +1202,44 @@ D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\Proveedores\obj\D
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\Proveedores\obj\Debug\Proveedores.csproj.CopyComplete
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\Proveedores\obj\Debug\Proveedores.dll
 D:\User\RSG\Documentos\Clientes\Tracusa\Proveedores 26 05 2015\Proveedores\obj\Debug\Proveedores.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Proveedores.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Proveedores.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Proveedores.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Antlr3.Runtime.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\ClosedXML.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DocumentFormat.OpenXml.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.AspNet.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.Core.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OAuth.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OpenId.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\EntityFramework.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\Microsoft.Web.Infrastructure.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PNegocio.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\System.Web.Optimization.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\System.Web.Providers.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\WebGrease.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PNegocio.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\ClosedXML.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\EntityFramework.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.Core.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OAuth.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OpenId.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\DotNetOpenAuth.AspNet.xml
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\PPersistencia.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\es\EntityFramework.resources.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\es\System.Web.Optimization.resources.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\bin\es\System.Web.Providers.resources.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\obj\Debug\Proveedores.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\obj\Debug\Proveedores.csproj.CopyComplete
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\obj\Debug\Proveedores.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\Proveedores\obj\Debug\Proveedores.pdb
