@@ -117,3 +117,9 @@ C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PEntidades\obj\Release\PEntidades.csprojResolveAssemblyReference.cache
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PEntidades\obj\Release\PEntidades.dll
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PEntidades\obj\Release\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.pdb

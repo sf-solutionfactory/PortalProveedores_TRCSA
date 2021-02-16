@@ -150,3 +150,13 @@ C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Release\PPersistencia.csprojResolveAssemblyReference.cache
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Release\PPersistencia.dll
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PPersistencia\obj\Release\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csproj.CopyComplete
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.pdb

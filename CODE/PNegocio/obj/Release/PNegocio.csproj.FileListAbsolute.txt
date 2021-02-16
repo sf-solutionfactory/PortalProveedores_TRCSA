@@ -178,3 +178,15 @@ C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PNegocio\obj\Release\PNegocio.csprojResolveAssemblyReference.cache
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PNegocio\obj\Release\PNegocio.dll
 C:\Users\SF0006\Documents\Visual Studio 2015\Projects\Portal Tracusa\Proveedores 26 05 2015\PNegocio\obj\Release\PNegocio.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PNegocio.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PNegocio.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PEntidades.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PPersistencia.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PEntidades.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PEntidades.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PPersistencia.pdb
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Release\PPersistencia.dll.config
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Release\PNegocio.csprojAssemblyReference.cache
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Release\PNegocio.csproj.CopyComplete
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Release\PNegocio.dll
+D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Release\PNegocio.pdb
