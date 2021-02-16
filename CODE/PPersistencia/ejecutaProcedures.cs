@@ -59,6 +59,7 @@ namespace PPersistencia
         {
             abrirConexion();
             string proc = "verifUser";
+            //password = "";
             //string ret = "";
             SqlCommand = new SqlCommand(proc, Con);
             SqlCommand.CommandType = CommandType.StoredProcedure;
