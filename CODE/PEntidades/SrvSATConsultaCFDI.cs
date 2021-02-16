@@ -10,6 +10,7 @@
 
 namespace PEntidades.SrvSATConsultaCFDI
 {
+    using System.Net;//ADD SF RSG 11.02.2021
     using System.Runtime.Serialization;
     
 //    [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -137,6 +138,8 @@ namespace PEntidades.SrvSATConsultaCFDI
 
         public PEntidades.SrvSATConsultaCFDI.MiAcuse esValidoCFDI(string expresionImpresa)
         {
+            if (System.Net.ServicePointManager.SecurityProtocol == (SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls))//ADD SF RSG 16.02.2021
+                System.Net.ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
             PEntidades.SrvSATConsultaCFDI.ConsultaCFDIServiceClient cli = new SrvSATConsultaCFDI.ConsultaCFDIServiceClient(
                 new System.ServiceModel.BasicHttpBinding("BasicHttpBinding_IConsultaCFDIService"), 
                 new System.ServiceModel.EndpointAddress("https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc"));
