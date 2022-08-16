@@ -56,25 +56,27 @@
     </table>
 
     </div>
-    <br/>
-
     <div id="tablaResultados">
     <asp:Label ID="lblTextoExplicacion" runat="server" Text=""></asp:Label>
+    
+    <br/>
     <br/>
         <table class="tblFm">
             <tr>
                 <td>
                         <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
-
                 </td>
             </tr>
         </table>
     <asp:Label ID="lblMostrarTabla" runat="server" Text=""></asp:Label>
 
-    <asp:HiddenField ID="hidVerificar" runat="server" />
-    <asp:HiddenField ID="hidPantalla" runat="server" Value="DesvincularGrupoNoticia" />
+    
+        <asp:HiddenField ID="hidVerificar" runat="server" />
+    
+        <asp:HiddenField ID="hidPantalla" runat="server" Value="DesvincularGrupoNoticia" />
 
-    <asp:HiddenField ID="hidComplementoUr" runat="server" />
+    
+        <asp:HiddenField ID="hidComplementoUr" runat="server" />
 
         <asp:HiddenField ID="hidCerrarSesion" runat="server" />
     </div>

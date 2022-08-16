@@ -70,6 +70,8 @@ namespace Proveedores.portal
                 {
                 }
                 string mensaje = "";
+
+
                 if (lstFact == null || lstFact.Count <= 0)
                 {
                     List<string[]> listaDiferentesInstancias = (List<string[]>)Session["listaDiferentesInstancias"];
@@ -110,6 +112,10 @@ namespace Proveedores.portal
                     n_instancias = listaDiferentesInstancias.Count;
                     //if (n_instancias > 0)
                     //{
+                    
+                    
+                    
+                    
                     lstFact = nFac.getListFacturasNew(
                     listaDiferentesInstancias,
                     ordenarOrden, "",
@@ -118,6 +124,13 @@ namespace Proveedores.portal
                     monedaHig, monedaLow,
                     refhig, refLow, ref mensaje
                     );
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     //}
 
                     Session["lstFacturas2"] = lstFact; //----new----- // se guarda en la sesion el resultado
@@ -183,7 +196,14 @@ namespace Proveedores.portal
             try
             {
                 cantidad = nFac.desvincular(listaDiferentesInstanciasg, uui);
-                mensaje = "<br> Se desadjuntaron " + cantidad + " XML/s y " + cantidad + " PDF/s. <br>";
+                if (cantidad > 1)
+                {
+                    mensaje = "<br> Se desadjuntaron " + cantidad + " XML/s y " + cantidad + " PDF/s. <br>";
+                }
+                else
+                {
+                    mensaje = "<br> Se desadjuntó " + cantidad + " XML y " + cantidad + " PDF. <br>";
+                }
             }
             catch (Exception)
             {

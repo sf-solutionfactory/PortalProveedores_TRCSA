@@ -187,6 +187,7 @@
                 <td>
                 </td>
                 <td>
+
                     <div class="btn btnConfigCorreo">Configuración especial...</div>
                 </td>
             </tr>
@@ -240,6 +241,9 @@
                 <tr>
                     <td></td>
                     <td>
+                        
+                        
+                        
                         <div class="btn btnCancel">
                             Cancelar
                         </div>

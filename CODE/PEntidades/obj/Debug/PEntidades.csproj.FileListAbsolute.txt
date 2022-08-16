@@ -172,3 +172,9 @@ D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.pdb
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.dll
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.dll.config
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.csproj.CoreCompileInputs.cache
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.pdb

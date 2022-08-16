@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.portal {
-    
-    
-    public partial class facturas3 {
-        
+namespace Proveedores.portal
+{
+
+
+    public partial class facturas3
+    {
+
         /// <summary>
         /// Control ltlTablas.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltlTablas;
-        
+
         /// <summary>
         /// Control File1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile File1;
-        
+
         /// <summary>
         /// Control File2.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile File2;
-        
+
         /// <summary>
         /// Control cargararchivo.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cargararchivo;
-        
+
         /// <summary>
         /// Control lblConsola.
         /// </summary>
@@ -56,7 +58,16 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblConsola;
-        
+
+        /// <summary>
+        /// Control hidMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidMessage;
+
         /// <summary>
         /// Control lblIdEstatus.
         /// </summary>
@@ -65,7 +76,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblIdEstatus;
-        
+
         /// <summary>
         /// Control hidIndexs.
         /// </summary>
@@ -74,7 +85,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidIndexs;
-        
+
         /// <summary>
         /// Control btnLLenarTbs.
         /// </summary>

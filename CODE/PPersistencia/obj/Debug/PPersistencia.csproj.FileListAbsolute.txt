@@ -238,3 +238,14 @@ D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersist
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csproj.CopyComplete
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.dll
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.dll.config
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PPersistencia.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Debug\PEntidades.dll.config
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csproj.AssemblyReference.cache
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csproj.CoreCompileInputs.cache
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.csproj.CopyComplete
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Debug\PPersistencia.pdb

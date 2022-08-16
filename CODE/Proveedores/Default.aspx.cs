@@ -35,6 +35,8 @@ namespace Proveedores
                     try
                     {
                         PNegocio.Encript encript = new PNegocio.Encript();
+                        string passW = encript.Desencriptar(pass); //TEST
+                        passW = encript.Desencriptar(passW); //TEST
                         resLog = login.isUserBDDistinct(usuario, encript.Encriptar(encript.Encriptar(pass)));//Si es correcto devuelve un arreglo de dos posiciones, primera posicion el id de usuario y en la segunda el RFC, si el usuario es incorrecto devolvera un arreglo de dos: la posición uno es el error y la posicion dos estara vacia
                         resPass = resLog[0].ToString().Trim();
                         //resultado, idproveedor_rfc, idrol, cambiar_contraseña, lifnr, portal_activo, proveedor_activo, rol_acivo, fecha_vigencia

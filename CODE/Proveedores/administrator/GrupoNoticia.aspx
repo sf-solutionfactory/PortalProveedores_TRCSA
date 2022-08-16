@@ -243,6 +243,9 @@
         <br />
         <table class="tblFm">
             <tr>
+               
+                
+
                 <td>
                     <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
                 <td>
@@ -298,7 +301,16 @@
         <input id="procar" type="hidden" name="procargado" value="" />
         <br />
 
-        <%--<div id="scrolltable" class="tablauno">--%>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    <%--<div id="scrolltable" class="tablauno">--%>
             <asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>
         <%--</div>--%>
 

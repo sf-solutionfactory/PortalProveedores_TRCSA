@@ -25,6 +25,7 @@
     <br />
     <asp:Literal ID="litTablaGrpValidaciones" runat="server"></asp:Literal>
     <br />
+    
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="tblComun" DataSourceID="SqlDataSource1" OnRowEditing="GridView1_RowEditing" DataKeyNames="ID">
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />

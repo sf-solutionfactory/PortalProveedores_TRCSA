@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
@@ -114,6 +115,7 @@ namespace Proveedores.portal
                         {
                             string raw = "";
                             
+                           
                             if (validarSAT(this.xmlDoc))//Cuando es válido en SAT
                             {
                                 if (validarSAP())//Cuando es válido en SAP

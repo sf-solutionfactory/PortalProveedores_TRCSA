@@ -97,7 +97,14 @@
             font-family: fantasy;
             line-height: 20px;
         }
-    </style>
+    
+        
+        
+        
+        
+        
+        
+        </style>
     <br />
 
     <center>
@@ -110,6 +117,7 @@
                         <div id="divCargadorArchivo">
                             <strong>Archivo XML</strong><input type="file" class="input-file cargador" id="File1" name="File1" runat="server"/><br />
                             <strong>Archivo PDF</strong><input type="file" class="input-file cargador" id="File2" name="File1" runat="server"/>
+                            
                             <asp:Button ID="cargararchivo" CssClass="btnCargar btn_ cargador" runat="server" Text="Cargar" OnClick="Button1_Click" Width="15%" />
                         </div>
                     </div>
@@ -134,6 +142,7 @@
                         
                         <%--<asp:Label ID="lblConsola" runat="server" Text="" CssClass="consola"></asp:Label>--%>
                         <asp:Label ID="lblConsola" runat="server" Text="" CssClass=""></asp:Label>
+                        <asp:HiddenField ID="hidMessage" runat="server" /> <%--ADD SF RSG 09.04.2021--%>
                         <%--<label class="consola">ASK</label>--%> 
                         <br />
                         <asp:Label ID="lblIdEstatus" runat="server" CssClass="lblIdEstatus" Visible="False"></asp:Label>

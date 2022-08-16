@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -18,6 +19,7 @@ namespace Proveedores.portal
         private System.Xml.XmlDocument xmlDoc;
         XElement xmlFact;
         string[] indexs;
+
         int maxXML = 10;
         string complementoMsgError = "";
 
@@ -96,7 +98,10 @@ namespace Proveedores.portal
             string clase = "show";
             if (listFact.Count > 0)
             {
+
                 int iddetalle = int.Parse(indexs[0]) - 1;
+                
+                
                 for (int i = 0; i < indexs.Length; i++)
                 {
                     //listFact[int.Parse(indexs[i])].consola = "";
@@ -231,7 +236,14 @@ namespace Proveedores.portal
 
                     tablas += "<tr>";
                     tablas += "<td>";
+                    
+
+
+
                     tablas += "";
+                    
+                    
+                  
                     tablas += "</td>";
                     tablas += "<td>";
                     tablas += "<img src='../css/images/fl_back.png' class='imgBack pointer' align='left'><img src='../css/images/fl_next.png' class='imgNext pointer' align='right'>";
@@ -289,6 +301,9 @@ namespace Proveedores.portal
                     byte[] rawBytePDF = new byte[0];
                     try
                     {
+                        System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+                        customCulture.NumberFormat.NumberDecimalSeparator = ".";
+                        System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
                         if (tipoArchivo == "XML")
                         {
                             this.xmlDoc = new System.Xml.XmlDocument();
@@ -321,6 +336,8 @@ namespace Proveedores.portal
                         bool continuar = false;
                         if (tipoArchivo == "XML")
                         {
+
+
                             continuar = validarSAT(ref impRetencion);
                         }
                         //else if (tipoArchivo == "PDF")
@@ -332,12 +349,14 @@ namespace Proveedores.portal
                             //raw = this.xmlDoc.InnerXml.ToString();
                             if (tipoArchivo == "XML")
                             {
+
                                 continuar = validarSAP(ref fecha_xml, ref referencia, impRetencion, listFact[int.Parse(indexs[0])].XBLNR2, ref inveref);
                             }
                             //else if (tipoArchivo == "PDF")
                             //{
                             //    continuar = true;
                             //}
+
                             if (String.IsNullOrEmpty(impRetencion)) 
                             {
                                 impRetencion = "0";

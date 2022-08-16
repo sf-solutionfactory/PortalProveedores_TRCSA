@@ -148,7 +148,7 @@ namespace Proveedores.portal
                 }
                 cargarConfigPass();
             }
-            
+
 
         }
 
@@ -174,7 +174,7 @@ namespace Proveedores.portal
             {
                 PNegocio.Administrador.Proveedores objInstancia = new PNegocio.Administrador.Proveedores();
                 string sqlString = "select u.usuariolog, u.nombre, u.apellidos, u.usuarioPass, u.fechaIni, u.fechaIFn, u.email, u.proveedor_idProveedor,p.nombre, r.nombre as rol from usuario as u, proveedor as p,  rol as r where u.proveedor_idProveedor= p.idProveedor and usuarioLog = '" + id + "' and r.idROl = u.rol_idRol;";
-                 listaProveedor = objInstancia.consultarProveedoresPorId(sqlString);
+                listaProveedor = objInstancia.consultarProveedoresPorId(sqlString);
                 if (listaProveedor.Count > 1)
                 {
                     Session["listaProveedor"] = listaProveedor;
@@ -185,6 +185,10 @@ namespace Proveedores.portal
                     this.cmbRol.Text = listaProveedor[1][9];
                     this.datepicker.Text = Gen.Util.CS.Gen.convertirFechaBDaFormatoJq(listaProveedor[1][4].ToString());
                     this.datepicker2.Text = Gen.Util.CS.Gen.convertirFechaBDaFormatoJq(listaProveedor[1][5].ToString());
+
+
+
+
                     this.txtIdemail.Text = listaProveedor[1][6];
                     this.txtIdemailRepetir.Text = listaProveedor[1][6];
                     this.lblProveedorSelected.Text = listaProveedor[1][8];
@@ -194,8 +198,8 @@ namespace Proveedores.portal
                     List<string[]> ListaUsuarioSoc = instancia.cosultarUsuarioSociedad(id); // lista de sociedades que tiene actulmente asignadas
                     List<string[]> socPorProv = cargarSociedades(prov);
                     List<int> lista = obtenerActivados(ListaUsuarioSoc, socPorProv);
-                    mostrarSociedades(socPorProv ,lista);
-                   
+                    mostrarSociedades(socPorProv, lista);
+
 
                 }
                 cargarTablaUsuarios(listaProveedor[1][7]);
@@ -224,7 +228,8 @@ namespace Proveedores.portal
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
 
-            if(this.hidVerificar.Value =="noEmail"){
+            if (this.hidVerificar.Value == "noEmail")
+            {
                 this.lblDialog.Text = "El email no cumple con las caracteristicas necesarias";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
             }
@@ -241,8 +246,8 @@ namespace Proveedores.portal
             {
                 this.lblDialog.Text = "La contraseña no cumple con las caracteristicas necesarias";
             }
-                
-            
+
+
         }
         public void insertarUser()
         {
@@ -273,54 +278,55 @@ namespace Proveedores.portal
             string[] numeros = obtenerSociedades(); // numerador de las filas
             List<string[]> listaSociedades = obtenerDatsSocSel(numeros); // las sociedades que hacen referencia al numerador 
 
-            if (pass1 == pass2 && email == email2 )
+            if (pass1 == pass2 && email == email2)
+            {
+                if (this.ckbCambiarPassNext.Checked)
                 {
-                    if (this.ckbCambiarPassNext.Checked)
-                    {
-                        esCambiarPassNext = "1";
-                    }
-                    else
-                    {
-                        esCambiarPassNext = "0";
-                    }
-
-                    inicioVigencia = Gen.Util.CS.Gen.convertirFecha(inicioVigencia);
-                    FinVigencia = Gen.Util.CS.Gen.convertirFecha(FinVigencia);
-
-                    PNegocio.Administrador.Usuario us = new PNegocio.Administrador.Usuario();
-                    PNegocio.Encript encript = new PNegocio.Encript();
-
-                    switch (
-                    us.insertarUsuario(usuari, nombre, apellidos, encript.Encriptar(encript.Encriptar(pass1)), inicioVigencia.Trim(), FinVigencia.Trim(),
-                    prov, esCambiarPassNext, creadoPor, email, rol, listaSociedades )
-                    )
-                    {
-                        case "insertado":
-                            List<string> listaEmail = new List<string>();
-                            listaEmail.Add(email);
-                            bool enviadoEmail = PNegocio.EnviarEmail.SendMail(listaEmail,null,null, usuari, txtPassword.Text);
-                            cargarTablaUsuarios(prov);
-                            Session["textoDialogo"] = "Insertado";
-                            Response.Redirect("usuarios.aspx?" + this.hidComplementoUr.Value); 
-                            break;
-                        case "nombre existente":
-                            this.lblDialog.Text = "El nombre de usuario ya existe";
-                            break;
-                        case "error":
-                            this.lblDialog.Text = "Error al insertar";
-                            break;
-                        default:
-                            this.lblDialog.Text = "Error desconocido";
-                            break;
-                        case "limite":
-                            this.lblDialog.Text = "El numero maximo permitido de usuarios fue alcanzado";
-                            break;
-                    }
-
+                    esCambiarPassNext = "1";
                 }
-                else {
-                    this.lblDialog.Text = "El password o el email no coinciden";
+                else
+                {
+                    esCambiarPassNext = "0";
                 }
+
+                inicioVigencia = Gen.Util.CS.Gen.convertirFecha(inicioVigencia);
+                FinVigencia = Gen.Util.CS.Gen.convertirFecha(FinVigencia);
+
+                PNegocio.Administrador.Usuario us = new PNegocio.Administrador.Usuario();
+                PNegocio.Encript encript = new PNegocio.Encript();
+
+                switch (
+                us.insertarUsuario(usuari, nombre, apellidos, encript.Encriptar(encript.Encriptar(pass1)), inicioVigencia.Trim(), FinVigencia.Trim(),
+                prov, esCambiarPassNext, creadoPor, email, rol, listaSociedades)
+                )
+                {
+                    case "insertado":
+                        List<string> listaEmail = new List<string>();
+                        listaEmail.Add(email);
+                        bool enviadoEmail = PNegocio.EnviarEmail.SendMail(listaEmail, null, null, usuari, txtPassword.Text);
+                        cargarTablaUsuarios(prov);
+                        Session["textoDialogo"] = "Insertado";
+                        Response.Redirect("usuarios.aspx?" + this.hidComplementoUr.Value);
+                        break;
+                    case "nombre existente":
+                        this.lblDialog.Text = "El nombre de usuario ya existe";
+                        break;
+                    case "error":
+                        this.lblDialog.Text = "Error al insertar";
+                        break;
+                    default:
+                        this.lblDialog.Text = "Error desconocido";
+                        break;
+                    case "limite":
+                        this.lblDialog.Text = "El numero maximo permitido de usuarios fue alcanzado";
+                        break;
+                }
+
+            }
+            else
+            {
+                this.lblDialog.Text = "El password o el email no coinciden";
+            }
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
         }
 
@@ -337,7 +343,8 @@ namespace Proveedores.portal
             }
         }
 
-        public void guardarCambios() {
+        public void guardarCambios()
+        {
             usuari = this.txtIdUsuario.Text.Trim(); // int
             nombre = this.txtIdNombre.Text.Trim();
             apellidos = this.txtIdApellidos.Text.Trim();
@@ -352,183 +359,195 @@ namespace Proveedores.portal
             string asunto = "Modifcacion de cuenta de usuario.";
             creadoPor = "1"; // int
 
-                bool verificarContrasena = true;
-                bool verificarEmailb = true;
-                bool entrarAModificar = false;
+            bool verificarContrasena = true;
+            bool verificarEmailb = true;
+            bool entrarAModificar = false;
 
-                if (pass1 == null || pass1 == "" &&
-                    pass2 == null || pass2 == ""
-                    )
+            if (pass1 == null || pass1 == "" &&
+                pass2 == null || pass2 == ""
+                )
+            {
+                verificarContrasena = false;
+            }
+
+            if (email == null || email == "" &&
+                email2 == null || email2 == ""
+                )
+            {
+                verificarEmailb = false;
+            }
+
+            if (verificarContrasena)
+            {
+                if (pass1 == pass2)
                 {
-                    verificarContrasena = false;
+                    entrarAModificar = true;
                 }
-
-                if (email == null || email == "" &&
-                    email2 == null || email2 == ""
-                    )
+                else
                 {
-                    verificarEmailb = false;
+                    entrarAModificar = false;
+                    this.lblDialog.Text = "Contraseña no coincide";
                 }
+            }
+            else
+            {
+                entrarAModificar = true;
+            }
 
-                if (verificarContrasena)
+            if (entrarAModificar)
+            {
+                if (verificarEmailb)
                 {
-                    if (pass1 == pass2)
+                    if (email == email2)
                     {
                         entrarAModificar = true;
                     }
                     else
                     {
                         entrarAModificar = false;
-                        this.lblDialog.Text = "Contraseña no coincide";
+
+                        this.lblDialog.Text = "Email no coincide";
                     }
                 }
-                else {
-                    entrarAModificar = true;
-                }
+            }
 
-                if (entrarAModificar)
+
+            if (entrarAModificar)
+            {
+                if (this.ckbCambiarPassNext.Checked)
                 {
-                    if (verificarEmailb)
-                    {
-                        if (email == email2)
-                        {
-                            entrarAModificar = true;
-                        }
-                        else
-                        {
-                            entrarAModificar = false;
-                            
-                            this.lblDialog.Text = "Email no coincide";
-                        }
-                    }   
-                }
-                    
-                
-                if (entrarAModificar)
-                {
-                    if (this.ckbCambiarPassNext.Checked)
-                    {
-                        esCambiarPassNext = "1";
-                    }
-                    else
-                    {
-                        esCambiarPassNext = "0";
-                    }
-
-                    PNegocio.Administrador.Usuario us = new PNegocio.Administrador.Usuario();
-                    PNegocio.Encript encript = new PNegocio.Encript();
-
-                    listaProveedor = (List<string[]>)Session["listaProveedor"];
-
-                    if(usuari == null || usuari == "" ){
-                        
-                        usuari = listaProveedor[1][0].Trim();
-                    }
-                    if(nombre == null || nombre == "" ){
-                        nombre = listaProveedor[1][1].Trim();
-                    }
-                    if(apellidos == null || apellidos == "" ){
-                        
-                        apellidos = listaProveedor[1][2].Trim();
-                    }
-
-                    
-                        if (String.IsNullOrEmpty(inicioVigencia))
-                        {
-                            inicioVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(listaProveedor[1][4].Trim());
-                        }
-                        else
-                        {
-                            //inicioVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(inicioVigencia);
-                            inicioVigencia = Gen.Util.CS.Gen.convertirFecha(inicioVigencia);
-                            mensaje += "Vigencia de Inicio: " + inicioVigencia + "\n";
-                        }
-                        if (String.IsNullOrEmpty(FinVigencia))
-                        {
-                            //FinVigencia = listaProveedor[1][5].Trim();
-                            FinVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(listaProveedor[1][5].Trim());
-                        }
-                        else
-                        {
-                            //FinVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(FinVigencia);
-                            FinVigencia = Gen.Util.CS.Gen.convertirFecha(FinVigencia);
-                            mensaje += "Vigencia de Fin: " + FinVigencia + " \n";
-                        }
-                    
-                    
-
-                    if (String.IsNullOrEmpty(email))
-                    {
-                        email = listaProveedor[1][6].Trim();
-                    }
-                    else
-                    {
-                        if (email != listaProveedor[1][6].Trim())
-                        {
-                            mensaje += "Email: " + email + " \r";
-                        }
-                    }
-                    if (String.IsNullOrEmpty(pass1))
-                    {
-                        pass1 = listaProveedor[1][3].Trim();
-                    }
-                    else
-                    {
-                        pass1 = encript.Encriptar(encript.Encriptar(pass1));
-                        mensaje += "Pass: " + txtPassword.Text + " \r";
-                    }
-
-                    if (listaProveedor[1][9] != rol)
-                    {
-                        mensaje += "Rol nuevo: " + rol;
-                    }
-                    string[] numeros = obtenerSociedades(); // numerador de las filas
-                    List<string[]> listaSociedades = obtenerDatsSocSel(numeros); // las sociedades que hacen referencia al numerador 
-            
-
-                    switch (
-                    us.ActualizaUsuario(usuari, nombre, apellidos, pass1, inicioVigencia.Trim(), FinVigencia.Trim(),
-                    esCambiarPassNext, creadoPor, email, this.hidId.Value.Trim(), rol, listaSociedades)
-                    )
-                    {
-                        case "ok":
-                            List<string> listaEmail = new List<string>();
-                            listaEmail.Add(email);
-                            bool enviadoEmail = PNegocio.EnviarEmail.SendMail(listaEmail, mensaje, asunto, null, null);
-                            Session["textoDialogo"] = "Actualizado correctamente";
-                            Response.Redirect("usuarios.aspx?"+this.hidComplementoUr.Value); 
-                            break;
-                        case "error":
-                            this.lblDialog.Text = "Error al insertar";
-                            break;
-                        case "no existe":
-                            this.lblDialog.Text = "no se encontro el usuario, probablemente fue modificado por otro usuario";
-                            break;
-                        default:
-                            this.lblDialog.Text = "Error desconocido";
-                            break;
-                    }
-
-                    this.btnGuardarCambios.Visible = true;
-                    this.ltlbtnCancel.Visible = true;
+                    esCambiarPassNext = "1";
                 }
                 else
                 {
-                    this.lblDialog.Text = "El password o el email no coinciden";
-                    this.btnGuardarCambios.Visible = true;
-                    this.ltlbtnCancel.Visible = true;
+                    esCambiarPassNext = "0";
                 }
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+
+                PNegocio.Administrador.Usuario us = new PNegocio.Administrador.Usuario();
+                PNegocio.Encript encript = new PNegocio.Encript();
+
+                listaProveedor = (List<string[]>)Session["listaProveedor"];
+
+                if (usuari == null || usuari == "")
+                {
+
+                    usuari = listaProveedor[1][0].Trim();
+                }
+                if (nombre == null || nombre == "")
+                {
+                    nombre = listaProveedor[1][1].Trim();
+                }
+                if (apellidos == null || apellidos == "")
+                {
+
+                    apellidos = listaProveedor[1][2].Trim();
+                }
+
+
+                
+                
+                
+                
+                
+                
+                
+                if (String.IsNullOrEmpty(inicioVigencia))
+                {
+                    inicioVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(listaProveedor[1][4].Trim());
+                }
+                else
+                {
+                    //inicioVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(inicioVigencia);
+                    inicioVigencia = Gen.Util.CS.Gen.convertirFecha(inicioVigencia);
+                    mensaje += "Vigencia de Inicio: " + inicioVigencia + "\n";
+                }
+                if (String.IsNullOrEmpty(FinVigencia))
+                {
+                    //FinVigencia = listaProveedor[1][5].Trim();
+                    FinVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(listaProveedor[1][5].Trim());
+                }
+                else
+                {
+                    //FinVigencia = Gen.Util.CS.Gen.convertirFechaDesdeSesion(FinVigencia);
+                    FinVigencia = Gen.Util.CS.Gen.convertirFecha(FinVigencia);
+                    mensaje += "Vigencia de Fin: " + FinVigencia + " \n";
+                }
+
+
+
+                if (String.IsNullOrEmpty(email))
+                {
+                    email = listaProveedor[1][6].Trim();
+                }
+                else
+                {
+                    if (email != listaProveedor[1][6].Trim())
+                    {
+                        mensaje += "Email: " + email + " \r";
+                    }
+                }
+                if (String.IsNullOrEmpty(pass1))
+                {
+                    pass1 = listaProveedor[1][3].Trim();
+                }
+                else
+                {
+                    pass1 = encript.Encriptar(encript.Encriptar(pass1));
+                    mensaje += "Pass: " + txtPassword.Text + " \r";
+                }
+
+                if (listaProveedor[1][9] != rol)
+                {
+                    mensaje += "Rol nuevo: " + rol;
+                }
+                string[] numeros = obtenerSociedades(); // numerador de las filas
+                List<string[]> listaSociedades = obtenerDatsSocSel(numeros); // las sociedades que hacen referencia al numerador 
+
+
+                switch (
+                us.ActualizaUsuario(usuari, nombre, apellidos, pass1, inicioVigencia.Trim(), FinVigencia.Trim(),
+                esCambiarPassNext, creadoPor, email, this.hidId.Value.Trim(), rol, listaSociedades)
+                )
+                {
+                    case "ok":
+                        List<string> listaEmail = new List<string>();
+                        listaEmail.Add(email);
+                        bool enviadoEmail = PNegocio.EnviarEmail.SendMail(listaEmail, mensaje, asunto, null, null);
+                        Session["textoDialogo"] = "Actualizado correctamente";
+                        Response.Redirect("usuarios.aspx?" + this.hidComplementoUr.Value);
+                        break;
+                    case "error":
+                        this.lblDialog.Text = "Error al insertar";
+                        break;
+                    case "no existe":
+                        this.lblDialog.Text = "no se encontro el usuario, probablemente fue modificado por otro usuario";
+                        break;
+                    default:
+                        this.lblDialog.Text = "Error desconocido";
+                        break;
+                }
+
+                this.btnGuardarCambios.Visible = true;
+                this.ltlbtnCancel.Visible = true;
+            }
+            else
+            {
+                this.lblDialog.Text = "El password o el email no coinciden";
+                this.btnGuardarCambios.Visible = true;
+                this.ltlbtnCancel.Visible = true;
+            }
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
         }
 
-       
 
-        private List<string[]> cargarSociedades(string rfc) {
+
+        private List<string[]> cargarSociedades(string rfc)
+        {
             PNegocio.Administrador.Usuario inst = new PNegocio.Administrador.Usuario();
-           
+
             List<string[]> resultado = inst.cosultarSociedadesPorprov(rfc, "90%");
             return resultado;
-            
+
 
         }
 
@@ -537,6 +556,7 @@ namespace Proveedores.portal
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
+                
                 this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);
                 Session["TablaSociedades"] = resultado;
             }
@@ -544,7 +564,7 @@ namespace Proveedores.portal
             {
                 this.ltlTablaSociedades.Text = "<strong>No se encontraron resultados para mostrar en la tabla</strong>";
             }
-        } 
+        }
 
         private string[] obtenerSociedades()
         {
@@ -562,43 +582,44 @@ namespace Proveedores.portal
             List<string[]> tablaRes = new List<string[]>();
             try
             {
-                 tablasoc = (List<string[]>)Session["TablaSociedades"];
-                 
-                 for (int i = 0; i < numeros.Length; i++)
-                 {
-                     int J = int.Parse(numeros[i]);
-                     string[] tablaRes1 = tablasoc[int.Parse(numeros[i])];
-                     tablaRes.Add(tablaRes1);
-                 }
+                tablasoc = (List<string[]>)Session["TablaSociedades"];
+
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    int J = int.Parse(numeros[i]);
+                    string[] tablaRes1 = tablasoc[int.Parse(numeros[i])];
+                    tablaRes.Add(tablaRes1);
+                }
             }
             catch (Exception)
             {
             }
-            return tablaRes;            
+            return tablaRes;
         }
 
 
 
         private List<int> obtenerActivados(List<string[]> ListaUsuarioSoc, List<string[]> socPorProv)
         {
-            List<int> activados =new List<int>();
+            List<int> activados = new List<int>();
             for (int i = 1; i < socPorProv.Count; i++)
-            {   
-                for(int j = 1; j < ListaUsuarioSoc.Count; j++){
-                    
+            {
+                for (int j = 1; j < ListaUsuarioSoc.Count; j++)
+                {
+
                     if (
                         ListaUsuarioSoc[j][1].Trim() == socPorProv[i][1].Trim() &&
                         ListaUsuarioSoc[j][2].Trim() == socPorProv[i][2].Trim() &&
                         ListaUsuarioSoc[j][3].Trim() == socPorProv[i][3].Trim() &&
-                        ListaUsuarioSoc[j][4].Trim() == socPorProv[i][0].Trim() 
+                        ListaUsuarioSoc[j][4].Trim() == socPorProv[i][0].Trim()
                         )
                     {
                         activados.Add(i);
                         break;
-                    } 
+                    }
 
                 }
-                
+
             }
 
             return activados;

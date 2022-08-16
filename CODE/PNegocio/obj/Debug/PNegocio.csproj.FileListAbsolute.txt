@@ -292,3 +292,16 @@ D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.cspr
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csproj.CopyComplete
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.dll
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PNegocio.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PNegocio.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PEntidades.dll.config
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.pdb
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\bin\Debug\PPersistencia.dll.config
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csproj.AssemblyReference.cache
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csproj.CoreCompileInputs.cache
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.csproj.CopyComplete
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.dll
+D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PNegocio\obj\Debug\PNegocio.pdb

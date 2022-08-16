@@ -119,6 +119,7 @@
     <table>
         <tr>
             <td><asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
+            
             <td><asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btnTerminar"/></td>
         </tr>
     </table>
@@ -143,8 +144,19 @@
         <div id="scrolltable" class="tablauno">
         <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
         </div>
+
+
+
+
+
         <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
 
+    
+    
+    
+    
+    
+    
     </div>
 
     <asp:HiddenField ID="hidIdSelected" runat="server" />

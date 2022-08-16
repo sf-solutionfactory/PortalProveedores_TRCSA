@@ -128,6 +128,7 @@ namespace Proveedores.administrator
             List<int> listaEvitar = new List<int>();
             if (inde > -1)
             {
+
                 this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "tblComun' style='width:" + "90%" + ";", listaEvitar, false, editable, false, false, 0, 1);
             }
             else

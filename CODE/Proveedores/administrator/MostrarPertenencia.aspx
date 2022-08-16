@@ -9,6 +9,10 @@
     <script src="../js/BusquedaTabla.js"></script>
     <script src="../js/EliminarFila.js"></script>
 
+    
+    
+    
+    
     <script>
 
         $(function () {

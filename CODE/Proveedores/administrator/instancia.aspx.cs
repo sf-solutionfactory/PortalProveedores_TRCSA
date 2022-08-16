@@ -284,11 +284,13 @@ namespace Proveedores.administrator
                 catch (Exception)
                 {
                     this.lblDialog.Text = "La sociedad solo permite numeros";
+                
                 }
                 
             }
             else {
                 this.lblDialog.Text = "Existen campos vacios";
+                
                 activarMensageDialog();
             }
            
@@ -310,6 +312,8 @@ namespace Proveedores.administrator
                 if (res == "actualizado")
                 {
                     Session["textoDialogo"] = "Actualizado correctamente";
+                    
+                    
                     try
                     {
                         if (this.txtEndpoint.Text.Trim() != null && this.txtEndpoint.Text.Trim() != "")

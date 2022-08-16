@@ -47,7 +47,6 @@
             $('#ContentPlaceHolder1_btnEditaInstancia').click(function () {
                 validar();
             });
-
             mostrarDialog();
 
         });
@@ -171,16 +170,12 @@
               <td> <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label> </td>
             </tr>
         </table>
-        
-
-
         <br />
         <br />
         <asp:Label ID="lblTabla" runat="server" CssClass="lblTable"></asp:Label>
         <br />
         <br />
         <br />
-
         <asp:HiddenField ID="hidVerificar" runat="server" />
         <asp:HiddenField ID="hidPantalla" runat="server" Value="Instancia" />
         <asp:HiddenField ID="hidPsAnt" runat="server" />
@@ -189,5 +184,4 @@
 
         <asp:HiddenField ID="hidCerrarSesion" runat="server" />
     </div>
-
 </asp:Content>

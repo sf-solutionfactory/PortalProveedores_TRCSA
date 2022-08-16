@@ -321,20 +321,32 @@ namespace Proveedores.administrator
                     umbral, bloqSociedad, numPassRec, intervaloTiempoBloq, maxIntentos, "1", caducidadPass,
                     identificador, stringSQLComplemento, tiempoBloqAdmin, this.txtMaxXML.Text);
                 string mensaje = "";
+                
                 mensaje = "La configuración fue guardada correctamente";
                 List<string> listaEmail = new List<string>();
                 listaEmail.Add(email);
                 bool enviadoEmail = PNegocio.EnviarEmail.SendMail(listaEmail, null, null, "Administrador", null);
                 if (enviadoEmail)
                 {
+                    
                     mensaje += ", sus datos de correo electrónico fueron configurados correctamente, verifique la bandeja de entrada del correo que utilizo en la configuración para ver el resultado de su configuración";
+                
                 }
                 else {
+
                     mensaje += ", sin embargo no fue posible enviar el resultado a la bandeja de entrada del correo que introdujo en la configuración, verifique que los datos sean correctos";
  
+                
                 }
                 Session["textoDialogo"] = mensaje;
+                
+                
+                
+                
+                
+                
                 Response.Redirect("config.aspx");
+
             }
             else
             {
@@ -342,6 +354,7 @@ namespace Proveedores.administrator
             }
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
 
+        
         }
 
         public void cargarDatosEstatusActivo(List<string[]> datosCOnfiguracion)

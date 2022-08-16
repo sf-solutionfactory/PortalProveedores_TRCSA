@@ -1,31 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pagMaestra/MtrInicio.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proveedores.index" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/passSeguro/stylePassSeguro.css" rel="stylesheet" />
+    
+    
     <script src="css/passSeguro/ValidaPassSeguro.js"></script>
-
- <div id="pswd_info">
-   <h4>La contraseña debe cumplir con los siguientes requerimientos:</h4>
-   <ul>
-      <li id="letter">Al menos debe tener <strong><%=hidNumeroLetras.Value%> letra/s</strong></li>
-      <li id="capital">Al menos debe tener <strong><%=hidNumeroLetrasM.Value%> letra/s en mayúsculas</strong></li>
-      <li id="number">Al menos debe tener <strong><%=hidCantidadNumeros.Value%> número/s</strong></li>
-      <li id="length">Debe tener <strong><%=hidNumeroCaracteres.Value%> caractere/s</strong> como mínimo</li>
-   </ul>
-</div>
-
     <style>
         .lblError {
-            color:red;
+            color: red;
         }
 
         /*.btn {
             color: #C82B40;
         }*/
     </style>
+    
+    <div id="pswd_info">
+        <h4>La contraseña debe cumplir con los siguientes requerimientos:</h4>
+        <ul>
+            <li id="letter">Al menos debe tener <strong><%=hidNumeroLetras.Value%> letra/s</strong></li>
+            <li id="capital">Al menos debe tener <strong><%=hidNumeroLetrasM.Value%> letra/s en mayúsculas</strong></li>
+            <li id="number">Al menos debe tener <strong><%=hidCantidadNumeros.Value%> número/s</strong></li>
+            <li id="length">Debe tener <strong><%=hidNumeroCaracteres.Value%> caractere/s</strong> como mínimo</li>
+        </ul>
+    </div>
 
     <center>
+
         <div class="login">
             <div class="divImg">
                 <img src="images/candadoCerrado.png" />
@@ -49,7 +52,7 @@
         </div>
     </center>
 
-    <asp:HiddenField ID="hidVerificar" runat="server"  />
+    <asp:HiddenField ID="hidVerificar" runat="server" />
     <asp:HiddenField ID="hidNumeroLetras" runat="server" />
     <asp:HiddenField ID="hidNumeroLetrasM" runat="server" />
     <asp:HiddenField ID="hidCantidadNumeros" runat="server" />
