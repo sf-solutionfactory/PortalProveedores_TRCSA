@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -588,6 +589,41 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.css" />
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\css\dataTables.bootstrap4.min.css" />
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.js" />
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="version2\assets\extra-libs\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="version2\assets\extra-libs\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="version2\assets\images\custom-select.png" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="version2\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+    <Content Include="version2\assets\libs\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <Content Include="version2\assets\libs\popper.js\dist\umd\popper.min.js" />
+    <Content Include="version2\css\highlight.min.css" />
+    <Content Include="version2\dist\css\style.css" />
+    <Content Include="version2\dist\css\style.min.css" />
+    <Content Include="version2\dist\css\styleDetalles.css" />
+    <Content Include="version2\dist\js\app-style-switcher.js" />
+    <Content Include="version2\dist\js\app-style-switcher.min.js" />
+    <Content Include="version2\dist\js\custom.js" />
+    <Content Include="version2\dist\js\custom.min.js" />
+    <Content Include="version2\dist\js\feather.min.js" />
+    <Content Include="version2\dist\js\pages\datatable\datatable-basic.init.js" />
+    <Content Include="version2\dist\js\pages\datatable\datatable-basic.init.min.js" />
+    <Content Include="version2\dist\js\sidebarmenu.js" />
+    <Content Include="version2\dist\js\sidebarmenu.min.js" />
+    <Content Include="version2\js\highlight.min.js" />
+    <Content Include="version2\js\jsfunctions.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -869,6 +905,21 @@
     <None Include="Service References\SrvSATConsultaCFDI\ConsultaCFDIService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\package.json" />
+    <Content Include="version2\assets\extra-libs\datatables.net-bs4\Readme.md" />
+    <Content Include="version2\assets\extra-libs\datatables.net\package.json" />
+    <Content Include="version2\assets\extra-libs\datatables.net\Readme.md" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="version2\assets\libs\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="version2\dist\js\pages\datatable\data.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
