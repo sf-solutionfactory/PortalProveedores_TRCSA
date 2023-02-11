@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Iniciar sesión";
+}
+
+<div class="form-signin">
+
+    <img class="mb-4" src="/Images/tracusa_logo.png" alt="" width="300" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" align="center">Iniciar sesión</h1>
+
+    @using (Html.BeginForm("SingIn", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.TextBox("user", "", new { @class = "form-control", @placeholder = "Usuario", @id = "inputUser" })
+        <label for="inputPassword" class="sr-only">Password</label>
+        @Html.TextBox("password", "", new { @type = "password", @class = "form-control", @placeholder = "Contraseña", @id = "inputPassword" }) <br />
+
+        <input type="submit" value="Entrar" class="btn btn-lg btn-primary btn-block" />
+
+        <span style="color:red" align="center" id="message"><b>@ViewBag.Message</b></span>
+    }
+
+</div>

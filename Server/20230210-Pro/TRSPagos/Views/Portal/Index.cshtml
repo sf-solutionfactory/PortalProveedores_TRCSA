@@ -1,0 +1,29 @@
+﻿@model Portal.Proveedores.Models.StatusModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<form class="form-signin">
+    <img class="mb-4" src="/Images/tracusa_logo.png" alt="" width="300" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" align="center">Seleccione el archivo a subir</h1>
+
+    <hr style="border:2px;">
+
+    <div class="mb-3">
+        <input type="file" name="UploadPDF" id="uploadPDF" class="btn-outline-primary" accept="application/pdf" />
+    </div>
+
+    <div class="mb-3">
+        <input type="file" name="UploadXML" class="btn-outline-primary" accept="application/xml" />
+    </div>
+
+    <hr style="border:2px;">
+
+    <div class="mb-3">
+        @Html.ActionLink("Enviar archivos", "Index", "Portal", new { area = "" }, new { @class = "btn btn-lg btn-primary btn-block" })
+    </div>
+</form>
+
+
+
+
