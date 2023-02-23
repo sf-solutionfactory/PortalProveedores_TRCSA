@@ -97,7 +97,7 @@ namespace Proveedores.administrator
                     this.btnDescargarE.Visible = true;
                 }
                 else {
-                    this.lblInfoProveedores.Text = "<strong>Activar y desactivar</strong>";
+                    this.lblInfoProveedores.Text = "<!--<strong>Activar y desactivar</strong>-->";
 
                 }
                 //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro(); //DELETE SF RSG 02.2023 V2.0

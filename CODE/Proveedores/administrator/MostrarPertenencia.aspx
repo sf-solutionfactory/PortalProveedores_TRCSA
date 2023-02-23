@@ -94,7 +94,7 @@
     <div class="row">  <%--ADD SF RSG 02.2023 V2.0--%>
         <div class="col-md-6">  <%--ADD SF RSG 02.2023 V2.0--%>
             <label class="btn btn-success" title="Volver" style="margin-bottom:0px;"><i id="btnBack" class="fa-solid fa-arrow-left" name="Regresar"></i></label>
-            <br />
+            <%--<br />--%>
             <asp:Label ID="lblInfoProveedores" runat="server" Text=""></asp:Label>
             <asp:Label ID="lblEleccion" runat="server" Text=""></asp:Label>
             <asp:Button ID="btnDescargarE" runat="server" Text="Descargar en formato Excel" OnClick="btnDescargarE_Click" Visible="False" CssClass="btn btn-primary" />  <%--MODIFY SF RSG 02.2023 V2.0--%>

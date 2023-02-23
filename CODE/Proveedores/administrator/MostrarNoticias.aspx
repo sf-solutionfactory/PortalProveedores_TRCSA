@@ -32,7 +32,7 @@
                 }
             });
 
-            $("#grupoNoticia").addClass("active");
+            $("#grupoNoticia").addClass("selected active");
 
             $(".tblComun>tbody>tr").click(function () {
                 var n_noticia = $.trim($(this).find("td:nth-child(1)").html());
@@ -111,16 +111,21 @@
         }
 
     </style>
-
-    <div id="gettt">Obtener</div>
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <div id="gettt" style="font-weight: bold; font-size: 17px;">Obtener</div><%--MODIFY SF RSG 02.2023 V2.0--%>
 
     
 
     <table>
         <tr>
             <td><asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
-            
-            <td><asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btnTerminar"/></td>
+
+            <td><asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btn-success"/></td> <%--MODIFY SF RSG 02.2023 V2.0--%>
         </tr>
     </table>
     
@@ -136,31 +141,33 @@
 
     <div id="tablaResultados">
         <%--<h2>Proveedores</h2>--%>
-        <br />
+<%--        <br />--%>
 
         <asp:Label ID="lblTablaFiltroUl" runat="server" Text=""></asp:Label>
-        <br />
-        <br />
-        <div id="scrolltable" class="tablauno">
+<%--        <br />
+        <br />--%>
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="scrolltable" class="tablauno">
         <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
         </div>
 
-
-
-
-
-        <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
-
-    
-    
-    
-    
-    
-    
+        </div>
+            <div class="col-lg-6">
+                <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
+        <%--<div id="scrolltable" class="tablauno">
+        <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
+        </div>
+        <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>--%>
+        
     </div>
 
     <asp:HiddenField ID="hidIdSelected" runat="server" />
 
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
+            </div>
+            </div>
 
 </asp:Content>

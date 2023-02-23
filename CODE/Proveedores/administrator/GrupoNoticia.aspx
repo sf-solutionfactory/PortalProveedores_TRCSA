@@ -99,8 +99,8 @@
 
             mostrarDialog($("#ContentPlaceHolder1_lblDialog").text());  //MODIFY SF RSG 02.2023 V2.0
 
-            if ($("#sortable1").height() > $("#sortable2").height()) {
-                $("#sortable2").css("height", $("#sortable1").height());
+            if ($("#sortable1").height() != $("#sortable2").height()) {
+                $("#sortable2").css("height", $("#sortable1").height()*0.9);
             }
 
             $(".idProv").hide();
@@ -180,16 +180,14 @@
     </style>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text="sssdd"></asp:Label>
-
-    <div class="paraDiseno">
-        
+    
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
-
-
+    <div class="paraDiseno">
+        
         <table class="tblFm2">
             <tr>
                 <td><strong style="font-weight: bold; font-size: 18px;">Aquí puedes crear grupos de noticias</strong></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>

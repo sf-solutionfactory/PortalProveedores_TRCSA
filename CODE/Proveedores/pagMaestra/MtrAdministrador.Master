@@ -385,8 +385,9 @@
                                     <span class="hide-menu">Proveedores</span>
                                 </a>
                                 <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="Proveedores.aspx" class="sidebar-link"><span class="hide-menu">Proveedores </span></a></li>
-                                    <li class="sidebar-item"><a href="MostrarPertenencia.aspx?vinculador=Proveedores&campo=Proveedor&primerproveedor=me" class="sidebar-link"><span class="hide-menu">Activar y desactivar </span></a></li>
+<%--                                    <li class="sidebar-item"><a href="Proveedores.aspx" class="sidebar-link"><span class="hide-menu">Proveedores </span></a></li>--%>
+                                    <li class="sidebar-item"><a href="MostrarPertenencia.aspx?vinculador=Proveedores&campo=Proveedor&primerproveedor=me" class="sidebar-link"><span class="hide-menu">Proveedores </span></a></li>
+                                    <li class="sidebar-item"><a href="Proveedores.aspx" class="sidebar-link"><span class="hide-menu">Crear Grupo </span></a></li>
                                     <li class="sidebar-item"><a href="DesvincularGrupoProv.aspx" class="sidebar-link"><span class="hide-menu">Ver grupos </span></a></li>
                                     <li class="sidebar-item carga" id="cargaA"><a href="#" class="sidebar-link"><span class="hide-menu">Carga automática... </span></a></li>
                                 </ul>

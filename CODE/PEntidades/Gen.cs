@@ -84,12 +84,13 @@ namespace Gen.Util.CS
                     if (j == 0)
                     {
                         html += "<div class='idProv'>" + lista[i][j].Trim() + "</div>";
-                        html += " <br>";
+                        //html += " <br>";
                     }
                     else
                     {
-                        html += "<div class='DivSort'>" + lista[i][j].Trim() + "</div>";
                         html += " <br>";
+                        html += "<div class='DivSort'>" + lista[i][j].Trim() + "</div>";
+                        //html += " <br>";
                     }
                 }
                 html += "</li>";

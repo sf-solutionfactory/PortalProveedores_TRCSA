@@ -179,13 +179,13 @@ select,
 .btn,
 textarea,
 .cargador {
-/*    font-family: Helvetica,Arial,"lucida grande",tahoma,verdana,arial,sans-serif;
+    /*    font-family: Helvetica,Arial,"lucida grande",tahoma,verdana,arial,sans-serif;
     border: solid 1px #6E6E6E;*/
     padding: 5px 5px 3px;
     min-width: 150px;
     /*background: #E5E4E4;*/
     margin-right: 0px;
-}
+    }
 
 .btn {
     min-width: 100px;
