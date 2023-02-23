@@ -13,6 +13,7 @@
 
              var activaFiltro = true;
 
+             $("#usuario").addClass("selected active"); /*ADD SF RSG 02.2023 V2.0*/
              $("#searchTerm").keyup(function () { //$("#searchTerm").keyup(function () {
                  if (activaFiltro) {
                      activaFiltro = false;
@@ -27,7 +28,7 @@
                  validar();
              });
 
-             mostrarDialog();
+             mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
 
              
             $("table").tablesorter({ debug: true });
@@ -35,11 +36,36 @@
 
          });
 
-    </script>
+     </script>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
+        <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+            <div class="form-group">
+                    <label for="ContentPlaceHolder1_txtCredencial">Credencial inaceptada</label>
+                    <asp:TextBox ID="txtCredencial" runat="server" CssClass="txtValidar form-control" ></asp:TextBox>
+                <br />
+                <asp:Button ID="btnGCredInac" runat="server" Text="Agregar" OnClick="btnGCredInac_Click" CssClass=" btn btn-primary" /> 
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+            <div id="tablaResultados">
 
-    <div class="paraDiseno">
+                <div>
+                     <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+                    <%--<br />--%>
+                    <asp:Literal ID="ltlTablaCredInaceptadas" runat="server" ></asp:Literal>
+                </div>
+            </div>
+        </div>
+    </div>
+            <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+<%--    <div class="paraDiseno">
 
         
     <table class="tblFm tblFm3">
@@ -56,7 +82,7 @@
                 
             </td>
             <td>
-                <asp:Button ID="btnGCredInac" runat="server" Text="Guardar" OnClick="btnGCredInac_Click" CssClass=" btn"/>
+                <asp:Button ID="btnGCredInac" runat="server" Text="Guardar" OnClick="btnGCredInac_Click" CssClass=" btn btn-primary"/> 
             </td>
         </tr>
     </table>
@@ -72,7 +98,7 @@
         <br />
         <asp:Literal ID="ltlTablaCredInaceptadas" runat="server" ></asp:Literal>
     </div>
-         </div>
+         </div>--%>
 
 
     <asp:HiddenField ID="hidVerificar" runat="server" />

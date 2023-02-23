@@ -87,20 +87,20 @@ namespace Proveedores.administrator
                 editable = true;
             }
 
-            this.lblResultado.Text = new PNegocio.Administrador.Proveedor().consultarProveedores("90%",false, editable, false, evitarCols, ref resultado, ref tablas);
+            this.lblResultado.Text = new PNegocio.Administrador.Proveedor().consultarProveedores("100%",false, editable, false, evitarCols, ref resultado, ref tablas); //MODIFY SF RSG 02.2023 V2.0
             Session["Tablas"] = tablas;
             if (this.lblResultado.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
                 if (!editable)
                 {
-                    this.lblInfoProveedores.Text = "<strong>Seleccione alguno de los proveedores, para su elección clic sobre el registro</strong>";
+                    //this.lblInfoProveedores.Text = "<strong>Seleccione alguno de los proveedores, para su elección clic sobre el registro</strong>";   //DELETE SF RSG 02.2023 V2.0
                     this.btnDescargarE.Visible = true;
                 }
                 else {
                     this.lblInfoProveedores.Text = "<strong>Activar y desactivar</strong>";
 
                 }
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro(); //DELETE SF RSG 02.2023 V2.0
             }
             else {
                 this.lblComplementoFail.Text = "Para realizar carga de proveedores elija en el menu :"+
@@ -128,8 +128,8 @@ namespace Proveedores.administrator
             List<int> listaEvitar = new List<int>();
             if (inde > -1)
             {
-
-                this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "tblComun' style='width:" + "90%" + ";", listaEvitar, false, editable, false, false, 0, 1);
+                //this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "tblComun' style='width:" + "90%" + ";", listaEvitar, false, editable, false, false, 0, 1); //DELETE SF RSG 02.2023 V2.0
+                this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "table table-striped table-bordered' style='width:" + "100%" + ";", listaEvitar, false, editable, false, false, 0, 1);
             }
             else
             {

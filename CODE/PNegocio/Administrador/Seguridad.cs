@@ -48,7 +48,8 @@ namespace PNegocio.Administrador
                 for(int i = 1; i < resultado.Count; i++){
                     resultado[i][1] = encript.Desencriptar(encript.Desencriptar(resultado[i][1]));   
                 }
-                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:90%;", listaEvitar, false, false, true, false, 0, 1);
+                //return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:90%;", listaEvitar, false, false, true, false, 0, 1);    //DELETE SF RSG 02.2023 V2.0
+                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "table table-striped table-bordered' style='width:100%;", listaEvitar, false, false, true, false, 0, 1); //ADD SF RSG 02.2023 V2.0
             }
             else
             {

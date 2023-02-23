@@ -1,15 +1,16 @@
 ﻿
 function workThis(button) {
     //alert("working");
-    $("#dialog-confirm").dialog({
-        resizable: false,
-        height: 140,
-        modal: true,
-        buttons: {
-            "Continuar": function () {
-                $(this).dialog("close");
+    //$("#dialog-confirm").dialog({ //DELETE SF RSG 02.2023 V2.0
+    //    resizable: false,
+    //    height: 140,
+    //    modal: true,
+    //    buttons: {
+    //        "Continuar": function () {
+    //            $(this).dialog("close");
 
-    var textoBoton = $.trim($(button).text());
+    var textoBoton = $(button).find('i').attr('name');   //ADD SF RSG 02.2023 V2.0
+    //var textoBoton = $.trim($(button).text());         //DELETE SF RSG 02.2023 V2.0
     //alert(textoBoton);
     var rows = $(button).parents('tr');
     var cellsOfRow = rows[0].getElementsByTagName('td');
@@ -61,12 +62,12 @@ function workThis(button) {
     
     }
 
-            },
-            Cancel: function () {
-                $(this).dialog("close");
-            }
-        }
-    });
+    //        },                                                //DELETE SF RSG 02.2023 V2.0
+    //        Cancel: function () {
+    //            $(this).dialog("close");
+    //        }
+    //    }
+    //});
 
 }
 

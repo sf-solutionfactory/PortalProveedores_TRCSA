@@ -2,14 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>     
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel1" runat="server" GroupingText="Configuración global">
         <%--<script src="../js/validarNotNull.js"></script>--%>
         <link href="../css/Orden.css" rel="stylesheet" />
         <script src="../js/validarEmail.js"></script>
         <script>
             $(function () {
-                $("#config").addClass("active");
+                $("#config").addClass("selected active");
 
                 $('#ContentPlaceHolder1_btnEnviarConfig').click(function () {
                     var resultEmail1 = false;
@@ -63,7 +68,7 @@
 
                 
 
-                mostrarDialog();
+                //mostrarDialog();  /*ADD SF RSG 02.2023 V2.0*/
 
             });
 
@@ -150,8 +155,14 @@
             </table>
         <%--</div>--%>
     </asp:Panel>
-    <br />
-
+    <%--<br />--%>    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel2" runat="server" GroupingText="Correo">
         <%--<div class="paraDiseno">--%>
         <table class="tblFm tblFm3 tablaEmailNormal" >
@@ -187,8 +198,8 @@
                 <td>
                 </td>
                 <td>
-
-                    <div class="btn btnConfigCorreo">Configuración especial...</div>
+                    <%--<div class="btn btnConfigCorreo">Configuración especial...</div>--%>
+                    <div class="btn btn-success btnConfigCorreo">Configuración especial...</div>
                 </td>
             </tr>
         </table>
@@ -243,8 +254,8 @@
                     <td>
                         
                         
-                        
-                        <div class="btn btnCancel">
+                        <%--<div class="btn btnCancel">--%>
+                        <div class="btn btn-light btnCancel">
                             Cancelar
                         </div>
                     </td>
@@ -267,7 +278,14 @@
         </table>
     <%--</div>--%>
     </asp:Panel>
-    <br />
+    <%--<br />--%>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel3" runat="server" GroupingText="Seguridad">
         <%--<div class="paraDiseno">--%>
         <table class="tblFm tblFm3">
@@ -303,6 +321,14 @@
             </tr>
         </table>
     </asp:Panel>
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel6" runat="server" GroupingText="Contenido Password">
         <table class="tblFm tblFm3">
             <tr>
@@ -331,7 +357,15 @@
             </tr>
         </table>
     </asp:Panel>
-
+    
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel5" runat="server" GroupingText="XML:">
         <table class="tblFm tblFm3">
             <tr>
@@ -343,6 +377,14 @@
         </table>
     </asp:Panel>
     
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel4" runat="server" GroupingText="Opciones:">
         
     <br />
@@ -354,7 +396,7 @@
             }
 
             .primerTd {
-                width:40%;
+                /*width:40%;*/
                 /*padding-rigt:3em;*/    
             }
 
@@ -387,7 +429,7 @@
                    <asp:Label ID="lblInfoGuardar" runat="server" Text=""></asp:Label>
                </td>
                <td class="segundoTd">
-                   <asp:Button ID="btnEnviarConfig" runat="server" OnClick="btnEnviarConfig_Click" Text="Guardar" CssClass="btn" /> 
+                   <asp:Button ID="btnEnviarConfig" runat="server" OnClick="btnEnviarConfig_Click" Text="Guardar" CssClass="btn btn-primary" /> 
                </td>
             </tr>
             <tr>
@@ -398,9 +440,10 @@
                 </td>
                 <td class="segundoTd">
                     <br />
-                    <asp:Label ID="lblVernterior" runat="server" CssClass="btn" Text=""></asp:Label>
+                    <asp:Label ID="lblVernterior" runat="server" CssClass="btn btn-light" Text=""></asp:Label>
                     <br />
-                    <asp:Button ID="btnRecuperarAnterior" runat="server" CssClass="btn" OnClick="btnRecuperarAnterior_Click" Text="Restablecer" />
+                    <br />  <%--ADD SF RSG 02.2023 V2.0--%>
+                    <asp:Button ID="btnRecuperarAnterior" runat="server" CssClass="btn btn-danger" OnClick="btnRecuperarAnterior_Click" Text="Restablecer" />
                     <br/>
                     <br/>
                     
@@ -408,7 +451,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td class="segundoTd"><asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" CssClass="btn" /></td>
+                <td class="segundoTd"><asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" CssClass="btn btn-light" /></td>
             </tr>
         </tbody>
     </table>
@@ -416,11 +459,14 @@
     </asp:Panel>
 
     
-    <br />
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div> 
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
     <asp:HiddenField ID="hidVerificar" runat="server" Value="si" />
 
-    <br />
+    
     <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
     <asp:HiddenField ID="hidTipoCorreo" runat="server" />
 

@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores {
-    
-    
-    public partial class index {
-        
+namespace Proveedores
+{
+
+
+    public partial class index
+    {
+
         /// <summary>
         /// Control lblPortalProveedores.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPortalProveedores;
-        
+
         /// <summary>
         /// Control lblDescripUsuario.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescripUsuario;
-        
+
         /// <summary>
         /// Control txtUsuario.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
-        
+
         /// <summary>
         /// Control txtrepitContra.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtrepitContra;
-        
+
         /// <summary>
         /// Control lblDescContrasena.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescContrasena;
-        
+
         /// <summary>
         /// Control txtContrasena.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContrasena;
-        
+
         /// <summary>
         /// Control lblError.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
-        
+
         /// <summary>
         /// Control btnAcceder.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAcceder;
-        
+
         /// <summary>
         /// Control hidVerificar.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidVerificar;
-        
+
         /// <summary>
         /// Control hidNumeroLetras.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidNumeroLetras;
-        
+
         /// <summary>
         /// Control hidNumeroLetrasM.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidNumeroLetrasM;
-        
+
         /// <summary>
         /// Control hidCantidadNumeros.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidCantidadNumeros;
-        
+
         /// <summary>
         /// Control hidNumeroCaracteres.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidNumeroCaracteres;
-        
+
         /// <summary>
         /// Control hidVerificarPass.
         /// </summary>

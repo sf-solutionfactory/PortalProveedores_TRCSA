@@ -275,7 +275,9 @@ textarea {
   resize: vertical; }
 
 fieldset {
-  min-width: 0;
+  
+    
+    : 0;
   padding: 0;
   margin: 0;
   border: 0; }

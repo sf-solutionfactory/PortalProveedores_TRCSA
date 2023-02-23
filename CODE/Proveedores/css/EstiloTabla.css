@@ -41,19 +41,20 @@
     
     .tblComun tbody tr td{  /* CUERPO */
         height:30px;
-
         border-left: 5px solid #FFFFFF;
         border-bottom: 5px solid #FFFFFF;
-
         color: #333333;
     }
+
         .tblComun tr th:first-child,
         .tblComun tr td:first-child{
             border-left: 0px;
         }
+
         .td-par{
             background: #CCCCCC;
         }
+
         .td-impar{
             background: #B3B3B3;
         }
@@ -68,13 +69,19 @@
     border:3px solid #0B2161;
     border-bottom: none;
 }
+
     .tblCV-ValImpar{
         background: #FFFFFF;
     }
-    .tblCV-ValPar{
-        background: #B3B3B3;
-    }
-    
+.tblCV-ValPar {
+    /*background: #B3B3B3;*/ /*DELETE SF RSG 02.2023 V2.0*/
+    background: #dceffb; /*ADD SF RSG 02.2023 V2.0*/
+}
+.tblCV-CamImparE {  /*ADD SF RSG 02.2023 V2.0*/
+    /*background: #C82B40;*/
+    background: #013a5d;
+    color: #FFFFFF;
+}
     .tblCV-CamImpar{
         /*background: #C82B40;*/
         background: #0B2161;
@@ -85,7 +92,6 @@
         color: #000000;
         /*background: #81BEF7;*/
         background: #FFFFFF;
-        
         
     }
     
@@ -98,8 +104,7 @@
 /*      FIN     Tabla Campo-valor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /*      INICIO      Tabla Facturas      ***************************************/
-.tblFact{
-    
+.tblFact{   
 }
 
     .tblFact .factDescripcion{
@@ -114,6 +119,7 @@
     background:red;
     border:5px solid red;
 }
+
 .kz td {
     /*border-bottom:5px solid red;*/
     border:none;
@@ -124,6 +130,7 @@
     background:#A9BCF5;
     border:5px solid #A9BCF5;
 }
+
 .e td {
     /*border-bottom:5px solid red;*/
     border:none;
@@ -143,20 +150,24 @@
     width:300px;
     height:300px;
 }
+
 .validacionIconos li{
     border:2px dotted #000000;
     margin:0px;
     padding:0px;
 }
+
 .validacionIconos>li{
     display:block;
 }
+
     .validacionIconos > li > ul {
         margin:0px;
         padding:0px;
         border:0px;
         list-style:none;
     }
+
         .validacionIconos>li>ul>li{
             display:inline-block;
             width:35px;
@@ -164,6 +175,7 @@
             padding:0px;
             margin:0px;
         }
+
     .validacionIconos>li>ul>li>img {
         width:35px;
     }
@@ -177,6 +189,7 @@
     text-align:center;
     border-bottom:2px solid #B3B3B3;
 }
+
 .datMtrWrap table{
     display:inline-block;
     margin-top:20PX;
@@ -184,13 +197,13 @@
     padding-right:2%;
     border-left: 2px solid #B3B3B3;
 }
+
     .datMtrWrap table:first-child {
         /*padding-left:0px;*/
         border-left: none;
     }
 
 .tblDatMtr {
-
 }
 
     .tblDatMtr tbody > tr > td {
@@ -199,6 +212,7 @@
         font-weight:bolder;
         padding-top:10px;
     }
+
     .tblDatMtr tbody > tr > td:first-child {
         color: #808080;
         text-align:right;
@@ -222,13 +236,13 @@
     padding-right:2%;
     border-left: 2px solid #B3B3B3;
 }
+
     .datMtrWrap table:first-child {
         /*padding-left:0px;*/
         border-left: none;
     }
 
 .tblDatMtr {
-
 }
 
     .tblDatMtr > tr > td {
@@ -237,18 +251,18 @@
         font-weight:bolder;
         padding-top:10px;
     }
+
     .tblDatMtr > tr > td:first-child {
         color: #808080;
         text-align:right;
-
     } 
 
 /*///// FIN      Tablas de datos maestrso*/
 
 
-.tblFm tr td{
-    
+.tblFm tr td{   
 }
+
     .tblFm tr td:first-child {
         font-weight: bolder;
         min-width:180px;
@@ -257,21 +271,18 @@
 
     .tblFm [type="password"],
     .tblFm [type="text"],
-    .tblFm textarea
-    
-     {
+    .tblFm textarea     {
         width:300px;
         margin-left:3px;
     }
 
-.tblFm select
-{
-    min-width:300px;
-    min-height:400px;
+.tblFm select {
+    min-width: 300px;
+    min-height: 400px;
+    margin-left: 3px;
 }
 
-.tblFm2 tr td{
-    
+.tblFm2 tr td{    
 }
 
     .tblFm2 tr td:first-child {
@@ -283,8 +294,7 @@
     .tblFm2 [type="password"],
     .tblFm2 [type="text"],
     .tblFm2 textarea,
-    .tblFm2 select
-     {
+    .tblFm2 select{
         width:300px;
         margin-left:3px;
     }
@@ -306,7 +316,6 @@
     margin-right: 10px;
 }
 .tablados{
-    
     width:46%;
     height:100%;
     position:relative;

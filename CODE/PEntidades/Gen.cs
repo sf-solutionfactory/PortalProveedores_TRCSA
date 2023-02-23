@@ -193,7 +193,8 @@ namespace Gen.Util.CS
             //int colEvitarIzq = 1;
             string html = "";
             int tamcol = lista[0].Length - colEvitarDer;
-            html += "<table id='" + htmlId + "' class='" + cssClass + "'>" +
+            //html += "<table id='" + htmlId + "' class='" + cssClass + "'>" +                              //DELETE SF RSG 02.2023 V2.0
+            html += "<div class='table-responsive'><table id='" + htmlId + "' class='" + cssClass + "'>" +  //ADD SF RSG 02.2023 V2.0
                             "<thead>";
             html += "<tr>";
             for (int i = 0; i < tamcol; i++)
@@ -213,13 +214,16 @@ namespace Gen.Util.CS
                 html += "<th>Modificaciones</th>"; // agregar titulo de cambios para modificar, Activar/desactivar
             }
 
+            if (lista.Count > 1000) 
+                lista.RemoveRange(1001,lista.Count-1002);   //-------------------------------QUITAR-----------------------------------------//
             html += "</tr></thead>";
             html += "<tbody>";
             for (int i = 1; i < lista.Count; i++)
             {
                 string enviar = "";
                 string estatus = "";
-                string ComplementoBoton = "Activar";
+                //string ComplementoBoton = "Activar";  //DELETE SF RSG 02.2023 V2.0
+                string ComplementoBoton = "<i id='btnActiDesacti' class='fa-solid fa-lock-open' style='color:#FFFFFF;' name='Activar'  title='Activar'></i>";  //ADD SF RSG 02.2023 V2.0
                 html += "<tr>";
                 for (int j = 0; j < tamcol; j++)
                 {
@@ -228,13 +232,15 @@ namespace Gen.Util.CS
                         estatus = lista[i][j];
                         if (lista[i][j] == "True")
                         {
-                            html += "<td>" + "Activo" + "</td>";
+                            //html += "<td>" + "Activo" + "</td>";                                           //DELETE SF RSG 02.2023 V2.0
+                            html += "<td style='color:#00C279;font-weight: bold;'>" + "Activo" + "</td>";    //ADD SF RSG 02.2023 V2.0
                         }
                         else
                         {
                             if (activable) // si el activable quiere decir que trae informacion de bloqueo(esbloq)
                             {
-                                html += "<td>" + "Inactivo" + "</td>";
+                                //html += "<td>" + "Inactivo" + "</td>";                                        //DELETE SF RSG 02.2023 V2.0
+                                html += "<td style='color:#E75353;font-weight: bold;'>" + "Inactivo" + "</td>"; //ADD SF RSG 02.2023 V2.0
                             }
                             else
                             {
@@ -258,7 +264,8 @@ namespace Gen.Util.CS
 
                 if (estatus == "True")
                 {
-                    ComplementoBoton = "Desactivar";
+                    //ComplementoBoton = "Desactivar";                                                                                                              //DELETE SF RSG 02.2023 V2.0
+                    ComplementoBoton = "<i id='btnActiDesacti' class='fa-solid fa-lock' style='color:#FFFFFF;'name='Desactivar' title='Desactivar'></i>";    //ADD SF RSG 02.2023 V2.0
                 }
 
                 enviar = lista[i][0].ToString();
@@ -272,18 +279,23 @@ namespace Gen.Util.CS
                         html += "<center>";
                         if (activable)// si Activar
                         {
-                            html += "<label class='btn plusBtn'onclick='workThis(this);'>" + ComplementoBoton + "</label>";
+                            //html += "<label class='btn plusBtn'onclick='workThis(this);'>" + ComplementoBoton + "</label>";    //DELETE SF RSG 02.2023 V2.0
+                            html += "<label id='btnActionActiDesacti' class='btn btn-warning' onclick='workThis(this);' title='Activar/Desactivar'>" + ComplementoBoton + "</label>";    //ADD SF RSG 02.2023 V2.0
                         }
                         if (modificable) // editar
                         {
-                            html += "<label class='btn plusBtn' onclick='workThis(this);'>Modificar</label>";
+
+                            //html += "<label class='btn plusBtn' onclick='workThis(this);'>Modificar</label>";    //DELETE SF RSG 02.2023 V2.0
+                            html += "&nbsp<label id='btnActionModificar'class='btn btn-primary' onclick='workThis(this);'  title='Editar'><i id='btnModificar' class='fa-solid fa-pen-to-square' name='Modificar'></i></label>";    //ADD SF RSG 02.2023 V2.0
                         }
                         if (desechable) // eliminar
                         {
-                            html += "<label class='btn plusBtn' onclick='workThis(this);'>Eliminar</label>";
+                            //html += "<label class='btn plusBtn' onclick='workThis(this);'>Eliminar</label>";    //DELETE SF RSG 02.2023 V2.0
+                            html += "&nbsp<label class='btn btn-danger' onclick='workThis(this);' title='Eliminar'><i id='btnEliminar' class='fa-solid fa-trash' name='Eliminar'></i></label>";    //ADD SF RSG 02.2023 V2.0
                             if (detalles) // eliminar
                             {
-                                html += "<label class='btn plusBtn' onclick='workThis(this);'>Ver más</label>";
+                                //html += "<label class='btn plusBtn' onclick='workThis(this);'>Ver más</label>";    //DELETE SF RSG 02.2023 V2.0
+                                html += "&nbsp<label class='btn btn-success' onclick='workThis(this);' title='Ver más información del usuario'><i id='btnVerMas' class='fa-solid fa-eye' name='Ver más'></i></label>";    //ADD SF RSG 02.2023 V2.0
                             }
                         }
                         html += "</center>";
@@ -297,7 +309,8 @@ namespace Gen.Util.CS
                 html += "</tr>";
             }
             html += "</tbody>";
-            html += "</table>";
+            //html += "</table>";           //DELETE SF RSG 02.2023 V2.0
+            html += "</table></div>";       //ADD SF RSG 02.2023 V2.0
             return html;
         }
 
@@ -307,7 +320,8 @@ namespace Gen.Util.CS
             //int colEvitarIzq = 1;
             string html = "";
             int tamcol = lista[0].Length - colEvitarDer;
-            html += "<table id='" + htmlId + "' class='" + cssClass + "'>" +
+            //html += "<table id='" + htmlId + "' class='" + cssClass + "'>" +  //DELETE SF RSG 02.2023 v2.0
+            html += "<div class='table-responsive'><table id='" + htmlId + "' class='" + cssClass + "'>" +  //ADD SF RSG 02.2023 v2.0
                      "<thead>";
             html += "<tr>";
 
@@ -370,13 +384,15 @@ namespace Gen.Util.CS
                         estatus = lista[i][j];
                         if (lista[i][j] == "True")
                         {
-                            html += "<td>" + "Activo" + "</td>";
+                            //html += "<td>" + "Activo" + "</td>";    //DELETE SF RSG 02.2023 V2.0
+                            html += "<td style='color:#00C279; font-weight: bold;'>" + "Activo" + "</td>";    //ADD SF RSG 02.2023 V2.0
                         }
                         else
                         {
                             if (activable) // si el activable quiere decir que trae informacion de bloqueo(esbloq)
                             {
-                                html += "<td>" + "Inactivo" + "</td>";
+                                //html += "<td>" + "Inactivo" + "</td>";    //DELETE SF RSG 02.2023 V2.0
+                                html += "<td style='color:#E75353; font-weight: bold;'>" + "Inactivo" + "</td>";    //ADD SF RSG 02.2023 V2.0
                             }
                             else
                             {
@@ -439,7 +455,7 @@ namespace Gen.Util.CS
                 html += "</tr>";
             }
             html += "</tbody>";
-            html += "</table>";
+            html += "</table></div>";    //MODIFY SF RSG 02.2023 V2.0
             return html;
         }
 

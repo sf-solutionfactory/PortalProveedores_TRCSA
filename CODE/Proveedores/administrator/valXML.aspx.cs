@@ -169,7 +169,7 @@ namespace Proveedores.administrator
             {
                 this.lblDialog.Text = mensajeJS;
                 //Session["textoDialogo"] = mensajeJS;
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
                 //string script = @"<script type='text/javascript'>alert('" + mensajeJS + "');</script>";
                 //ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
             }
@@ -288,7 +288,7 @@ namespace Proveedores.administrator
                     this.lblSinRegistros.Visible = true;
                 }
                 this.lblDialog.Text = "Eliminado correctamente";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
             }
         }

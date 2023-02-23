@@ -99,7 +99,7 @@ namespace Proveedores.administrator
             this.lblDescribeNombre.Text = "Nombre del grupo: ";
             this.lblNombreGrupo.Text = lista[1][1];
 
-            this.lblTextoExplicacion.Text = "<strong>Los siguientes proveedores estan ligados al grupo de noticia seeccionado:</strong>";
+            this.lblTextoExplicacion.Text = "<strong style='font-weight: bold; font-size: 17px;'>Los siguientes proveedores estan ligados al grupo de noticia seeccionado:</strong>";   //MODIFY SF RSG 02.2023 V2.0
         }
 
         protected void MostrarInformacion(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace Proveedores.administrator
                 this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedor().consultarProveedoresConNoticia("90%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
-                    this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                    //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();//DELETE SF RSG 02.2023 V2.0
                     this.hidComplementoUr.Value = buscar;
                 }
             }
@@ -124,7 +124,7 @@ namespace Proveedores.administrator
                 this.lblMostrarTabla.Text = new PNegocio.Administrador.Noticia().consultarGruposDeNoticia("90%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
-                    this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                    //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();//DELETE SF RSG 02.2023 V2.0
                     this.hidComplementoUr.Value = buscar;
                 }
             }    
@@ -137,7 +137,7 @@ namespace Proveedores.administrator
             if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
 
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();//DELETE SF RSG 02.2023 V2.0
                 this.hidComplementoUr.Value = "Por proveedor" + ","+toSee;
             }
             else {

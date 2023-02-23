@@ -35,7 +35,7 @@
                 }
             });
 
-            $("#grupoNoticia").addClass("active");
+            $("#grupoNoticia").addClass("selected active");
 
             $("#ContentPlaceHolder1_btnSubmit").click(function () {
                 //alert("por entrar");
@@ -97,7 +97,7 @@
 
             $("#sortable1, #sortable2").disableSelection();
 
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").text());  //MODIFY SF RSG 02.2023 V2.0
 
             if ($("#sortable1").height() > $("#sortable2").height()) {
                 $("#sortable2").css("height", $("#sortable1").height());
@@ -182,16 +182,20 @@
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text="sssdd"></asp:Label>
 
     <div class="paraDiseno">
-
-        <br />
+        
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
 
         <table class="tblFm2">
             <tr>
-                <td><strong>Aquí puedes crear grupos de noticias</strong></td>
+                <td><strong style="font-weight: bold; font-size: 18px;">Aquí puedes crear grupos de noticias</strong></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
-        <br/>
+        <%--<br/>--%>
 
 
         <table id="datosNoticia" class="tblFm">
@@ -211,54 +215,48 @@
                     <asp:Label ID="lblIdNoticia" runat="server" Text=""></asp:Label><asp:Label ID="lblNoticiaSeleccionada" runat="server" Text=""></asp:Label>
                 </td>
                 <td>
-                    <asp:Button ID="btnBUscarNoticia" runat="server" Text="Buscar noticia..." OnClick="btnBUscarNoticia_Click" CssClass="btn" />
+                    <asp:Button ID="btnBUscarNoticia" runat="server" Text="Buscar noticia..." OnClick="btnBUscarNoticia_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
                 </td>
             </tr>
             <tr>
                 <td>Tabla de noticias seleccionadas
                 </td>
-                <td></td>
-                <td>
-                    <asp:Literal ID="ltlTablaNoticiasSeleccionadas" runat="server"></asp:Literal>
-                </td>
             </tr>
-
         </table>
 
         <br />
-
+       <asp:Literal ID="ltlTablaNoticiasSeleccionadas" runat="server"></asp:Literal>
     </div>
 
-
+        
     <div id="tablaResultados">
 
     </div>
         
         <table class="tblFm2">
             <tr>
-                <td><strong>Proveedores</strong></td>
+                <td><strong style="font-weight: bold; font-size: 18px;">Proveedores</strong></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
 
-        <br />
+        <%--<br />--%>
         <table class="tblFm">
             <tr>
-               
-                
-
-                <td>
-                    <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
-                <td>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Crear grupo" OnClick="crearGrupo" CssClass="btn actionFloat" /></td>
-                <td>
-                    <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="GuardarCambios" CssClass="btn actionFloat" /></td>
-                <td>
-                    <asp:Button ID="btnCancel" runat="server" Text="Cancelar" OnClick="Cancelar" CssClass="btn actionFloat" /></td>
-                <td>
+               <td>
                 <asp:DropDownList ID="drlbTipoGrupo" runat="server" CssClass="btn actionFloat">
                     <asp:ListItem Value="proveedor">Por proveedor</asp:ListItem>
                     <asp:ListItem Value="grupo">Por grupo</asp:ListItem>
                 </asp:DropDownList>
+                   </td>
+<%--                <td>
+                    <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>--%>
+                <td>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Crear grupo" OnClick="crearGrupo" CssClass="btn btn-primary" /></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                <td>
+                    <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="GuardarCambios" CssClass="btn btn-primary" /></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                <td>
+                    <asp:Button ID="btnCancel" runat="server" Text="Cancelar" OnClick="Cancelar" CssClass="btn btn-light" /></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                <td>
             </td>
             </tr>
         </table>
@@ -301,25 +299,16 @@
         <input id="procar" type="hidden" name="procargado" value="" />
         <br />
 
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    <%--<div id="scrolltable" class="tablauno">--%>
+    <div class="row">
+        <div class="col-lg-6">
             <asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>
-        <%--</div>--%>
-
+        </div>
+         <div class="col-lg-6">
         <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
-        <br />
-        <br />
-        <br />
-
-        <br />
+        </div>
+    </div>
+    </div>
+    </div>
         <%--</center>--%>
     
 

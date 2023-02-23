@@ -20,12 +20,18 @@ namespace PNegocio.Administrador
 
         public static string textoTablaFiltroSort()
         {
-            return "<table class='filtro'>" +
-                   "<tr>" +
-                   "<td>Filtrar...</td>" +
-                   "<td><input id='searchTermSort' type='text'/></td>" + // "<td><input id='searchTerm' type='text' onkeyup='doSearchSorter()' /></td>" +
-                   "</tr>" +
-                   "</table>";
+            //BEGIN OF DELETE SF RSG 02.2023 V2.0
+            //return "<table class='filtro'>" +
+            //       "<tr>" +
+            //       "<td>Filtrar...</td>" +
+            //       "<td><input id='searchTermSort' type='text'/></td>" + // "<td><input id='searchTerm' type='text' onkeyup='doSearchSorter()' /></td>" +
+            //       "</tr>" +
+            //       "</table>";
+            //END   OF DELETE SF RSG 02.2023 V2.0
+            //BEGIN OF INSERT SF RSG 02.2023 V2.0
+            return "Filtrar...</span>" +
+                   "<input id='searchTermSort' type='text' />";
+            //END   OF INSERT SF RSG 02.2023 V2.0
         }
 
         public static string textoTablaFiltroSortMostrarNoticias()

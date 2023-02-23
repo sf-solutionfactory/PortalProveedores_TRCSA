@@ -77,11 +77,11 @@ namespace Proveedores.administrator
 
         private void buscarDetalleGrupo(string toSee)
         {
-            this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedor().consultarProveedorPorGrProv(toSee, "90%");
+            this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedor().consultarProveedorPorGrProv(toSee, "100%");
             if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
 
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
                 this.hidComplementoUr.Value = "Por proveedor" + "," + toSee;
             }
             else
@@ -90,7 +90,7 @@ namespace Proveedores.administrator
                 this.lblTextoExplicacion.Text = "";
             }
         }
-        
+
 
         private void cerrarSesion()
         {
@@ -114,20 +114,20 @@ namespace Proveedores.administrator
         {
             if (buscar == "Por proveedor")
             {
-                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedores().consultarProveedoresEnGrupo("90%");
+                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedores().consultarProveedoresEnGrupo("100%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
-                    this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                    //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
                     this.hidComplementoUr.Value = buscar;
                 }
             }
 
             if (buscar == "Por grupo")
             {
-                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedores().consultarGruposDeProveedores("90%");
+                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedores().consultarGruposDeProveedores("100%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
-                    this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                    //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
                     this.hidComplementoUr.Value = buscar;
                 }
             }

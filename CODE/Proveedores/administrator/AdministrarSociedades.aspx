@@ -5,11 +5,11 @@
     <link href="../css/Orden.css" rel="stylesheet" />
     <script src="../js/EliminarFila.js"></script>
 
-    <script>
+<%--    <script>
         $(function () {
             $("table").tablesorter({ debug: true });
         });
-    </script> 
+    </script> --%>
 
 
     <div id="tablaResultados">
@@ -18,7 +18,7 @@
 
         <br/>
 
-        <asp:Button ID="btnTerminar" runat="server" Text="Terminar" OnClick="btnTerminar_Click" CssClass="btn"/>
+        <asp:Button ID="btnTerminar" runat="server" Text="Terminar" OnClick="btnTerminar_Click" CssClass="btn btn-primary"/>
 
     </div>
 

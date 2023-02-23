@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.administrator {
-    
-    
-    public partial class AdministrarSociedades {
-        
+namespace Proveedores.administrator
+{
+
+
+    public partial class AdministrarSociedades
+    {
+
         /// <summary>
         /// Control ltlTablaSociedades.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltlTablaSociedades;
-        
+
         /// <summary>
         /// Control btnTerminar.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTerminar;
-        
+
         /// <summary>
         /// Control hidVerificar.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidVerificar;
-        
+
         /// <summary>
         /// Control hidPantalla.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidPantalla;
-        
+
         /// <summary>
         /// Control hidComplementoUr.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidComplementoUr;
-        
+
         /// <summary>
         /// Control hidId.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidId;
-        
+
         /// <summary>
         /// Control hidValCheck.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidValCheck;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>

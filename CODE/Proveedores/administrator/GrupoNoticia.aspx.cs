@@ -188,7 +188,7 @@ namespace Proveedores.administrator
             Session["Tablas"] = tablas;
             if (this.lblTablaProveedores.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
 
                 //string html = "<table><tr><td><ul id='sortable2' class='droptrue'>" + "</ul>";
                 //html += "</ul></td></tr></table>";
@@ -214,7 +214,7 @@ namespace Proveedores.administrator
             Session["Tablas"] = tablas;
             if (this.lblTablaProveedores.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
             }
         }
 

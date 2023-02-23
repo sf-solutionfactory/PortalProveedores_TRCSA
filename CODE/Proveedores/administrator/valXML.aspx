@@ -7,11 +7,24 @@
             
             $("#valXML").addClass("active");
 
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
 
             
             $("table").tablesorter({ debug: true });
 
+            $(document).ready(function () {
+                $('#ContentPlaceHolder1_GridView1').DataTable({
+                    responsive: true,
+                    //order: [[2, 'asc']],
+                    //rowGroup: {
+                    //    dataSrc: 2
+                    //},
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+                    }
+                });
+            });
+            
 
             //("#ContentPlaceHolder1_lstBoxNoSelectedProv").
          
@@ -20,30 +33,47 @@
     <script src="../js/BusquedaTabla.js"></script>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
-
-    <asp:Button ID="btnNuevo" runat="server" CssClass="btn" OnClick="btnNuevo_Click" Text="Nuevo" ToolTip="Agregar nuevo grupo de validación XML" />
-    <br />
-    <asp:Literal ID="litTablaGrpValidaciones" runat="server"></asp:Literal>
-    <br />
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="tblComun" DataSourceID="SqlDataSource1" OnRowEditing="GridView1_RowEditing" DataKeyNames="ID">
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+                <strong style="font-weight: bold; font-size: 17px;">Estos son las validaciones existentes: </strong><br /><br />   <%--MODIFY SF RSG 02.2023 V2.0--%>
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <%--<asp:Button ID="btnNuevo" runat="server" CssClass="btn btn-primary" OnClick="btnNuevo_Click" Text="Nuevo" ToolTip="Agregar nuevo grupo de validación XML" />--%>   <%-- MODIFY SF RSG 02.2023 V2.0--%>
+
+    <asp:Literal ID="litTablaGrpValidaciones" runat="server"></asp:Literal>
+    <%--<br />--%>
+    
+    <%--<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="tblComun" DataSourceID="SqlDataSource1" OnRowEditing="GridView1_RowEditing" DataKeyNames="ID">--%><%-- DELETE SF RSG 02.2023 V2.0--%>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" DataSourceID="SqlDataSource1" OnRowEditing="GridView1_RowEditing" DataKeyNames="ID"><%-- ADD SF RSG 02.2023 V2.0--%>
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
             <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
             <asp:BoundField DataField="Validaciones" HeaderText="Validaciones" ReadOnly="True" SortExpression="Validaciones" />
             <asp:CommandField AccessibleHeaderText="Editar" ButtonType="Button" EditText="Editar" ShowEditButton="True">
-            <ControlStyle CssClass="btn" />
+            <ControlStyle CssClass="btn btn-success" />  <%-- MODIFY SF RSG 02.2023 V2.0--%>
             <HeaderStyle CssClass="icono" />
             </asp:CommandField>
         </Columns>
     </asp:GridView>
-    <asp:Label ID="lblSinRegistros" runat="server" Font-Bold="True" Font-Italic="False" Font-Overline="False" Font-Size="XX-Large" Font-Strikeout="False" ForeColor="Silver" Text="Sin datos para mostrar" Visible="False"></asp:Label>
+    <asp:Label ID="lblSinRegistros" runat="server" Font-Bold="True" Font-Italic="False" Font-Overline="False" Font-Size="17px" Font-Strikeout="False" ForeColor="Black" Text="Sin datos para mostrar" Visible="False"></asp:Label>
+    <%--<br />
+    <br />--%>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            </div>
+            </div>
+    <div class="card col-md-12 col-lg-8">
+        <div class="card-body">
+            <h4 class="card-title"></h4>   
+            <asp:Button ID="btnNuevo" runat="server" CssClass="btn btn-primary" OnClick="btnNuevo_Click" Text="Nuevo" ToolTip="Agregar nuevo grupo de validación XML" />   
     <br />
     <br />
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>   
     <asp:Panel ID="pnlNuevo" runat="server">
 
         <table class="tblFm2">
-            <tr><td><strong>Crear nuevos grupos de validación</strong></td></tr>
+            <tr><td><strong style="font-weight: bold; font-size: 17px;">Crear nuevos grupos de validación</strong></td></tr><%-- MODIFY SF RSG 02.2023 V2.0--%>
         </table>
         <br/>
         <table class="tblFm">
@@ -105,9 +135,9 @@
                     
                 </td>
                 <td style="text-align:right">
-                    <asp:Button ID="btnEliminar" runat="server" CssClass="btn" OnClick="btnEliminar_Click" Text="Eliminar" />
-                    &nbsp; <asp:Button ID="btnGuardar" runat="server" CssClass="btn" OnClick="btnGuardar_Click" Text="Guardar" />
-                    &nbsp;<asp:Button ID="btnCancelar" runat="server" CssClass="btn" OnClick="btnCancelar_Click" Text="Cancelar" />
+                    <asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click" Text="Eliminar" />        <%-- MODIFY SF RSG 02.2023 V2.0--%>
+                    &nbsp; <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" OnClick="btnGuardar_Click" Text="Guardar" />   <%-- MODIFY SF RSG 02.2023 V2.0--%>
+                    &nbsp;<asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-light" OnClick="btnCancelar_Click" Text="Cancelar" />   <%-- MODIFY SF RSG 02.2023 V2.0--%>
 
                 </td>
             </tr>
@@ -123,6 +153,7 @@
         <asp:Literal ID="litConsole" runat="server"></asp:Literal>
         <br />
     </asp:Panel>
-
+            </div>
+            </div>
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
 </asp:Content>

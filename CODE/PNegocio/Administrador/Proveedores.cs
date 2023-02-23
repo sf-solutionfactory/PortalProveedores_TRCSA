@@ -134,7 +134,8 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
-                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:" + ancho + ";", listaEvitar, false, false, true, true, 0, 1);
+                //return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:" + ancho + ";", listaEvitar, false, false, true, true, 0, 1); //DELETE SF RSG 02.2023 V2.0
+                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "table table-striped table-bordered' style='width:" + ancho + ";", listaEvitar, false, false, true, true, 0, 1);  //ADD SF RSG 02.2023 V2.0
             }
             else
             {
@@ -149,7 +150,8 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
-                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:" + ancho + ";", listaEvitar, false, false, true, false, 0, 1);
+                //return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:" + ancho + ";", listaEvitar, false, false, true, false, 0, 1);    //DELETE SF RSG 02.2023 v2.0
+                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "table table-striped table-bordered' style='width:" + ancho + ";", listaEvitar, false, false, true, false, 0, 1);    //ADD SF RSG 02.2023 v2.0
             }
             else
             {

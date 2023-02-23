@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.administrator {
-    
-    
-    public partial class DesvincularGrupoNoticia {
-        
+namespace Proveedores.administrator
+{
+
+
+    public partial class DesvincularGrupoNoticia
+    {
+
         /// <summary>
         /// Control lblDialog.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDialog;
-        
+
         /// <summary>
         /// Control chkModoDesvincular.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList chkModoDesvincular;
-        
+
         /// <summary>
         /// Control btnBuscar.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-        
+
         /// <summary>
         /// Control lblDescribeNombre.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescribeNombre;
-        
+
         /// <summary>
         /// Control lblNombreGrupo.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombreGrupo;
-        
+
         /// <summary>
         /// Control lblDescribeTituloGrupo.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescribeTituloGrupo;
-        
+
         /// <summary>
         /// Control lblTItuloGrupoNoticia.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTItuloGrupoNoticia;
-        
+
         /// <summary>
         /// Control lblTextoExplicacion.
         /// </summary>
@@ -83,16 +85,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTextoExplicacion;
-        
-        /// <summary>
-        /// Control lblTablaFiltro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTablaFiltro;
-        
+
         /// <summary>
         /// Control lblMostrarTabla.
         /// </summary>
@@ -101,7 +94,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMostrarTabla;
-        
+
         /// <summary>
         /// Control hidVerificar.
         /// </summary>
@@ -110,7 +103,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidVerificar;
-        
+
         /// <summary>
         /// Control hidPantalla.
         /// </summary>
@@ -119,7 +112,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidPantalla;
-        
+
         /// <summary>
         /// Control hidComplementoUr.
         /// </summary>
@@ -128,7 +121,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidComplementoUr;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>

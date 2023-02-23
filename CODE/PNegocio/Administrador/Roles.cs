@@ -18,7 +18,8 @@ namespace PNegocio.Administrador
             listaEvitar.Add(16);
             List<string[]> lista = ejec.ejcPsdConsultaRoles();
             cont = lista.Count;
-            return Gen.Util.CS.Gen.convertToHtmlTableDelete(lista, "tableToOrder", "tblComun' style='width:90%;", listaEvitar, true, true, false, false, 0, 1);
+            //return Gen.Util.CS.Gen.convertToHtmlTableDelete(lista, "tableToOrder", "tblComun' style='width:90%;", listaEvitar, true, true, false, false, 0, 1);     //DELETE SF RSG 02.2023 V2.0
+            return Gen.Util.CS.Gen.convertToHtmlTableDelete(lista, "tableToOrder", "table table-striped table-bordered' style='width:100%;", listaEvitar, true, true, false, false, 0, 1);     //ADD SF RSG 02.2023 V2.0
         }
 
         public string ejcPsdConsultaRolPorProvedor(string proveedor)
@@ -28,7 +29,7 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
-                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:90%;", listaEvitar, false, false, true, false, 0, 1);
+                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun' style='width:100%;", listaEvitar, false, false, true, false, 0, 1);     //MODIFY SF RSG 02.2023 V2.0
             }
             else
             {

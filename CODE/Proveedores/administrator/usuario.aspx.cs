@@ -231,11 +231,11 @@ namespace Proveedores.administrator
         public void cargarTablaUsuarios(string prov)
         {
 
-            this.lblTablaUsuarios.Text = new PNegocio.Administrador.Usuario().cosultarUsuariosPorFiltroEnString(prov, "90%");
+            this.lblTablaUsuarios.Text = new PNegocio.Administrador.Usuario().cosultarUsuariosPorFiltroEnString(prov, "100%");
             if (this.lblTablaUsuarios.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
-                this.lblExplicacionResultados.Text = "<strong>Estos son los usuarios que corresponden al proveedor que elegiste:</strong>";
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();  //DELETE SF RSG 02.2023 V2.0
+                this.lblExplicacionResultados.Text = "<strong style='font-weight: bold; font-size: 13px;'>Estos son los usuarios que corresponden al proveedor que elegiste:</strong>";  // SF RSG 02.2023 V2.0
             }
         }
 
@@ -244,12 +244,12 @@ namespace Proveedores.administrator
 
             if(this.hidVerificar.Value =="noEmail"){
                 this.lblDialog.Text = "El email no cumple con las caracteristicas necesarias";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
             }
             else if (this.hidVerificar.Value == "no")
             {
                 this.lblDialog.Text = "Existen campos sin valor o invalidos";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
             }
             else if (this.hidVerificar.Value == "si" && this.hidVerificarPass.Value == "si")
             {
@@ -328,24 +328,24 @@ namespace Proveedores.administrator
                             Response.Redirect("usuario.aspx?" + this.hidComplementoUr.Value); 
                             break;
                         case "nombre existente":
-                            this.lblDialog.Text = "El nombre de usuario ya existe";
+                            this.lblDialog.Text = "Error:El nombre de usuario ya existe";
                             break;
                         case "error":
-                            this.lblDialog.Text = "Error al insertar";
+                            this.lblDialog.Text = "Error:Error al insertar";
                             break;
                         default:
-                            this.lblDialog.Text = "Error desconocido";
+                            this.lblDialog.Text = "Error:Error desconocido";
                             break;
                         case "limite":
-                            this.lblDialog.Text = "El numero maximo permitido de usuarios fue alcanzado";
+                            this.lblDialog.Text = "Error:El numero maximo permitido de usuarios fue alcanzado";
                             break;
                     }
 
                 }
                 else {
-                    this.lblDialog.Text = "El password o el email no coinciden";
+                    this.lblDialog.Text = "Error:El password o el email no coinciden";
                 }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
         }
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -353,7 +353,7 @@ namespace Proveedores.administrator
 
             if (this.hidVerificar.Value == "noCalendario")
             {
-                this.lblDialog.Text = "Las fechas no cumplen con el formato adecuado";
+                this.lblDialog.Text = "Error:Las fechas no cumplen con el formato adecuado";
                 this.btnGuardarCambios.Visible = true;
                 this.ltlbtnCancel.Visible = true;
             }
@@ -415,7 +415,7 @@ namespace Proveedores.administrator
                     else
                     {
                         entrarAModificar = false;
-                        this.lblDialog.Text = "Contraseña no coincide";
+                        this.lblDialog.Text = "Error:Contraseña no coincide";
                     }
                 }
                 else {
@@ -434,7 +434,7 @@ namespace Proveedores.administrator
                         {
                             entrarAModificar = false;
                             
-                            this.lblDialog.Text = "Email no coincide";
+                            this.lblDialog.Text = "Error:Email no coincide";
                         }
                     }   
                 }
@@ -540,13 +540,13 @@ namespace Proveedores.administrator
                             Response.Redirect("usuario.aspx?"+this.hidComplementoUr.Value); 
                             break;
                         case "error":
-                            this.lblDialog.Text = "Error al insertar";
+                            this.lblDialog.Text = "Error:Error al insertar";
                             break;
                         case "no existe":
-                            this.lblDialog.Text = "No se encontro el usuario, probablemente fue modificado por otro usuario";
+                            this.lblDialog.Text = "Error:No se encontro el usuario, probablemente fue modificado por otro usuario";
                             break;
                         default:
-                            this.lblDialog.Text = "Error desconocido";
+                            this.lblDialog.Text = "Error:Error desconocido";
                             break;
                     }
 
@@ -555,11 +555,11 @@ namespace Proveedores.administrator
                 }
                 else
                 {
-                    this.lblDialog.Text = "El password o el email no coinciden";
+                    this.lblDialog.Text = "Error:El password o el email no coinciden";
                     this.btnGuardarCambios.Visible = true;
                     this.ltlbtnCancel.Visible = true;
                 }
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
         }
 
        
@@ -567,7 +567,7 @@ namespace Proveedores.administrator
         private List<string[]> cargarSociedades(string rfc) {
             PNegocio.Administrador.Usuario inst = new PNegocio.Administrador.Usuario();
            
-            List<string[]> resultado = inst.cosultarSociedadesPorprov(rfc, "90%");
+            List<string[]> resultado = inst.cosultarSociedadesPorprov(rfc, "100%");
             return resultado;
         }
 
@@ -576,9 +576,10 @@ namespace Proveedores.administrator
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
-                this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);
+                //this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);  //DELETE SF RSG 02.2023 V2.0
                 //this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 1, 1);
-
+                this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "table table-striped table-bordered toCheck' style='width:" + "100%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);  //ADD SF RSG 02.2023 V2.0
+                this.ltlTablaSociedades.Text = this.ltlTablaSociedades.Text.Replace("False", "Inactivo");  //ADD SF RSG 02.2023 V2.0
                 Session["TablaSociedades"] = resultado;
             }
             else

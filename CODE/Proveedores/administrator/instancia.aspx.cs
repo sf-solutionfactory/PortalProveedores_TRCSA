@@ -134,13 +134,13 @@ namespace Proveedores.administrator
             this.lblTabla.Text = new PNegocio.Administrador.Instancia().consultarInstancia();
             if (this.lblTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
-                this.lblExplicacionInstancias.Text = "<strong>Estas son las instancias de SAP que tenemos en el registro:</strong>";
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();                                     //DELETE SF RSG 02.2023 V2.0
+                //this.lblExplicacionInstancias.Text = "<strong>Estas son las instancias de SAP que tenemos en el registro:</strong>";  //DELETE SF RSG 02.2023 V2.0
+                this.lblExplicacionInstancias.Text = "<strong style='font-weight: bold; font-size: 17px;'>Estas son las instancias de SAP que tenemos en el registro:</strong>";  //ADD SF RSG 02.2023 V2.0
             }
             else {
                 //this.lblExplicacionInstancias.Text = "";
             }
-            //this.lblTabla.Text = "aqui";
         }
 
         protected void btnEjecutaInstancia_Click(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace Proveedores.administrator
                                 
                             case "existente":
                                 //this.lblResultado.Text = "Ya existe esa descripcion";
-                                mensaje = "Ya existe la descripción o el endpoint";                                
+                                mensaje = "Error: Ya existe la descripción o el endpoint";                                
                                 break;
                             case "insertado":
                                 mensaje = "Insertado";
@@ -211,14 +211,14 @@ namespace Proveedores.administrator
                                         res = instancia.insertarRFCPorInstancia(sqlString);
                                     }
                                     else {
-                                        mensaje = "La instancia fue  insertada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
+                                        mensaje = "Error:La instancia fue  insertada pero no regresó respuesta alguna, verifique que: |<br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
                                         
                                     }
                                     
                                 }
                                 catch (Exception)
                                 {
-                                    mensaje = "La instancia fue  insertada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
+                                    mensaje = "Error:La instancia fue  insertada pero no regresó respuesta alguna, verifique que: |<br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
 
                                 }
                                 
@@ -240,7 +240,7 @@ namespace Proveedores.administrator
                                 break;
                             case "error":
                                 //this.lblResultado.Text = "Hubo un error en la insercion";
-                                mensaje = "Error en la inserción";
+                                mensaje = "Error:Error en la inserción";
                                 //Response.Redirect(Request.RawUrl);
                                 break;
                         }
@@ -255,7 +255,7 @@ namespace Proveedores.administrator
                     {
                         //this.lblResultado.Text = "No habia conexion";
                         //Session["textoDialogo"] = "No se encontro la conexion a la base de datos, intente nuevamente";
-                        this.lblDialog.Text = "No se encontró la conexión a la base de datos, intente nuevamente";
+                        this.lblDialog.Text = "Error: No se encontró la conexión a la base de datos, intente nuevamente";
                         
                     }
                 }
@@ -263,7 +263,7 @@ namespace Proveedores.administrator
                 {
                     //this.lblResultado.Text = "Usuario o contraseña no coinciden";
                     //Session["textoDialogo"] = "Usuario o contraseña no coinciden";
-                    this.lblDialog.Text = "Contraseña o usuario no coinciden";
+                    this.lblDialog.Text = "Error: Contraseña o usuario no coinciden";
                     
                 }
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
@@ -283,18 +283,18 @@ namespace Proveedores.administrator
                 }
                 catch (Exception)
                 {
-                    this.lblDialog.Text = "La sociedad solo permite numeros";
-                
+                    this.lblDialog.Text = "Error:La sociedad solo permite numeros";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialogError($('#ContentPlaceHolder1_lblDialog').text())", true);
                 }
-                
+
             }
             else {
-                this.lblDialog.Text = "Existen campos vacios";
-                
-                activarMensageDialog();
+                this.lblDialog.Text = "Error:Existen campos vacios";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialogError($('#ContentPlaceHolder1_lblDialog').text())", true); //ADD SF RSG 02.2023 V2.0
+                //activarMensageDialog(); //DELETE SF RSG 02.2023 V2.0
             }
-           
-            
+
+
         }
 
         public void actualizaInstancia() {
@@ -311,9 +311,9 @@ namespace Proveedores.administrator
                 this.txtUsuario.Text, encrypt.Encriptar(encrypt.Encriptar(this.txtPassword.Text.Trim())), this.txtEndpoint.Text.Trim());
                 if (res == "actualizado")
                 {
-                    Session["textoDialogo"] = "Actualizado correctamente";
-                    
-                    
+                    //Session["textoDialogo"] = "Actualizado correctamente";         //DELETE SF RSG 02.2023 V2.0
+                    this.lblDialog.Text = "Actualizado correctamente";               //ADD SF RSG 02.2023 V2.0
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').text())", true);    //ADD SF RSG 02.2023 V2.0
                     try
                     {
                         if (this.txtEndpoint.Text.Trim() != null && this.txtEndpoint.Text.Trim() != "")
@@ -331,7 +331,7 @@ namespace Proveedores.administrator
                                 result = instancia.insertarRFCPorInstancia(sqlString);   
                             }
                             else {
-                                Session["textoDialogo"] = "La instancia fue  actualizada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
+                                Session["textoDialogo"] = "Error:La instancia fue  actualizada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
                                         
                             }
                                  
@@ -339,7 +339,7 @@ namespace Proveedores.administrator
                     }
                     catch (Exception)
                     {
-                        Session["textoDialogo"] = "La instancia fue  actualizada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
+                        Session["textoDialogo"] = "Error:La instancia fue  actualizada pero no regresó respuesta alguna, verifique que: <br/>  1.- Sus datos sean correctos <br/> 2.- Que la instancia este en funcionamiento <br/> 3.- Que la sociedad sea la que le pertenece de lo contrario no podremos conocer su RFC";       
 
                     }
                     //this.lblDialog.Text = "Actualizado correctamente";
@@ -354,7 +354,7 @@ namespace Proveedores.administrator
                             this.lblDialog.Text = "La descripción o el edpoint ya están registrados";
                             break;
                         default:
-                            this.lblDialog.Text = "Ocurrió algún error, intente de nuevo";
+                            this.lblDialog.Text = "Error:Ocurrió algún error, intente de nuevo";
                             break;
                     }
                     //this.lblDialog.Text = "Algunos datos no coinciden";
@@ -369,7 +369,7 @@ namespace Proveedores.administrator
                 //mostrarTablaInstancias();
             }
             else {
-                this.lblDialog.Text = "Contraseña o usuario no coinciden";
+                this.lblDialog.Text = "Error: Contraseña o usuario no coinciden";
             }
             activarMensageDialog();
             //Response.Redirect("instancia.aspx");

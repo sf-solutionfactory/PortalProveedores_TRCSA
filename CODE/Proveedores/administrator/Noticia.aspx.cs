@@ -124,19 +124,19 @@ namespace Proveedores.administrator
                     }
                     else
                     {
-                        this.lblDialog.Text = "El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
+                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
                     }
 
                 }
             }
             else if (verificar == "noCalendario")
             {
-                this.lblDialog.Text = "Las fechas no cumplen con el formato adecuado";
+                this.lblDialog.Text = "Error:Las fechas no cumplen con el formato adecuado";
             }
             else {
-                this.lblDialog.Text = "Existen campos vacios";  
+                this.lblDialog.Text = "Error:Existen campos vacios";  
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
         }
 
@@ -170,7 +170,7 @@ namespace Proveedores.administrator
                 this.lblDialog.Text = res;
             }
 
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
             mostrarTablarNoticias();
         }
@@ -200,11 +200,11 @@ namespace Proveedores.administrator
 
         private void mostrarTablarNoticias()
         {
-            this.lblTablaNoticias.Text = new PNegocio.Administrador.Noticia().consultarNoticias("90%");
+            this.lblTablaNoticias.Text = new PNegocio.Administrador.Noticia().consultarNoticias("100%");
             if (this.lblTablaNoticias.Text != "<div>No se encontraron resultados para mostrar en la tabla</div>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
-                this.lblDescribeResultados.Text = "<strong>Estas son las noticias existentes:</strong>";
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                this.lblDescribeResultados.Text = "<strong style='font-weight:bold; font-size:17px;'>Estas son las noticias existentes:</strong>";  //MODIFY SF RSG 02.2023 V2.0
             }
             else {
                 this.lblTablaNoticias.Text = "<strong>No se encontraron resultados para mostrar en la tabla</strong>";   
@@ -229,18 +229,18 @@ namespace Proveedores.administrator
                     }
                     else
                     {
-                        this.lblDialog.Text = "El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
+                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
                     }
 
                 }
             }
             else if (verificar == "noCalendario")
             {
-                this.lblDialog.Text = "Las fechas no cumplen con el formato adecuado";
+                this.lblDialog.Text = "Error:Las fechas no cumplen con el formato adecuado";
             }
             else
             {
-                this.lblDialog.Text = "Existen campos vacios";
+                this.lblDialog.Text = "Error:Existen campos vacios";
             }
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
             
@@ -265,7 +265,7 @@ namespace Proveedores.administrator
                 
             }
             else {
-                this.lblDialog.Text = "No fue posible realizar el cambio, intente nuevamente";
+                this.lblDialog.Text = "Error:No fue posible realizar el cambio, intente nuevamente";
             }
 
         }

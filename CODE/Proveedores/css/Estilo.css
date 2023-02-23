@@ -9,7 +9,7 @@
 
 body, html {
     margin: 0px;
-    min-width: 1124px;
+    /*min-width: 1124px;*/  /*DELETE SF RSG 02.2023 V2.0*/
 }
 
 html {
@@ -179,11 +179,11 @@ select,
 .btn,
 textarea,
 .cargador {
-    font-family: Helvetica,Arial,"lucida grande",tahoma,verdana,arial,sans-serif;
-    border: solid 1px #6E6E6E;
+/*    font-family: Helvetica,Arial,"lucida grande",tahoma,verdana,arial,sans-serif;
+    border: solid 1px #6E6E6E;*/
     padding: 5px 5px 3px;
     min-width: 150px;
-    background: #E5E4E4;
+    /*background: #E5E4E4;*/
     margin-right: 0px;
 }
 
@@ -634,7 +634,7 @@ legend {
     z-index: 2000;
 }
 #searchTermSort {
-    margin-left: -25%;
+    /*margin-left: -25%;*/
     overflow:hidden;
 }
 .cls_mpletras {

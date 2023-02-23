@@ -24,9 +24,8 @@
                 }
             });
 
-            $("#proveedor").addClass("active");
-            mostrarDialog();
-
+            $("#proveedores").addClass("selected active");    //MODIFY SF RSG 02.2023 V2.0
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
             
             $("table").tablesorter({ debug: true });
        
@@ -36,16 +35,21 @@
     </script>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <div class="paraDiseno">
-        <strong>Elija como desea desvincular</strong> 
-        <br/><br/><br/>
+        <strong style="font-weight: bold; font-size: 17px;">Elija como desea desvincular</strong>  <%--MODIFY SF RSG 02.2023 V2.0--%>
+        <br/><%--<br/><br/>--%>
         <asp:DropDownList ID="chkModoDesvincular" runat="server" AutoPostBack="True" OnTextChanged="MostrarInformacion">
         <asp:ListItem Selected="True">Por grupo</asp:ListItem>
         <asp:ListItem>Por proveedor</asp:ListItem>
         </asp:DropDownList>
 
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn" />
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-success" /> <%--MODIFY SF RSG 02.2023 V2.0--%>
 
      <table>
         <tr>
@@ -65,7 +69,7 @@
     <div id="tablaResultados">
     <asp:Label ID="lblTextoExplicacion" runat="server" Text=""></asp:Label>
     <br/>
-    <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+    <%--<asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>--%>
     <asp:Label ID="lblMostrarTabla" runat="server" Text=""></asp:Label>
 
     <asp:HiddenField ID="hidVerificar" runat="server" />
@@ -74,6 +78,8 @@
     <asp:HiddenField ID="hidComplementoUr" runat="server" />
 
         <asp:HiddenField ID="hidCerrarSesion" runat="server" />
+    </div>
+    </div>
     </div>
 
 </asp:Content>

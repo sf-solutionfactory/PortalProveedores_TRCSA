@@ -60,22 +60,22 @@ namespace Proveedores.administrator
                         }
                         catch (Exception)
                         {
-                            resultados += "La carga en la instancia  <strong>" + listEndpoints[i][2].ToString() + " </strong> fue erronea. <br/>";
+                            resultados += "Error:La carga en la instancia  <strong>" + listEndpoints[i][2].ToString() + " </strong> fue erronea. <br/>";
                         }
                     }
                     Session["textoDialogo"] = resultados;
                 }
                 else
                 {
-                    Session["textoDialogo"] = "No existen endpoints o instancias disponibles";
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                    Session["textoDialogo"] = "Error:No existen endpoints o instancias disponibles";
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
                 }
             }
             else
             {
-                Session["textoDialogo"] = "No se encotro un Rol por defecto para crear usuarios. Cree un Rol";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                Session["textoDialogo"] = "Error:No se encotro un Rol por defecto para crear usuarios. Cree un Rol";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
             }
         }
 

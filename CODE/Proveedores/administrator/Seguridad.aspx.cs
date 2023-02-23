@@ -68,7 +68,7 @@ namespace Proveedores.administrator
             string res = objInstancia.insertarCredInacep(encript.Encriptar(encript.Encriptar(this.txtCredencial.Text)));
             this.lblDialog.Text  = "Insertado";
             consultarCredencialesAnaceptables();
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
         }
 
@@ -84,7 +84,7 @@ namespace Proveedores.administrator
             this.ltlTablaCredInaceptadas.Text = new PNegocio.Administrador.Seguridad().consultarCredenciales();
             if (this.ltlTablaCredInaceptadas.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
             }
             
         }

@@ -106,7 +106,7 @@ namespace Proveedores.administrator
                             case "Datos del proveedor":
                                 this.chkDatosMaestros.Checked = true;
                                 break;
-                        case "Control de usuarios":
+                            case "Control de usuarios":
                                 this.chkUsuarios.Checked =  true;
                                 break;
                             default:
@@ -224,36 +224,36 @@ namespace Proveedores.administrator
                         if (this.lblDialog.Text == "correcto")
                         {
                             if(desicion == "insertar"){
-                                complemento = "insertó";
+                                complemento = "creado"; //MODIFY SF RSG 02.2023 V2.0    
                                 limpiarCampos();
                             }
                             else if (desicion == "actualizar")
                             {
-                                complemento = "actualizó";
+                                complemento = "modificado"; //MODIFY SF RSG 02.2023 V2.0   
                                 this.btnGuardarCambios.Visible = false;
                                 this.btnCancel.Visible = false;
                                 this.btnGuardarRol.Visible = true;
                                 limpiarCampos();
                             }
-                            this.lblDialog.Text = " se " + complemento + " correctamente";
+                            this.lblDialog.Text = " Registro " + complemento + " correctamente"; //MODIFY SF RSG 02.2023 V2.0   
 
-                        }
+                }
                         
                         else{
-                            this.lblDialog.Text = "No se logró realizar la acción, probablemente ya exista esa combinación de pantallas o el nombre";
+                            this.lblDialog.Text = "Error:No se logró realizar la acción, probablemente ya exista esa combinación de pantallas o el nombre";
                         }
                         
                         //Response.Redirect(Request.RawUrl);
                     }
                     else{
-                        this.lblDialog.Text = "Debe seleccionar al menos dos vistas, las unitarias ya existen por default";
+                        this.lblDialog.Text = "Error:Debe seleccionar al menos dos vistas, las unitarias ya existen por default";
                     }
 
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
-                
-                //this.lblResultado.Text = resultado;
-           //}
+
+            //this.lblResultado.Text = resultado;
+            //}
         }
 
         protected void btnGuardarRol_Click(object sender, EventArgs e)
@@ -263,15 +263,15 @@ namespace Proveedores.administrator
                 trabajaRol("insertar");
             }
             else {
-                this.lblDialog.Text = "No deben de existir campos vacios";
+                this.lblDialog.Text = "Error:No deben de existir campos vacios";
                 activarMensageDialog();
             }
             
         }
 
         private void activarMensageDialog(){
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
-    
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
+
         }
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@
                 }
             });
             //$("#Roles").setMenuItemFocused();
-            $("#Roles").addClass("active");
+            $("#Roles").addClass("selected active");  //MODIFY SF RSG 02.2023 V2.0
             $('#ContentPlaceHolder1_btnGuardarRol').click(function () {
                 validar();
                 //validarCheckBox();
@@ -32,7 +32,7 @@
             $("table").tablesorter({ debug: true });
 
 
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
 
         });
     </script>
@@ -42,14 +42,19 @@
 
 
     <div class="paraDiseno">
-
+        
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
         <table class="tblFm2">
             <tr>
-                <td><strong>Aquí puedes crear nuevos roles:</strong></td>
+                <td><strong style="font-weight: bold; font-size: 17px;">Aquí puedes crear nuevos roles:</strong></td>   <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
         <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
-            <br/><br/>
+            <%--<br/><br/>--%>
     <asp:Panel ID="Panel1" runat="server">
         <table class="tblFm">
             <tr>
@@ -85,11 +90,11 @@
                 <td>
                     <table>
                         <tr>
-                            <td><asp:Button ID="btnGuardarRol" runat="server" Text="Guardar" OnClick="btnGuardarRol_Click" CssClass="btn" /></td>
+                            <td><asp:Button ID="btnGuardarRol" runat="server" Text="Guardar" OnClick="btnGuardarRol_Click" CssClass="btn btn-primary" /></td>   <%--MODIFY SF RSG 02.2023 V2.0--%>
                         </tr>
                         <tr>
-                            <td><asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn" /></td>
-                            <td><asp:Button ID="btnCancel" runat="server" CssClass="btn" Text="Cancelar" OnClick="btnCancel_Click" /></td>
+                            <td><asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn btn-primary" /></td>   <%--MODIFY SF RSG 02.2023 V2.0--%>
+                            <td><asp:Button ID="btnCancel" runat="server" CssClass="btn btn-secondary" Text="Cancelar" OnClick="btnCancel_Click" /></td>   <%--MODIFY SF RSG 02.2023 V2.0--%>
                         </tr>
                     </table>
                 </td>
@@ -98,30 +103,41 @@
         </table>
 
     </asp:Panel>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+        </div>
+        </div>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+           <%--DELETE SF RSG 02.2023 V2.0--%>
+<%--        
         <br/>
-
-        <table class="tblFm2">
-            <tr>
-                <td><strong>Estos son los roles existentes: </strong></td>
-            </tr>
+    <table class="tblFm2">
+            <tr>--%>
+                <strong style="font-weight: bold; font-size: 17px;">Estos son los roles existentes: </strong>   <%--MODIFY SF RSG 02.2023 V2.0--%>
+<%--            </tr>
         </table>
         <table class="tblFm">
             <tr>
                 <td>Filtrar...</td>
                 <td><input id="searchTerm" type="text"/></td>
             </tr>
-        </table>
-   
+        </table>--%>
+      <%--DELETE SF RSG 02.2023 V2.0--%>
     
-        
+    <br/><br/>
         <asp:Label ID="lblTablaRoles" runat="server" Text="lblTablaRoles"></asp:Label>
 
-    <br/><br/>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
          
 
     
 </div>
-    <br/>
+    <%--<br/>--%>
     <asp:HiddenField ID="hidVerificar" runat="server" />
     <asp:HiddenField ID="hidPantalla" runat="server" Value="Roles" />
 

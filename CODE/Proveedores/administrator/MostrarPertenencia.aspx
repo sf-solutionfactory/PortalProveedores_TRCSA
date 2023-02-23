@@ -31,13 +31,13 @@
 
             switch ($("#ContentPlaceHolder1_hidVinculador").val()) {
                 case "usuario":
-                    $("#usuario").addClass("active");
+                    $("#usuario").addClass("selected active");    //MODIFY SF RSG 02.2023 V2.0
                     break;
                 case "AsignarRol":
-                    $("#asignarRol").addClass("active");
+                    $("#asignarRol").addClass("selected active");    //MODIFY SF RSG 02.2023 V2.0
                     break;
                 case "Proveedores":
-                    $("#proveedor").addClass("active");
+                    $("#proveedores").addClass("selected active");    //MODIFY SF RSG 02.2023 V2.0
                     break;
                 default:
                     break;
@@ -52,7 +52,7 @@
                 document.location.href = vinculador + ".aspx";
             });
 
-            $(".tblComun>tbody>tr").click(function () {
+            $(".tblComun2>tbody>tr").click(function () {
 
                 var proveedor = $(this).find("td:nth-child(1)").html();
                 var nombre = $(this).find("td:nth-child(2)").html();
@@ -74,7 +74,7 @@
                         break;
                 }
             });
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());    //MODIFY SF RSG 02.2023 V2.0
 
 
             $("table").tablesorter({ debug: true });
@@ -84,19 +84,28 @@
     </script>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
-    <img id="btnBack" src="../images/ico-Volver.png" />
+    <%--<img id="btnBack" src="../images/ico-Volver.png" />--%>
+    <div class="row">  <%--ADD SF RSG 02.2023 V2.0--%>
+        <div class="col-md-6">  <%--ADD SF RSG 02.2023 V2.0--%>
+            <label class="btn btn-success" title="Volver" style="margin-bottom:0px;"><i id="btnBack" class="fa-solid fa-arrow-left" name="Regresar"></i></label>
+            <br />
+            <asp:Label ID="lblInfoProveedores" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblEleccion" runat="server" Text=""></asp:Label>
+            <asp:Button ID="btnDescargarE" runat="server" Text="Descargar en formato Excel" OnClick="btnDescargarE_Click" Visible="False" CssClass="btn btn-primary" />  <%--MODIFY SF RSG 02.2023 V2.0--%>
+        </div>
+    </div>
     <div class="paraDiseno">
-
-        <asp:Label ID="lblInfoProveedores" runat="server" Text=""></asp:Label>
-        <asp:Label ID="lblEleccion" runat="server" Text=""></asp:Label><br />
-        <asp:Button ID="btnDescargarE" runat="server" Text="Descargar en formato Excel" OnClick="btnDescargarE_Click" Visible="False" CssClass="btn" />
-
+        <%--<br />--%>
+        <%--<div id="contenidoPost"></div>--%>  <%--DELETE SF RSG 02.2023 V2.0--%>
         <br />
-        <div id="contenidoPost"></div>
-        <br />
-
-        <table>
+        <%--BEGIN OF DELETE SF RSG 02.2023 V2.0--%>
+<%--        <table>
             <tr>
                 <td><input type="submit" name="letra" class="cls_mpletras" value="0 - 9"/></td>         
                 <td><input type="submit" name="letra" class="cls_mpletras" value="A"/></td>         
@@ -132,7 +141,8 @@
 
         <br />
         <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
-        <br />
+        <br />--%>
+        <%--BEGIN OF DELETE SF RSG 02.2023 V2.0--%>
         <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
 
         <br />
@@ -148,5 +158,9 @@
         <asp:HiddenField ID="hidCerrarSesion" runat="server" />
 
     </div>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            </div>
+            </div>
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
 </asp:Content>

@@ -26,7 +26,7 @@
                 }
             });
             
-            $("#noticia").addClass("active");
+            $("#noticia").addClass("selected active");  //MODIFY SF RSG 02.2023 V2.0
            
             $('#ContentPlaceHolder1_btnGuardar, #ContentPlaceHolder1_btnModificar').click(function () {
                 if (validar()) {
@@ -84,7 +84,7 @@
             if($("#<%=hidContenido.ClientID%>").val() != "") {
                 $("#txtAreaContenido1").val($("#<%=hidContenido.ClientID%>").val());
             }
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").text());  //MODIFY SF RSG 02.2023 V2.0
         });
     </script>
     <style>
@@ -92,12 +92,17 @@
     </style>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-6">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <div class="paraDiseno">
 
         <table class="tblFm2">
             <tr>
-                <td><strong>Aquí puedes crear nuevas noticias:</strong></td>
+                <td><strong style="font-weight: bold; font-size: 17px;">Aquí puedes crear nuevas noticias:</strong></td>
             </tr>
         </table>
     
@@ -164,10 +169,10 @@
             <td>
                 
             </td>
-            <td>
-                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn" />
-                <asp:Button ID="btnModificar" runat="server" Text="Guardar cambios" OnClick="btnModificar_Click"  CssClass="btn" />
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn" OnClick="btnCancelar_Click" />
+            <td style="text-align:right">
+                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary" />
+                <asp:Button ID="btnModificar" runat="server" Text="Guardar cambios" OnClick="btnModificar_Click"  CssClass="btn btn-primary" />
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-light" OnClick="btnCancelar_Click" />
             </td>
 
         </tr> 
@@ -175,9 +180,16 @@
     </table>
 
    </div>
-
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+   </div>
+   </div>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+            
     <div id="tablaResultados">
-    <br/><br/>
+    <%--<br/><br/>--%>
         <table class="tblFm2">
             <tr>
                 <td><asp:Label ID="lblDescribeResultados" runat="server" Text=""></asp:Label></td>
@@ -185,17 +197,19 @@
         </table>
         
 
-        <table class="tblFm">
+        <%--<table class="tblFm">
             <tr>
                 <td><asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
             </tr>
         </table>
-        <br/>
+        <br/>--%>
      
-    <br/>
-    <br/>
+<%--    <br/>
+    <br/>--%>
      <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
 
+   </div>
+   </div>
    </div>
     <br/>
     
