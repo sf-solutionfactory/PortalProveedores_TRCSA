@@ -147,7 +147,7 @@ namespace Proveedores.administrator
                         }
                         else
                         {
-                            mensajeJS = "Error. Error al intentar guardar el grupo de validación.";
+                            mensajeJS = "Error: Error al intentar guardar el grupo de validación.";
                         }
                     }
                     else
@@ -163,7 +163,7 @@ namespace Proveedores.administrator
             }
             else
             {
-                mensajeJS = "Elija alguna validación para este grupo";
+                mensajeJS = "Error:Elija alguna validación para este grupo";
             }
             if (mensajeJS.Length != 0) 
             {

@@ -111,7 +111,7 @@ namespace Proveedores.administrator
         {
             if (buscar == "Por proveedor")
             {
-                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedor().consultarProveedoresConNoticia("90%");
+                this.lblMostrarTabla.Text = new PNegocio.Administrador.Proveedor().consultarProveedoresConNoticia("100%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
                     //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();//DELETE SF RSG 02.2023 V2.0
@@ -121,7 +121,7 @@ namespace Proveedores.administrator
 
             if (buscar == "Por grupo")
             {
-                this.lblMostrarTabla.Text = new PNegocio.Administrador.Noticia().consultarGruposDeNoticia("90%");
+                this.lblMostrarTabla.Text = new PNegocio.Administrador.Noticia().consultarGruposDeNoticia("100%");
                 if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                 {
                     //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();//DELETE SF RSG 02.2023 V2.0
@@ -133,7 +133,7 @@ namespace Proveedores.administrator
 
 
         private void buscarDetalleGrupo(string toSee) {
-            this.lblMostrarTabla.Text = new PNegocio.Administrador.Noticia().consultarProveedorPorGrNoticia(toSee, "90%");
+            this.lblMostrarTabla.Text = new PNegocio.Administrador.Noticia().consultarProveedorPorGrNoticia(toSee, "100%");
             if (this.lblMostrarTabla.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
 

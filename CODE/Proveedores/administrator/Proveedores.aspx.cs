@@ -176,11 +176,11 @@ namespace Proveedores.administrator
 
                 if (proveedores == "C_E")
                 {
-                    this.lblDialog.Text = "No es posible crear grupos con proveedores extranjeros";    
+                    this.lblDialog.Text = "Error:No es posible crear grupos con proveedores extranjeros";    
                 }
                 else if (this.txtNombreGrupo.Text == "")
                 {
-                    this.lblDialog.Text = "Ingrese algun nombre de grupo";
+                    this.lblDialog.Text = "Error:Ingrese algun nombre de grupo";
                 }
                 else
                 {
@@ -188,7 +188,7 @@ namespace Proveedores.administrator
                     {
                         PNegocio.Administrador.Proveedores provedores = new PNegocio.Administrador.Proveedores();
                         this.lblResultado.Text = provedores.insertarUnionProveedores(idProveedores, this.txtNombreGrupo.Text);
-                        Session["textoDialogo"] = "Se realizo la union correctamente";
+                        Session["textoDialogo"] = "Se realizó la unión correctamente";
                         Response.Redirect("Proveedores.aspx");
                     }
                     else

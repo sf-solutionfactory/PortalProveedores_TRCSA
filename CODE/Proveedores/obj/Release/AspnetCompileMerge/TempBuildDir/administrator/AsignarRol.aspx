@@ -45,7 +45,7 @@
         
     </style>
 
-    <div class="paraDiseno">
+    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
 
     <strong>Aquí puedes asigar roles a los usuarios, primeramente seleecione un proveedor para mostrar sus usuarios</strong>
 

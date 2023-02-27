@@ -118,6 +118,7 @@ namespace Proveedores.administrator
                     {
                         case "Proveedor":
                             this.lblProveedorSelected.Text = nombre + " " + descripcion;
+                            this.lblProveedorSelected1.Text = nombre + " " + descripcion;
                             break;
                         default:
                             break;
@@ -125,6 +126,7 @@ namespace Proveedores.administrator
                     if (primerProveedor != "me" && primerProveedor != "" && primerProveedor != null )
                     {
                         this.lblProveedorSelected.Text = primerProveedor;
+                        this.lblProveedorSelected1.Text = primerProveedor;
                     }
                     
                 }
@@ -205,6 +207,7 @@ namespace Proveedores.administrator
                     this.txtIdemail.Text = listaProveedor[1][6];
                     this.txtIdemailRepetir.Text = listaProveedor[1][6];
                     this.lblProveedorSelected.Text = listaProveedor[1][8];
+                    this.lblProveedorSelected1.Text = listaProveedor[1][8];
                     this.hidId.Value = listaProveedor[1][0];
                     PNegocio.Administrador.Usuario instancia = new PNegocio.Administrador.Usuario();
 
@@ -243,12 +246,12 @@ namespace Proveedores.administrator
         {
 
             if(this.hidVerificar.Value =="noEmail"){
-                this.lblDialog.Text = "El email no cumple con las caracteristicas necesarias";
+                this.lblDialog.Text = "Error:El email no cumple con las características necesarias";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
             }
             else if (this.hidVerificar.Value == "no")
             {
-                this.lblDialog.Text = "Existen campos sin valor o invalidos";
+                this.lblDialog.Text = "Existen campos sin valor o inválidos";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0 
             }
             else if (this.hidVerificar.Value == "si" && this.hidVerificarPass.Value == "si")
@@ -261,7 +264,7 @@ namespace Proveedores.administrator
                     this.lblDialog.Text = "Las fechas no cumplen con el formato adecuado";
                 }
                 else {
-                    this.lblDialog.Text = "La contraseña no cumple con las caracteristicas necesarias"; 
+                    this.lblDialog.Text = "La contraseña no cumple con las características necesarias"; 
                 }
             }
                 
@@ -337,7 +340,7 @@ namespace Proveedores.administrator
                             this.lblDialog.Text = "Error:Error desconocido";
                             break;
                         case "limite":
-                            this.lblDialog.Text = "Error:El numero maximo permitido de usuarios fue alcanzado";
+                            this.lblDialog.Text = "Error:El numero máximo permitido de usuarios fue alcanzado";
                             break;
                     }
 
@@ -543,7 +546,7 @@ namespace Proveedores.administrator
                             this.lblDialog.Text = "Error:Error al insertar";
                             break;
                         case "no existe":
-                            this.lblDialog.Text = "Error:No se encontro el usuario, probablemente fue modificado por otro usuario";
+                            this.lblDialog.Text = "Error:No se encontró el usuario, probablemente fue modificado por otro usuario";
                             break;
                         default:
                             this.lblDialog.Text = "Error:Error desconocido";

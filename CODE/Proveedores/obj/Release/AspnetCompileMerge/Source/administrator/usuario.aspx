@@ -64,7 +64,7 @@
         $(function () {
 
             //$("#usuario").setMenuItemFocused();
-            $("#usuario").addClass("active");
+            $("#usuario").addClass("selected active"); /*MODIFY SF RSG 02.2023 V2.0*/
             $(".busquedaProveedor").click(function () {
                 document.location.href = "MostrarPertenencia.aspx?vinculador=usuario&campo=Proveedor&primerproveedor=me";
                 //alert(cambiarPassNext);
@@ -141,7 +141,7 @@
                 if ($.trim(user1) == "Proveedor...") {
                     $("#ContentPlaceHolder1_lblProveedorSelected").css("color", "#FF0000");
                     $("#ContentPlaceHolder1_lblDialog").text("llenar proveedores");
-                    mostrarDialog();
+                    mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
                     //alert("llenar proveedores");
                     this.blur();
                 }
@@ -171,7 +171,7 @@
             });
 
 
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
 
         });
 
@@ -189,17 +189,22 @@
     </div>--%>
 
     <%--<a href="Seguridad.aspx">Seguridad</a>--%>
-
-    <div class="paraDiseno">
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+<div class="col-md-12 col-lg-12"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="paraDiseno"> <!--MODIFY SF RSG 02.2023 V2.0-->
+        
         <table class="tblFm2">
             <tr>
-                <td><strong>Llena todos los campos para dar de alta nuevos usuarios </strong></td>
+                <td><strong style="font-weight: bold; font-size: 17px;">Llena todos los campos para dar de alta nuevos usuarios </strong></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
 
-        <br />
-        <br />
+<%--        <br />
+        <br />--%>
 
         <table class="tblFm">
             <tr>
@@ -209,8 +214,8 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..."></asp:Label></td>
-                            <td><strong class="busquedaProveedor link">Busqueda...</strong></td>
+                                <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px"></asp:Label></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
+                            <td><strong class="busquedaProveedor link btn btn-light">Busqueda...</strong></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
                         </tr>
                     </table>
                 </td>
@@ -329,17 +334,18 @@
                     <td>Sociedades</td>
                     <td>
                         <asp:Panel ID="pnlSociedades" runat="server"></asp:Panel>
-                        <asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn" OnClick="btnAdminSoc_Click" />
+                        <asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn btn-primary" OnClick="btnAdminSoc_Click" /><%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <br /><br />
                         <asp:Literal ID="ltlTablaSociedades" runat="server"></asp:Literal>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnEnviar" runat="server" Text="Guardar" OnClick="btnEnviar_Click" CssClass="btn" />
-                        <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn" />
+                        <asp:Button ID="btnEnviar" runat="server" Text="Guardar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn btn-secondary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
                         <%--<asp:Button ID="btnCancel" runat="server" Text="Cancelar" />--%>
-                        <asp:Literal ID="ltlbtnCancel" runat="server" Text="<div id='ltlbtnCancel' class='btn'>Cancelar</div>"></asp:Literal>
+                        <asp:Literal ID="ltlbtnCancel" runat="server" Text="<div id='ltlbtnCancel' class='btn btn-light'>Cancelar</div>"></asp:Literal>   <%--MODIFY SF RSG 02.2023 V2.0--%>
                         <%--<div id="btnCancelZ">cancelar</div>--%>
                     </td>
                 </tr>
@@ -350,21 +356,29 @@
         </div>
 
     </div>
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    </div>
+<div class="col-md-12 col-lg-12"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <%--<div id="obtenerCheckbox">chechbox</div>--%>
 
     <div class="validaMostrar">
         <%--<div class ="resUsuariosTabla">--%>
-        <br />
+        <%--<br />--%>
 
 
 
         <%--<div id="contenidoPost"></div>--%>
-        <br />
-        <br />
+<%--        <br />
+        <br />--%>
         <asp:Label ID="lblExplicacionResultados" runat="server" Text=""></asp:Label>
-        <br />
-        <br />
+<%--        <br />
+        <br />--%>
         <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
 
         <br />
@@ -390,6 +404,9 @@
 
         <%--</div>--%>
     </div>
-
+            
+    </div>
+    </div>
+    </div>
 
 </asp:Content>

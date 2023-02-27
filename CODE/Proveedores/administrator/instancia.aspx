@@ -49,6 +49,7 @@
             });
             //mostrarDialog();                                           //DELETE SF RSG 02.2023 V2.0
             mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());   //ADD SF RSG 02.2023 V2.0
+            $('.nav-link').text($("#ContentPlaceHolder1_hidPantalla")[0].value);   //ADD SF RSG 02.2023 V2.0
         });
 
     </script>
@@ -73,8 +74,9 @@
         }
     </style>
     
-    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="card col-md-12 col-lg-6">
+    <%--//---------------------------------------------------------------------------------------------------------------------//--%>
+        <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col-md-12 col-lg-6"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
@@ -85,9 +87,72 @@
                 <td><strong style="font-weight: bold; font-size: 17px;">Llena todos los campos para dar de alta nuevas instancias de SAP</strong></td>  <%--ADD SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
+        
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_TextBox1">Descripción</label>
+                    <asp:TextBox ID="txtDescripcion" runat="server" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        <div class="row">
+        <div class="form-group col">
+            <label for="ContentPlaceHolder1_TextBox2">Usuario</label>
+                    <asp:TextBox ID="txtUsuario" runat="server" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        <div class="form-group col">
+            <label for="ContentPlaceHolder1_TextBox3">Repetir usuario</label>
+                    <asp:TextBox ID="txtRepiteUsuario" runat="server" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        </div>
+        <div class="row">
+        <div class="form-group col">
+            <label for="ContentPlaceHolder1_TextBox4">Password</label>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        <div class="form-group col">
+            <label for="ContentPlaceHolder1_TextBox5">Repetir password</label>
+                    <asp:TextBox ID="txtRepitePassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_TextBox5">Endpoint</label>
+                    <asp:TextBox ID="txtEndpoint" runat="server" class="txtValidar form-control"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_TextBox5">Mi sociedad</label>
+                    <asp:TextBox ID="txtMiSociedad" runat="server" MaxLength="4" class="txtValidar form-control"></asp:TextBox>
+        </div>
+<%--        <table class="tblFm">
+            <tr>
+                <td></td>
+                <td>--%>
+                    <asp:Button ID="btnEjecutaInstancia" runat="server" Text="Guardar" OnClick="btnEjecutaInstancia_Click" CssClass="btn btn-primary" />    
+                    <asp:Button ID="btnEditaInstancia" runat="server" Text="Guardar cambios" CssClass="btn btn-primary" OnClick="btnEditaInstancia_Click" />
+                    <asp:Button ID="btnCancelEdit" runat="server" Text="Cancelar" OnClick="btnCancelEdit_Click" CssClass="btn btn-light" />
+<%--                </td>
+            </tr>
+        </table>--%>
+    </div>
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    </div>
+    <%--//---------------------------------------------------------------------------------------------------------------------//--%>
+        <%--//---------------------------------------------------------------------------------------------------------------------//--%>
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col-md-12 col-lg-6" style="display:none;"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
+        <table class="tblFm2">
+            <tr>
+                <%--<td><strong>Llena todos los campos para dar de alta nuevas instancias de SAP</strong></td>--%>  <%--DELETE SF RSG 02.2023 V2.0--%>
+                <td><strong style="font-weight: bold; font-size: 17px;">Llena todos los campos para dar de alta nuevas instancias de SAP</strong></td>  <%--ADD SF RSG 02.2023 V2.0--%>
+            </tr>
+        </table>
 
         <table class="tblFm">
-            <tr>
+            <%--<tr>
                 <td>Descripción
                 </td>
                 <td>
@@ -121,7 +186,7 @@
                 <td>
                     <asp:TextBox ID="txtRepitePassword" runat="server" TextMode="Password" class="txtValidar"></asp:TextBox>
                 </td>
-            </tr>
+            </tr>--%>
             
             <%--<tr>
                 <td>
@@ -133,7 +198,7 @@
                     <asp:TextBox ID="txtPassCambiar" runat="server" TextMode="Password" class="txtValidar"></asp:TextBox>
                 </td>
             </tr>--%>
-            <tr>
+<%--            <tr>
                 <td>Endpoint
                 </td>
                 <td>
@@ -150,17 +215,20 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="btnEjecutaInstancia" runat="server" Text="Guardar" OnClick="btnEjecutaInstancia_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
-                    <asp:Button ID="btnEditaInstancia" runat="server" Text="Guardar cambios" CssClass="btn btn-primary" OnClick="btnEditaInstancia_Click" /><%--MODIFY SF RSG 02.2023 V2.0--%>
-                    <asp:Button ID="btnCancelEdit" runat="server" Text="Cancelar" OnClick="btnCancelEdit_Click" CssClass="btn btn-light" /><%--MODIFY SF RSG 02.2023 V2.0--%>
+                    <asp:Button ID="btnEjecutaInstancia" runat="server" Text="Guardar" OnClick="btnEjecutaInstancia_Click" CssClass="btn btn-primary" />    
+                    <asp:Button ID="btnEditaInstancia" runat="server" Text="Guardar cambios" CssClass="btn btn-primary" OnClick="btnEditaInstancia_Click" />
+                    <asp:Button ID="btnCancelEdit" runat="server" Text="Cancelar" OnClick="btnCancelEdit_Click" CssClass="btn btn-light" />
                 </td>
-            </tr>
+            </tr>--%>
         </table>
     </div>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
+    </div>
+        <%--//---------------------------------------------------------------------------------------------------------------------//--%>
+
     <div class="card col-md-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  

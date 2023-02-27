@@ -1,4 +1,4 @@
-﻿/*INICIO tabla sort*/
+/*INICIO tabla sort*/
         .ui-state-default {
             border: 5px solid #F2F2F2;
             background: #E5E4E4;
@@ -20,7 +20,7 @@
 
         .ui-state-default div {
             /*margin-right: 3em;*/
-            font-weight: bold;
+            /* font-weight: bold; */
         }
 
         .ui-state-default > div {
@@ -63,13 +63,12 @@
         }
 
         #sortable1.droptrue.ui-sortable, #sortable2.droptrue.ui-sortable {
-            /*background: #EFF8FB;*/
-            /*margin-left:2%;*/
+            /* background: #EFF8FB; */
+            /* margin-left:2%; */
             min-height:400px;
-            min-width: 600px;
+            min-width: 600px; /*DELETE SF RSG 02.2023 V2.0*/
             width:45%;
             /*min-width: 312px;*/
         }
-
 
 /*FIN tabla sort*/

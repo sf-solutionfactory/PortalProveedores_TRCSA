@@ -1,11 +1,11 @@
-﻿        .paraDiseno {
-            margin-left: 7%;
-            margin-top: 1%;
+        .paraDiseno {
+            /* margin-left: 7%; */
+            /* margin-top: 1%; */
             width: auto;
         }
 
         #tablaResultados {
-            margin-left: 7%;
+            /*margin-left: 7%;*/
        }
 
         td {
@@ -13,7 +13,7 @@
         }
 
         table {
-            margin-left: 5%;
+            /* margin-left: 5%; */
        }
 
             table.tblFm {

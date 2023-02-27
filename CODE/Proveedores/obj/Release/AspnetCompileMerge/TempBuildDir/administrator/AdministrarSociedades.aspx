@@ -5,21 +5,29 @@
     <link href="../css/Orden.css" rel="stylesheet" />
     <script src="../js/EliminarFila.js"></script>
 
-    <script>
+<%--    <script>
         $(function () {
             $("table").tablesorter({ debug: true });
         });
-    </script> 
+    </script> --%>
 
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+<div class="col-md-12 col-lg-12"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <div id="tablaResultados">
 
         <asp:Literal ID="ltlTablaSociedades" runat="server"></asp:Literal>
 
         <br/>
 
-        <asp:Button ID="btnTerminar" runat="server" Text="Terminar" OnClick="btnTerminar_Click" CssClass="btn"/>
+        <asp:Button ID="btnTerminar" runat="server" Text="Terminar" OnClick="btnTerminar_Click" CssClass="btn btn-primary"/>
 
+    </div>
+    </div>
+    </div>
     </div>
 
         <asp:HiddenField ID="hidVerificar" runat="server" />

@@ -160,3 +160,14 @@ D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersi
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csproj.CopyComplete
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.dll
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.pdb
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.dll.config
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.dll
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PPersistencia.pdb
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.dll
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.pdb
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\bin\Release\PEntidades.dll.config
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csproj.AssemblyReference.cache
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csproj.CoreCompileInputs.cache
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.csproj.CopyComplete
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.dll
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PPersistencia\obj\Release\PPersistencia.pdb

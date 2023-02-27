@@ -105,7 +105,7 @@
 
     <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..."></asp:Label>
 
-    <div class="paraDiseno"> 
+    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0--> 
   <strong>Llena todos los campos para dar de alta nuevos usuarios</strong>
         <br/><br/>
 

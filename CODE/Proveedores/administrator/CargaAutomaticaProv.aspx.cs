@@ -74,7 +74,7 @@ namespace Proveedores.administrator
             }
             else
             {
-                Session["textoDialogo"] = "Error:No se encotro un Rol por defecto para crear usuarios. Cree un Rol";
+                Session["textoDialogo"] = "Error:No se encotró un Rol por defecto para crear usuarios. Cree un Rol";
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
             }
         }

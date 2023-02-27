@@ -114,6 +114,15 @@ namespace Proveedores.administrator
         protected global::System.Web.UI.WebControls.HiddenField hidPantalla;
 
         /// <summary>
+        /// Control hidPantalla1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidPantalla1;
+
+        /// <summary>
         /// Control hidComplementoUr.
         /// </summary>
         /// <remarks>

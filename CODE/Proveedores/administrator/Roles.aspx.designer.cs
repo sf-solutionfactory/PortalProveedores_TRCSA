@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.administrator {
-    
-    
-    public partial class Roles {
-        
+namespace Proveedores.administrator
+{
+
+
+    public partial class Roles
+    {
+
         /// <summary>
         /// Control lblDialog.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDialog;
-        
+
         /// <summary>
         /// Control lblResultado.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultado;
-        
+
         /// <summary>
         /// Control Panel1.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// Control txtNombreRol.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreRol;
-        
+
         /// <summary>
         /// Control rdbEsActivo.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdbEsActivo;
-        
+
         /// <summary>
         /// Control chkFacturas.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkFacturas;
-        
+
         /// <summary>
         /// Control chkPartidas.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkPartidas;
-        
+
         /// <summary>
         /// Control chkPagos.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkPagos;
-        
+
         /// <summary>
         /// Control chkDatosMaestros.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDatosMaestros;
-        
+
         /// <summary>
         /// Control chkUsuarios.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkUsuarios;
-        
+
         /// <summary>
         /// Control chkRolDefault.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkRolDefault;
-        
+
         /// <summary>
         /// Control btnGuardarRol.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarRol;
-        
+
         /// <summary>
         /// Control btnGuardarCambios.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarCambios;
-        
+
         /// <summary>
         /// Control btnCancel.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-        
+
         /// <summary>
         /// Control lblTablaRoles.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTablaRoles;
-        
+
         /// <summary>
         /// Control hidVerificar.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidVerificar;
-        
+
         /// <summary>
         /// Control hidPantalla.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidPantalla;
-        
+
         /// <summary>
         /// Control hidIdAnt.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidIdAnt;
-        
+
         /// <summary>
         /// Control hidComplementoUr.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidComplementoUr;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>

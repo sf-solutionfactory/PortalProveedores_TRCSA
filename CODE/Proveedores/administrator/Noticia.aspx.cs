@@ -124,7 +124,7 @@ namespace Proveedores.administrator
                     }
                     else
                     {
-                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
+                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato válido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
                     }
 
                 }
@@ -134,7 +134,7 @@ namespace Proveedores.administrator
                 this.lblDialog.Text = "Error:Las fechas no cumplen con el formato adecuado";
             }
             else {
-                this.lblDialog.Text = "Error:Existen campos vacios";  
+                this.lblDialog.Text = "Error:Existen campos vacíos";  
             }
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
@@ -229,7 +229,7 @@ namespace Proveedores.administrator
                     }
                     else
                     {
-                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato valido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
+                        this.lblDialog.Text = "Error:El formato de la imagen no es un formato válido, puede ser: .jpg., .png, .gif, .bmp, .tif, .gif";
                     }
 
                 }
@@ -240,10 +240,10 @@ namespace Proveedores.administrator
             }
             else
             {
-                this.lblDialog.Text = "Error:Existen campos vacios";
+                this.lblDialog.Text = "Error:Existen campos vacíos";
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
-            
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
+
         }
 
         public void modificarNoticia() {

@@ -126,7 +126,8 @@
 
             $(".validaMostrar").hide();
             //alert($.trim($("#ContentPlaceHolder1_lblProveedorSelected").html()) );
-            if ($.trim($("#ContentPlaceHolder1_lblProveedorSelected").html()) != "Proveedor...") {
+            //if ($.trim($("#ContentPlaceHolder1_lblProveedorSelected").html()) != "Proveedor...") {
+            if ($.trim($("#ContentPlaceHolder1_lblProveedorSelected1")[0].value) != "Proveedor...") {
                 $(".validaMostrar").show("slow");
 
             }
@@ -136,7 +137,8 @@
 
             $(".focusTxt").focus(function () {
                 var user1 = "";
-                user1 = $("#ContentPlaceHolder1_lblProveedorSelected").html();
+                //user1 = $("#ContentPlaceHolder1_lblProveedorSelected").html();
+                user1 = $("#ContentPlaceHolder1_lblProveedorSelected1")[0].value;
                 //user2 = $("#ContentPlaceHolder1_lblRepeatProveedorSelected").html();
                 if ($.trim(user1) == "Proveedor...") {
                     $("#ContentPlaceHolder1_lblProveedorSelected").css("color", "#FF0000");
@@ -189,19 +191,31 @@
     </div>--%>
 
     <%--<a href="Seguridad.aspx">Seguridad</a>--%>
-
-    <div class="paraDiseno">
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+<div class="col-md-12 col-lg-12"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="paraDiseno"> <!--MODIFY SF RSG 02.2023 V2.0-->
+        
         <table class="tblFm2">
             <tr>
                 <td><strong style="font-weight: bold; font-size: 17px;">Llena todos los campos para dar de alta nuevos usuarios </strong></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
 
-        <br />
-        <br />
-
-        <table class="tblFm">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="ContentPlaceHolder1_txtNombreRol">Proveedor</label>
+                <asp:TextBox ID="lblProveedorSelected1" runat="server" class="txtValidar form-control" Text="Proveedor..." ReadOnly></asp:TextBox>
+                <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px" Visible="false"></asp:Label> <%--MODIFY SF RSG 02.2023 V2.0--%>
+            </div>
+            <div class="busquedaProveedor link btn btn-light" style="height: 30px;margin-top: 24px;">Busqueda...</div>  <%--MODIFY SF RSG 02.2023 V2.0--%>
+        </div>
+<%--        <br />
+        <br />--%>
+        <%--<table class="tblFm">
             <tr>
                 <td>Proveedor
                 </td>
@@ -209,17 +223,61 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px"></asp:Label></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
-                            <td><strong class="busquedaProveedor link btn btn-light">Busqueda...</strong></td>  <%--MODIFY SF RSG 02.2023 V2.0--%>
+                                <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px"></asp:Label></td> 
+                            <td><strong class="busquedaProveedor link btn btn-light">Busqueda...</strong></td> 
                         </tr>
                     </table>
                 </td>
             </tr>
-        </table>
+        </table>--%>
 
         <div class="validaMostrar">
-
-
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="ContentPlaceHolder1_txtIdUsuario">Usuario</label>
+                    <asp:TextBox ID="txtIdUsuario" runat="server" CssClass="txtbox focusTxt txtValidar form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdNombre">Nombre</label>
+                    <asp:TextBox ID="txtIdNombre" runat="server" CssClass="focusTxt txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdApellidos">Apellidos</label>
+                    <asp:TextBox ID="txtIdApellidos" runat="server" CssClass="focusTxt txtValidar form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdNombre">Password</label>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="txtbox focusTxt txtValidar form-control" TextMode="Password"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdApellidos">Repetir password</label>
+                    <asp:TextBox ID="txtPasswordRepetir" runat="server" CssClass="txtbox focusTxt txtValidar form-control" TextMode="Password"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="col-sm-9" style="margin-top: 32px;">
+                        <asp:CheckBox ID="ckbCambiarPassNext" Text="Cambiar password" runat="server" name="ckbCambiarPassNext" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3" id="rowInicioV">
+                    <label for="ContentPlaceHolder1_txtIdNombre">Inicio vigencia</label>
+                        <asp:TextBox ID="datepicker" runat="server" class="txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3" id="rowFinV">
+                    <label for="ContentPlaceHolder1_txtIdApellidos">Fin vigencia</label>
+                        <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="col-sm-9" style="margin-top: 32px;">
+                        <asp:CheckBox ID="ckbVigenciaIlimitada" Text="Vigencia permanente" runat="server" CssClass="ckbVigenciaI" />
+                    </div>
+                </div>
+            </div>
 
             <table class="tblFm">
                 <%-- <tr>
@@ -231,7 +289,7 @@
                 </table>
             </td>
         </tr>--%>
-                <tr>
+                <%--<tr>
                     <td>Usuario</td>
                     <td>
                         <asp:TextBox ID="txtIdUsuario" runat="server" CssClass="txtbox focusTxt txtValidar"></asp:TextBox>
@@ -261,13 +319,13 @@
                     <td>
                         <asp:TextBox ID="txtPasswordRepetir" runat="server" CssClass="txtbox focusTxt txtValidar" TextMode="Password"></asp:TextBox>
                     </td>
-                </tr>
+                </tr>               
                 <tr>
-                    <td>Vigencia permanente</td>
+                    <td>Cambiar password</td>
                     <td>
-                        <asp:CheckBox ID="ckbVigenciaIlimitada" runat="server" CssClass="ckbVigenciaI" />
+                        <asp:CheckBox ID="ckbCambiarPassNext" runat="server" />
                     </td>
-                </tr>
+                </tr> 
                 <tr id="rowInicioV">
                     <td>Inicio vigencia</td>
                     <td>
@@ -281,11 +339,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Cambiar password</td>
+                    <td>Vigencia permanente</td>
                     <td>
-                        <asp:CheckBox ID="ckbCambiarPassNext" runat="server" />
+                        <asp:CheckBox ID="ckbVigenciaIlimitada" runat="server" CssClass="ckbVigenciaI" />
                     </td>
-                </tr>
+                </tr>--%>
 
                 <%--<tr>
             <td>Clase usuario</td>
@@ -294,6 +352,34 @@
             </td>
         </tr>--%>
             </table>
+
+
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdNombre">Email</label>
+                    <asp:TextBox ID="txtIdemail" runat="server" class="focusTxt txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="ContentPlaceHolder1_txtIdApellidos">Repetir email</label>
+                    <asp:TextBox ID="txtIdemailRepetir" runat="server" class="focusTxt txtValidar form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="ContentPlaceHolder1_txtIdApellidos">Rol a asignar</label>
+                    <asp:DropDownList ID="cmbRol" runat="server" CssClass="txtValidar form-control" AutoPostBack="false"></asp:DropDownList>
+                </div>
+            </div>
+            <strong style="font-weight: bold; font-size: 17px;">Sociedades </strong>
+                        <asp:Panel ID="pnlSociedades" runat="server"></asp:Panel>
+                        <%--<asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn btn-primary" OnClick="btnAdminSoc_Click" />--%><%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <asp:Literal ID="ltlTablaSociedades" runat="server"></asp:Literal>
+            
+                        <asp:Button ID="btnEnviar" runat="server" Text="Guardar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn btn-secondary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <%--<asp:Button ID="btnCancel" runat="server" Text="Cancelar" />--%>
+                        <asp:Literal ID="ltlbtnCancel" runat="server" Text="<div id='ltlbtnCancel' class='btn btn-light'>Cancelar</div>"></asp:Literal>   <%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn btn-primary" OnClick="btnAdminSoc_Click" /><%--MODIFY SF RSG 02.2023 V2.0--%>
             <table class="tblFm">
                 <%--<tr>
             <td>Tipo usuario</td>
@@ -306,7 +392,7 @@
             <td>
                 <asp:Label ID="lblCreadoPor" runat="server" Text=""></asp:Label></td>
         </tr>--%>
-                <tr>
+               <%-- <tr>
                     <td>Email
                     </td>
                     <td>
@@ -329,7 +415,7 @@
                     <td>Sociedades</td>
                     <td>
                         <asp:Panel ID="pnlSociedades" runat="server"></asp:Panel>
-                        <asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn btn-primary" OnClick="btnAdminSoc_Click" /><%--MODIFY SF RSG 02.2023 V2.0--%>
+                        <asp:Button ID="btnAdminSoc" runat="server" Text="Administrar sociedades ..." CssClass="btn btn-primary" OnClick="btnAdminSoc_Click" />
                         <br /><br />
                         <asp:Literal ID="ltlTablaSociedades" runat="server"></asp:Literal>
                     </td>
@@ -337,13 +423,13 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnEnviar" runat="server" Text="Guardar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
-                        <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn btn-secondary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
-                        <%--<asp:Button ID="btnCancel" runat="server" Text="Cancelar" />--%>
-                        <asp:Literal ID="ltlbtnCancel" runat="server" Text="<div id='ltlbtnCancel' class='btn btn-light'>Cancelar</div>"></asp:Literal>   <%--MODIFY SF RSG 02.2023 V2.0--%>
-                        <%--<div id="btnCancelZ">cancelar</div>--%>
+                        <asp:Button ID="btnEnviar" runat="server" Text="Guardar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />    
+                        <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar cambios" OnClick="btnGuardarCambios_Click" CssClass="btn btn-secondary" />    
+                        <%--<asp:Button ID="btnCancel" runat="server" Text="Cancelar" />
+                        <asp:Literal ID="ltlbtnCancel" runat="server" Text="<div id='ltlbtnCancel' class='btn btn-light'>Cancelar</div>"></asp:Literal>   
+                        <%--<div id="btnCancelZ">cancelar</div>
                     </td>
-                </tr>
+                </tr>--%>
             </table>
 
 
@@ -351,21 +437,29 @@
         </div>
 
     </div>
-
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    </div>
+    </div>
+    </div>
+<div class="col-md-12 col-lg-12"><div class="card">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <%--<div id="obtenerCheckbox">chechbox</div>--%>
 
     <div class="validaMostrar">
         <%--<div class ="resUsuariosTabla">--%>
-        <br />
+        <%--<br />--%>
 
 
 
         <%--<div id="contenidoPost"></div>--%>
-        <br />
-        <br />
+<%--        <br />
+        <br />--%>
         <asp:Label ID="lblExplicacionResultados" runat="server" Text=""></asp:Label>
-        <br />
-        <br />
+<%--        <br />
+        <br />--%>
         <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
 
         <br />
@@ -391,6 +485,9 @@
 
         <%--</div>--%>
     </div>
-
+            
+    </div>
+    </div>
+    </div>
 
 </asp:Content>

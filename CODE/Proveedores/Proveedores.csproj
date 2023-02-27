@@ -314,6 +314,7 @@
     <Content Include="images\ico-ListaGrupo.png" />
     <Content Include="images\loading.gif" />
     <Content Include="images\loadingDots.gif" />
+    <Content Include="images\logo_sicsa.png" />
     <Content Include="images\logo_tracusa.bmp" />
     <Content Include="images\logo_tracusa.png" />
     <Content Include="images\nombre-empresa.png" />

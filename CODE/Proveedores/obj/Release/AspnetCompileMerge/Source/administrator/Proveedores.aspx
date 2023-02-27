@@ -29,7 +29,7 @@
             $("table").tablesorter({ debug: true });
             //});
             //Marcar pestaña
-            $("#proveedor").addClass("active");
+            $("#proveedor").addClass("selected active");    //MODIFY SF RSG 02.2023 V2.0
             //sortable
             $("ul.droptrue").sortable({
                 connectWith: "ul"
@@ -81,7 +81,7 @@
                 codeHtml = codeHtml.replace(/>/g, "]");
                 $("#procar").val(codeHtml);
             });
-            mostrarDialog();
+            mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());  //MODIFY SF RSG 02.2023 V2.0
             //agregarTitle();
 
             $(".tblComun td:nth-child(2n+1)").addClass("td-impar");
@@ -134,19 +134,24 @@
     </style>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
-
-    <div class="paraDiseno">
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="card col-md-12 col-lg-12">
+        <div class="card-body">
+            <h4 class="card-title"></h4>  
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
 
         <table class="tblFm2">
             <tr>
-                <td><strong>Estos son los proveedores existentes: </strong></td>
+                <td><strong style="font-weight: bold; font-size: 17px;">Estos son los proveedores existentes: </strong></td>    <%--//MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
         <br />
         <br />
     </div>
-
-    <table class="tblFm">
+    <%--//BEGIN OF DELETE SF RSG 02.2023 V2.0--%>
+<%--    <table class="tblFm">
         <tr>
             <td>
                 <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
@@ -158,11 +163,30 @@
                 <asp:TextBox ID="txtNombreGrupo" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="btnUnir" runat="server" Text="Unir" OnClick="btnUnir_Click" class="btn" />
+                <asp:Button ID="btnUnir" runat="server" Text="Unir" OnClick="btnUnir_Click" class="btn btn-success" />  
             </td>
         </tr>
-    </table>
     <br />
+    </table>--%>
+    <%--//END   OF DELETE SF RSG 02.2023 V2.0--%>
+    <%--//BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-6">
+                        <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group col-md-6">
+                        <asp:Label ID="lblNombreGrupo" runat="server" Text="Nombre del grupo:"></asp:Label>
+                        <asp:TextBox ID="txtNombreGrupo" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                        <div class="col-md-12" style="text-align:right">
+                            <asp:Button ID="btnUnir" runat="server" Text="Unir" OnClick="btnUnir_Click" class="btn btn-success" />
+                        </div>
+                </div>
+            </div>
+    <%--//END   OF INSERT SF RSG 02.2023 V2.0--%>
     <table>
             <tr>
                 <td><input type="submit" name="letra" class="cls_mpletras" value="0 - 9"/></td>         
@@ -205,18 +229,33 @@
             </td>
         </tr>
     </table>--%>
-
+    <%--//BEGIN OF DELETE SF RSG 02.2023 V2.0--%>
     <%--<div id="tablaPRoveedores">--%>
-    <asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>
+    <%--<asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>--%>
     <%--</div>--%>
 
     <%--<div id="DatosProveedoresUnir">--%>
-    <asp:Label ID="lblObjeto1" runat="server" Text=""></asp:Label>
+    <%--<asp:Label ID="lblObjeto1" runat="server" Text=""></asp:Label>--%>
     <%--</div>--%>
+    <%--//END OF DELETE SF RSG 02.2023 V2.0--%>
+    <%--//BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="row">
+        <div class="col-lg-6">
+            <asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>
+        </div>
+        <div class="col-lg-6">
+            <asp:Label ID="lblObjeto1" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+    <%--//END OF INSERT SF RSG 02.2023 V2.0--%>
     <br />
 
     <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
     <br />
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            </div>
+            </div>
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
     <asp:HiddenField ID="hidRFC1" runat="server" />
     <asp:HiddenField ID="hidRFC2" runat="server" />

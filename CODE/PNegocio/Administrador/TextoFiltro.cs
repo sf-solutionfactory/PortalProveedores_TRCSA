@@ -30,18 +30,22 @@ namespace PNegocio.Administrador
             //END   OF DELETE SF RSG 02.2023 V2.0
             //BEGIN OF INSERT SF RSG 02.2023 V2.0
             return "Filtrar...</span>" +
-                   "<input id='searchTermSort' type='text' />";
+                   "<input id='searchTermSort' type='text' placeholder='Filtrar...' class='form-control'/>";
             //END   OF INSERT SF RSG 02.2023 V2.0
         }
 
         public static string textoTablaFiltroSortMostrarNoticias()
         {
-            return "<table class='filtro'>" +
-                   "<tr>" +
-                   "<td>Filtrar...</td>" +
-                   "<td><input id='searchTermNoticia' type='text'/></td>" + //  "<td><input id='searchTermNoticia' type='text' onkeyup='doSearchSorterMostrarNoticia()' /></td>" +
-                   "</tr>" +
-                   "</table>";
+            //return "<table class='filtro'>" +
+            //       "<tr>" +
+            //       "<td>Filtrar...</td>" +
+            //       "<td><input id='searchTermNoticia' type='text'/></td>" + //  "<td><input id='searchTermNoticia' type='text' onkeyup='doSearchSorterMostrarNoticia()' /></td>" +
+            //       "</tr>" +
+            //       "</table>";
+            //BEGIN OF INSERT SF RSG 02.2023 V2.0
+            return "Filtrar...</span>" +
+                   "<input id='searchTermNoticia' type='text' placeholder='Filtrar...' class='custom-form-control'/>";
+            //END   OF INSERT SF RSG 02.2023 V2.0
         }
     }
 }

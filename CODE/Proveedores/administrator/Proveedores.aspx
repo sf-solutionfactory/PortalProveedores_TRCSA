@@ -140,7 +140,7 @@
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="paraDiseno">
+    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
 
         <table class="tblFm2">
             <tr>
@@ -170,20 +170,22 @@
     </table>--%>
     <%--//END   OF DELETE SF RSG 02.2023 V2.0--%>
     <%--//BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <asp:Label ID="lblNombreGrupo" runat="server" Text="Nombre del grupo:"></asp:Label>
-            <asp:TextBox ID="txtNombreGrupo" runat="server"></asp:TextBox>
-        </div>
-<%--    </div>
-    <div class="row">--%>
-        <div class="col-md-3">
-            <asp:Button ID="btnUnir" runat="server" Text="Unir" OnClick="btnUnir_Click" class="btn btn-success" />  
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-6">
+                        <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group col-md-6">
+                        <asp:Label ID="lblNombreGrupo" runat="server" Text="Nombre del grupo:"></asp:Label>
+                        <asp:TextBox ID="txtNombreGrupo" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                        <div class="col-md-12" style="text-align:right">
+                            <asp:Button ID="btnUnir" runat="server" Text="Unir" OnClick="btnUnir_Click" class="btn btn-success" />
+                        </div>
+                </div>
+            </div>
     <%--//END   OF INSERT SF RSG 02.2023 V2.0--%>
     <table>
             <tr>

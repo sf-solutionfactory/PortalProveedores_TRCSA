@@ -4,8 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">        
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="card col-md-12 col-lg-6">
-        <div class="card-body">
+<div class="col-md-12 col-lg-6">
+<div class="col-md-12 col-lg-12"><div class="card">
+    <div class="card-body">
             <h4 class="card-title"></h4>     
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel1" runat="server" GroupingText="Configuración global">
@@ -69,6 +70,7 @@
                 
 
                 //mostrarDialog();  /*ADD SF RSG 02.2023 V2.0*/
+                $('.nav-link').text($("#ContentPlaceHolder1_hidPantalla")[0].value);   //ADD SF RSG 02.2023 V2.0
 
             });
 
@@ -111,10 +113,10 @@
                 border:dashed;
             }
 
-            #ContentPlaceHolder1_dpdSufijoEmail, #ContentPlaceHolder1_txtEmail {
+/*            #ContentPlaceHolder1_dpdSufijoEmail, #ContentPlaceHolder1_txtEmail {
                 min-width: 150px;
                 width:150px;
-            }
+            }*/
             
 
 
@@ -122,13 +124,33 @@
 
         <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
 
-        <%--<div class="paraDiseno">--%>
-            <table class="tblFm tblFm3">
+        <%--<div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->--%>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-3 pt-0">Estatus del portal</legend>
+                <asp:RadioButtonList ID="rdbPortal" runat="server">
+                    <asp:ListItem Selected="True">Activado</asp:ListItem>
+                    <asp:ListItem>Desactivado</asp:ListItem>
+                </asp:RadioButtonList>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtUmbral">Umbral de usuarios por proveedor</label>
+            <asp:TextBox ID="txtUmbral" runat="server" onkeypress="return soloNumeros2(event)" CssClass="soloNumeros2 form-control" value="5" MaxLength="2"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_dpdBloqSociedad">Bloqueo de sociedad</label>
+            <asp:DropDownList ID="dpdBloqSociedad" runat="server" CssClass="form-control">
+                <asp:ListItem>1 = N</asp:ListItem>
+                <asp:ListItem>1 = 1</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <%--    <table class="tblFm tblFm3">
                 <tr>
                     <td>Estatus del portal
                     </td>
                     <td>
-                        <asp:RadioButtonList ID="rdbPortal" runat="server">
+                        <asp:RadioButtonList ID="rbdEsactivo" runat="server">
                             <asp:ListItem>Activado</asp:ListItem>
                             <asp:ListItem>Desactivado</asp:ListItem>
                         </asp:RadioButtonList>
@@ -152,25 +174,100 @@
                     </td>
                 </tr>
                
-            </table>
+            </table>--%>
         <%--</div>--%>
     </asp:Panel>
     <%--<br />--%>    
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    <div class="card col-md-12 col-lg-6">
-        <div class="card-body">
-            <h4 class="card-title"></h4>  
+    </div>
+    <div class="col-md-12 col-lg-12"><div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel2" runat="server" GroupingText="Correo">
-        <%--<div class="paraDiseno">--%>
-        <table class="tblFm tblFm3 tablaEmailNormal" >
+        <%--<div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->--%>
+        <div class="tblFm tblFm3 tablaEmailNormal">
+            <div class="row">
+                <div class="col">
+                    <label for="ContentPlaceHolder1_txtEmail">Email</label>
+                    <asp:TextBox ID="txtEmail" runat="server" class="txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="col">
+                    <label for="ContentPlaceHolder1_dpdSufijoEmail" style="color: transparent">Sufijo</label>
+                    <asp:DropDownList ID="dpdSufijoEmail" runat="server" CssClass="form-control">
+                        <asp:ListItem>@gmail.com</asp:ListItem>
+                        <asp:ListItem>@yahoo.com</asp:ListItem>
+                        <asp:ListItem>@hotmail.com</asp:ListItem>
+                        <asp:ListItem>@outlook.com</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col">
+                    <label for="ContentPlaceHolder1_txtPassword">Contraseña</label>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="col">
+                    <label for="ContentPlaceHolder1_txtPassword">Confirmar contraseña</label>
+                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
+                </div>
+            </div>
+            <br />
+                    <div class="btn btn-success btnConfigCorreo">Configuración especial...</div>
+        </div>
+        <div class="card">
+        <div id="divConfigEspecialCorreo" class="tblFm tblFm3 card-body">
+            <div class="row">
+                <div class="col form-group">
+                    <label for="ContentPlaceHolder1_txtSMTP">SMTP</label>
+                    <asp:TextBox ID="txtSMTP" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col form-group">
+                    <label for="ContentPlaceHolder1_txtPuerto">Puerto</label>
+                    <asp:TextBox ID="txtPuerto" runat="server" class="soloNumeros2 form-control" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                </div>
+            </div>
+            <div class="form-group">
+                <%--<label for="ContentPlaceHolder1_txtPuerto">SSL</label>--%>
+                <asp:CheckBox ID="chkSSL" runat="server" Text="SSL" CssClass="" />
+            </div>
+            <%--<strong>Información de inicio de sesión</strong>--%>
+            <div class="form-group">
+                <label for="ContentPlaceHolder1_txtCorreoServidorCorreo">Correo</label>
+                <asp:TextBox ID="txtCorreoServidorCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <label for="ContentPlaceHolder1_txtContraServidorCorreoo">Contraseña</label>
+                    <asp:TextBox ID="txtContraServidorCorreo" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="col form-group">
+                    <label for="ContentPlaceHolder1_txtRepiteContraServidorCorreo">Repite contraseña</label>
+                    <asp:TextBox ID="txtRepiteContraServidorCorreo" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="btn btn-light btnCancel">
+                Cancelar
+            </div>
+        </div>
+        </div>
+                <div class="form-group">
+                    <label for="ContentPlaceHolder1_txtAsunto">Asunto</label>
+                    <asp:TextBox ID="txtAsunto" runat="server" class="txtValidar form-control"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label for="ContentPlaceHolder1_txtAreaContenido">Contenido</label>
+                    <asp:TextBox ID="txtAreaContenido" runat="server" Columns="50" Rows="5" TextMode="multiline" class="txtValidar form-control" />
+                </div>
+                <%--<table class="tblFm tblFm3 tablaEmailNormal" >
             <tr>
                 <td>Email</td>
                 <td>
-                    <asp:TextBox ID="txtEmail" runat="server" class="txtValidar"></asp:TextBox>
-                    <asp:DropDownList ID="dpdSufijoEmail" runat="server">
+                    <asp:TextBox ID="txtEmail" runat="server" class="txtValidar form-control"></asp:TextBox>
+                    <asp:DropDownList ID="dpdSufijoEmail" runat="server" CssClass="form-control">
                         <asp:ListItem>@gmail.com</asp:ListItem>
                         <asp:ListItem>@yahoo.com</asp:ListItem>
                         <asp:ListItem>@hotmail.com</asp:ListItem>
@@ -182,29 +279,27 @@
                 <td>Contraseña
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="txtValidar"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
                     <br />
 
                 </td>
-            </tr>
+            </tr>>
             <tr>
                 <td>Confirmar contraseña
                 </td>
                 <td>
-                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" class="txtValidar"></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" class="txtValidar form-control"></asp:TextBox>
                     </td>
-            </tr>
+            </tr>--%
             <tr>
                 <td>
                 </td>
                 <td>
                     <%--<div class="btn btnConfigCorreo">Configuración especial...</div>--%>
-                    <div class="btn btn-success btnConfigCorreo">Configuración especial...</div>
-                </td>
+<%--                </td>
             </tr>
-        </table>
-        
-          <table id="divConfigEspecialCorreo" class="tblFm tblFm3">
+        </table>--%>
+          <%--<table id="divConfigEspecialCorreo1" class="tblFm tblFm3">
                 <tr>
                     <td><strong>Tipo de servidor</strong></td>
                     <td></td>
@@ -212,19 +307,19 @@
                 <tr>
                     <td>SMTP</td>
                     <td>
-                        <asp:TextBox ID="txtSMTP" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSMTP" runat="server" CssClass="form-control"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>Puerto</td>
                     <td>
-                        <asp:TextBox ID="txtPuerto" runat="server" class="soloNumeros2" onkeypress="return soloNumeros2(event)" ></asp:TextBox>
+                        <asp:TextBox ID="txtPuerto" runat="server" class="soloNumeros2 form-control" onkeypress="return soloNumeros2(event)" ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>SSL</td>
                     <td>
-                        <asp:CheckBox ID="chkSSL" runat="server" Text="SSL" />
+                        <asp:CheckBox ID="chkSSL" runat="server" Text="SSL" CssClass="" />
                     </td>
                 </tr>
                 <tr>
@@ -234,154 +329,201 @@
                 <tr>
                     <td>Correo</td>
                     <td>
-                        <asp:TextBox ID="txtCorreoServidorCorreo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCorreoServidorCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>Contraseña</td>
                     <td>
-                        <asp:TextBox ID="txtContraServidorCorreo" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContraServidorCorreo" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </td>
                 </tr>
               <tr>
                     <td>Repite contraseña</td>
                     <td>
-                        <asp:TextBox ID="txtRepiteContraServidorCorreo" TextMode="Password" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtRepiteContraServidorCorreo" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>
+                    <td>--%>
                         
                         
                         <%--<div class="btn btnCancel">--%>
-                        <div class="btn btn-light btnCancel">
+                        <%-- <div class="btn btn-light btnCancel">
                             Cancelar
                         </div>
-                    </td>
+                   </td>
                 </tr>
-         </table>
-                
-    <table class="tblFm tblFm3">
+         </table>--%>
+    <%--<table class="tblFm tblFm3">
             <tr>
                 <td>Asunto</td>
                 <td>
-                    <asp:TextBox ID="txtAsunto" runat="server" class="txtValidar"></asp:TextBox>
+                    <asp:TextBox ID="txtAsunto" runat="server" class="txtValidar form-control"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Contenido</td>
                 <td>
-                    <asp:TextBox ID="txtAreaContenido" runat="server" Columns="50" Rows="5" TextMode="multiline" class="txtValidar" />
+                    <asp:TextBox ID="txtAreaContenido" runat="server" Columns="50" Rows="5" TextMode="multiline" class="txtValidar form-control" />
                 </td>
             </tr>
-        </table>
+        </table>--%>
     <%--</div>--%>
     </asp:Panel>
     <%--<br />--%>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    <div class="card col-md-12 col-lg-6">
+    </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel3" runat="server" GroupingText="Seguridad">
-        <%--<div class="paraDiseno">--%>
-        <table class="tblFm tblFm3">
+        <%--<div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->--%>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Nº passwords por recordar</label>
+            <asp:TextBox ID="txtNumPassRec" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2 form-control" MaxLength="2"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Máximo de intentos</label>
+                    <asp:TextBox ID="txtMaxIntentos" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2 form-control" MaxLength="2"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Intervalo de tiempo para bloqueo(m)</label>
+                    <asp:TextBox ID="txtIntervalo" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="2" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Caducidad de password(d)</label>
+                    <asp:TextBox ID="txtCaducidadPass" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Tiempo de bloqueo de Administrador(m)</label>
+                    <asp:TextBox ID="txtTiempoBloqAdmin" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="4" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <%--<table class="tblFm tblFm3">
             <tr>
                 <td>Nº passwords por recordar</td>
                 <td>
-                    <asp:TextBox ID="txtNumPassRec" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2" MaxLength="2"></asp:TextBox>
+                    <asp:TextBox ID="txtNumPassRec" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2 form-control" MaxLength="2"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Máximo de intentos</td>
                 <td>
-                    <asp:TextBox ID="txtMaxIntentos" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2" MaxLength="2"></asp:TextBox>
+                    <asp:TextBox ID="txtMaxIntentos" runat="server" onkeypress="return soloNumeros2(event)" value="3" class="txtValidar soloNumeros2 form-control" MaxLength="2"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Intervalo de tiempo para bloqueo(m)</td>
                 <td>
-                    <asp:TextBox ID="txtIntervalo" runat="server" class="txtValidar soloNumeros2" MaxLength="2" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtIntervalo" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="2" onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Caducidad de password(d)</td>
                 <td>
-                    <asp:TextBox ID="txtCaducidadPass" runat="server" class="txtValidar soloNumeros2" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtCaducidadPass" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Tiempo de bloqueo de Administrador(m)</td>
                 <td>
-                    <asp:TextBox ID="txtTiempoBloqAdmin" runat="server" class="txtValidar soloNumeros2" MaxLength="4" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtTiempoBloqAdmin" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="4" onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
-        </table>
+        </table>--%>
     </asp:Panel>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    <div class="card col-md-12 col-lg-6">
+    </div>
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel6" runat="server" GroupingText="Contenido Password">
-        <table class="tblFm tblFm3">
-            <tr>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de letras</label>
+            <asp:TextBox ID="txtNumeroLetras" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de letras en Mayuscúla</label>
+            <asp:TextBox ID="txtNumeroLetrasM" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Cantidad de números</label>
+            <asp:TextBox ID="txtCantidadNumeros" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de caracteres</label>
+            <asp:TextBox ID="txtNumeroCaracteres" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+        <%-- <table class="tblFm tblFm3">
+           <tr>
                 <td>Numero de letras</td>
                 <td>
-                    <asp:TextBox ID="txtNumeroLetras" runat="server" class="txtValidar soloNumeros2" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtNumeroLetras" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Numero de letras en Mayuscúla</td>
                 <td>
-                    <asp:TextBox ID="txtNumeroLetrasM" runat="server" class="txtValidar soloNumeros2" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtNumeroLetrasM" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Cantidad de números</td>
                 <td>
-                    <asp:TextBox ID="txtCantidadNumeros" runat="server" class="txtValidar soloNumeros2" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtCantidadNumeros" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>Numero de caracteres</td>
                 <td>
-                    <asp:TextBox ID="txtNumeroCaracteres" runat="server" class="txtValidar soloNumeros2" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtNumeroCaracteres" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
-        </table>
+        </table>--%>
     </asp:Panel>
     
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    <div class="card col-md-12 col-lg-6">
+    </div>
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel5" runat="server" GroupingText="XML:">
-        <table class="tblFm tblFm3">
+        <div class="form-group">
+            <label for="ContentPlaceHolder1_txtAreaContenido">Máximo de XML permitidos para adjuntar</label>
+            <asp:TextBox ID="txtMaxXML" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
+        </div>
+       <%-- <table class="tblFm tblFm3">
             <tr>
                 <td>Maximo de XML permitidos para adjuntar</td>
                 <td>
-                    <asp:TextBox ID="txtMaxXML" runat="server" class="txtValidar soloNumeros2" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
+                    <asp:TextBox ID="txtMaxXML" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3"  onkeypress="return soloNumeros2(event)"></asp:TextBox>
                 </td>
             </tr>
-        </table>
+        </table>--%>
     </asp:Panel>
     
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    <div class="card col-md-12 col-lg-6">
+    </div>
+    </div>
+<div class="col-md-12 col-lg-6">
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
@@ -461,10 +603,12 @@
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
+    </div>
     </div> 
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
     <asp:HiddenField ID="hidVerificar" runat="server" Value="si" />
+        <asp:HiddenField ID="hidPantalla" runat="server" Value="Configuración" />
 
     
     <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
@@ -472,5 +616,5 @@
 
     <asp:HiddenField ID="hidloadconfpass" runat="server" />
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
-
+    </div>
 </asp:Content>

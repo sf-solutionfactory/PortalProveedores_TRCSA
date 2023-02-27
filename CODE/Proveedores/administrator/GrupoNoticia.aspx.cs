@@ -242,7 +242,7 @@ namespace Proveedores.administrator
                 {
                     new PNegocio.Administrador.Noticia().insertarGrupoNoticia(nameGroup, n_noticia, idProveedores, tablaNumeros);
                     nameGroup = n_noticia = "";
-                    Session["textoDialogo"] = "El grupo de noticia se insertó correctamente";
+                    Session["textoDialogo"] = "El grupo de noticias se insertó correctamente";
                     Response.Redirect("GrupoNoticia.aspx");
                 }
                 if (mode == "modificar")
@@ -280,7 +280,7 @@ namespace Proveedores.administrator
             }
             else
             {
-                this.lblDialog.Text = "debe de llenar todos los campos necesarios";
+                this.lblDialog.Text = "Error:Debe de llenar todos los campos necesarios";
                 if (n_noticia != "" && titulo != "" && n_noticia != null && titulo != null)
                 {
                     this.lblIdNoticia.Text = n_noticia;
@@ -288,7 +288,7 @@ namespace Proveedores.administrator
 
                 }
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
 
 

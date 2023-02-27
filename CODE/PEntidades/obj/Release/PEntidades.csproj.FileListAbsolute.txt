@@ -123,3 +123,10 @@ D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidade
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.csprojAssemblyReference.cache
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.dll
 D:\User\RSG\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.pdb
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.dll.config
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.dll
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Release\PEntidades.pdb
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.csproj.AssemblyReference.cache
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.csproj.CoreCompileInputs.cache
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.dll
+C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Release\PEntidades.pdb

@@ -27,6 +27,7 @@
             $("table").tablesorter({ debug: true });
          
             mostrarDialog($("#ContentPlaceHolder1_lblDialog").text());  //MODIFY SF RSG 02.2023 V2.0
+            $('.nav-link').text($("#ContentPlaceHolder1_hidPantalla1")[0].value);   //ADD SF RSG 02.2023 V2.0
         });
        
         
@@ -35,20 +36,23 @@
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="card col-md-12 col-lg-12">
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <div class="paraDiseno">
     <strong style="font-weight: bold; font-size: 17px;">Elija como desea desvincular</strong>   <%--MODIFY SF RSG 02.2023 V2.0--%>
     <br/><br/><%--<br/>--%>
-    <asp:DropDownList ID="chkModoDesvincular" runat="server" AutoPostBack="True" OnTextChanged="MostrarInformacion">
+        <div class="col-md-4 col-sm-12" style="padding-left:0px;">
+        <div class="input-group mb-3">
+    <asp:DropDownList ID="chkModoDesvincular" runat="server" AutoPostBack="True" OnTextChanged="MostrarInformacion" CssClass="custom-select">
         <asp:ListItem Selected="True">Por grupo</asp:ListItem>
         <asp:ListItem>Por proveedor</asp:ListItem>
     </asp:DropDownList>
-
-    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />   <%--MODIFY SF RSG 02.2023 V2.0--%>
-
+            <div class="input-group-append">
+    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="input-group-text" />   <%--MODIFY SF RSG 02.2023 V2.0--%>
+            </div>
+        </div>
     <table>
         <tr>
             <td><asp:Label ID="lblDescribeNombre" runat="server" Text=""></asp:Label></td>
@@ -79,11 +83,13 @@
         <asp:HiddenField ID="hidVerificar" runat="server" />
     
         <asp:HiddenField ID="hidPantalla" runat="server" Value="DesvincularGrupoNoticia" />
+    <asp:HiddenField ID="hidPantalla1" runat="server" Value="Ver Grupos" />
 
     
         <asp:HiddenField ID="hidComplementoUr" runat="server" />
 
         <asp:HiddenField ID="hidCerrarSesion" runat="server" />
+    </div>
     </div>
     </div>
     </div>

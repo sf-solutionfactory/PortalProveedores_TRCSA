@@ -71,6 +71,7 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
+
     <script>
         $(document).ready(function () {
             $('#tableToOrder').DataTable({
@@ -453,18 +454,18 @@
                     </div>
                 </div>
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="col-md-12">
+                        <%--<div class="col-md-12">--%>
 <%--                            <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title"></h4>--%>
-                                    <div id="divContenido">
+                                    <div id="divContenido" class="row" data-masonry="{&quot;percentPosition&quot;: true }">
                                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                         </asp:ContentPlaceHolder>
                                     </div>
                                 <%--</div>
                             </div>--%>
-                        </div>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>

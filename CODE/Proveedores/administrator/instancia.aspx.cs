@@ -156,7 +156,7 @@ namespace Proveedores.administrator
                 }
                 catch (Exception)
                 {
-                    this.lblDialog.Text = "La sociedad solo permite numeros";   
+                    this.lblDialog.Text = "Error:La sociedad solo permite numeros";   
                 }
                 
             }
@@ -164,8 +164,8 @@ namespace Proveedores.administrator
             {
                 //this.lblResultado.Text = "Existen campos vacios";
                 //Session["textoDialogo"] = "Existen campos vacios";
-                this.lblDialog.Text = "Existen campos vacios";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:Existen campos vacios";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
             }
         }
 
@@ -266,7 +266,7 @@ namespace Proveedores.administrator
                     this.lblDialog.Text = "Error: Contraseña o usuario no coinciden";
                     
                 }
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
         }
 
         protected void btnEditaInstancia_Click(object sender, EventArgs e)
@@ -351,7 +351,7 @@ namespace Proveedores.administrator
                     switch (res)
                     {
                         case "existente":
-                            this.lblDialog.Text = "La descripción o el edpoint ya están registrados";
+                            this.lblDialog.Text = "Error:La descripción o el edpoint ya están registrados";
                             break;
                         default:
                             this.lblDialog.Text = "Error:Ocurrió algún error, intente de nuevo";
@@ -386,9 +386,9 @@ namespace Proveedores.administrator
         //}
         private void activarMensageDialog()
         {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
         }
-        
+
     }
 }

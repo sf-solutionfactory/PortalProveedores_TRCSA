@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.administrator {
-    
-    
-    public partial class config {
-        
+namespace Proveedores.administrator
+{
+
+
+    public partial class config
+    {
+
         /// <summary>
         /// Control Panel1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// Control lblDialog.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDialog;
-        
+
         /// <summary>
         /// Control rdbPortal.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rdbPortal;
-        
+
         /// <summary>
         /// Control txtUmbral.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUmbral;
-        
+
         /// <summary>
         /// Control dpdBloqSociedad.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpdBloqSociedad;
-        
+
         /// <summary>
         /// Control Panel2.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel2;
-        
+
         /// <summary>
         /// Control txtEmail.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// Control dpdSufijoEmail.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpdSufijoEmail;
-        
+
         /// <summary>
         /// Control txtPassword.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
+
         /// <summary>
         /// Control txtConfirmPassword.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-        
+
         /// <summary>
         /// Control txtSMTP.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSMTP;
-        
+
         /// <summary>
         /// Control txtPuerto.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPuerto;
-        
+
         /// <summary>
         /// Control chkSSL.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkSSL;
-        
+
         /// <summary>
         /// Control txtCorreoServidorCorreo.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreoServidorCorreo;
-        
+
         /// <summary>
         /// Control txtContraServidorCorreo.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContraServidorCorreo;
-        
+
         /// <summary>
         /// Control txtRepiteContraServidorCorreo.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRepiteContraServidorCorreo;
-        
+
         /// <summary>
         /// Control txtAsunto.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAsunto;
-        
+
         /// <summary>
         /// Control txtAreaContenido.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAreaContenido;
-        
+
         /// <summary>
         /// Control Panel3.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel3;
-        
+
         /// <summary>
         /// Control txtNumPassRec.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumPassRec;
-        
+
         /// <summary>
         /// Control txtMaxIntentos.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaxIntentos;
-        
+
         /// <summary>
         /// Control txtIntervalo.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtIntervalo;
-        
+
         /// <summary>
         /// Control txtCaducidadPass.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCaducidadPass;
-        
+
         /// <summary>
         /// Control txtTiempoBloqAdmin.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTiempoBloqAdmin;
-        
+
         /// <summary>
         /// Control Panel6.
         /// </summary>
@@ -236,7 +238,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel6;
-        
+
         /// <summary>
         /// Control txtNumeroLetras.
         /// </summary>
@@ -245,7 +247,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroLetras;
-        
+
         /// <summary>
         /// Control txtNumeroLetrasM.
         /// </summary>
@@ -254,7 +256,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroLetrasM;
-        
+
         /// <summary>
         /// Control txtCantidadNumeros.
         /// </summary>
@@ -263,7 +265,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidadNumeros;
-        
+
         /// <summary>
         /// Control txtNumeroCaracteres.
         /// </summary>
@@ -272,7 +274,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumeroCaracteres;
-        
+
         /// <summary>
         /// Control Panel5.
         /// </summary>
@@ -281,7 +283,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel5;
-        
+
         /// <summary>
         /// Control txtMaxXML.
         /// </summary>
@@ -290,7 +292,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaxXML;
-        
+
         /// <summary>
         /// Control Panel4.
         /// </summary>
@@ -299,7 +301,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel4;
-        
+
         /// <summary>
         /// Control lblInfoGuardar.
         /// </summary>
@@ -308,7 +310,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInfoGuardar;
-        
+
         /// <summary>
         /// Control btnEnviarConfig.
         /// </summary>
@@ -317,7 +319,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEnviarConfig;
-        
+
         /// <summary>
         /// Control lblAdvertencia.
         /// </summary>
@@ -326,7 +328,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdvertencia;
-        
+
         /// <summary>
         /// Control lblLeyendaConfigAnterior.
         /// </summary>
@@ -335,7 +337,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLeyendaConfigAnterior;
-        
+
         /// <summary>
         /// Control lblLeyendaConfigAnterior2.
         /// </summary>
@@ -344,7 +346,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLeyendaConfigAnterior2;
-        
+
         /// <summary>
         /// Control lblVernterior.
         /// </summary>
@@ -353,7 +355,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVernterior;
-        
+
         /// <summary>
         /// Control btnRecuperarAnterior.
         /// </summary>
@@ -362,7 +364,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRecuperarAnterior;
-        
+
         /// <summary>
         /// Control btnCancel.
         /// </summary>
@@ -371,7 +373,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-        
+
         /// <summary>
         /// Control hidVerificar.
         /// </summary>
@@ -380,7 +382,16 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidVerificar;
-        
+
+        /// <summary>
+        /// Control hidPantalla.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidPantalla;
+
         /// <summary>
         /// Control lblResultado.
         /// </summary>
@@ -389,7 +400,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultado;
-        
+
         /// <summary>
         /// Control hidTipoCorreo.
         /// </summary>
@@ -398,7 +409,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidTipoCorreo;
-        
+
         /// <summary>
         /// Control hidloadconfpass.
         /// </summary>
@@ -407,7 +418,7 @@ namespace Proveedores.administrator {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidloadconfpass;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>

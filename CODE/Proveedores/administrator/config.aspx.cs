@@ -127,19 +127,20 @@ namespace Proveedores.administrator
             string  d = this.txtEmail.Text;
             if (this.hidVerificar.Value == "noEmail")
             {
-                this.lblDialog.Text = "El email no cumple con las características necesarias";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:El email no cumple con las características necesarias";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
             }
             else if(this.hidVerificar.Value == "no"){
-                this.lblDialog.Text = "Existen campos sin datos";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:Existen campos sin datos";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
+
 
             }
             else if (this.hidVerificar.Value == "noNumeros")
             {
-                this.lblDialog.Text = "Existen campos invalidos, debe introducir solo numeros en algunos campos, verifiquelo";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:Existen campos invalidos, debe introducir solo numeros en algunos campos, verifiquelo";
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
             }
             else if (this.hidVerificar.Value == "si")
@@ -158,8 +159,8 @@ namespace Proveedores.administrator
                         ejecutaprcedureUpdateConfig();
                     }
                     else {
-                        this.lblDialog.Text = "Sí desea utilizar la configuración especial de correo debe llenar todos los campos";
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                        this.lblDialog.Text = "Error:Sí desea utilizar la configuración especial de correo debe llenar todos los campos";
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
                     }
 
@@ -188,17 +189,17 @@ namespace Proveedores.administrator
                 Response.Redirect("~/administrator/config.aspx", false);
             }
             else{
-                this.lblDialog.Text = "No fue posible realizar el cambio";
+                this.lblDialog.Text = "Error:No fue posible realizar el cambio";
             }
 	        }
 	        catch (Exception)
 	        {
-                this.lblDialog.Text = "No fue posible conectarse a la BD";
+                this.lblDialog.Text = "Error:No fue posible conectarse a la BD";
 	        }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
-            
-            
+
+
 
         }
 
@@ -350,11 +351,11 @@ namespace Proveedores.administrator
             }
             else
             {
-                this.lblDialog.Text = "Las contraseñas no coinciden";
+                this.lblDialog.Text = "Error:Las contraseñas no coinciden";
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
 
-        
+
         }
 
         public void cargarDatosEstatusActivo(List<string[]> datosCOnfiguracion)

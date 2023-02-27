@@ -6532,7 +6532,7 @@ pre {
     position: relative;
     width: 100%;
     padding-right: 15px;
-    padding-left: 15px
+    padding-left: 15px;
 }
 
 .col {
@@ -13801,7 +13801,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .mb-3, .my-3 {
-    margin-bottom: 1rem !important
+    margin-bottom: 1rem !important;
 }
 
 .ml-3, .mx-3 {
@@ -13853,7 +13853,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .pt-0, .py-0 {
-    padding-top: 0 !important
+    padding-top: 0 !important;
 }
 
 .pr-0, .px-0 {

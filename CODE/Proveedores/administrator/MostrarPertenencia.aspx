@@ -75,6 +75,7 @@
                 }
             });
             mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());    //MODIFY SF RSG 02.2023 V2.0
+            //$('.nav-link').text($("#ContentPlaceHolder1_hidPantalla")[0].value);   //ADD SF RSG 02.2023 V2.0
 
 
             $("table").tablesorter({ debug: true });

@@ -40,7 +40,7 @@
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
         <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="card col-md-6">
+    <div class="col-md-12 col-lg-6"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>
             <div class="form-group">
@@ -51,7 +51,8 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    </div>
+    <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>
             <div id="tablaResultados">
@@ -64,8 +65,9 @@
             </div>
         </div>
     </div>
+    </div>
             <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
-<%--    <div class="paraDiseno">
+<%--    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
 
         
     <table class="tblFm tblFm3">
