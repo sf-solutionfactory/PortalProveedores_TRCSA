@@ -8,8 +8,9 @@
         $(function () {
 
         var posicionMostrar = 0;
-        var tablas = 0;
-        $("#facturas").addClass("active");
+            var tablas = 0;
+
+        $("#facturas").addClass("selected active"); //MODIFY SF RSG 02.2023 V2.0");
         $("#ContentPlaceHolder1_btnLLenarTbs").hide();
             
         $(".btnCargar").click(function () {
@@ -117,8 +118,8 @@
                         <div id="divCargadorArchivo">
                             <strong>Archivo XML</strong><input type="file" class="input-file cargador" id="File1" name="File1" runat="server"/><br />
                             <strong>Archivo PDF</strong><input type="file" class="input-file cargador" id="File2" name="File1" runat="server"/>
-                            
-                            <asp:Button ID="cargararchivo" CssClass="btnCargar btn_ cargador" runat="server" Text="Cargar" OnClick="Button1_Click" Width="15%" />
+                            <%--<asp:Button ID="cargararchivo" CssClass="btnCargar btn_ cargador" runat="server" Text="Cargar" OnClick="Button1_Click" Width="15%" />--%>
+                            <asp:Button ID="cargararchivo" CssClass="btnCargar btn_ cargador btn btn-primary mb-2" runat="server" Text="Cargar" OnClick="Button1_Click" Width="15%" />  <%--MODIFY SF RSG 02.2023 V2.0--%>
                         </div>
                     </div>
                 

@@ -78,6 +78,10 @@ namespace PEntidades
 
         public string F_BASE { get; set; }
         public string F_VENCIM { get; set; }
+        public string GJAHR { get; set; }   //ADD SF RSG 02.2023 v2.0
+        public int ZCOUNT { get; set; }  //ADD SF RSG 02.2023 v2.0
+        public string BUKRS { get; set; }  //ADD SF RSG 02.2023 v2.0
+        public string UUID { get; set; }  //ADD SF RSG 02.2023 v2.0
 
         public int IDINSTANCIA { get; set; }
 

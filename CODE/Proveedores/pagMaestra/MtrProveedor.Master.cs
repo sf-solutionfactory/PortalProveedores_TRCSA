@@ -83,24 +83,49 @@ namespace Proveedores
             {
                 switch (idPantallas[i])
                 {
+                    //BEGIN OF DELETE SF RSG 02.2023 V2.0
+                    //        case 0:
+                    //            rtnMenu += "<li id='Inicio' ><a href='Inicio.aspx' ><span>Inicio</span></a></li>";
+                    //            break;
+                    //        case 1:
+                    //            rtnMenu += "<li id='facturas' ><a href='facturas.aspx' ><span>Facturas Pendientes</span></a></li>";
+                    //            break;
+                    //        case 2:
+                    //            rtnMenu += "<li id='prtAbiertas' class='last'><a href='prtAbiertas.aspx' ><span>Facturas Liberadas</span></a></li>";
+                    //            break;
+                    //        case 4:
+                    //            rtnMenu += "<li id='pagos' class='last'><a href='pagos.aspx'><span>Pagos</span></a></li>";
+                    //            break;
+                    //        case 8:
+                    //            rtnMenu += "<li id='datosMaestros' ><a href='datosMaestros.aspx'><span>Mis Datos</span></a></li>";
+                    //            break;
+                    //        case 16:
+                    //            rtnMenu += "<li id='usuarios' ><a href='usuarios.aspx'><span>Usuarios</span></a></li>";
+                    //            break;
+                    //END   OF DELETE SF RSG 02.2023 V2.0
+                    //BEGIN OF INSERT SF RSG 02.2023 V2.0
                     case 0:
-                        rtnMenu += "<li id='Inicio' ><a href='Inicio.aspx' ><span>Inicio</span></a></li>";
+                        rtnMenu += "<li id='Inicio' class='sidebar-item'><a class='sidebar-link sidebar-link' href='Inicio.aspx' aria-expanded='false'><i data-feather='home' class='feather-icon'></i><span class='hide-menu'>Inicio</span></a></li>";
                         break;
                     case 1:
-                        rtnMenu += "<li id='facturas' ><a href='facturas.aspx' ><span>Facturas Pendientes</span></a></li>";
+                        rtnMenu += "<li id='facturas' class='sidebar-item'><a class='sidebar-link sidebar-link' href='facturas.aspx' aria-expanded='false'><i data-feather='file-minus' class='feather-icon'></i><span class='hide-menu'>Facturas Pendientes</span></a></li>";
                         break;
                     case 2:
-                        rtnMenu += "<li id='prtAbiertas' class='last'><a href='prtAbiertas.aspx' ><span>Facturas Liberadas</span></a></li>";
+                        rtnMenu += "<li id='prtAbiertas' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='prtAbiertas.aspx' aria-expanded='false'><i data-feather='file-text' class='feather-icon'></i><span class='hide-menu'>Facturas Liberadas</span></a></li>";
                         break;
                     case 4:
-                        rtnMenu += "<li id='pagos' class='last'><a href='pagos.aspx'><span>Pagos</span></a></li>";
+                        rtnMenu += "<li id='pagos' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='pagos.aspx' aria-expanded='false'><i data-feather='dollar-sign' class='feather-icon'></i><span class='hide-menu'>Pagos</span></a></li>";
                         break;
                     case 8:
-                        rtnMenu += "<li id='datosMaestros' ><a href='datosMaestros.aspx'><span>Mis Datos</span></a></li>";
+                        rtnMenu += "<li id='datosMaestros' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='datosMaestros.aspx' aria-expanded='false'><i data-feather='database' class='feather-icon'></i><span class='hide-menu'>Mis Datos</span></a></li>";
                         break;
                     case 16:
-                        rtnMenu += "<li id='usuarios' ><a href='usuarios.aspx'><span>Usuarios</span></a></li>";
+                        rtnMenu += "<li id='usuarios'class='sidebar-item'><a class='sidebar-link sidebar-link' href='usuarios.aspx' aria-expanded='false'><i data-feather='users' class='feather-icon'></i><span class='hide-menu'>Usuarios</span></a></li>";
                         break;
+                    case 32:
+                        rtnMenu += "<li id='datosMaestros' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='datosMaestros.aspx' aria-expanded='false'><i data-feather='database' class='feather-icon'></i><span class='hide-menu'>Estado de Cuenta</span></a></li>";
+                        break;
+                        //END   OF INSERT SF RSG 02.2023 V2.0
                 }
             }
             //Session["objUsuario"] = objUsuario;//Lo mando por que se borraba de la sesión

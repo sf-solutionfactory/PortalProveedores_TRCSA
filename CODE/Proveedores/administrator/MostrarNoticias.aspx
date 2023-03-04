@@ -113,6 +113,7 @@
     </style>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col">
     <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  
@@ -182,6 +183,7 @@
     <asp:HiddenField ID="hidIdSelected" runat="server" />
 
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
+            </div>
             </div>
             </div>
 

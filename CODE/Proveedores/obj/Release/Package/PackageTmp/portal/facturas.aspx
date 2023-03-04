@@ -16,7 +16,7 @@
             var entrada = [];
             var activaFiltro = true;      
             
-            $("#facturas").addClass("active");
+            $("#facturas").addClass("selected active"); //MODIFY SF RSG 02.2023 V2.0
             $("#btnCrgMasiva").hide();
 
             workDetalles("ocultar");
@@ -168,11 +168,18 @@
                 //var hijo = padre.children(".desadjuntarXML");
                 //if (hijo.hasClass("desadjuntarXML") === false) {//para indicar si contiene archivos ya adjuntos si tiene no dejara adjuntar mas
 
-                    if ($(this).hasClass('fl_verde')) {
+                if ($(this).hasClass('fl_verde')) {
                     var cadena = "";
                     var padre = $(this).parent("td");
+
+
                     padre = $(padre).parent("tr");
+
+
                     var oID = $(padre).attr("id");
+
+
+
                     var pos1 = 0;
                     if (numeros.length == 0) {
                         //var padre = $(this).parent("div");
@@ -181,8 +188,17 @@
                             hijo = $(hijo).children("div");
                             var xc = $(hijo).attr("indx");
                             numeros[numeros.length] = xc;
+
+
+
+
+
+
+
+
                         }
                     }
+
                     if (entrada.length > 0) {
                         pos1 = jQuery.inArray(oID, entrada)
                     }
@@ -193,6 +209,9 @@
                                 cadena = cadena + ',';
                             }
                         }
+
+
+
                         sessionStorage.setItem("indexs", cadena);
                         window.location = "facturasDet.aspx";
                     }
@@ -231,7 +250,15 @@
         
         });
 
+        function showFiltros() {
+            document.getElementById("collapseOne").classList.add("show");
+        }
     </script>
+
+
+
+
+
 
     <style>
         .hrfCargadorXml:hover {
@@ -243,9 +270,9 @@
             width:20px;
         }
 
-        .vistaPor {
+        /*.vistaPor {
             width:150px;
-        }
+        }*/
 
         .img-der{ 
             position:absolute;
@@ -264,62 +291,151 @@
 
     </style>
 
-    <label class="h1">
-        Facturas
-    </label>
-    <br/><br/>
+<%--    <label class="h1">Facturas</label>
+    <br/><br/>--%>
      <a id="btnCrgMasiva" style="float:right;text-decoration:none;color:#4D4D4D;text-align:center;" class="btn" href="facturasMasiva.aspx">
         Carga masiva
     </a>
-    <br/>
+<%--    <br/>--%>
 
     <%--<label class="lblShow">
         mostrar detalles
     </label>--%>
 
     <%--<div><img src="../css/images/fl-der.png" class="img-der"/></div> --%>
+    
+    <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <%--<p>
+                    <a class="btn btn-primary text-white" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Filtros</a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Referencia low</label>
+                                <asp:TextBox ID="txtRef1" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Referencia high</label>
+                                <asp:TextBox ID="txtRef2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Moneda low</label>
+                                <asp:TextBox ID="txtMoneda1" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Moneda high</label>
+                                <asp:TextBox ID="txtMoneda2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Fecha low</label>
+                                <asp:TextBox ID="datepicker" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-2">
+                                <label>Fecha high</label>
+                                <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+                </div>--%>
+                <div id="accordion">
+                    <div class="card1 mb-3">
+                        <div class="card-header1 mb-2" id="headingOne">
+                            <h5 class="mb-0">
+                                <a class="btn-link" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">[ - ] Filtros</a>
+                            </h5>
+                        </div>
 
-    <table class="filtro">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div style="background-color: rgba(0,0,0,.03);">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Referencia low</label>
+                                            <asp:TextBox ID="txtRef1" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Referencia high</label>
+                                            <asp:TextBox ID="txtRef2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Moneda low</label>
+                                            <asp:TextBox ID="txtMoneda1" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Moneda high</label>
+                                            <asp:TextBox ID="txtMoneda2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Fecha low</label>
+                                            <asp:TextBox ID="datepicker" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group col-md-4 col-lg-2">
+                                            <label>Fecha high</label>
+                                            <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <asp:Button ID="btnActualizaX" CssClass="btn btn-success" runat="server" Text="Buscar" /> <%--MODIFY SF RSG 02.2023 v2.0--%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+     <%--<table class="filtro">
             <table>
-                <theader>
+               <theader>
                     <th class="vistaPor">
                         Referencia: 
                     </th>
                     <th>
                         Moneda:
-                    </th>
+                    </th>--%>
                     <%-- <th>
                         Fecha factura: 
                     </th>--%>
-                    <th>
+                    <%--<th>
                         Fecha: 
                     </th>
-                </theader>
-                <tr>
-                    <%--<td>
+                </theader>--%>
+                <%--<tr>
+                    <td>
                         <asp:RadioButtonList ID="rdbMostrarComo" runat="server">
                              <asp:ListItem Selected="True">Orden</asp:ListItem>
                              <asp:ListItem>Referencia</asp:ListItem>
                         </asp:RadioButtonList>
                     </td>--%>
-                    <td class="referecia">
+                   <%-- <td class="referecia">
                         <asp:TextBox ID="txtRef1" runat="server"></asp:TextBox><br/><br/>
                         <asp:TextBox ID="txtRef2" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="moneda">
+                    </td>--%>
+<%--                    <td class="moneda">
                         <asp:TextBox ID="txtMoneda1" runat="server"></asp:TextBox><br/><br/>
                         <asp:TextBox ID="txtMoneda2" runat="server"></asp:TextBox>
-                    </td>
+                    </td>--%>
                     <%-- <td class="fechafact">
                         <asp:TextBox ID="txtffact1" CssClass="datepicker" runat="server"></asp:TextBox><br/><br/>
                         <asp:TextBox ID="txtffact2" CssClass="datepicker2" runat="server"></asp:TextBox>
                     </td>--%>
-                    <td class="fechacompra">
+<%--                    <td class="fechacompra">
                         <asp:TextBox ID="datepicker" runat="server"></asp:TextBox><br/><br/>
                         <asp:TextBox ID="datepicker2" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="btnActualizaX" CssClass="ico-actualizar" runat="server" Text="" />
+                        <asp:Button ID="btnActualizaX" CssClass="btn btn-primary" runat="server" Text="Buscar" />
                     </td>
                     <td>
                         <table class="tblComp">
@@ -335,30 +451,34 @@
                     </td>
                 </tr>
 
-            </table>
+            </table>--%>
         
         <%--</tr>--%>
-        <tr>
-            <td><br/>Filtrar...</td>
+<%--        <tr>
+            <td><br/>Filtrar...</td>--%>
             <%--<td><input id="searchTerm" type="text" onkeyup="doSearch()" /></td>--%>
-            <td><input id="searchTerm" type="text"/></td>
+<%--            <td><input id="searchTerm" type="text"/></td>
         </tr>
-    </table>
+    </table>--%>
 
-        <br/>
+<%--        <br/>--%>
         <img id="imgLoaging" src="../images/loadingDots.gif" />
-        <br/>
+<%--        <br/>--%>
 
     <asp:Label ID="lblTabla" runat="server"></asp:Label>
-        <asp:Button ID="btnActualiza" CssClass="ico-actualizar" runat="server" Text="" />
-    <br/>
-    <br/>
-    <br/>
+        <%--<asp:Button ID="btnActualiza" CssClass="ico-actualizar" runat="server" Text="" />--%>
+   <%-- <br/>--%>
+            <asp:Button ID="btnActualiza" CssClass="btn btn-success ico-actualiza" runat="server" Text="Limpiar tabla" />
+<%--    <br/>
+    <br/>--%>
 
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
     <asp:HiddenField ID="hidActualiza" runat="server" />
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
     <asp:Label ID="lblDialog2" runat="server" title="Informe" Text=""></asp:Label>
-
+                
+            </div>
+        </div>
+    </div>
 </asp:Content>

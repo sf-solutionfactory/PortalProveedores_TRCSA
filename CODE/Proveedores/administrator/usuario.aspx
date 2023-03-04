@@ -55,8 +55,8 @@
         }
 
         #ContentPlaceHolder1_cmbRol {
-            height: 12px;
-            min-height: 25px;
+/*            height: 12px;
+            min-height: 25px;*/
         }
     </style>
     <script>

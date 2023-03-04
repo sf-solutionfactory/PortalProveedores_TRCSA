@@ -9,6 +9,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\proveedoresTracusav2</_PublishTargetUrl>
+    <History>True|2023-03-03T23:09:39.3497842Z;True|2023-03-02T16:40:52.3215980-06:00;False|2023-03-02T16:39:56.3844201-06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="404.aspx">
@@ -33,46 +34,46 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="administrator/DesvincularGrupoNoticia.aspx">
-      <publishTime>02/23/2023 16:37:18</publishTime>
+      <publishTime>02/27/2023 12:14:26</publishTime>
     </File>
     <File Include="administrator/DesvincularGrupoProv.aspx">
-      <publishTime>02/23/2023 19:28:41</publishTime>
+      <publishTime>03/03/2023 17:40:55</publishTime>
     </File>
     <File Include="administrator/GrupoNoticia.aspx">
-      <publishTime>02/23/2023 16:08:50</publishTime>
+      <publishTime>02/27/2023 11:28:11</publishTime>
     </File>
     <File Include="administrator/index.aspx">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="administrator/instancia.aspx">
-      <publishTime>02/23/2023 16:36:13</publishTime>
+      <publishTime>03/03/2023 17:35:49</publishTime>
     </File>
     <File Include="administrator/MostrarNoticias.aspx">
-      <publishTime>02/23/2023 12:22:03</publishTime>
+      <publishTime>03/03/2023 18:18:33</publishTime>
     </File>
     <File Include="administrator/MostrarPantalla.aspx">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="administrator/MostrarPertenencia.aspx">
-      <publishTime>02/23/2023 16:39:43</publishTime>
+      <publishTime>03/03/2023 17:37:57</publishTime>
     </File>
     <File Include="administrator/Noticia.aspx">
-      <publishTime>02/23/2023 15:54:04</publishTime>
+      <publishTime>03/03/2023 17:47:57</publishTime>
     </File>
     <File Include="administrator/Proveedores.aspx">
-      <publishTime>02/23/2023 19:15:22</publishTime>
+      <publishTime>03/03/2023 17:39:53</publishTime>
     </File>
     <File Include="administrator/Roles.aspx">
-      <publishTime>02/23/2023 19:32:46</publishTime>
+      <publishTime>03/03/2023 17:41:21</publishTime>
     </File>
     <File Include="administrator/Seguridad.aspx">
       <publishTime>02/23/2023 15:59:23</publishTime>
     </File>
     <File Include="administrator/usuario.aspx">
-      <publishTime>02/23/2023 16:49:22</publishTime>
+      <publishTime>03/03/2023 17:47:11</publishTime>
     </File>
     <File Include="administrator/valXML.aspx">
-      <publishTime>02/23/2023 16:07:38</publishTime>
+      <publishTime>03/03/2023 17:48:57</publishTime>
     </File>
     <File Include="administrator/WebServices.aspx">
       <publishTime>06/11/2014 12:33:49</publishTime>
@@ -81,10 +82,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>02/24/2023 10:42:50</publishTime>
+      <publishTime>03/03/2023 18:19:53</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>02/24/2023 10:42:50</publishTime>
+      <publishTime>03/03/2023 18:19:53</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.jQuery.dll">
       <publishTime>01/06/2014 09:14:10</publishTime>
@@ -147,34 +148,34 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="bin/PEntidades.dll">
-      <publishTime>02/24/2023 10:32:32</publishTime>
+      <publishTime>03/02/2023 16:39:50</publishTime>
     </File>
     <File Include="bin/PEntidades.dll.config">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="bin/PEntidades.pdb">
-      <publishTime>02/24/2023 10:32:32</publishTime>
+      <publishTime>03/02/2023 16:39:50</publishTime>
     </File>
     <File Include="bin/PNegocio.dll">
-      <publishTime>02/24/2023 10:32:33</publishTime>
+      <publishTime>03/03/2023 17:09:29</publishTime>
     </File>
     <File Include="bin/PNegocio.pdb">
-      <publishTime>02/24/2023 10:32:33</publishTime>
+      <publishTime>03/03/2023 17:09:29</publishTime>
     </File>
     <File Include="bin/PPersistencia.dll">
-      <publishTime>02/24/2023 10:32:32</publishTime>
+      <publishTime>03/03/2023 17:09:29</publishTime>
     </File>
     <File Include="bin/PPersistencia.dll.config">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="bin/PPersistencia.pdb">
-      <publishTime>02/24/2023 10:32:32</publishTime>
+      <publishTime>03/03/2023 17:09:29</publishTime>
     </File>
     <File Include="bin/Proveedores.dll">
-      <publishTime>02/24/2023 10:42:46</publishTime>
+      <publishTime>03/03/2023 18:19:50</publishTime>
     </File>
     <File Include="bin/Proveedores.pdb">
-      <publishTime>02/24/2023 10:42:46</publishTime>
+      <publishTime>03/03/2023 18:19:50</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>01/16/2023 16:42:46</publishTime>
@@ -249,7 +250,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="css/Estilo.css">
-      <publishTime>02/23/2023 18:36:00</publishTime>
+      <publishTime>03/03/2023 17:29:38</publishTime>
     </File>
     <File Include="css/EstiloLogin.css">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -591,10 +592,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="css/passSeguro/style.css">
-      <publishTime>02/16/2023 13:21:10</publishTime>
+      <publishTime>03/03/2023 16:43:49</publishTime>
     </File>
     <File Include="css/passSeguro/stylePassSeguro.css">
-      <publishTime>01/16/2023 16:42:44</publishTime>
+      <publishTime>02/24/2023 14:19:33</publishTime>
     </File>
     <File Include="css/passSeguro/ValidaPassSeguro.js">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -657,7 +658,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/20/2023 14:25:39</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>02/16/2023 13:23:34</publishTime>
+      <publishTime>03/03/2023 17:04:36</publishTime>
     </File>
     <File Include="errorGenerico.html">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -692,6 +693,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="images/fichero.png">
       <publishTime>01/16/2023 16:42:45</publishTime>
     </File>
+    <File Include="images/ficheroNew.png">
+      <publishTime>03/02/2023 11:19:37</publishTime>
+    </File>
     <File Include="images/ico-ayuda.png">
       <publishTime>01/16/2023 16:42:45</publishTime>
     </File>
@@ -722,6 +726,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="images/loadingDots.gif">
       <publishTime>01/16/2023 16:42:45</publishTime>
     </File>
+    <File Include="images/logo-ico.png">
+      <publishTime>03/02/2023 11:23:10</publishTime>
+    </File>
     <File Include="images/logo.jpg">
       <publishTime>04/13/2015 11:59:48</publishTime>
     </File>
@@ -740,8 +747,14 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="images/sap.png">
       <publishTime>01/16/2023 16:42:45</publishTime>
     </File>
+    <File Include="images/sapNew.png">
+      <publishTime>03/02/2023 11:19:37</publishTime>
+    </File>
     <File Include="images/sat.png">
       <publishTime>01/16/2023 16:42:45</publishTime>
+    </File>
+    <File Include="images/satNew.png">
+      <publishTime>03/02/2023 11:19:37</publishTime>
     </File>
     <File Include="images/Solution_Logo - escala grises.png">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -891,22 +904,22 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="pagMaestra/MtrAdministrador.Master">
-      <publishTime>02/24/2023 10:40:59</publishTime>
+      <publishTime>03/03/2023 17:44:37</publishTime>
     </File>
     <File Include="pagMaestra/MtrInicio.Master">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/03/2023 17:05:36</publishTime>
     </File>
     <File Include="pagMaestra/MtrProveedor.Master">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/03/2023 17:25:36</publishTime>
     </File>
     <File Include="portal/datosMaestros.aspx">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/02/2023 14:26:35</publishTime>
     </File>
     <File Include="portal/DelAndUpd.aspx">
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="portal/facturas.aspx">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/02/2023 13:36:23</publishTime>
     </File>
     <File Include="portal/facturas2.aspx">
       <publishTime>02/18/2014 14:07:20</publishTime>
@@ -915,7 +928,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="portal/facturasDet.aspx">
-      <publishTime>01/16/2023 16:42:46</publishTime>
+      <publishTime>02/27/2023 17:43:57</publishTime>
     </File>
     <File Include="portal/facturasMasiva.aspx">
       <publishTime>01/16/2023 16:42:46</publishTime>
@@ -930,25 +943,28 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/11/2014 10:29:05</publishTime>
     </File>
     <File Include="portal/Inicio.aspx">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/03/2023 17:07:29</publishTime>
     </File>
     <File Include="portal/operaciones.aspx">
       <publishTime>01/10/2014 15:53:43</publishTime>
     </File>
     <File Include="portal/pagos.aspx">
-      <publishTime>01/16/2023 16:42:46</publishTime>
+      <publishTime>03/02/2023 12:16:01</publishTime>
+    </File>
+    <File Include="portal/PagosDet.aspx">
+      <publishTime>03/02/2023 12:52:54</publishTime>
     </File>
     <File Include="portal/pagosFiltro.aspx">
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="portal/prtAbiertas.aspx">
-      <publishTime>02/10/2023 16:57:20</publishTime>
+      <publishTime>03/02/2023 13:36:10</publishTime>
     </File>
     <File Include="portal/usuarios.aspx">
-      <publishTime>02/23/2023 15:54:03</publishTime>
+      <publishTime>03/03/2023 17:26:55</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>02/24/2023 10:42:48</publishTime>
+      <publishTime>03/03/2023 18:19:51</publishTime>
     </File>
     <File Include="Properties/DataSources/PEntidades.SrvSATConsultaCFDI.Acuse.datasource">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -1839,7 +1855,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/17/2023 11:33:07</publishTime>
     </File>
     <File Include="version2/dist/css/style.min.css">
-      <publishTime>02/23/2023 19:22:04</publishTime>
+      <publishTime>03/03/2023 17:44:05</publishTime>
     </File>
     <File Include="version2/dist/css/styleDetalles.css">
       <publishTime>02/10/2023 17:00:11</publishTime>

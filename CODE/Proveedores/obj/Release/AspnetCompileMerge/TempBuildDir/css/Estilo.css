@@ -14,7 +14,7 @@ body, html {
 
 html {
     border-top: 8px solid #BDBDBD;
-    background: url(images/fondo_lineas.png) no-repeat center -10px fixed;
+    /*background: url(images/fondo_lineas.png) no-repeat center -10px fixed;*/
 }
 
 #divHeader {
@@ -170,7 +170,7 @@ html {
 
 a:link {
     text-decoration: none;
-    color: #000000;
+    /* color: #000000; */
 }
 
 [type="password"],
@@ -206,7 +206,7 @@ textarea,
 }
 
 .cargador {
-    width: 79%;
+    /* width: 79%; */
     overflow: hidden;
 }
 
@@ -402,12 +402,14 @@ textarea,
     height: 30px;
     width: 30px;
     background: url("images/ico-expandir_todo.png");
+    display: none; /*MODIFY SF RSG 02.2023 V2.0*/
 }
 
 .ico-contraer_Todo {
     height: 30px;
     width: 30px;
     background: url("images/ico-contraer_todo.png");
+    display: none; /*MODIFY SF RSG 02.2023 V2.0*/
 }
 
 .ico-cerrar {
@@ -419,7 +421,7 @@ textarea,
     margin-top: 30px;
     padding-top: 35px;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #000000; /*MODIFY SF RSG 02.2023 v2.0*/
     font-weight: bold;
 }
     /*      FIN     Iconos*/
@@ -433,7 +435,7 @@ textarea,
     }
 
 /*      INICIO      LAYUOT Inicio/Bienvenida*/
-#divWrapContenido div {
+#divWrapCon/*tenido div {
     display: inline-block;
 }
 
@@ -463,24 +465,24 @@ textarea,
 
 #divArticulo {
     text-indent: 1em;
-    text-align: justify;
+    text-align: justify;*/
     /*overflow-y:scroll;*/
-}
+/*}
 
 #divColumna2 {
     width: 28%;
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: 1%;*/
     /*background:#666666;*/
-}
+/*}
 
     #divColumna2 div {
-        display: block;
+        display: block;*/
         /*height:200px;*/
         /*border:5px solid #C82B40;*/
         /*margin-bottom:20px;*/
         /*margin-top:10%;*/
-    }
+    /*}
 
     #divColumna2 #divNav1 {
         display: none;
@@ -508,7 +510,7 @@ textarea,
             #divColumna2 #divNav2 div p {
                 margin: 0px;
                 padding: 0px;
-            }
+            }*/
 /*///// FIN      LAYUOT Inicio/Bienvenida*/
 
 /*      INICIO      MenuHelper*/
@@ -597,7 +599,7 @@ legend {
 
 /*INICIO estilo de noticia de inicio*/
 .titulo, .articulo {
-    font: large Palatino bold italic;
+    /*font: large Palatino bold italic;*/
 }
 
 #divArticulo {

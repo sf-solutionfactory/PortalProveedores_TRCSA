@@ -82,7 +82,7 @@
             </div>
         </div>
         <div style="margin-top:45px;">
-            <img src="images/logo_tracusa.bmp" class="imglogo" style="max-height:200px;"/>
+            <img src="images/logo_tracusa.bmp" class="imglogo" style="max-height:200px;max-width:80%"/>
         </div>
     </center>
     <div id="pswd_info" class="">

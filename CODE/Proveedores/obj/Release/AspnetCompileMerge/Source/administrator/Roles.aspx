@@ -46,7 +46,7 @@
     </style>
 
 
-    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
+    <div class="paraDiseno col"> <!--MODIFY SF RSG 02.2023 V2.0-->
         
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
 <div class="col-md-12 col-lg-6"><div class="card">

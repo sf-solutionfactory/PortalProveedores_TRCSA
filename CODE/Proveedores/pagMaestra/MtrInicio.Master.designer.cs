@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores {
-    
-    
-    public partial class MtrInicio {
-        
+namespace Proveedores
+{
+
+
+    public partial class MtrInicio
+    {
+
         /// <summary>
         /// Control head.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>

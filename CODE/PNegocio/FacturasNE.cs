@@ -122,7 +122,7 @@ namespace PNegocio
 
             return lstResul;
         }
-        
+
         /// <summary>
         /// Valida importe total, subtotal iva y moneda.
         /// </summary>
@@ -135,7 +135,7 @@ namespace PNegocio
         /// <param name="moneda">Tipo de Moneda</param>
         /// <param name="numerodoc">Numero de documento</param>
         /// <returns></returns>
-        public string validardatosMir7(List<string[]> listaDiferentesInstancias, string fechafac, string año, decimal importe, decimal importeIVA, decimal importeSub, string moneda, string  numerodoc, string val_fec, string val_impt, string val_imps, string val_iva, string val_mon, decimal importedesc)
+        public string validardatosMir7(List<string[]> listaDiferentesInstancias, string fechafac, string año, decimal importe, decimal importeIVA, decimal importeSub, string moneda, string numerodoc, string val_fec, string val_impt, string val_imps, string val_iva, string val_mon, decimal importedesc, string bukrs = "")   //MODIFY SF RSG 02.2023 v2.0
         {
             PEntidades.SrvSAPUProveedores.ZWS_UPROVEEDORESClient srv = new PPersistencia.WebServices().getZWS_UPROVEEDORESInstanceNew(
                     listaDiferentesInstancias[0][1].ToString().Trim(),

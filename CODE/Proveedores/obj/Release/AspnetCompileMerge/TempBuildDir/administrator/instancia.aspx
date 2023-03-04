@@ -139,6 +139,7 @@
     <%--//---------------------------------------------------------------------------------------------------------------------//--%>
         <%--//---------------------------------------------------------------------------------------------------------------------//--%>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col">
     <div class="col-md-12 col-lg-6" style="display:none;"><div class="card">
         <div class="card-body">
             <h4 class="card-title"></h4>  
@@ -268,6 +269,6 @@
     <asp:Label ID="lblTabla" runat="server" CssClass="lblTable"></asp:Label><%--ADD SF RSG 02.2023 V2.0--%>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
-    </div> 
+    </div> </div>
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 </asp:Content>

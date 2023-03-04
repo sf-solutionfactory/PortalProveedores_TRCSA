@@ -11,6 +11,7 @@
 
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />    <%--ADD SF RSG 02.2023 v2.0--%>
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -259,6 +260,9 @@
             width: 150px;
             height:63px;
         }
+        .form-control {
+            font-size: 1.4rem;
+        }
 
 
         /*///////////*/
@@ -453,9 +457,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid">
+                <%--<div class="container-fluid">
                     <div class="col-md-12">
-                        <%--<div class="col-md-12">--%>
+                        <div class="col-md-12">--%>
 <%--                            <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title"></h4>--%>
@@ -465,9 +469,9 @@
                                     </div>
                                 <%--</div>
                             </div>--%>
-                        <%--</div>--%>
+                        <%--</div>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     <%-- END OF INSERT SF RSG 02.2023 V2.0 --%>

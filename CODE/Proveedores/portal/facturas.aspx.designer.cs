@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores.portal {
-    
-    
-    public partial class Facturas {
-        
+namespace Proveedores.portal
+{
+
+
+    public partial class Facturas
+    {
+
         /// <summary>
         /// Control txtRef1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRef1;
-        
+
         /// <summary>
         /// Control txtRef2.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRef2;
-        
+
         /// <summary>
         /// Control txtMoneda1.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMoneda1;
-        
+
         /// <summary>
         /// Control txtMoneda2.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMoneda2;
-        
+
         /// <summary>
         /// Control datepicker.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox datepicker;
-        
+
         /// <summary>
         /// Control datepicker2.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox datepicker2;
-        
+
         /// <summary>
         /// Control btnActualizaX.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizaX;
-        
+
         /// <summary>
         /// Control lblTabla.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTabla;
-        
+
         /// <summary>
         /// Control btnActualiza.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualiza;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidCerrarSesion;
-        
+
         /// <summary>
         /// Control hidActualiza.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidActualiza;
-        
+
         /// <summary>
         /// Control lblDialog.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Proveedores.portal {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDialog;
-        
+
         /// <summary>
         /// Control lblDialog2.
         /// </summary>

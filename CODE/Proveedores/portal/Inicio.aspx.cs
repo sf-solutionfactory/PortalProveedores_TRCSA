@@ -57,13 +57,15 @@ namespace Proveedores.portal
                 string[] resultado = null;
 
                     resultado = new PNegocio.Administrador.Noticia().consultarNoticiaPorIdProveedor(idProveedor);
-                    this.lblTitulo.Text = resultado[0];
+                    //this.lblTitulo.Text = resultado[0];
+                    this.lblTitulo.Text = "<h1 class='display-4'>"+resultado[0]+"</h1>";    //ADD SF RSG 02.2023 v2.0
                     this.lblArticulo.Text = resultado[1];
                     //if (resultado != null)
                     //{
                         if (resultado[2].ToString().Trim() != "" && resultado[2].ToString().Trim() != null)
                         {
-                            this.lblBanner.Text = "<img src='" + resultado[2] + "'/>";
+                            //this.lblBanner.Text = "<img src='" + resultado[2] + "'/>";
+                            this.lblBanner.Text = "<img src='" + resultado[2] + "'  class='img-fluid img-thumbnail' alt='Responsive image'/>";
                         }
                         else
                         {

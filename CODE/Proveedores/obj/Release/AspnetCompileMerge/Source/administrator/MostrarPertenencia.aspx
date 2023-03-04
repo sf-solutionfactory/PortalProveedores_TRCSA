@@ -75,7 +75,7 @@
                 }
             });
             mostrarDialog($("#ContentPlaceHolder1_lblDialog").html());    //MODIFY SF RSG 02.2023 V2.0
-            $('.nav-link').text($("#ContentPlaceHolder1_hidPantalla")[0].value);   //ADD SF RSG 02.2023 V2.0
+            //$('.nav-link').text($("#ContentPlaceHolder1_hidPantalla")[0].value);   //ADD SF RSG 02.2023 V2.0
 
 
             $("table").tablesorter({ debug: true });
@@ -86,6 +86,7 @@
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col">
     <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  
@@ -160,6 +161,7 @@
 
     </div>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            </div>
             </div>
             </div>
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>

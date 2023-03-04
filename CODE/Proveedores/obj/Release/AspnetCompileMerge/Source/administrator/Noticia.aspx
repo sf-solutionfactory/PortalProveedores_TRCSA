@@ -26,7 +26,7 @@
                 }
             });
             
-            $("#noticia").addClass("selected active");  //MODIFY SF RSG 02.2023 V2.0
+            $("#noticias").addClass("selected active");  //MODIFY SF RSG 02.2023 V2.0
            
             $('#ContentPlaceHolder1_btnGuardar, #ContentPlaceHolder1_btnModificar').click(function () {
                 if (validar()) {
@@ -47,7 +47,7 @@
                 plugins: "fullpage",
                 toolbar_items_size: 'small',
                 inline: false,
-                width: 310,
+                //width: 310,
                 language: "es_MX",
                 plugins: [
                 'advlist autolink lists charmap anchor',
@@ -94,11 +94,12 @@
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="card col-md-12 col-lg-6">
+    <div class="col">
+    <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
-    <div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->
+    <%--<div class="paraDiseno ">--%> <!--MODIFY SF RSG 02.2023 V2.0-->
 
         <table class="tblFm2">
             <tr>
@@ -107,7 +108,54 @@
         </table>
     
     <br/>
-    <table class="tblFm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Titulo</label>
+                            <asp:TextBox ID="txtTitulo" runat="server" class="txtValidar form-control <%--ampliar--%>" MaxLength="100"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Inicio validez</label>
+                            <asp:TextBox ID="datepicker" runat="server" class="txtValidar form-control <%--ampliar--%>"></asp:TextBox>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Fin validez</label>
+                            <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control <%--ampliar--%>"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Dirección URL de imagen</label>
+                            <asp:TextBox ID="txtURLImagen" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-3 pt-0">Tipo</legend>
+                            <asp:RadioButtonList ID="rdbTipoNoticia" runat="server">
+                                <asp:ListItem Selected="True">General</asp:ListItem>
+                                <asp:ListItem>Asignable</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Cuerpo de noticia</label>
+                            <textarea id="txtAreaContenido1" style="width: 100%; height: 200px; margin-top: 100px;" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary" />
+            <asp:Button ID="btnModificar" runat="server" Text="Guardar cambios" OnClick="btnModificar_Click" CssClass="btn btn-primary" />
+            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-light" OnClick="btnCancelar_Click" />
+<%--    <table class="tblFm">
         <tr>
             <td>
                 Titulo
@@ -122,10 +170,10 @@
                 Cuerpo de noticia
             </td>
             <td>
-                <textarea id="txtAreaContenido1" style="width: 400px; height: 200px; margin-top: 100px;"></textarea>
+                <textarea id="txtAreaContenido1" style="width: 400px; height: 200px; margin-top: 100px;"></textarea>--%>
                 <%--<asp:TextBox ID="txtAreaContenido" runat="server" Columns="50" Rows="8" TextMode="multiline" class="txtValidar" MaxLength="500" />--%>
                 
-            </td>
+<%--            </td>
         </tr> 
         <tr>
             <td>
@@ -177,9 +225,9 @@
 
         </tr> 
 
-    </table>
+    </table>--%>
 
-   </div>
+   <%--</div>--%>
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
    </div>
    </div>
@@ -208,6 +256,7 @@
     <br/>--%>
      <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
 
+   </div>
    </div>
    </div>
    </div>

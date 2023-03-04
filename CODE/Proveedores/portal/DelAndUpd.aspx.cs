@@ -92,7 +92,7 @@ namespace Proveedores.portal
             }
             else
             {
-                Session["textoDialogo"] = "La ultima operación no se concretó correctamente, posiblemente ocurrio un error o por el momento es una acción no permitida";
+                Session["textoDialogo"] = "Error:La última operación no se concretó correctamente, posiblemente ocurrió un error o por el momento es una acción no permitida";
             }
 
             Response.Write(pag);

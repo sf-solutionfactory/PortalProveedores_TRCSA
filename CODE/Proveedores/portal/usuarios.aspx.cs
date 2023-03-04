@@ -217,11 +217,11 @@ namespace Proveedores.portal
         public void cargarTablaUsuarios(string prov)
         {
 
-            this.lblTablaUsuarios.Text = new PNegocio.Administrador.Usuario().cosultarUsuariosPorFiltroEnString(prov, "90%");
+            this.lblTablaUsuarios.Text = new PNegocio.Administrador.Usuario().cosultarUsuariosPorFiltroEnString(prov, "100%");  //MODIFY SF RSG 02.2023 v2.0
             if (this.lblTablaUsuarios.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro();
-                this.lblExplicacionResultados.Text = "<strong>Estos son los usuarios que corresponden al proveedor que elegiste:</strong>";
+                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltro(); //DELETE SF RSG 02.2023 v2.0
+                this.lblExplicacionResultados.Text = "<strong style='font-weight: bold; font-size: 17px;'>Estos son los usuarios que corresponden al proveedor que elegiste:</strong>";  //MODIFY SF RSG 02.2023 v2.0
             }
         }
 
@@ -230,13 +230,13 @@ namespace Proveedores.portal
 
             if (this.hidVerificar.Value == "noEmail")
             {
-                this.lblDialog.Text = "El email no cumple con las caracteristicas necesarias";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:El email no cumple con las características necesarias";  //MODIFY SF RSG 02.2023 V2.0  
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
             }
             else if (this.hidVerificar.Value == "no")
             {
-                this.lblDialog.Text = "Exisaten campos si valor";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+                this.lblDialog.Text = "Error:Exisaten campos si valor";  //MODIFY SF RSG 02.2023 V2.0
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
             }
             else if (this.hidVerificar.Value == "si" && this.hidVerificarPass.Value == "si")
             {
@@ -244,7 +244,7 @@ namespace Proveedores.portal
             }
             else
             {
-                this.lblDialog.Text = "La contraseña no cumple con las caracteristicas necesarias";
+                this.lblDialog.Text = "Error:La contraseña no cumple con las características necesarias";  //MODIFY SF RSG 02.2023 V2.0
             }
 
 
@@ -309,25 +309,25 @@ namespace Proveedores.portal
                         Response.Redirect("usuarios.aspx?" + this.hidComplementoUr.Value);
                         break;
                     case "nombre existente":
-                        this.lblDialog.Text = "El nombre de usuario ya existe";
+                        this.lblDialog.Text = "Error:El nombre de usuario ya existe";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                     case "error":
-                        this.lblDialog.Text = "Error al insertar";
+                        this.lblDialog.Text = "Error:Error al insertar";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                     default:
-                        this.lblDialog.Text = "Error desconocido";
+                        this.lblDialog.Text = "Error:Error desconocido";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                     case "limite":
-                        this.lblDialog.Text = "El numero maximo permitido de usuarios fue alcanzado";
+                        this.lblDialog.Text = "Error:El número máximo permitido de usuarios fue alcanzado";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                 }
 
             }
             else
             {
-                this.lblDialog.Text = "El password o el email no coinciden";
+                this.lblDialog.Text = "Error:El password o el email no coinciden";  //MODIFY SF RSG 02.2023 V2.0
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
         }
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -386,7 +386,7 @@ namespace Proveedores.portal
                 else
                 {
                     entrarAModificar = false;
-                    this.lblDialog.Text = "Contraseña no coincide";
+                    this.lblDialog.Text = "Error:Contraseña no coincide";  //MODIFY SF RSG 02.2023 V2.0
                 }
             }
             else
@@ -406,7 +406,7 @@ namespace Proveedores.portal
                     {
                         entrarAModificar = false;
 
-                        this.lblDialog.Text = "Email no coincide";
+                        this.lblDialog.Text = "Error:Email no coincide";  //MODIFY SF RSG 02.2023 V2.0
                     }
                 }
             }
@@ -517,13 +517,13 @@ namespace Proveedores.portal
                         Response.Redirect("usuarios.aspx?" + this.hidComplementoUr.Value);
                         break;
                     case "error":
-                        this.lblDialog.Text = "Error al insertar";
+                        this.lblDialog.Text = "Error:Error al insertar";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                     case "no existe":
-                        this.lblDialog.Text = "no se encontro el usuario, probablemente fue modificado por otro usuario";
+                        this.lblDialog.Text = "Error:No se encontro el usuario, probablemente fue modificado por otro usuario";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                     default:
-                        this.lblDialog.Text = "Error desconocido";
+                        this.lblDialog.Text = "Error:Error desconocido";  //MODIFY SF RSG 02.2023 V2.0
                         break;
                 }
 
@@ -532,11 +532,11 @@ namespace Proveedores.portal
             }
             else
             {
-                this.lblDialog.Text = "El password o el email no coinciden";
+                this.lblDialog.Text = "Error:El password o el email no coinciden";  //MODIFY SF RSG 02.2023 V2.0
                 this.btnGuardarCambios.Visible = true;
                 this.ltlbtnCancel.Visible = true;
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog()", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').html())", true); //MODIFY SF RSG 02.2023 V2.0  
         }
 
 
@@ -545,7 +545,7 @@ namespace Proveedores.portal
         {
             PNegocio.Administrador.Usuario inst = new PNegocio.Administrador.Usuario();
 
-            List<string[]> resultado = inst.cosultarSociedadesPorprov(rfc, "90%");
+            List<string[]> resultado = inst.cosultarSociedadesPorprov(rfc, "100%"); //MODIFY SF RSG 02.2023 v2.0
             return resultado;
 
 
@@ -557,7 +557,8 @@ namespace Proveedores.portal
             {
                 List<int> listaEvitar = new List<int>();
                 
-                this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);
+                //this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "tblComun toCheck' style='width:" + "90%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);  //DELETE SF RSG 02.2023 v2.0
+                this.ltlTablaSociedades.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete2(resultado, "", "table table-striped table-bordered toCheck' style='width:" + "100%" + ";", listaEvitar, false, false, false, false, 0, 1, true, listaNumeros);  //ADD SF RSG 02.2023 v2.0
                 Session["TablaSociedades"] = resultado;
             }
             else

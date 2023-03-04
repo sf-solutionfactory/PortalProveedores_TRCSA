@@ -215,8 +215,8 @@ namespace Gen.Util.CS
                 html += "<th>Modificaciones</th>"; // agregar titulo de cambios para modificar, Activar/desactivar
             }
 
-            if (lista.Count > 1000) 
-                lista.RemoveRange(1001,lista.Count-1002);   //-------------------------------QUITAR-----------------------------------------//
+            //if (lista.Count > 1000) 
+            //    lista.RemoveRange(1001,lista.Count-1002);   //-------------------------------QUITAR-----------------------------------------//
             html += "</tr></thead>";
             html += "<tbody>";
             for (int i = 1; i < lista.Count; i++)

@@ -84,7 +84,9 @@ namespace Proveedores.portal
                     {
                         this.lblTabla.Text = "<br/><br/><br/><h3>" + "Este usuario no tiene sociedades activas, por lo que no puede obtener datos" + "</h3>";
                     }
-                }
+
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showFiltros()", true); //ADD SF RSG 02.2023 V2.0  
+                    }
                 //if (this.lblTabla.Text  != "")
                 //{
                 //    this.btnActualiza.Visible = true;

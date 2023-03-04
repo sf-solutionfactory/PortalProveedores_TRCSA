@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores {
-    
-    
-    public partial class pagos {
-        
+namespace Proveedores
+{
+
+
+    public partial class pagos
+    {
+
         /// <summary>
         /// Control datepicker.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox datepicker;
-        
+
         /// <summary>
         /// Control datepicker2.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox datepicker2;
-        
+
         /// <summary>
         /// Control btnActualizaX.
         /// </summary>
@@ -38,25 +40,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizaX;
-        
-        /// <summary>
-        /// Control lblExpandirTodo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExpandirTodo;
-        
-        /// <summary>
-        /// Control lblContraerTodo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContraerTodo;
-        
+
         /// <summary>
         /// Control lblTabla.
         /// </summary>
@@ -65,16 +49,25 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTabla;
-        
+
         /// <summary>
-        /// Control btnActualiza.
+        /// Control lblExpandirTodo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualiza;
-        
+        protected global::System.Web.UI.WebControls.Label lblExpandirTodo;
+
+        /// <summary>
+        /// Control lblContraerTodo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContraerTodo;
+
         /// <summary>
         /// Control hidFiltro.
         /// </summary>
@@ -83,7 +76,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidFiltro;
-        
+
         /// <summary>
         /// Control hidCerrarSesion.
         /// </summary>
@@ -92,7 +85,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidCerrarSesion;
-        
+
         /// <summary>
         /// Control hidActualiza.
         /// </summary>
@@ -101,7 +94,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidActualiza;
-        
+
         /// <summary>
         /// Control btnToOrder.
         /// </summary>
@@ -110,7 +103,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnToOrder;
-        
+
         /// <summary>
         /// Control hidHeader.
         /// </summary>
@@ -119,7 +112,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hidHeader;
-        
+
         /// <summary>
         /// Control modoOrdenar.
         /// </summary>
@@ -128,5 +121,14 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField modoOrdenar;
+
+        /// <summary>
+        /// Control lblDialog.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDialog;
     }
 }

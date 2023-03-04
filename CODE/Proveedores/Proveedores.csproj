@@ -301,6 +301,7 @@
     <Content Include="images\adn_logo.png" />
     <Content Include="css\images\fl_der.png" />
     <Content Include="images\candadov2.png" />
+    <Content Include="images\ficheroNew.png" />
     <Content Include="images\ico-datos_maestros.png" />
     <Content Include="images\ico-sf-1-step.gif" />
     <Content Include="images\ico-sf-2-steps.gif" />
@@ -314,6 +315,7 @@
     <Content Include="images\ico-ListaGrupo.png" />
     <Content Include="images\loading.gif" />
     <Content Include="images\loadingDots.gif" />
+    <Content Include="images\logo-ico.png" />
     <Content Include="images\logo_sicsa.png" />
     <Content Include="images\logo_tracusa.bmp" />
     <Content Include="images\logo_tracusa.png" />
@@ -323,7 +325,9 @@
     <Content Include="images\ico-descargar.png" />
     <Content Include="images\ico-imprimir.png" />
     <Content Include="images\sap.png" />
+    <Content Include="images\sapNew.png" />
     <Content Include="images\sat.png" />
+    <Content Include="images\satNew.png" />
     <Content Include="images\Solution_Logo - escala grises.png" />
     <Content Include="images\Solution_Logo.png" />
     <Content Include="images\ico-Volver.png" />
@@ -386,6 +390,7 @@
     <Content Include="portal\pagos.aspx" />
     <Content Include="js\modernizr-2.5.3.js" />
     <Content Include="Global.asax" />
+    <Content Include="portal\PagosDet.aspx" />
     <Content Include="portal\pagosFiltro.aspx" />
     <Content Include="portal\prtAbiertas.aspx" />
     <Content Include="portal\usuarios.aspx" />
@@ -859,6 +864,13 @@
     </Compile>
     <Compile Include="portal\pagos.aspx.designer.cs">
       <DependentUpon>pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\PagosDet.aspx.cs">
+      <DependentUpon>PagosDet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\PagosDet.aspx.designer.cs">
+      <DependentUpon>PagosDet.aspx</DependentUpon>
     </Compile>
     <Compile Include="portal\pagosFiltro.aspx.cs">
       <DependentUpon>pagosFiltro.aspx</DependentUpon>

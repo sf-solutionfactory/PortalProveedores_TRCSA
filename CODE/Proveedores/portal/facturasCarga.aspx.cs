@@ -114,9 +114,9 @@ namespace Proveedores.portal
                         if (this.index != "")//Cuando si se encuentra la factura
                         {
                             string raw = "";
-                            
-                           
-                            if (validarSAT(this.xmlDoc))//Cuando es válido en SAT
+
+                            bool noValida = WebConfigurationManager.AppSettings["noValidaSat"].ToString().Equals("X");  //ADD SF RSG 02.2023 v2.0
+                            if (validarSAT(this.xmlDoc, noValida))   //MODIFY SF RSG 02.2023 v2.0
                             {
                                 if (validarSAP())//Cuando es válido en SAP
                                 {
@@ -242,10 +242,10 @@ namespace Proveedores.portal
                 //               "</script>");
         }
 
-        private bool validarSAT(System.Xml.XmlDocument xmlDoc)
+        private bool validarSAT(System.Xml.XmlDocument xmlDoc, bool nv)  //MODIFY SF RSG 02.2023 v2.0
         {
             PNegocio.ConsultaCFDI c = new PNegocio.ConsultaCFDI();
-            string resul = c.esCorrectoCFDI(xmlDoc.InnerXml); 
+            string resul = c.esCorrectoCFDI(xmlDoc.InnerXml, nv);   //MODIFY SF RSG 02.2023 v2.0
 
             switch (resul.Trim())
             {

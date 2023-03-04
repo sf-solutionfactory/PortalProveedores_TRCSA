@@ -113,29 +113,45 @@
     </style>
     
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+    <div class="col">
     <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
-    <div id="gettt" style="font-weight: bold; font-size: 17px;">Obtener</div><%--MODIFY SF RSG 02.2023 V2.0--%>
+    <div id="gettt" style="font-weight: bold; font-size: 17px;">Obtener</div>            <%--MODIFY SF RSG 02.2023 V2.0--%>
+            <div class="col-md-4 col-sm-12" style="padding-left: 0px;">
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-6">
+                        <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group col-md-6">
+                    </div>
+                    <div class="col-md-12" style="text-align: right">
+                        <asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btn-success" />             <%--MODIFY SF RSG 02.2023 V2.0--%>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    
-
-    <table>
+            <%--<table>
         <tr>
             <td><asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label></td>
 
-            <td><asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btn-success"/></td> <%--MODIFY SF RSG 02.2023 V2.0--%>
+            <td><asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btn-success"/></td>
         </tr>
-    </table>
+    </table>--%>
     
-    <br />
+    <%--<br />--%>
     <asp:Label ID="lblConsejoSeleccionar" runat="server" Text=""></asp:Label>
-    <br />
+    <%--<br />--%>
     <asp:Label ID="lblResultado" runat="server" Text=""></asp:Label>
-    <br />
+    <%--<br />--%>
     <asp:Label ID="lblConsejo" runat="server" Text=""></asp:Label>
-    <br />
+    <%--<br />--%>
     <asp:HiddenField ID="hidVinculador" runat="server" />
     <asp:HiddenField ID="hidNombrGrupo" runat="server" />
 
@@ -167,6 +183,7 @@
     <asp:HiddenField ID="hidIdSelected" runat="server" />
 
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
+            </div>
             </div>
             </div>
 

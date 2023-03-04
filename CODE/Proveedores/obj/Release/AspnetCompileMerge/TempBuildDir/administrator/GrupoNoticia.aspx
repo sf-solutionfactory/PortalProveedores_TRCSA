@@ -195,8 +195,21 @@
         </table>
         <%--<br/>--%>
 
-
-        <table id="datosNoticia" class="tblFm">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Nombre del grupo</label>
+                <asp:TextBox ID="txtNombreGrupoN" runat="server" class="txtValidar form-control"></asp:TextBox>
+            </div>
+            <div class="col-md-6">
+                <br />
+                <asp:Button ID="btnBUscarNoticia" runat="server" Text="Buscar noticia..." OnClick="btnBUscarNoticia_Click" CssClass="btn btn-primary" />
+                <%--MODIFY SF RSG 02.2023 V2.0--%>
+            </div>
+        </div>
+        <div class="row">
+                    <asp:Label ID="lblIdNoticia" runat="server" Text=""></asp:Label><asp:Label ID="lblNoticiaSeleccionada" runat="server" Text=""></asp:Label>
+            </div>
+        <%--<table id="datosNoticia" class="tblFm">
             <tr>
                 <td>Nombre del grupo
                 </td>
@@ -213,7 +226,7 @@
                     <asp:Label ID="lblIdNoticia" runat="server" Text=""></asp:Label><asp:Label ID="lblNoticiaSeleccionada" runat="server" Text=""></asp:Label>
                 </td>
                 <td>
-                    <asp:Button ID="btnBUscarNoticia" runat="server" Text="Buscar noticia..." OnClick="btnBUscarNoticia_Click" CssClass="btn btn-primary" />    <%--MODIFY SF RSG 02.2023 V2.0--%>
+                    <asp:Button ID="btnBUscarNoticia" runat="server" Text="Buscar noticia..." OnClick="btnBUscarNoticia_Click" CssClass="btn btn-primary" />    
                 </td>
             </tr>
             <tr>
@@ -222,7 +235,7 @@
             </tr>
         </table>
 
-        <br />
+        <br />--%>
        <asp:Literal ID="ltlTablaNoticiasSeleccionadas" runat="server"></asp:Literal>
     </div>
 

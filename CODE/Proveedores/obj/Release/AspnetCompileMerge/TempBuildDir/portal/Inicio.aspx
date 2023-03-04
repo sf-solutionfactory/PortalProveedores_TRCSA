@@ -5,7 +5,7 @@
     <script>
         $(function () {
             
-            $("#Inicio").addClass("active");
+            $("#Inicio").addClass("selected active");
             //$("table tr td a").button({ icons: { primary: "ui-icon-circle-arrow-n" } });
             //$("table tr td .estatusCorrecto").button({ icons: { primary: "ui-icon-check" } });
             //$("table tr td .estatusIncorrecto").button({ icons: { primary: "ui-icon-closethick" } });
@@ -23,13 +23,14 @@
                 calcularAltoArticulo();
             });
             
-            //$("*").css({ "font-size": "" });
-            //$(document).css({ "font-size": "" });
-            if (document.all) {
-                document.body.style.removeProperty('font-size');
-            } else {
-                document.body.style.removeAttribute('font-size');
-            }
+            ////$("*").css({ "font-size": "" });
+            ////$(document).css({ "font-size": "" });
+            //if (document.all) {
+            //    document.body.style.removeProperty('font-size');
+            //} else {
+            //    document.body.style.removeAttribute('font-size');
+            //}
+
             
             function calcularAltoArticulo() {
                 var heightMen = 0;
@@ -39,8 +40,8 @@
                 heightMen -= $('.h1').height();
                 heightMen -= $('#divBanner').height();
 
-                heightArt = ($("#divFooter").position().top) + (heightMen);
-                $("#divArticulo").height(heightArt);
+                ////heightArt = ($("#divFooter").position().top) + (heightMen);
+                ////$("#divArticulo").height(heightArt);
             }
             calcularAltorC2();
             function calcularAltorC2() {
@@ -50,42 +51,57 @@
     </script>
 
     <style>
-        #divColumna1 #divBanner img {
+      /*  #divColumna1 #divBanner img {
             width: 700px;
             height: 250px;
             -webkit-box-shadow: 12px 6px 49px -3px rgba(0,0,0,0.75);
             -moz-box-shadow: 12px 6px 49px -3px rgba(0,0,0,0.75);
             box-shadow: 12px 6px 49px -3px rgba(0,0,0,0.75);
-        }
-        *{
+        }*/
+/*        *{
             font-size:inherit;
-        }
+        }*/
         #divColumna2, #divFooter, #dialog-confirm, #divHeader{
             font-size:12px;
         }
     </style>
     <%--<script type="text/javascript" src="http://counter5.statcounterfree.com/private/counter.js?c=00c48f5cc61861bbd35c1c5294116ad3"></script>--%>
 
-    <div id="divWrapContenido">
-        <div id="divColumna1">
-            <div id="divTitulo">
-                <label class="h1">
-                    <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="titulo"></asp:Label>
-                    
-                    </label>
-                </div>
-            <br/>
-            <br/>
-            <div id="divArticulo">
-                <asp:Label ID="lblArticulo" runat="server" Text="" CssClass="articulo"></asp:Label>
-                
-                </div>
-            <div id="divBanner">
-                <asp:Label ID="lblBanner" runat="server" Text=""></asp:Label>
+<%--    <div id="divWrapContenido">--%>
+            <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+        <div class="row">
+        <div class="col-lg-9">
+            <div class="card">
+                <div class="card-body" style="min-height:50%;">
+                    <h4 class="card-title"></h4>
+                    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
+                    <div <%--id="divColumna1"--%>>
+                        <div id="divTitulo">
+                            <label class="display-3">
+                                <asp:Label ID="lblTitulo" runat="server" Text="" CssClass="titulo"></asp:Label>
+
+                            </label>
+                        </div>
+                       <%-- <br />
+                        <br />--%>
+                        <div id="divArticulo">
+                        <asp:Label ID="lblArticulo" runat="server" Text="" CssClass="articulo" Style="font-size: 20px;"></asp:Label><%--MODIFY SF RSG 02.2023 V2.0--%>
+                    </div>
+                        <div id="divBanner">
+                            <asp:Label ID="lblBanner" runat="server" Text=""></asp:Label>
+                        </div>
+                    </div>
+            <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                    <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
-        <div id="divColumna2">
+        <div <%--id="divColumna2--%>">
             <div id="divNav1">
                 
                 </div>
@@ -157,6 +173,9 @@
                         </p>
                     </div>--%>
                 </div>
+        </div>
+                </div>
             </div>
+        </div>
         </div>
 </asp:Content>

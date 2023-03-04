@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using PEntidades;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace PNegocio
 {
@@ -44,24 +45,32 @@ namespace PNegocio
         public string convertListPAbiertasToTableInCode(List<PAbiertasYPago> lstPAbiertas, int index, string cont,string idTabla) // [index para ubicar la fila a la que se le aplicara el estilo de muestra],[cont decide el modo de expandir; si es "n" es solo a una fila y va a expandir, si es "yes" es solo a una fila y va a contraer, si es et expande todo, si es ct contrae todo, en este caso los index son negativos para que no afecte a ninguna fila en especial]
         {
             string html = "";
-            html += "<table class='tblComun' id='" + idTabla + "'>"; // tableToOrder para filtrar
+            html += "<table class='tblComun' id='" + idTabla + "'>"; // tableToOrder para filtrar   //DELETE SF RSG 02.2023 v2.0
+            html += "<div class='table-responsive'> <table class='table table-striped table-bordered dataTable no-footer' id='" + idTabla + "'>"; // tableToOrder para filtrar     //ADD SF RSG 02.2023 v2.0
             html += "   <thead>" +
                         "       <tr>" +
+                        "         <th class='icono' style='display:none;'></th>" +  //ADD SF RSG 02.2023 v2.0
                         "         <th>Clearing Document</th>" +
                         "         <th>Nº documento</th>" +
-                        "         <th>Tipo de documento</th>" +
-                        "         <th>Fecha de pago</th>" +
+                        //"         <th>Tipo de documento</th>" +
+                        "         <th>Clase</th>" +
+                        //"         <th>Fecha de pago</th>" +
+                        "         <th>Fecha</th>" +
                         "         <th>Monto</th>" +
                         "         <th>Moneda</th>" +
                         "         <th>Nº asignacion</th>" +
 
                         "         <th>Factura</th>" +
+                        "         <th class='icono'>Est</th>" +     //ADD SF RSG 02.2023 v2.0
                         "         <th>Cuenta</th>" +
                         "         <th>Proveedor</th>" +
-                        "         <th>Texto</th>" +
-                        "         <th>Doc. Compras</th>" +
+                        "         <th>Texto</th>" +    //MODIFY SF RSG 02.2023 v2.0
+                        "         <th style='display:none;'>Doc. Compras</th>" +    //MODIFY SF RSG 02.2023 v2.0
 
                         "         <th class='icono'></th>" +
+                        "         <th style='display:none;'></th>" +     //ADD SF RSG 02.2023 v2.0
+                        "         <th style='display:none;'></th>" +     //ADD SF RSG 02.2023 v2.0
+                        "         <th style='display:none;'></th>" +     //ADD SF RSG 02.2023 v2.0
                         "       </tr>" +
                         "   </thead>";
             html += "   <tbody>";
@@ -94,6 +103,7 @@ namespace PNegocio
                 {
                     clase = "kz";
                 }
+
                 if (lstPAbiertas[i].BLART1 == "KZ" || lstPAbiertas[i].BLART1 == "ZT" ) //#F5DA81
                 {
                     
@@ -107,24 +117,49 @@ namespace PNegocio
                     }
 
                     //html += "<div id='contenedorPagos'>"; // para dividir cada KZ con sus respectivos RE
-                    html += "<tr class='" + clase + "' " + ((clase=="kz") ? "" : "") + ">" + // clase para agregar el color correspondiente
+                    html += "<tr class='" + clase + "' " + ((clase == "kz") ? "" : "") + ">" + // clase para agregar el color correspondiente
+                               "    <td style='display:none;'></td>" +            //ADD SF RSG 02.2023 v2.0
                                "    <td>" + lstPAbiertas[i].AUGBL1 + "</td>" +
                                "    <td>" + lstPAbiertas[i].BELNR1 + "</td>" +
                                "    <td>" + lstPAbiertas[i].BLART1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
-                               "    <td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
+                               "    <td>" + lstPAbiertas[i].BLDAT1 + "</td>";
+                    if (lstPAbiertas[i].DMSHB1 < 0)
+                        html += "   <td class='columna-numerica text-danger'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
+                    else
+                        html += "   <td class='columna-numerica'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
+                    html +=    "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
                                "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
+                               "    <td>" + lstPAbiertas[i].XBLNR + "</td>";
+                    if (lstPAbiertas[i].ZCOUNT <= 0)            //ADD SF RSG 02.2023 v2.0
+                        html += "   <td><div class='btnCargarAux btnCargar fl_verde' onclick='datosTabla(this);'></div></td>";
+                    else
+                        html += "   <td><div class='desadjuntarXML' title='Desadjuntar archivos' msm='' onclick='desadjuntarCP(" + lstPAbiertas[i].BELNR1 + ", \" " + lstPAbiertas[i].UUID.Trim() + "\")'></div></td>"; ;
 
-                               "    <td>" + lstPAbiertas[i].KONTO + "</td>" +
+                    html +=    "    <td>" + lstPAbiertas[i].KONTO + "</td>" +
                                "    <td>" + lstPAbiertas[i].NAME1 + "</td>" +
                                "    <td>" + lstPAbiertas[i].SGTXT + "</td>" +
-                               "    <td>" + lstPAbiertas[i].EBELN + "</td>" +
+                               "    <td style='display:none;'>" + lstPAbiertas[i].EBELN + "</td>" +
 
 
                                "    <td class='icono nonecolor'>" + link + contenido + endlink + "</td>" + // contenido solo es para agregar el icono correspondiente
+                               "    <td class='GJAHR' style='display:none;'>" + lstPAbiertas[i].GJAHR + "</td>" + //ADD SF RSG 02.2023 v2.0
+                               "    <td class='BUKRS' style='display:none;'>" + lstPAbiertas[i].BUKRS + "</td>" + //ADD SF RSG 02.2023 v2.0
+                               "    <td class='UUID' style='display:none;'>" + lstPAbiertas[i].UUID + "</td>" +   //ADD SF RSG 02.2023 v2.0
                                "</tr>";
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     if (lstPAbiertas[i].indice == index || cont == "et") // en caso de que sea el index a expandir o que la se reciba la peticion de expandir todo
                     {
                         i++;
@@ -139,34 +174,42 @@ namespace PNegocio
                                    "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
+                                    "   <td></td>" +            //ADD SF RSG 02.2023 v2.0
 
                                    "    <td>" + lstPAbiertas[i].KONTO + "</td>" +
                                    "    <td>" + lstPAbiertas[i].NAME1 + "</td>" +
-                                   "    <td>" + lstPAbiertas[i].SGTXT + "</td>" +
-                                   "    <td>" + lstPAbiertas[i].EBELN + "</td>" +
+                                   "    <td style='display:none;'>" + lstPAbiertas[i].SGTXT + "</td>" +           //MODIFY SF RSG 02.2023 v2.0
+                                   "    <td style='display:none;'>" + lstPAbiertas[i].EBELN + "</td>" +           //MODIFY SF RSG 02.2023 v2.0
 
                                    "    <td style='background:#FFFFFF;'></td>" +
+                                   "    <td class='GJAHR' style='display:none;'>" + lstPAbiertas[i].GJAHR + "</td>" +            //ADD SF RSG 02.2023 v2.0
+                                   "    <td class='BUKRS' style='display:none;'>" + lstPAbiertas[i].BUKRS + "</td>" +            //ADD SF RSG 02.2023 v2.0
+                                   "    <td class='UUID' style='display:none;'>" + lstPAbiertas[i].UUID + "</td>" +              //ADD SF RSG 02.2023 v2.0
                                    "</tr>";
                             i++;
                         }
                         i--;
                         //html += "</div>"; // cierra contenedorPagos
                     }
-                    else {
+                    else 
+                    {
                         //html += "</div>";  // cierra contenedorPagos
                     }
 
                 }
             }
             html += "   </tbody>" +
-                        "</table>";
+                        "</table>" +
+                        "</div>";            //ADD SF RSG 02.2023 v2.0
             return html;
         }
 
         public string convertListPAbiertasToTableInCodeFacturas(List<PAbiertasYPago> lstPAbiertas)
         {
             string html = "";
-            html += "<table class='tblComun sortTable' id='tableToOrder'>";
+            //html += "<table class='tblComun sortTable' id='tableToOrder'>";               //DELETE SF RSG 02.2023 v2.0
+            html += "<table class='table table-striped table-bordered' id='tableToOrder'>"; //ADD SF RSG 02.2023 v2.0
+            
             html += "   <thead>" +
                         "       <tr>" +
                         //"         <th class='" + "tHide" + "'>hide</th>" +
@@ -194,25 +237,32 @@ namespace PNegocio
                 html += "<tr>" +
                                "    <td>" + lstPAbiertas[i].AUGBL1 + "</td>" +
                                "    <td>" + lstPAbiertas[i].BELNR1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].BLART1 + "</td>" +
-                               //"    <td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
-                               "    <td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
+                               "    <td>" + lstPAbiertas[i].BLART1 + "</td>";
+                //"    <td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
+                if (lstPAbiertas[i].DMSHB1 < 0)
+                    html += "       <td class='columna-numerica text-danger'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
+                else
+                    html += "       <td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>";
+                    html +=    "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
+                                   "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
 
-                               "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
-                               "    <td>" + lstPAbiertas[i].NAME1 + "</td>" +
-                               "    <td>" + lstPAbiertas[i].EBELN + "</td>" +
-                               "    <td>" + lstPAbiertas[i].F_BASE + "</td>" +
-                               //"    <td>" + lstPAbiertas[i].F_VENCIM + "</td>" +
+                                   "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
+                                   "    <td>" + lstPAbiertas[i].NAME1 + "</td>" +
+                                   "    <td>" + lstPAbiertas[i].EBELN + "</td>" +
+                                   "    <td>" + lstPAbiertas[i].F_BASE + "</td>" +
+                                   //"    <td>" + lstPAbiertas[i].F_VENCIM + "</td>" +
 
-                               "</tr>"; 
+                                   "</tr>"; 
             }
             html += "   </tbody>" +
                         "</table>";
             return html;
         }
 
+        
+        
+        
+        
         public string convertListToTableInCode(List<FacturasXVerificar> listFact, string ordenarOrden)//Lista de facturas
         {
             List<PEntidades.HeaderList> nombres = new List<HeaderList>();
@@ -238,7 +288,8 @@ namespace PNegocio
             nombres.Add(head = new HeaderList("Adjuntos"));
 
             string codeBeginTable = "";
-            codeBeginTable += "<table class='tblComun tblFact sortTable tblGroup' id='tableToOrder'>";
+            //codeBeginTable += "<table class='tblComun tblFact sortTable tblGroup' id='tableToOrder'>";  //DELETE SF RSG 02.2023 v2.0
+            codeBeginTable += "<div class='table-responsive'><table class='tblFact sortTable tblGroup table table-striped table-bordered' id='tableToOrder'>";  //ADD SF RSG 02.2023 v2.0
 
             string codetableCreateHeader = "<thead><tr>";
             for (int i = 0; i < nombres.Count; i++)
@@ -717,7 +768,8 @@ namespace PNegocio
                     }
                 }
                 msn = msm;
-            }else
+            }
+            else
             {
                 if(msm.Contains("UUID") || msm.Contains("SAT") || msm.Contains("SAP"))//adjuntados anteriormente
                 {
@@ -798,6 +850,9 @@ namespace PNegocio
 
         }
 
-
+        public string formatCurrency(float input)
+        {
+            return input.ToString("C", CultureInfo.CurrentCulture);
+        }
     }
 }

@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proveedores {
-    
-    
-    public partial class MtrProveedor {
-        
+namespace Proveedores
+{
+
+
+    public partial class MtrProveedor
+    {
+
         /// <summary>
         /// Control head.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -29,16 +31,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// Control lblMenu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblMenu;
-        
+
         /// <summary>
         /// Control lblUsuario.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUsuario;
-        
+
         /// <summary>
         /// Control btnCerrarSesion.
         /// </summary>
@@ -56,7 +49,16 @@ namespace Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
-        
+
+        /// <summary>
+        /// Control lblMenu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblMenu;
+
         /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>

@@ -337,8 +337,8 @@ namespace Proveedores.portal
                         if (tipoArchivo == "XML")
                         {
 
-
-                            continuar = validarSAT(ref impRetencion);
+                            bool noValida = WebConfigurationManager.AppSettings["noValidaSat"].ToString().Equals("X"); //MODIFY SF RSG 02.2023 v2.0
+                            continuar = validarSAT(ref impRetencion, noValida); //MODIFY SF RSG 02.2023 v2.0
                         }
                         //else if (tipoArchivo == "PDF")
                         //{
@@ -371,22 +371,14 @@ namespace Proveedores.portal
                                     {
                                         int contadorres = 0;
                                         int indexInstanciaCorrespondiente = Gen.Util.CS.Gen.buscarIndexUbicacionInstanciaCorrres(listaDiferentesInstancias, listFact[int.Parse(indexs[i])].IDINSTANCIA);
-
-                                        //if (tipoArchivo == "PDF")
-                                        //{
+                                        //if (tipoArchivo == "PDF"){
                                         //    error = "2";
                                         //    listFact[int.Parse(indexs[i])].uuid = nombrePdf;
                                         //    listFact[int.Parse(indexs[i])].DescripcionErrorSAP = "SAP : Cargada correctamente";
                                         //    listFact[int.Parse(indexs[i])].DescripcionErrorSAT = "SAT : N/A";
                                         //}
-                                        if (inveref)
-                                        {
-                                            listFact[int.Parse(indexs[i])].DescripcionErrorSAP += " XML adjunto mediante FOLIO - SERIE";
-                                        }
-                                        else
-                                        {
-                                            listFact[int.Parse(indexs[i])].DescripcionErrorSAP += " XML adjunto mediante SERIE - FOLIO";
-                                        }
+                                        if (inveref) listFact[int.Parse(indexs[i])].DescripcionErrorSAP += " XML adjunto mediante FOLIO - SERIE";
+                                        else listFact[int.Parse(indexs[i])].DescripcionErrorSAP += " XML adjunto mediante SERIE - FOLIO";
                                         try
                                         {
                                             error = "3";
@@ -431,12 +423,7 @@ namespace Proveedores.portal
                                                 complementoMsgError += listFact[int.Parse(indexs[i])].DescripcionErrorSAP;
                                                 listFact[int.Parse(indexs[i])].cantidadXML = contadorres;
                                                 listFact[int.Parse(indexs[i])].consola = "Cargada correctamente";                                                
-                                            }
-                                            else
-                                            {
-                                                //listFact[int.Parse(indexs[i])].consola = "SAP: Error al guardar el " + tipoArchivo;
-                                                //complementoMsgError += "SAP: Error al guardar el " + tipoArchivo;
-                                                // SF EAHM 31 05 2017
+                                            }else{
                                                 complementoMsgError += "SAP: Error al guardar el " + tipoArchivo;
                                                 if (!String.IsNullOrEmpty(cf.error))
                                                 {
@@ -444,10 +431,8 @@ namespace Proveedores.portal
                                                     listFact[int.Parse(indexs[i])].DescripcionErrorSAP = "SAP: Error al guardar el " + tipoArchivo;
                                                 }
                                                 listFact[int.Parse(indexs[i])].ErrorMostrar = "N/A";
-
                                                 listFact[int.Parse(indexs[i])].consola = complementoMsgError;
                                             }
-
                                             complementoMsgError += "</br>";
                                             complementoMsgError += "</br>";
 
@@ -534,6 +519,10 @@ namespace Proveedores.portal
                                         listFact[int.Parse(indexs[i])].consola = listFact[int.Parse(indexs[i])].DescripcionErrorSAP;
                                     }
                                 }
+
+
+
+
                                 cargarDatosTabla();
                             }
                         }
@@ -570,13 +559,20 @@ namespace Proveedores.portal
                                 }
                             }
 
+                            
+                            
+                            
                             cargarDatosTabla();
                         }
 
                     }
                     catch (Exception ex)
                     {
+                        
+                        
+                        
                         this.lblConsola.Text = "Error al cargar el archivo" + " " + error + "" + ex;
+                        
                         //Response.Write("Error: " + ex.Message); //Nota: Exception.Message devuelve un mensaje detallado que describe la excepción actual. //Por motivos de seguridad, no se recomienda devolver Exception.Message a los usuarios finales de //entornos de producción. Sería más aconsejable poner un mensaje de error genérico. } } else { Response.Write("Seleccione un archivo que cargar."); 
                     }
                 }
@@ -601,8 +597,13 @@ namespace Proveedores.portal
                         listFact[int.Parse(indexs[i])].DescripcionErrorSAT = mesajeerr; //No es XML
                         listFact[int.Parse(indexs[i])].consola = mesajeerr; //No es XML
                     }
+                    
+                    
+                    
+                    
                     cargarDatosTabla();
                     //this.lblConsola.Text = "No es un XML";
+                    this.hidMessage.Value = "Error al cargar el archivo" + "(" + error + ")  " + mesajeerr;  // ADD SF RSG 02.2023 v2.0
                 }
 
             }
@@ -627,8 +628,13 @@ namespace Proveedores.portal
                     listFact[int.Parse(indexs[i])].DescripcionErrorSAT = mesajeerr; //No es XML
                     listFact[int.Parse(indexs[i])].consola = mesajeerr; //No es XML
                 }
+                
+                
+                
+          
                 cargarDatosTabla();
                 //this.lblConsola.Text = "No es un XML";
+                this.hidMessage.Value = "Error al cargar el archivo" + "(0)  " + mesajeerr;  // ADD SF RSG 02.2023 v2.0
             }
 
         }
@@ -656,10 +662,10 @@ namespace Proveedores.portal
 
         }
 
-        private bool validarSAT(ref string impRetencion)
+        private bool validarSAT(ref string impRetencion, bool nv) //MODIFY SF RSG 02.2023 v2.0
         {
             PNegocio.ConsultaCFDI c = new PNegocio.ConsultaCFDI();
-            string resul = c.esCorrectoCFDI(this.xmlDoc.InnerXml);
+            string resul = c.esCorrectoCFDI(this.xmlDoc.InnerXml, nv); //MODIFY SF RSG 02.2023 v2.0
 
             List<PEntidades.FacturasXVerificar> listFact = new List<PEntidades.FacturasXVerificar>();
             listFact = (List<PEntidades.FacturasXVerificar>)Session["lstFacturas2"];
@@ -681,19 +687,11 @@ namespace Proveedores.portal
             ndComplemento = xmlDoc.GetElementsByTagName("cfdi:Impuestos")[0];
             try
             {
-                impRetencion = ndComplemento.Attributes["totalImpuestosRetenidos"].Value;
+                impRetencion = ndComplemento.Attributes["TotalImpuestosRetenidos"].Value;
             }
             catch (Exception)
             {
-                try
-                {
-                    impRetencion = ndComplemento.Attributes["TotalImpuestosRetenidos"].Value;
-                }
-                catch (Exception)
-                {
                     impRetencion = "";
-                }
-                
             }
 
             for (int i = 0; i < indexs.Length; i++)
@@ -730,6 +728,10 @@ namespace Proveedores.portal
                 }
             }
 
+            
+            
+            
+            
             switch (resul.Trim())
             {
                 case "Vigente":

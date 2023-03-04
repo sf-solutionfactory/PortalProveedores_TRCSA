@@ -152,7 +152,7 @@ namespace Proveedores.portal
                         if (String.IsNullOrEmpty(mensaje))
                         {
                             string[] status = nFac.status;
-                            this.lblTabla.Text = "<br/><br/><br/><br/><h3>No se encontro ninguna factura pendiente, puede intentar cargar nuevamente</h3>";
+                            this.lblTabla.Text = "<br/><br/><br/><br/><h3>No se encontró ninguna factura pendiente, puede intentar cargar nuevamente.</h3>";
                             if (status.Length > 0)
                             {
                                 for (int i = 0; i < status.Length; i++)
@@ -162,7 +162,7 @@ namespace Proveedores.portal
                                         this.lblTabla.Text += "<br/><h3>" + status[i] + "</h3>";
                                     }
                                 }
-                                this.lblTabla.Text += "<br/><h3>" + "Se recomienda intentar utilizando los campos para selección especifica(Referencia, Moneda y Fecha)" + "</h3>";
+                                this.lblTabla.Text += "<br/><h3>" + "Se recomienda utilizar los campos para selección especifica(Referencia, Moneda y Fecha)" + "</h3>";
 
                             }
                             if (n_instancias <= 0)
@@ -174,6 +174,8 @@ namespace Proveedores.portal
                         {
                             this.lblTabla.Text = "<br/><br/><br/><br/><h3>Por el momento no se tiene acceso a las facturas porque están siendo tratadas por el administrador. </br> Actualice o intente más tarde.</h3>";
                         }
+
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showFiltros()", true); //ADD SF RSG 02.2023 V2.0  
                     }
                 }
                 catch (Exception)
@@ -183,7 +185,7 @@ namespace Proveedores.portal
             }
             catch (Exception)
             {
-                this.lblTabla.Text = "<h3>Ocurrio un error al obtener los datos<h3>";
+                this.lblTabla.Text = "<h3>Ocurrió un error al obtener los datos<h3>";
             }
         }
         [WebMethod]

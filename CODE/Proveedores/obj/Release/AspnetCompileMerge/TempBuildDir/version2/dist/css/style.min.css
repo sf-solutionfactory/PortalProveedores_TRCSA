@@ -6310,7 +6310,7 @@ template {
 }
 
 .h1, h1 {
-    font-size: 2.25rem
+    /* font-size: 2.25rem; */
 }
 
 .h2, h2 {
@@ -7444,7 +7444,7 @@ pre {
 }
 
     .table td, .table th {
-        padding: 1rem;
+        padding: 0.5rem;
         vertical-align: top;
         border-top: 1px solid #e8eef3
     }
@@ -7712,7 +7712,7 @@ pre {
 .table-responsive {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     -webkit-overflow-scrolling: touch
 }
 
@@ -10124,7 +10124,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .card-footer, .card-header {
     padding: .75rem 25px;
-    background-color: rgba(0,0,0,.03)
+    background-color: rgba(0,0,0,.03);
 }
 
 .card-title {
@@ -13781,7 +13781,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .mb-2, .my-2 {
-    margin-bottom: .5rem !important
+    margin-bottom: .5rem !important;
 }
 
 .ml-2, .mx-2 {
@@ -13853,7 +13853,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .pt-0, .py-0 {
-    padding-top: 0 !important
+    padding-top: 0 !important;
 }
 
 .pr-0, .px-0 {
@@ -14843,7 +14843,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .text-center {
-    text-align: center !important
+    text-align: center !important;
 }
 
 @media (min-width:576px) {
@@ -15885,7 +15885,7 @@ a.text-purple:focus, a.text-purple:hover {
     background: #f9fbfd;
     position: relative;
     display: none;
-    box-shadow: 0 3px 9px 0 rgba(162,176,190,.15);
+    /* box-shadow: 0 3px 9px 0 rgba(162,176,190,.15); */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px
 }
@@ -16367,7 +16367,7 @@ a.text-purple:focus, a.text-purple:hover {
 }
 
 .sidebar-nav {
-    padding-top: 30px
+    padding-top: 30px;
 }
 
     .sidebar-nav #sidebarnav .list-divider {
