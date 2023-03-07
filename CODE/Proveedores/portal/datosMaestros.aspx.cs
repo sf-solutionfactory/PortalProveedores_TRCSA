@@ -221,7 +221,7 @@ namespace Proveedores
             input7.CssClass = "form-control";
             input7.ID = "input7";
             input7.Enabled = false;
-            input7.Text = "";
+            input7.Text = objProveedor.ADDR1_DATA;
             form7.Controls.Add(label7);
             form7.Controls.Add(input7);
             panelInterno.Controls.Add(form7);

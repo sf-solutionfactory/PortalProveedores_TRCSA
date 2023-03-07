@@ -204,7 +204,7 @@
                 </div>
                 <div class="row">
                 <div class="col-sm-12">
-                    <div class="table-responsive1">
+                    <div class="table-responsive1" style="overflow-x:auto;">
                         <asp:Label ID="lblTabla" runat="server"></asp:Label>
                     </div>
                     </div>

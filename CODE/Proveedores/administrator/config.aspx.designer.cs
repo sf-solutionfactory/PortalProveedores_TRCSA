@@ -312,15 +312,6 @@ namespace Proveedores.administrator
         protected global::System.Web.UI.WebControls.Label lblInfoGuardar;
 
         /// <summary>
-        /// Control btnEnviarConfig.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviarConfig;
-
-        /// <summary>
         /// Control lblAdvertencia.
         /// </summary>
         /// <remarks>
@@ -355,6 +346,15 @@ namespace Proveedores.administrator
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVernterior;
+
+        /// <summary>
+        /// Control btnEnviarConfig.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnviarConfig;
 
         /// <summary>
         /// Control btnRecuperarAnterior.

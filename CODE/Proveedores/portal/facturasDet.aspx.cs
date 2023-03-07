@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -100,158 +101,400 @@ namespace Proveedores.portal
             {
 
                 int iddetalle = int.Parse(indexs[0]) - 1;
-                
-                
+
+                tablas += "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel' data-interval='false'>";
+                tablas += "  <ol class='carousel-indicators'>";
                 for (int i = 0; i < indexs.Length; i++)
                 {
-                    //listFact[int.Parse(indexs[i])].consola = "";
-                    tablas += "<table class='tblCV' " + clase + ">";
-                    tablas += "<tbody>";
-
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    if (i == 0)
+                        tablas += "   <li data-target='#carouselExampleIndicators' data-slide-to='" + i + "' class='active'></li>";
+                    else
+                        tablas += "   <li data-target='#carouselExampleIndicators' data-slide-to='" + i + "'></li>";
+                }
+                tablas += " </ol>";
+                tablas += "<div class='carousel-inner'>";
+                for (int i = 0; i < indexs.Length; i++)
+                {
+                    if (i == 0)
+                        tablas += "  <div class='carousel-item active'>";
+                    else
+                        tablas += "   <div class='carousel-item'>";
+                    tablas += "<div class='form-group'><label>";
                     tablas += "Referencia";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[iddetalle].XBLNR2;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='form-group'><label>";
                     tablas += "Proveedor";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].LIFNR;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='row'>";
+
+                    tablas += "<div class='form-group col'><label>";
                     tablas += "Sociedad";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].BUKRS;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='form-group col'><label>";
                     tablas += "Centro";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].WERKS;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "</div>";
+                    tablas += "<div class='row'>";
+
+                    tablas += "<div class='form-group col'><label>";
                     tablas += "Fecha MIGO/BASE";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].BUDAT;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='form-group col'><label>";
                     tablas += "Fecha del documento";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].BLDAT;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "</div>";
+                    tablas += "<div class='row'>";
+
+                    tablas += "<div class='form-group col col-lg-8'><label>";
                     tablas += "Importe";
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += listFact[int.Parse(indexs[i])].WRBTR;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].WRBTR);
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    tablas += "Importe IVA";
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += listFact[int.Parse(indexs[i])].IVA;
-                    tablas += "</td>";
-                    tablas += "</tr>";
-
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    tablas += "IVA";
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += listFact[int.Parse(indexs[i])].MWSKZ;
-                    tablas += "</td>";
-                    tablas += "</tr>";
-
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    tablas += "Retención";
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += listFact[int.Parse(indexs[i])].RETENCION;
-                    tablas += "</td>";
-                    tablas += "</tr>";
-
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='form-group col col-lg-4'><label>";
                     tablas += "Moneda";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].WAERS;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    tablas += "Factura Elec.";
-                    tablas += "</td>";
-                    tablas += "<td>";
+                    tablas += "</div>";
+                    tablas += "<div class='row'>";
+
+                    tablas += "<div class='form-group col col-lg-4'><label>";
+                    tablas += "Importe IVA";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].IVA);
+                    tablas += "'></div>";
+
+                    tablas += "<div class='form-group col col-lg-4'><label>";
+                    tablas += "IVA";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    tablas += listFact[int.Parse(indexs[i])].MWSKZ;
+                    tablas += "'></div>";
+
+                    tablas += "<div class='form-group col col-lg-4'><label>";
+                    tablas += "Retención";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].RETENCION);
+                    tablas += "'></div>";
+
+                    tablas += "</div>";
+
+                    tablas += "<div class='form-group'><label>";
+                    tablas += "Factura electrónica";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].ELECT;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
+                    tablas += "<div class='row'>";
+
+                    tablas += "<div class='form-group col-lg-8'><label>";
                     tablas += "Saldo";
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += listFact[int.Parse(indexs[i])].SALDO;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].SALDO);
+                    tablas += "'></div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    tablas += "XML adjuntos";
-                    tablas += "</td>";
-                    tablas += "<td class='contadorXML'>";
+                    tablas += "<div class='form-group col-lg-4'><label>";
+                    tablas += "XML Adjuntos";
+                    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                     tablas += listFact[int.Parse(indexs[i])].cantidadXML;
-                    tablas += "</td>";
-                    tablas += "</tr>";
+                    tablas += "'></div>";
+                    tablas += "</div>";
+                    tablas += "<br/>";
+                    tablas += "<br/>";
+                    tablas += "   </div>";
+                }
+                tablas += "</div>";
+                tablas += "<a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>";
+                tablas += "  <span class='carousel-control-prev-icon' aria-hidden='true'></span>";
+                tablas += "  <span class='sr-only'>Previous</span>";
+                tablas += "</a>";
+                tablas += "<a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>";
+                tablas += "  <span class='carousel-control-next-icon' aria-hidden='true'></span>";
+                tablas += "  <span class='sr-only'>Next</span>";
+                tablas += "</a>";
+                tablas += "</div>";
 
-                    tablas += "<tr>";
-                    tablas += "<td>";
-                    
+                for (int i = 0; i < indexs.Length; i++)
+                {
+
+                    //    //listFact[int.Parse(indexs[i])].consola = "";
+                    //    tablas += "<table class='tblCV' " + clase + ">";
+                    //    tablas += "<tbody>";
+                    //    tablas += "<tr><td style='width:100%;' colspan='2'>";
+
+                    //    tablas += "<div class='form-group'><label>";
+                    //    tablas += "Referencia";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[iddetalle].XBLNR2;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group'><label>";
+                    //    tablas += "Proveedor";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].LIFNR;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='row'>";
+
+                    //    tablas += "<div class='form-group col'><label>";
+                    //    tablas += "Sociedad";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].BUKRS;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col'><label>";
+                    //    tablas += "Centro";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].WERKS;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "</div>";
+                    //    tablas += "<div class='row'>";
+
+                    //    tablas += "<div class='form-group col'><label>";
+                    //    tablas += "Fecha MIGO/BASE";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].BUDAT;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col'><label>";
+                    //    tablas += "Fecha del documento";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].BLDAT;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "</div>";
+                    //    tablas += "<div class='row'>";
+
+                    //    tablas += "<div class='form-group col col-lg-8'><label>";
+                    //    tablas += "Importe";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += formatCurrency(listFact[int.Parse(indexs[i])].WRBTR);
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col col-lg-4'><label>";
+                    //    tablas += "Moneda";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].WAERS;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "</div>";
+                    //    tablas += "<div class='row'>";
+
+                    //    tablas += "<div class='form-group col col-lg-4'><label>";
+                    //    tablas += "Importe IVA";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += formatCurrency(listFact[int.Parse(indexs[i])].IVA);
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col col-lg-4'><label>";
+                    //    tablas += "IVA";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].MWSKZ;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col col-lg-4'><label>";
+                    //    tablas += "Retención";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += formatCurrency(listFact[int.Parse(indexs[i])].RETENCION);
+                    //    tablas += "'></div>";
+
+                    //    tablas += "</div>";
+
+                    //    tablas += "<div class='form-group'><label>";
+                    //    tablas += "Factura electrónica";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].ELECT;
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='row'>";
+
+                    //    tablas += "<div class='form-group col-lg-8'><label>";
+                    //    tablas += "Saldo";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += formatCurrency(listFact[int.Parse(indexs[i])].SALDO);
+                    //    tablas += "'></div>";
+
+                    //    tablas += "<div class='form-group col-lg-4'><label>";
+                    //    tablas += "XML Adjuntos";
+                    //    tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                    //    tablas += listFact[int.Parse(indexs[i])].cantidadXML;
+                    //    tablas += "'></div>";
+                    //    tablas += "</div>";
+
+                    //    tablas += "</td></tr>";
+                    //    tablas += "<tr>";
+                    //    tablas += "<td style='width:50%;text-align:left'>";
+                    //    tablas += "<i class='fa-solid fa-arrow-left imgBack pointer' align='left' style='font-size:3rem'></i>";
+                    //    tablas += "</td>";
+                    //    tablas += "<td style='width:50%;text-align:right'>";
+                    //    tablas += "<i class='fa-solid fa-arrow-right imgNext pointer' align='right' style='font-size:3rem'></i>";
+                    //    tablas += "</td></tr>";
+
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Referencia";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[iddetalle].XBLNR2;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Proveedor";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].LIFNR;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Sociedad";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].BUKRS;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Centro";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].WERKS;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Fecha MIGO/BASE";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].BUDAT;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Fecha del documento";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].BLDAT;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Importe";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].WRBTR;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Importe IVA";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].IVA;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "IVA";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].MWSKZ;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Retención";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].RETENCION;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Moneda";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].WAERS;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Factura Elec.";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].ELECT;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "Saldo";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].SALDO;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
+                    //    //tablas += "XML adjuntos";
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td class='contadorXML'>";
+                    //    //tablas += listFact[int.Parse(indexs[i])].cantidadXML;
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    //tablas += "<tr>";
+                    //    //tablas += "<td>";
 
 
 
-                    tablas += "";
-                    
-                    
-                  
-                    tablas += "</td>";
-                    tablas += "<td>";
-                    tablas += "<img src='../css/images/fl_back.png' class='imgBack pointer' align='left'><img src='../css/images/fl_next.png' class='imgNext pointer' align='right'>";
-                    tablas += "</td>";
-                    tablas += "</tr>";
 
-                    tablas += "</tbody>";
-                    tablas += "</table>";
+                    //    //tablas += "";
+
+
+
+                    //    //tablas += "</td>";
+                    //    //tablas += "<td style='width:100%;'>";
+                    //    //tablas += "<img src='../css/images/fl_back.png' class='imgBack pointer' align='left'><img src='../css/images/fl_next.png' class='imgNext pointer' align='right'>";
+                    //    //tablas += "</td>";
+                    //    //tablas += "</tr>";
+
+                    //    tablas += "</tbody>";
+                    //    tablas += "</table>";
 
                     consolas += "<label class='consola " + clase + "'>" + listFact[int.Parse(indexs[i])].consola + "</label> ";
 
@@ -1127,6 +1370,16 @@ namespace Proveedores.portal
         protected void btnLLenarTbs_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public string formatCurrency(float input)
+        {
+            return input.ToString("C", CultureInfo.CurrentCulture);
+        }
+        public string formatCurrency(string input)
+        {
+            float temp = float.Parse(input);
+            return temp.ToString("C", CultureInfo.CurrentCulture);
         }
     }
 }

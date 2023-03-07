@@ -261,7 +261,7 @@
             height:63px;
         }
         .form-control {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
         }
 
 

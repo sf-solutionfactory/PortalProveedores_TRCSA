@@ -63,11 +63,11 @@
 
 /*      INICIO      Tabla Campo-valor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .tblCV{
-    width: 100%;
+    /* width: 100%; */
     /*height: 100%;*/
-    border-collapse: collapse;
-    border:3px solid #0B2161;
-    border-bottom: none;
+    /* border-collapse: collapse; */
+    /* border:3px solid #0B2161; */
+    /* border-bottom: none; */
 }
 
     .tblCV-ValImpar{
@@ -75,31 +75,31 @@
     }
 .tblCV-ValPar {
     /*background: #B3B3B3;*/ /*DELETE SF RSG 02.2023 V2.0*/
-    background: #dceffb; /*ADD SF RSG 02.2023 V2.0*/
+    /*background: #dceffb;*/ /*ADD SF RSG 02.2023 V2.0*/
 }
 .tblCV-CamImparE {  /*ADD SF RSG 02.2023 V2.0*/
     /*background: #C82B40;*/
-    background: #013a5d;
-    color: #FFFFFF;
+/*    background: #013a5d;
+    color: #FFFFFF;*/
 }
     .tblCV-CamImpar{
         /*background: #C82B40;*/
-        background: #0B2161;
-        color: #FFFFFF;
+        /* background: #0B2161; */
+        /* color: #FFFFFF; */
     }
     .tblCV-CamPar{
         /*background: #D66070;*/
-        color: #000000;
+        /*color: #000000;*/
         /*background: #81BEF7;*/
-        background: #FFFFFF;
+        /*background: #FFFFFF;*/
         
     }
     
     .tblCV tr td:first-child{
         /*color: #FFFFFF;*/
-        font-weight: bold;
-        padding: 3px;
-        text-align: right;
+        /* font-weight: bold; */
+        /* padding: 3px; */
+        /* text-align: right; */
     }
 /*      FIN     Tabla Campo-valor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -116,8 +116,9 @@
 
 
 .kz {
-    background:red;
-    border:5px solid red;
+    /*background:red;
+    border:5px solid red;*/
+    border:5px solid limegreen;
 }
 
 .kz td {

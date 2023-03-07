@@ -84,7 +84,7 @@
 <%--                <br />
                 <br />--%>
                 <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12" style="overflow-x:auto;">
                     <div class="table-responsive1">
                         <asp:Label ID="lblTabla" runat="server"></asp:Label>
                     </div>

@@ -193,8 +193,8 @@
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
             <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
             <asp:BoundField DataField="Validaciones" HeaderText="Validaciones" ReadOnly="True" SortExpression="Validaciones" />
-            <asp:CommandField AccessibleHeaderText="Editar" ButtonType="Button" EditText="Editar" ShowEditButton="True">
-            <ControlStyle CssClass="btn btn-success" />  <%-- MODIFY SF RSG 02.2023 V2.0--%>
+            <asp:CommandField AccessibleHeaderText="Editar" ButtonType="Link" EditText="" ShowEditButton="True">
+            <ControlStyle CssClass="btn btn-success fa-solid fa-pen-to-square" />  <%-- MODIFY SF RSG 02.2023 V2.0--%>
             <HeaderStyle CssClass="icono" />
             </asp:CommandField>
         </Columns>

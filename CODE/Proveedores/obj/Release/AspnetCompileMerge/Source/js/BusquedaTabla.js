@@ -159,7 +159,7 @@ function ocultaTablas(valor, posicion) {
         }
         else 
         {
-            $("." + valor ).eq(i).hide();
+            $("." + valor ).eq(i).hide(1000);
         }
 
         }   

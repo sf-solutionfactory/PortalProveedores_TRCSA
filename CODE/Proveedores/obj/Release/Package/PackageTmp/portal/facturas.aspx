@@ -464,8 +464,9 @@
 <%--        <br/>--%>
         <img id="imgLoaging" src="../images/loadingDots.gif" />
 <%--        <br/>--%>
-
+                <div style="overflow-x:auto;">
     <asp:Label ID="lblTabla" runat="server"></asp:Label>
+                    </div>
         <%--<asp:Button ID="btnActualiza" CssClass="ico-actualizar" runat="server" Text="" />--%>
    <%-- <br/>--%>
             <asp:Button ID="btnActualiza" CssClass="btn btn-success ico-actualiza" runat="server" Text="Limpiar tabla" />

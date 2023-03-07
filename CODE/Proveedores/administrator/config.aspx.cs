@@ -85,7 +85,7 @@ namespace Proveedores.administrator
             {
                 datosCOnfiguracion = PNegocio.Administrador.Configuracion.consultarConfiguracion("anterior");
                 this.lblVernterior.Visible = false;
-                this.lblAdvertencia.Text = "Esto solo es una visualización de los datos anteriores, si presiona el botón se restablecerá la configuración completa tomando en cuenta las credenciales utilizadas ";
+                this.lblAdvertencia.Text = "Esto solo es una visualización de los datos anteriores, si presiona el botón se restablecerá la configuración completa tomando en cuenta las credenciales utilizadas";
                 this.lblInfoGuardar.Text = "Puede realizar cambios sobre los datos cargados y guardar:  ";
                 this.lblLeyendaConfigAnterior.Visible = false;
                 this.lblLeyendaConfigAnterior2.Visible = true;
@@ -98,7 +98,7 @@ namespace Proveedores.administrator
                 {
                     datosCOnfiguracion = PNegocio.Administrador.Configuracion.consultarConfiguracion("activo");
                     //this.lblAdvertencia.Text = "";
-                    this.lblVernterior.Text = "Ver anterior";
+                    this.lblVernterior.Text = "Ver configuración anterior";
                     this.lblLeyendaConfigAnterior2.Visible = false;
                     this.lblLeyendaConfigAnterior.Visible = true;
                     this.btnRecuperarAnterior.Visible = false;

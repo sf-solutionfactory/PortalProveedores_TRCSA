@@ -7103,7 +7103,7 @@ pre {
 
     .col-lg-4 {
         flex: 0 0 33.33333%;
-        max-width: 33.33333%
+        max-width: 33.33333%;
     }
 
     .col-lg-5 {
@@ -7835,7 +7835,7 @@ select.form-control[multiple], select.form-control[size], textarea.form-control 
 }
 
 .form-group {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .form-text {
@@ -11801,7 +11801,7 @@ a.close.disabled {
 
 .carousel-inner {
     width: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
 
     .carousel-inner::after {
@@ -11868,7 +11868,7 @@ a.close.disabled {
     align-items: center;
     justify-content: center;
     width: 15%;
-    color: #fff;
+    color: #212529;
     text-align: center;
     opacity: .5;
     transition: opacity .15s ease
@@ -11938,7 +11938,7 @@ a.close.disabled {
     margin-left: 3px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #212529;
     background-clip: padding-box;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
@@ -11957,7 +11957,7 @@ a.close.disabled {
 }
 
 .carousel-indicators .active {
-    opacity: 1
+    opacity: 10;
 }
 
 .carousel-caption {

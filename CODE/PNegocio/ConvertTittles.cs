@@ -348,13 +348,13 @@ namespace PNegocio
                                       "<td>" + listFact[i].WERKS + "</td>" +
                                       "<td class='columna-numerica'>" + listFact[i].BUDAT + "</td>" +
                                       "<td class='columna-numerica'>" + listFact[i].BLDAT + "</td>" +
-                                      "<td class='columna-numerica'>" + listFact[i].WRBTR + "</td>" +
+                                      "<td class='columna-numerica'>" + formatCurrency(listFact[i].WRBTR) + "</td>" +
                                       "<td class='columna-numerica'>" + listFact[i].descMaterial + "</td>" +
                                       "<td class='columna-numerica'>" + listFact[i].MATNR + "</td>" +
                                       //"<td class='columna-numerica'>" + listFact[i].MWSKZ + "</td>" +
                                       //"<td class='columna-numerica'>" + listFact[i].RETENCION + "</td>" +
                                       "<td >" + listFact[i].WAERS + "</td>" +
-                                      "<td class='columna-numerica'>" + listFact[i].SALDO + "</td>" +
+                                      "<td class='columna-numerica'>" + formatCurrency(listFact[i].SALDO) + "</td>" +
                                       "<td class='columna-numerica'>" + cantidadXML + "</td>";
                     listFact[i].DescripcionErrorSAT = listFact[i].DescripcionErrorSAT.ToUpper().Trim();
                     listFact[i].DescripcionErrorSAP = listFact[i].DescripcionErrorSAP.ToUpper().Trim();
@@ -853,6 +853,11 @@ namespace PNegocio
         public string formatCurrency(float input)
         {
             return input.ToString("C", CultureInfo.CurrentCulture);
+        }
+        public string formatCurrency(string input)
+        {
+            float temp = float.Parse(input);
+            return temp.ToString("C", CultureInfo.CurrentCulture);
         }
     }
 }

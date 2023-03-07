@@ -6,8 +6,7 @@
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
 <div class="col-md-12 col-lg-6">
 <div class="col-md-12 col-lg-12"><div class="card">
-    <div class="card-body">
-            <h4 class="card-title"></h4>     
+    <div class="card-body"> 
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel1" runat="server" GroupingText="Configuración global">
         <%--<script src="../js/validarNotNull.js"></script>--%>
@@ -128,7 +127,7 @@
         <fieldset class="form-group">
             <div class="row">
                 <legend class="col-form-label col-sm-3 pt-0">Estatus del portal</legend>
-                <asp:RadioButtonList ID="rdbPortal" runat="server">
+                <asp:RadioButtonList ID="rdbPortal" runat="server" style="margin-left:5%;">
                     <asp:ListItem Selected="True">Activado</asp:ListItem>
                     <asp:ListItem>Desactivado</asp:ListItem>
                 </asp:RadioButtonList>
@@ -184,7 +183,6 @@
     </div>
     <div class="col-md-12 col-lg-12"><div class="card">
             <div class="card-body">
-                <h4 class="card-title"></h4>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel2" runat="server" GroupingText="Correo">
         <%--<div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->--%>
@@ -380,8 +378,7 @@
     </div>
     <div class="col-md-12 col-lg-6">
     <div class="col-md-12 col-lg-12"><div class="card">
-        <div class="card-body">
-            <h4 class="card-title"></h4>  
+        <div class="card-body"> 
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel3" runat="server" GroupingText="Seguridad">
         <%--<div class="paraDiseno row"> <!--MODIFY SF RSG 02.2023 V2.0-->--%>
@@ -444,8 +441,7 @@
     </div>
     </div>
     <div class="col-md-12 col-lg-12"><div class="card">
-        <div class="card-body">
-            <h4 class="card-title"></h4>  
+        <div class="card-body">  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel6" runat="server" GroupingText="Contenido Password">
         <div class="form-group">
@@ -498,8 +494,7 @@
     </div>
     </div>
     <div class="col-md-12 col-lg-12"><div class="card">
-        <div class="card-body">
-            <h4 class="card-title"></h4>  
+        <div class="card-body"> 
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel5" runat="server" GroupingText="XML:">
         <div class="form-group">
@@ -521,16 +516,14 @@
     </div>
     </div>
     </div>
-    </div>
-<div class="col-md-12 col-lg-6">
     <div class="col-md-12 col-lg-12"><div class="card">
         <div class="card-body">
-            <h4 class="card-title"></h4>  
+            <%--<h1 class="card-title">Opciones</h1>--%>  
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel4" runat="server" GroupingText="Opciones:">
         
-    <br />
-    <br />
+    <%--<br />
+    <br />--%>
 
         <style>
             table.opciones.primerTd {
@@ -547,13 +540,22 @@
             }
 
             #ContentPlaceHolder1_dpdBloqSociedad {
-                height:12px;
-                min-height:25px;
+/*                height:12px;
+                min-height:25px;*/
             }
             
         </style>
-
-    <table class="opciones tblFm">
+        <strong>Seleccione:</strong><br />
+        <asp:Label ID="lblInfoGuardar" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblAdvertencia" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblLeyendaConfigAnterior" runat="server" Text="" Visible="false"></asp:Label>
+        <asp:Label ID="lblLeyendaConfigAnterior2" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="lblVernterior" runat="server" CssClass="btn btn-light" Text=""></asp:Label>
+        <asp:Button ID="btnEnviarConfig" runat="server" OnClick="btnEnviarConfig_Click" Text="Guardar" CssClass="btn btn-primary" />
+        <asp:Button ID="btnRecuperarAnterior" runat="server" CssClass="btn btn-danger" OnClick="btnRecuperarAnterior_Click" Text="Restablecer" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" CssClass="btn btn-light" />
+    <%--<table class="opciones tblFm">
         <thead>
             <tr>
                 <th>
@@ -574,7 +576,7 @@
                    <asp:Button ID="btnEnviarConfig" runat="server" OnClick="btnEnviarConfig_Click" Text="Guardar" CssClass="btn btn-primary" /> 
                </td>
             </tr>
-            <tr>
+<%--            <tr>
                 <td>
                     <asp:Label ID="lblAdvertencia" runat="server" Text=""></asp:Label>
                     <asp:Label ID="lblLeyendaConfigAnterior" runat="server" Text="Para ver la configuración anterior presione este botón "></asp:Label>
@@ -584,7 +586,6 @@
                     <br />
                     <asp:Label ID="lblVernterior" runat="server" CssClass="btn btn-light" Text=""></asp:Label>
                     <br />
-                    <br />  <%--ADD SF RSG 02.2023 V2.0--%>
                     <asp:Button ID="btnRecuperarAnterior" runat="server" CssClass="btn btn-danger" OnClick="btnRecuperarAnterior_Click" Text="Restablecer" />
                     <br/>
                     <br/>
@@ -593,10 +594,10 @@
             </tr>
             <tr>
                 <td></td>
-                <td class="segundoTd"><asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" CssClass="btn btn-light" /></td>
+                <%--<td class="segundoTd"><asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancelar" CssClass="btn btn-light" /></td>
             </tr>
         </tbody>
-    </table>
+    </table>--%>
 
     </asp:Panel>
 
@@ -604,7 +605,7 @@
     <%--BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
     </div>
     </div>
-    </div> 
+    </div>
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
 
     <asp:HiddenField ID="hidVerificar" runat="server" Value="si" />
