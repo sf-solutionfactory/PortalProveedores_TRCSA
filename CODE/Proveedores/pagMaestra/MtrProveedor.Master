@@ -76,6 +76,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" /> <!-- PARA MOSTRAR LA VENTANITA AL MOMENTO DE HACER UNA ACCIÓN -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script><!-- PARA MOSTRAR LA VENTANITA AL MOMENTO DE HACER UNA ACCIÓN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     
     <%-- scripts termina versión 2 --%>
     <%-- END   OF INSERT SF RSG 02.2023 V2.0 --%>
@@ -156,14 +158,22 @@
             //}
     <%-- BEGIN OF INSERT SF RSG 02.2023 V2.0 --%>
             if ($("#ContentPlaceHolder1_lblDialog").text() != null && $("#ContentPlaceHolder1_lblDialog").text() != "") {
-                swal({
+                //swal({
+                //    title: $("#ContentPlaceHolder1_lblDialog").text(),
+                //    text: '',
+                //    type: 'success',
+                //    timer: 2000,
+                //    showConfirmButton: true
+                //}, function () {
+                //});
+
+                Swal.fire({
                     title: $("#ContentPlaceHolder1_lblDialog").text(),
                     text: '',
-                    type: 'success',
-                    timer: 2000,
-                    showConfirmButton: true
-                }, function () {
-                });
+                    icon: 'success',
+                    confirmButtonColor: 'rgb(140, 212, 245)',
+                    confirmButtonText: 'OK'
+                })
             }
     <%-- END   OF INSERT SF RSG 02.2023 V2.0 --%>
         }

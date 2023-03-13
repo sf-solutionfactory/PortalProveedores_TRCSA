@@ -83,6 +83,7 @@
                     <asp:CheckBox ID="chkPagos" runat="server" Text="Pagos" CssClass="chk" name="chkVerificar"/><br />
                     <asp:CheckBox ID="chkDatosMaestros" Text="Datos maestros" CssClass="chk" runat="server" name="chkVerificar" /><br />
                     <asp:CheckBox ID="chkUsuarios" Text="Usuarios" CssClass="chk" runat="server" name="chkVerificar" /><br />
+                    <asp:CheckBox ID="chkCuenta" Text="Estado de cuenta" CssClass="chk" runat="server" name="chkVerificar" /><br />     <%--ADD SF RSG 02.2023 V2.0--%>
                     <asp:CheckBox ID="chkRolDefault" Text="Rol Default" CssClass="chk" runat="server" name="chkRolDefault" /></div>
             </div>
         <%--<table class="tblFm">

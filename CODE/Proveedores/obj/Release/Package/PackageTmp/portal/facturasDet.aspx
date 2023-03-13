@@ -28,7 +28,7 @@
         }
 
         ocultaTablas("tblCV", posicionMostrar);
-        ocultaTablas("consola", posicionMostrar);
+        //ocultaTablas("consola", posicionMostrar);
         if ($("#ContentPlaceHolder1_hidIndexs").val() == "") {
             if (sessionStorage.getItem("contadorCarga") != "1") {
                 sessionStorage.setItem("contadorCarga", "1");

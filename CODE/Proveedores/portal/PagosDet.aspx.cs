@@ -54,11 +54,21 @@ namespace Proveedores.portal
                 tablas += Session["BLART1"].ToString();
                 tablas += "'></div>";
 
-                tablas += "<div class='form-group'><label>";
+                tablas += "<div class='row'>";
+
+                tablas += "<div class='form-group col-lg-6'><label>";
+                tablas += "Sociedad";
+                tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
+                tablas += Session["BUKRS"].ToString();
+                tablas += "'></div>";
+
+                tablas += "<div class='form-group col-lg-6'><label>";
                 tablas += "Ejercicio";
                 tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
                 tablas += Session["GJAHR1"].ToString();
                 tablas += "'></div>";
+
+                tablas += "</div>";
 
                 tablas += "<div class='form-group'><label>";
                 tablas += "Tipo de documento";

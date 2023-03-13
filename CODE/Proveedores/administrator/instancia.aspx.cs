@@ -83,7 +83,8 @@ namespace Proveedores.administrator
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            Response.Redirect("config.aspx");
+            //Response.Redirect("config.aspx");     //DELETE SF RSG 02.2023 v2.0
+            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
         }
 
         public void cargarEdit(){
@@ -311,9 +312,9 @@ namespace Proveedores.administrator
                 this.txtUsuario.Text, encrypt.Encriptar(encrypt.Encriptar(this.txtPassword.Text.Trim())), this.txtEndpoint.Text.Trim());
                 if (res == "actualizado")
                 {
-                    //Session["textoDialogo"] = "Actualizado correctamente";         //DELETE SF RSG 02.2023 V2.0
+                    Session["textoDialogo"] = "Actualizado correctamente";         //DELETE SF RSG 02.2023 V2.0
                     this.lblDialog.Text = "Actualizado correctamente";               //ADD SF RSG 02.2023 V2.0
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog($('#ContentPlaceHolder1_lblDialog').text())", true);    //ADD SF RSG 02.2023 V2.0
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "mostrarDialog('"+this.lblDialog.Text+"')", true);    //ADD SF RSG 02.2023 V2.0
                     try
                     {
                         if (this.txtEndpoint.Text.Trim() != null && this.txtEndpoint.Text.Trim() != "")

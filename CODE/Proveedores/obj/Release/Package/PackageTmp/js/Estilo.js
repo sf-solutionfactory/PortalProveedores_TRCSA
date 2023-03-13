@@ -25,29 +25,38 @@ $(function(){
 
     $(".estatus-detalle").click(function () {
         var mensaje = $(this).attr('msg');
+        var span = document.createElement("span");
+        span.innerHTML = '<div class="text-left">'+mensaje+'</div>';
         mensaje = $.parseHTML(mensaje);
         if (mensaje != "" && mensaje != null) {
             $("#ContentPlaceHolder1_lblDialog").text("");
             $("#ContentPlaceHolder1_lblDialog").append(mensaje);
             if ($.trim($("#ContentPlaceHolder1_lblDialog").text()) != "") {
-                dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
-                    autoOpen: false,
-                    height: 350,
-                    width: 400,
-                    modal: true,
-                    buttons: {
-                        "Aceptar": function () {
-                            dialog.dialog("close");
-                        },
-                        Cancel: function () {
-                            dialog.dialog("close");
-                        }
-                    },
-                    close: function () {
+                //dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
+                //    autoOpen: false,
+                //    height: 350,
+                //    width: 400,
+                //    modal: true,
+                //    buttons: {
+                //        "Aceptar": function () {
+                //            dialog.dialog("close");
+                //        },
+                //        Cancel: function () {
+                //            dialog.dialog("close");
+                //        }
+                //    },
+                //    close: function () {
 
-                    }
-                });
-                dialog.dialog("open");
+                //    }
+                //});
+                //dialog.dialog("open");
+                Swal.fire({
+                    //title: 'Error!',
+                    html: span,
+                    icon: 'info',
+                    confirmButtonColor: 'rgb(140, 212, 245)',
+                    confirmButtonText: 'OK'
+                })
                 return true;
             }
             

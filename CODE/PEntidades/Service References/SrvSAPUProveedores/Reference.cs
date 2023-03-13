@@ -271,7 +271,7 @@ namespace PEntidades.SrvSAPUProveedores {
         private string pOST_CODE1Field;
         
         private string aDDR1_DATAField;
-        
+
         private string cOUNTRYField;
         
         private string nAMECOUNTRYField;
@@ -297,7 +297,9 @@ namespace PEntidades.SrvSAPUProveedores {
         private string zAHLSField;
         
         private string tEXTLField;
-        
+
+        private string aDDR2_DATAField;   //ADD SF RSG 02.2023 v2.0
+
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public string LIFNR {
@@ -561,7 +563,22 @@ namespace PEntidades.SrvSAPUProveedores {
                 this.RaisePropertyChanged("TEXTL");
             }
         }
-        
+
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 22)]
+        public string ADDR2_DATA
+        {
+            get
+            {
+                return this.aDDR2_DATAField;
+            }
+            set
+            {
+                this.aDDR2_DATAField = value;
+                this.RaisePropertyChanged("ADDR2_DATA");
+            }
+        }
+
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -689,7 +706,13 @@ namespace PEntidades.SrvSAPUProveedores {
         private string gJAHRField;
         
         private string bUDATField;
-        
+
+        private int zCOUNTField;   //ADD SF RSG 02.2023 v2.0
+
+        private string bUKRSField;   //ADD SF RSG 02.2023 v2.0
+
+        private string uUIDField;   //ADD SF RSG 02.2023 v2.0
+
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public string ZUONR {
@@ -905,7 +928,51 @@ namespace PEntidades.SrvSAPUProveedores {
                 this.RaisePropertyChanged("BUDAT");
             }
         }
-        
+
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 18)]   //ADD SF RSG 02.2023 v2.0
+        public int ZCOUNT
+        {
+            get
+            {
+                return this.zCOUNTField;
+            }
+            set
+            {
+                this.zCOUNTField = value;
+                this.RaisePropertyChanged("ZCOUNT");
+            }
+        }
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 19)]   //ADD SF RSG 02.2023 v2.0
+        public string BUKRS
+        {
+            get
+            {
+                return this.bUKRSField;
+            }
+            set
+            {
+                this.bUKRSField = value;
+                this.RaisePropertyChanged("BUKRS");
+            }
+        }
+
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 20)]   //ADD SF RSG 02.2023 v2.0
+        public string UUID
+        {
+            get
+            {
+                return this.uUIDField;
+            }
+            set
+            {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1589,11 +1656,17 @@ namespace PEntidades.SrvSAPUProveedores {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:sap-com:document:sap:rfc:functions", Order=12)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string VAL_MONEDA;
-        
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "urn:sap-com:document:sap:rfc:functions", Order = 13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string COMPANY;         //ADD SF RSG 02.2023 v2.0
+
         public Z_UFAC_VERIFMIR7Request() {
         }
         
-        public Z_UFAC_VERIFMIR7Request(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA) {
+        //public Z_UFAC_VERIFMIR7Request(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA) {
+        public Z_UFAC_VERIFMIR7Request(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA, string COMPANY)         //ADD SF RSG 02.2023 v2.0
+        {
             this.FECHA_FACT = FECHA_FACT;
             this.FISYEAR = FISYEAR;
             this.IMPORTE = IMPORTE;
@@ -1607,6 +1680,7 @@ namespace PEntidades.SrvSAPUProveedores {
             this.VAL_IMP_IVA = VAL_IMP_IVA;
             this.VAL_IMP_SUB = VAL_IMP_SUB;
             this.VAL_MONEDA = VAL_MONEDA;
+            this.COMPANY = COMPANY;         //ADD SF RSG 02.2023 v2.0
         }
     }
     
@@ -2155,8 +2229,10 @@ namespace PEntidades.SrvSAPUProveedores {
         PEntidades.SrvSAPUProveedores.Z_UFAC_VERIFMIR7Response PEntidades.SrvSAPUProveedores.ZWS_UPROVEEDORES.Z_UFAC_VERIFMIR7(PEntidades.SrvSAPUProveedores.Z_UFAC_VERIFMIR7Request request) {
             return base.Channel.Z_UFAC_VERIFMIR7(request);
         }
-        
-        public string Z_UFAC_VERIFMIR7(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA) {
+
+        //public string Z_UFAC_VERIFMIR7(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA) {               //DELETE SF RSG 02.2023 v2.0
+        public string Z_UFAC_VERIFMIR7(string FECHA_FACT, string FISYEAR, decimal IMPORTE, decimal IMPORTE_IVA, decimal IMPORTE_SUB, decimal IMP_DESCUEN, string MONEDA, string NUM_DOC, string VAL_FECH_FACT, string VAL_IMPORTE, string VAL_IMP_IVA, string VAL_IMP_SUB, string VAL_MONEDA, string COMPANY)   //ADD SF RSG 02.2023 v2.0
+        {          
             PEntidades.SrvSAPUProveedores.Z_UFAC_VERIFMIR7Request inValue = new PEntidades.SrvSAPUProveedores.Z_UFAC_VERIFMIR7Request();
             inValue.FECHA_FACT = FECHA_FACT;
             inValue.FISYEAR = FISYEAR;
@@ -2171,6 +2247,7 @@ namespace PEntidades.SrvSAPUProveedores {
             inValue.VAL_IMP_IVA = VAL_IMP_IVA;
             inValue.VAL_IMP_SUB = VAL_IMP_SUB;
             inValue.VAL_MONEDA = VAL_MONEDA;
+            inValue.COMPANY = COMPANY;          //ADD SF RSG 02.2023 v2.0
             PEntidades.SrvSAPUProveedores.Z_UFAC_VERIFMIR7Response retVal = ((PEntidades.SrvSAPUProveedores.ZWS_UPROVEEDORES)(this)).Z_UFAC_VERIFMIR7(inValue);
             return retVal.MENSAJE;
         }

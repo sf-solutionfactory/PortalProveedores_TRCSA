@@ -374,6 +374,7 @@
     <Content Include="js\validarNotNull.js" />
     <Content Include="portal\datosMaestros.aspx" />
     <Content Include="portal\DelAndUpd.aspx" />
+    <Content Include="portal\estadoCuenta.aspx" />
     <Content Include="portal\facturasCarga.aspx" />
     <Content Include="portal\facturasMasiva.aspx" />
     <Content Include="portal\facturasResumen.aspx" />
@@ -791,6 +792,13 @@
     </Compile>
     <Compile Include="portal\DelAndUpd.aspx.designer.cs">
       <DependentUpon>DelAndUpd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\estadoCuenta.aspx.cs">
+      <DependentUpon>estadoCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\estadoCuenta.aspx.designer.cs">
+      <DependentUpon>estadoCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="portal\facturasCarga.aspx.cs">
       <DependentUpon>facturasCarga.aspx</DependentUpon>
