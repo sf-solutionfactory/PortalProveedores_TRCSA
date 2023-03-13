@@ -72,7 +72,7 @@
         <div class="row">
         <div class="col-lg-9">
             <div class="card">
-                <div class="card-body" style="min-height:250px;">
+                <div class="card-body" style="min-height:50%;">
                     <h4 class="card-title"></h4>
                     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
                     <div <%--id="divColumna1"--%>>

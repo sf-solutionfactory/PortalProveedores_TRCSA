@@ -58,8 +58,7 @@ namespace Proveedores.administrator
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            //Response.Redirect("config.aspx");     //DELETE SF RSG 02.2023 v2.0
-            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
+            Response.Redirect("config.aspx");
         }
 
         private void insertarCredInac()

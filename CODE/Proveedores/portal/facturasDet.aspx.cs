@@ -20,7 +20,7 @@ namespace Proveedores.portal
         private System.Xml.XmlDocument xmlDoc;
         XElement xmlFact;
         string[] indexs;
-        string[] indexs2;   //ADD SF RSG 02.2023 v2.0
+
         int maxXML = 10;
         string complementoMsgError = "";
 
@@ -87,8 +87,7 @@ namespace Proveedores.portal
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            //Response.Redirect("Inicio.aspx");     //DELETE SF RSG 02.2023 v2.0
-            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
+            Response.Redirect("Inicio.aspx");
         }
 
         public void cargarDatosTabla()
@@ -100,17 +99,12 @@ namespace Proveedores.portal
             string clase = "show";
             if (listFact.Count > 0)
             {
-                //indexs2 = new string[indexs.Length + 1];      //ADD SF RSG 02.2023 v2.0
-                indexs2 = new string[indexs.Length];            //ADD SF RSG 02.2023 v2.0
+
                 int iddetalle = int.Parse(indexs[0]) - 1;
-                //indexs2[0] = iddetalle.ToString();            //ADD SF RSG 02.2023 v2.0
-                //indexs.CopyTo(indexs2, 1);                    //ADD SF RSG 02.2023 v2.0
-                indexs.CopyTo(indexs2,0);                       //ADD SF RSG 02.2023 v2.0
 
                 tablas += "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel' data-interval='false'>";
                 tablas += "  <ol class='carousel-indicators'>";
-                //for (int i = 0; i < indexs.Length; i++)
-                for (int i = 0; i < indexs2.Length; i++)                  //ADD SF RSG 02.2023 v2.0
+                for (int i = 0; i < indexs.Length; i++)
                 {
                     if (i == 0)
                         tablas += "   <li data-target='#carouselExampleIndicators' data-slide-to='" + i + "' class='active'></li>";
@@ -119,8 +113,7 @@ namespace Proveedores.portal
                 }
                 tablas += " </ol>";
                 tablas += "<div class='carousel-inner'>";
-                //for (int i = 0; i < indexs.Length; i++)
-                for (int i = 0; i < indexs2.Length; i++)                  //ADD SF RSG 02.2023 v2.0
+                for (int i = 0; i < indexs.Length; i++)
                 {
                     if (i == 0)
                         tablas += "  <div class='carousel-item active'>";
@@ -135,8 +128,7 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group'><label>";
                     tablas += "Proveedor";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].LIFNR;
-                    tablas += listFact[int.Parse(indexs2[i])].LIFNR;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].LIFNR;
                     tablas += "'></div>";
 
                     tablas += "<div class='row'>";
@@ -144,15 +136,13 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group col'><label>";
                     tablas += "Sociedad";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].BUKRS;
-                    tablas += listFact[int.Parse(indexs2[i])].BUKRS;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].BUKRS;
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col'><label>";
                     tablas += "Centro";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].WERKS;
-                    tablas += listFact[int.Parse(indexs2[i])].WERKS;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].WERKS;
                     tablas += "'></div>";
 
                     tablas += "</div>";
@@ -161,15 +151,13 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group col'><label>";
                     tablas += "Fecha MIGO/BASE";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].BUDAT;
-                    tablas += listFact[int.Parse(indexs2[i])].BUDAT;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].BUDAT;
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col'><label>";
                     tablas += "Fecha del documento";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].BLDAT;
-                    tablas += listFact[int.Parse(indexs2[i])].BLDAT;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].BLDAT;
                     tablas += "'></div>";
 
                     tablas += "</div>";
@@ -178,15 +166,13 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group col col-lg-8'><label>";
                     tablas += "Importe";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += formatCurrency(listFact[int.Parse(indexs[i])].WRBTR);
-                    tablas += formatCurrency(listFact[int.Parse(indexs2[i])].WRBTR);                  //ADD SF RSG 02.2023 v2.0
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].WRBTR);
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col col-lg-4'><label>";
                     tablas += "Moneda";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].WAERS;
-                    tablas += listFact[int.Parse(indexs2[i])].WAERS;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].WAERS;
                     tablas += "'></div>";
 
                     tablas += "</div>";
@@ -195,22 +181,19 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group col col-lg-4'><label>";
                     tablas += "Importe IVA";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += formatCurrency(listFact[int.Parse(indexs[i])].IVA);
-                    tablas += formatCurrency(listFact[int.Parse(indexs2[i])].IVA);                  //ADD SF RSG 02.2023 v2.0
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].IVA);
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col col-lg-4'><label>";
                     tablas += "IVA";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].MWSKZ;
-                    tablas += listFact[int.Parse(indexs2[i])].MWSKZ;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].MWSKZ;
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col col-lg-4'><label>";
                     tablas += "Retención";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += formatCurrency(listFact[int.Parse(indexs[i])].RETENCION);
-                    tablas += formatCurrency(listFact[int.Parse(indexs2[i])].RETENCION);                  //ADD SF RSG 02.2023 v2.0
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].RETENCION);
                     tablas += "'></div>";
 
                     tablas += "</div>";
@@ -218,8 +201,7 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group'><label>";
                     tablas += "Factura electrónica";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].ELECT;
-                    tablas += listFact[int.Parse(indexs2[i])].ELECT;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].ELECT;
                     tablas += "'></div>";
 
                     tablas += "<div class='row'>";
@@ -227,15 +209,13 @@ namespace Proveedores.portal
                     tablas += "<div class='form-group col-lg-8'><label>";
                     tablas += "Saldo";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += formatCurrency(listFact[int.Parse(indexs[i])].SALDO);
-                    tablas += formatCurrency(listFact[int.Parse(indexs2[i])].SALDO);                  //ADD SF RSG 02.2023 v2.0
+                    tablas += formatCurrency(listFact[int.Parse(indexs[i])].SALDO);
                     tablas += "'></div>";
 
                     tablas += "<div class='form-group col-lg-4'><label>";
                     tablas += "XML Adjuntos";
                     tablas += "</label><input type='text' id='text1' class='form-control' readonly placeholder='";
-                    //tablas += listFact[int.Parse(indexs[i])].cantidadXML;
-                    tablas += listFact[int.Parse(indexs2[i])].cantidadXML;                  //ADD SF RSG 02.2023 v2.0
+                    tablas += listFact[int.Parse(indexs[i])].cantidadXML;
                     tablas += "'></div>";
                     tablas += "</div>";
                     tablas += "<br/>";
@@ -253,9 +233,8 @@ namespace Proveedores.portal
                 tablas += "</a>";
                 tablas += "</div>";
 
-                //for (int i = 0; i < indexs.Length; i++)
-                for (int i = 0; i < indexs2.Length; i++)                  //ADD SF RSG 02.2023 v2.0
-                    {
+                for (int i = 0; i < indexs.Length; i++)
+                {
 
                     //    //listFact[int.Parse(indexs[i])].consola = "";
                     //    tablas += "<table class='tblCV' " + clase + ">";
@@ -517,10 +496,9 @@ namespace Proveedores.portal
                     //    tablas += "</tbody>";
                     //    tablas += "</table>";
 
-                    //consolas += "<label class='consola " + clase + "'>" + listFact[int.Parse(indexs[i])].consola + "</label> ";
-                    consolas += "<label class='consola " + clase + "'>" + listFact[int.Parse(indexs2[i])].consola + "</label> ";                  //ADD SF RSG 02.2023 v2.0
+                    consolas += "<label class='consola " + clase + "'>" + listFact[int.Parse(indexs[i])].consola + "</label> ";
 
-                    //clase = "hidd";                  //DELETE SF RSG 02.2023 v2.0
+                    clase = "hidd";
                 }
             }
 

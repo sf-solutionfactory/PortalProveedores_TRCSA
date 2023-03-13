@@ -170,7 +170,7 @@ namespace PNegocio
                                    "    <td>" + lstPAbiertas[i].BELNR1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].BLART1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
-                                   "    <td class='columna-numerica'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>" +           //MODIFY SF RSG 02.2023 v2.0
+                                   "    <td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
@@ -494,7 +494,7 @@ namespace PNegocio
                                 string msm = listFact[pos].msgVarios;
                                 popdesvincularXML(ref msm, ref desadjuntar);
                                 list_uuid.Clear();
-                                htmldesa += "<p>Posición " + poci + " </p>" + desadjuntar;
+                                htmldesa += "<p>Pocision " + poci + " </p>" + desadjuntar;
                                 pos++;
                                 poci++;
                             }
@@ -731,7 +731,7 @@ namespace PNegocio
             {
                 if (codehtml.Contains("<table>") == false)
                 {
-                    codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Selección</td></tr>";
+                    codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Seleccion</td></tr>";
                 }
                 if (msm.Contains("SAP: Error al guardar el") == false && msm.Contains("Valores de XML no coinciden") == false)
                 {
@@ -775,7 +775,7 @@ namespace PNegocio
                 {
                     if (codehtml.Contains("<table>") == false)
                     {
-                        codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Selección</td></tr>";
+                        codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Seleccion</td></tr>";
                     }
                     while (msm.Length > 0)
                     {

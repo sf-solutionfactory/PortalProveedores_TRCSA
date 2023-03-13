@@ -44,19 +44,17 @@ namespace PNegocio.Administrador
             return ejec.ejcPsdConsultaRoles();
         }
 
-        //public string insertarRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion)      //DELETE SF RSG 02.2023 v2.0
-        public string insertarRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion, string cuenta)      //ADD SF RSG 02.2023 v2.0
+        public string insertarRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion)
         {
             PPersistencia.ejecutaProcedures ejec = new PPersistencia.ejecutaProcedures();
-            return ejec.ejcPsdInsertRoles(nombreRol, esActive, facturas, partidas, pagos, datosMaestros, usuarios, esCreacion, cuenta);      //MODIFY SF RSG 02.2023 v2.0
-
+            return ejec.ejcPsdInsertRoles(nombreRol, esActive, facturas, partidas, pagos, datosMaestros, usuarios, esCreacion);
+            
         }
 
-        //public string actualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion, string idAnterior)      //DELETE SF RSG 02.2023 v2.0
-        public string actualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion, string idAnterior, string cuenta)      //ADD SF RSG 02.2023 v2.0
+        public string actualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion, string idAnterior)
         {
             PPersistencia.ejecutaProcedures ejec = new PPersistencia.ejecutaProcedures();
-            return ejec.ejcPsdActualizaRol(nombreRol, esActive, facturas, partidas, pagos, datosMaestros, usuarios, idAnterior, esCreacion, cuenta);      //MODIFY SF RSG 02.2023 v2.0
+            return ejec.ejcPsdActualizaRol(nombreRol, esActive, facturas, partidas, pagos, datosMaestros, usuarios, idAnterior, esCreacion);
         }
 
         public List<string[]> consultarRolPorId(string id)

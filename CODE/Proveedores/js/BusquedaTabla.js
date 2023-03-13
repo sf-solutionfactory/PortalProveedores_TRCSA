@@ -256,29 +256,22 @@ function mostrar(result) {
     result = $.parseHTML(result.d);
     $("#ContentPlaceHolder1_lblDialog").text("");
     $("#ContentPlaceHolder1_lblDialog").append(result);
-    //dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
-    //    autoOpen: false,
-    //    height: 350,
-    //    width: 350,
-    //    modal: true,
-    //    buttons: {
-    //        "Aceptar": function () {                
-    //            dialog.dialog("close");
-    //            recargarpag();
-    //        },            
-    //    },
-    //    close: function () {
+    dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
+        autoOpen: false,
+        height: 350,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Aceptar": function () {                
+                dialog.dialog("close");
+                recargarpag();
+            },            
+        },
+        close: function () {
 
-    //    }
-    //});
-    //dialog.dialog("open");
-    Swal.fire({
-        title: $("#ContentPlaceHolder1_lblDialog").text(),
-        text: '',
-        icon: 'success',
-        confirmButtonColor: 'rgb(140, 212, 245)',
-        confirmButtonText: 'OK'
-    }).then((result) => {recargarpag();})
+        }
+    });
+    dialog.dialog("open");
 }
 function recargarpag() {
     //Create a Form

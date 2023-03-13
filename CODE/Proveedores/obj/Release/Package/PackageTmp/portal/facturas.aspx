@@ -74,51 +74,32 @@
             var dialog;
             $(".desadjuntarXML").click(function () {//evento de desajuntar archivois
                 var mensaje = $(this).attr('msm');
-
-                var span = document.createElement("span");
-                span.innerHTML = '<div >' + mensaje + '</div>';
                 
                 mensaje = $.parseHTML(mensaje);
                 if (mensaje != "" && mensaje != null) {
                     $("#ContentPlaceHolder1_lblDialog").text("");
                     $("#ContentPlaceHolder1_lblDialog").append(mensaje);
                     if ($.trim($("#ContentPlaceHolder1_lblDialog").text()) != "") {
-                        //dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
-                        //    autoOpen: false,
-                        //    height: 350,
-                        //    width: 400,
-                        //    modal: true,
-                        //    buttons: {
-                        //        "Desadjuntar": function () {
-                        //            obtenerUUID()
-                        //            cerrardialog()
+                        dialog = $("#ContentPlaceHolder1_lblDialog").dialog({
+                            autoOpen: false,
+                            height: 350,
+                            width: 400,
+                            modal: true,
+                            buttons: {
+                                "Desadjuntar": function () {
+                                    obtenerUUID()
+                                    cerrardialog()
                                     
-                        //        },
-                        //        Cancel: function () {
-                        //            dialog.dialog("close");
-                        //        }
-                        //    },
-                        //    close: function () {
+                                },
+                                Cancel: function () {
+                                    dialog.dialog("close");
+                                }
+                            },
+                            close: function () {
                                
-                        //    }
-                        //});
-                        //dialog.dialog("open");
-
-                        Swal.fire({
-                            //title: 'Error!',
-                            html: span,
-                            //icon: 'info',
-                            width: 600,
-                            showCancelButton: true,
-                            cancelButtonText: 'Cancelar',
-                            confirmButtonColor: 'rgb(140, 212, 245)',
-                            confirmButtonText: 'Desadjuntar'
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                obtenerUUID();
-                                cerrardialog();
                             }
-                        })
+                        });
+                        dialog.dialog("open");
                         //return true;
                     }
 
@@ -307,10 +288,6 @@
             font-family: fantasy; 
             font-size: 4em;
         }*/
-
-        table{
-            width: 100%;
-        }
 
     </style>
 

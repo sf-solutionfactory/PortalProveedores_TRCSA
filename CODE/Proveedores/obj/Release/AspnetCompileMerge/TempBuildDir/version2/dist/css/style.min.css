@@ -11801,7 +11801,7 @@ a.close.disabled {
 
 .carousel-inner {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden
 }
 
     .carousel-inner::after {

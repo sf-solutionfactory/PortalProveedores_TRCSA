@@ -17,7 +17,6 @@ namespace PEntidades
         private string house_num1;
         private string post_code1;
         private string addr1_data;
-        private string addr2_data;   //ADD SF RSG 02.2023 v2.0
         private string country;
         private string namecountry;
         private string region;
@@ -41,7 +40,6 @@ namespace PEntidades
             this.house_num1 = "";
             this.post_code1 = "";
             this.addr1_data = "";
-            this.addr2_data = "";   //ADD SF RSG 02.2023 v2.0
             this.country = "";
             this.namecountry = "";
             this.region = "";
@@ -55,7 +53,7 @@ namespace PEntidades
             this.extension2 = "";
         }
 
-        public Proveedor(string liftnr,string	title_medi,string	name1,string	name2,string	sort1,string	street,string	house_num1,string	post_code1,string	addr1_data,string	country,string	namecountry,string	region,string	nameregion,	string	po_box,string	post_code2,string	langu,string	tel_number,string	fax_number,string	extension1,string	extension2, string addr2_data)
+        public Proveedor(string liftnr,string	title_medi,string	name1,string	name2,string	sort1,string	street,string	house_num1,string	post_code1,string	addr1_data,string	country,string	namecountry,string	region,string	nameregion,	string	po_box,string	post_code2,string	langu,string	tel_number,string	fax_number,string	extension1,string	extension2)
         {
             this.liftnr = liftnr;
             this.title_medi = title_medi;
@@ -66,7 +64,6 @@ namespace PEntidades
             this.house_num1 = house_num1;
             this.post_code1 = post_code1;
             this.addr1_data = addr1_data;
-            this.addr2_data = addr2_data;   //ADD SF RSG 02.2023 v2.0
             this.country = country;
             this.namecountry = namecountry;
             this.region = region;
@@ -100,6 +97,5 @@ namespace PEntidades
         public string FAX_NUMBER { set { this.fax_number = value; } get { return fax_number; } }
         public string EXTENSION1 { set { this.extension1 = value; } get { return extension1; } }
         public string EXTENSION2 { set { this.extension2 = value; } get { return extension2; } }
-        public string ADDR2_DATA { set { this.addr2_data = value; } get { return addr2_data; } }   //ADD SF RSG 02.2023 v2.0
     }
 }

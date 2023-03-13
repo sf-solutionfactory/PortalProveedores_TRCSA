@@ -43,8 +43,7 @@ namespace Proveedores.portal
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            //Response.Redirect("Inicio.aspx");     //DELETE SF RSG 02.2023 v2.0
-            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

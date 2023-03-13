@@ -271,14 +271,9 @@ namespace Gen.Util.CS
 
                 enviar = lista[i][0].ToString();
 
-                bool revisar = true;
-                if (listaEvitar.Count != 0)
-                    revisar = false;
-                if (!revisar)
-                    if (!Gen.isIn(listaEvitar, enviar))
-                        revisar = true;
 
-                if (revisar) { 
+                if (!Gen.isIn(listaEvitar, enviar))
+                {
                     if (activable || modificable || desechable || detalles)
                     {
                         html += "<td>";
@@ -583,141 +578,8 @@ namespace Gen.Util.CS
             return buscado;
         }
 
-        //      BEGIN OF INSERT SF RSG 02.2023 V2.0     ------------------------    //
-        public static string convertToHtmlTableDelete3(List<string[]> lista, string htmlId, string cssClass, List<int> listaEvitar, bool modificable, bool activable, bool desechable, bool detalles, int colEvitarDer, int colEvitarIzq)
-        {
-            //int colEvitarIzq = 1;
-            string html = "";
-            int tamcol = lista[0].Length - colEvitarDer;
-            html += "<div class='table-responsive'><table id='" + htmlId + "' class='" + cssClass + "'>" + 
-                            "<thead>";
-            html += "<tr>";
-            for (int i = 0; i < tamcol; i++)
-            {
-                if (i < colEvitarIzq)
-                {
-                    html += "<th class='tHide'>" + lista[0][i] + "</th>";
-                }
-                else
-                {
-                    html += "<th>" + lista[0][i] + "</th>";
-                }
+        
 
-            }
-            if (activable || modificable)
-            {
-                html += "<th>Modificaciones</th>"; // agregar titulo de cambios para modificar, Activar/desactivar
-            }
-
-            html += "</tr></thead>";
-            html += "<tbody>";
-            for (int i = 1; i < lista.Count; i++)
-            {
-                string enviar = "";
-                string estatus = "";
-                string ComplementoBoton = "<i id='btnActiDesacti' class='fa-solid fa-lock-open' style='color:#FFFFFF;' name='Activar'  title='Activar'></i>"; 
-                html += "<tr>";
-                html += "<td class='tHide'>" + lista[i][0] + "</td>";
-                html += "<td>" + lista[i][1] + "</td>";
-                html += "<td>" + lista[i][2] + "</td>";
-                html += "<td>" + lista[i][3] + "</td>";
-                html += "<td>" + lista[i][4] + "</td>";
-                //for (int j = 1; j < tamcol - 1; j++)
-                //{
-                //    html += "<td>" + lista[i][j] + "</td>";
-                //}
-
-                estatus = lista[i][tamcol - 1];
-                if (lista[i][tamcol - 1] == "True")
-                {
-                    html += "<td style='color:#00C279;font-weight: bold;'>" + "Activo" + "</td>";
-                }
-                else
-                {
-                    html += "<td style='color:#E75353;font-weight: bold;'>" + "Inactivo" + "</td>";
-                }
-
-                if (estatus == "True")
-                {
-                    ComplementoBoton = "<i id='btnActiDesacti' class='fa-solid fa-lock' style='color:#FFFFFF;'name='Desactivar' title='Desactivar'></i>"; 
-                }
-
-                enviar = lista[i][0].ToString();
-
-                    if (activable || modificable)
-                    {
-                        html += "<td>";
-                        html += "<center>";
-                        if (activable)// si Activar
-                        {
-                            html += "<label id='btnActionActiDesacti' class='btn btn-warning' onclick='workThis(this);' title='Activar/Desactivar'>" + ComplementoBoton + "</label>"; 
-                        }
-                        if (modificable) // editar
-                        {
-
-                            html += "&nbsp<label id='btnActionModificar'class='btn btn-primary' onclick='workThis(this);'  title='Editar'><i id='btnModificar' class='fa-solid fa-pen-to-square' name='Modificar'></i></label>";   
-                        }
-                        html += "</center>";
-                        html += "</td>";
-                    }
-
-                html += "</tr>";
-            }
-            html += "</tbody>";
-            html += "</table></div>";     
-            return html;
-        }
-        public static string convertToHtmlTableDelete4(List<string[]> lista, string htmlId, string cssClass, List<int> listaEvitar, bool modificable, bool activable, bool desechable, bool detalles, int colEvitarDer, int colEvitarIzq)
-        {
-            //int colEvitarIzq = 1;
-            string html = "";
-            int tamcol = lista[0].Length - colEvitarDer;
-            html += "<table id='" + htmlId + "' class='" + cssClass + " display' width='100%;'></table>";
-            html += "<script>";
-            html += "var dataColumns = [";
-            for (int i = 0; i < tamcol; i++)
-            {
-                html += "{ title: '" + lista[0][i] + "'} ,";
-            }
-            html.Remove(html.Length - 2, 1);
-            if (activable || modificable)
-            {
-                html += "{title: 'Modificaciones'}"; // agregar titulo de cambios para modificar, Activar/desactivar
-            }
-
-            html += "];";
-            html += "var dataSet = [";
-            for (int i = 1; i < lista.Count; i++)
-            {
-                html += "[";
-                html += "'" + lista[i][0] + "', ";
-                html += "'" + lista[i][1] + "', ";
-                html += "'" + lista[i][2] + "', ";
-                html += "'" + lista[i][3] + "', ";
-                html += "'" + lista[i][4] + "', ";
-                html += "'" + lista[i][5] + "', ";
-
-                if (activable)// si Activar
-                    html += "'True' ";
-                else
-                    html += "'False' ";
-                html += "], ";
-            }
-
-            html.Remove(html.Length - 2, 1);
-            html += "];";
-
-            html += "$(document).ready(function () {";
-            html += "   $('#example').DataTable({";
-            html += "       data:   dataSet,";
-            html += "       columns: dataColumns";
-            html += "   }); ";
-            html += "});";
-
-            html += "</script>";
-            return html;
-        }
-
-        //      END   OF INSERT SF RSG 02.2023 V2.0     ------------------------    //
+        
     }
 }

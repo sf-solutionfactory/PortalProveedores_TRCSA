@@ -122,8 +122,7 @@ namespace Proveedores
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            //Response.Redirect("Inicio.aspx");     //DELETE SF RSG 02.2023 v2.0
-            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
+            Response.Redirect("Inicio.aspx");
         }
 
         
@@ -196,7 +195,7 @@ namespace Proveedores
             input4.CssClass = "form-control";
             input4.ID = "input4";
             input4.Enabled = false;
-            input4.Text = objProveedor.ADDR2_DATA;  //ADD SF RSG 03.2023 v2.0
+            input4.Text = objProveedor.ADDR1_DATA;
             form4.Controls.Add(label4);
             form4.Controls.Add(input4);
             panelInterno.Controls.Add(form4);

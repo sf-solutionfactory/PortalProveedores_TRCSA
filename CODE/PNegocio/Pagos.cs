@@ -43,8 +43,6 @@ namespace PNegocio
                     var resultado = srv.Z_UPAGOS(Gen.Util.CS.Gen.convertirFecha_SAP(date1), Gen.Util.CS.Gen.convertirFecha_SAP(date2), objLifnr, objetoSoc);
                     int cantidad = resultado.Count();
             
-                    
-                    
                     PEntidades.PAbiertasYPago objPabYPag;
                     for (int i = 0; i < cantidad; i++)
                     {
@@ -54,9 +52,7 @@ namespace PNegocio
                         string BELNR = resultado.ElementAt(i).BELNR.ToString();
                         string BLART = resultado.ElementAt(i).BLART.ToString();
                         string BLDAT = resultado.ElementAt(i).BLDAT.ToString();
-                        //float DMSHB = float.Parse(resultado.ElementAt(i).DMSHB.ToString());
-                        string dmshb = resultado.ElementAt(i).DMSHB.ToString("0.00");
-                        float DMSHB = float.Parse(dmshb);
+                        float DMSHB = float.Parse(resultado.ElementAt(i).DMSHB.ToString());
                         string HWAER = resultado.ElementAt(i).HWAER.ToString();
 
                         string XBLNR = resultado.ElementAt(i).XBLNR.ToString();
@@ -64,9 +60,6 @@ namespace PNegocio
                         string NAME1 = resultado.ElementAt(i).NAME1.ToString();
                         string SGTXT = resultado.ElementAt(i).SGTXT.ToString();
                         string EBELN = resultado.ElementAt(i).EBELN.ToString();
-                        string GJAHR = resultado.ElementAt(i).GJAHR.ToString();     //ADD SF RSG 02.2023 v2.0
-                        int ZCOUNT   = resultado.ElementAt(i).ZCOUNT;               //ADD SF RSG 02.2023 v2.0
-                        string UUID  = resultado.ElementAt(i).UUID.ToString();      //ADD SF RSG 02.2023 v2.0
 
                         objPabYPag.AUGBL1 = AUGBL;
                         objPabYPag.ZUONR1 = ZUONR;
@@ -81,10 +74,6 @@ namespace PNegocio
                         objPabYPag.NAME1 = NAME1;
                         objPabYPag.SGTXT = SGTXT;
                         objPabYPag.EBELN = EBELN;
-                        objPabYPag.GJAHR = GJAHR;           //ADD SF RSG 02.2023 v2.0
-                        objPabYPag.ZCOUNT = ZCOUNT;         //ADD SF RSG 02.2023 v2.0
-                        objPabYPag.BUKRS  = listaDiferentesInstancias[j][2].ToString().Trim();  //ADD SF RSG 02.2023 v2.0
-                        objPabYPag.UUID   = UUID;           //ADD SF RSG 02.2023 v2.0
 
                         objPabYPag.indice = i;
 

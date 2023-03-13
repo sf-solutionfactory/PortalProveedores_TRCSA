@@ -120,7 +120,7 @@
     <asp:Label ID="lblTabla" runat="server"></asp:Label>
                         </div>--%>
 
-    <asp:Button ID="btnActualiza" runat="server" Text="" CssClass=".ico-actualizar" Visible="false"/>
+    <asp:Button ID="btnActualiza" runat="server" Text="" CssClass=".ico-actualizar" />
 
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
     <asp:HiddenField ID="hidActualiza" runat="server" />
