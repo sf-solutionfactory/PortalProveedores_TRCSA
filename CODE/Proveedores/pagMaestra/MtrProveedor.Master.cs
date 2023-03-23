@@ -122,8 +122,8 @@ namespace Proveedores
                     case 16:
                         rtnMenu += "<li id='usuarios'class='sidebar-item'><a class='sidebar-link sidebar-link' href='usuarios.aspx' aria-expanded='false'><i data-feather='users' class='feather-icon'></i><span class='hide-menu'>Usuarios</span></a></li>";
                         break;
-                    case 32:
-                        rtnMenu += "<li id='datosMaestros' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='datosMaestros.aspx' aria-expanded='false'><i data-feather='database' class='feather-icon'></i><span class='hide-menu'>Estado de Cuenta</span></a></li>";
+                    case 7:
+                        rtnMenu += "<li id='estado' class='last sidebar-item'><a class='sidebar-link sidebar-link' href='estadoCuenta.aspx' aria-expanded='false'><i data-feather='bar-chart' class='feather-icon'></i><span class='hide-menu'>Estado de Cuenta</span></a></li>";
                         break;
                         //END   OF INSERT SF RSG 02.2023 V2.0
                 }

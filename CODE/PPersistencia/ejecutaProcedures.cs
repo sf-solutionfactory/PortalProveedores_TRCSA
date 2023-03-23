@@ -363,7 +363,8 @@ namespace PPersistencia
 
         }
 
-        public string ejcPsdInsertRoles(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion)
+        //public string ejcPsdInsertRoles(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion)      //DELETE SF RSG 02.2023 v2.0
+        public string ejcPsdInsertRoles(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string esCreacion, string cuenta)      //ADD SF RSG 02.2023 v2.0
         {
             abrirConexion();
             string proc = "insertRol";
@@ -377,6 +378,7 @@ namespace PPersistencia
             SqlCommand.Parameters.AddWithValue("@datosMaestros", datosMaestros);
             SqlCommand.Parameters.AddWithValue("@usuarios", usuarios);
             SqlCommand.Parameters.AddWithValue("@esCreacion", esCreacion);
+            SqlCommand.Parameters.AddWithValue("@cuenta", cuenta);      //ADD SF RSG 02.2023 v2.0
             SqlDataReader datareader = SqlCommand.ExecuteReader();
             datareader.Read();
             string res;
@@ -386,7 +388,8 @@ namespace PPersistencia
             return res; 
         }
 
-        public string ejcPsdActualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string idAnterior, string esCreacion)
+        //public string ejcPsdActualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string idAnterior, string esCreacion)      //DELETE SF RSG 02.2023 v2.0
+        public string ejcPsdActualizaRol(string nombreRol, string esActive, string facturas, string partidas, string pagos, string datosMaestros, string usuarios, string idAnterior, string esCreacion, string cuenta)      //ADD SF RSG 02.2023 v2.0
         {
             abrirConexion();
             string proc = "actualizaRol";
@@ -401,6 +404,7 @@ namespace PPersistencia
             SqlCommand.Parameters.AddWithValue("@datosMaestros", datosMaestros);
             SqlCommand.Parameters.AddWithValue("@usuarios", usuarios);
             SqlCommand.Parameters.AddWithValue("@esCreacion", esCreacion);
+            SqlCommand.Parameters.AddWithValue("@cuenta", cuenta);      //ADD SF RSG 02.2023 v2.0
             SqlDataReader datareader = SqlCommand.ExecuteReader();
             datareader.Read();
             string res;

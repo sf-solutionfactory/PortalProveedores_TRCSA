@@ -145,7 +145,7 @@ namespace PNegocio
             srv.Open();
             srv.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
             string resul = null;
-            resul = srv.Z_UFAC_VERIFMIR7(fechafac, año, importe, importeIVA, importeSub, importedesc, moneda, numerodoc, val_fec, val_impt, val_iva, val_imps, val_mon);
+            resul = srv.Z_UFAC_VERIFMIR7(fechafac, año, importe, importeIVA, importeSub, importedesc, moneda, numerodoc, val_fec, val_impt, val_iva, val_imps, val_mon, bukrs);
             srv.Close();
             return resul;
         }

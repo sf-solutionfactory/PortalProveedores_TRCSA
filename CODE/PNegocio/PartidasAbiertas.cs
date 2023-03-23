@@ -13,7 +13,8 @@ namespace PNegocio
         }
 
         public string[] status = new string[0];
-        public List<PEntidades.PAbiertasYPago> getfacturasAbiertas(string fecha1, string fecha2, List<string[]> listaDiferentesInstancias)
+        //public List<PEntidades.PAbiertasYPago> getfacturasAbiertas(string fecha1, string fecha2, List<string[]> listaDiferentesInstancias)    //DELETE SF RSG 02.2023 v2.0
+        public List<PEntidades.PAbiertasYPago> getfacturasAbiertas(string fecha1, string fecha2, List<string[]> listaDiferentesInstancias, string tipo = "")    //ADD SF RSG 02.2023 v2.0
         {
 
             List<PEntidades.PAbiertasYPago> list = new List<PEntidades.PAbiertasYPago>();
@@ -39,8 +40,9 @@ namespace PNegocio
 
                     objetoSoc = PEntidades.Utiles.objetoSociedad(splitSoc);
                     objLifnr = PEntidades.Utiles.objetoLifnr(splitLifnr);
-                    
-                    var resultado = srv.Z_UPARTIDAS_ABIERTAS(Gen.Util.CS.Gen.convertirFecha_SAP(fecha1), Gen.Util.CS.Gen.convertirFecha_SAP(fecha2), objLifnr, objetoSoc);
+
+                    //var resultado = srv.Z_UPARTIDAS_ABIERTAS(Gen.Util.CS.Gen.convertirFecha_SAP(fecha1), Gen.Util.CS.Gen.convertirFecha_SAP(fecha2), objLifnr, objetoSoc);        //DELETE SF RSG 02.2023 v2.0
+                    var resultado = srv.Z_UPARTIDAS_ABIERTAS(Gen.Util.CS.Gen.convertirFecha_SAP(fecha1), Gen.Util.CS.Gen.convertirFecha_SAP(fecha2), objLifnr, objetoSoc, tipo);    //ADD SF RSG 02.2023 v2.0
                     int cantidad = resultado.Count();
 
                     PEntidades.PAbiertasYPago objPabYPag;
@@ -62,6 +64,14 @@ namespace PNegocio
                         string F_BASE = resultado.ElementAt(i).F_BASE.ToString();
                         string F_VENCIM = resultado.ElementAt(i).F_VENCIM.ToString();
 
+                        string AUGBL    = resultado.ElementAt(i).AUGBL.ToString();  //ADD SF RSG 02.2023 v2.0
+                        string BUDAT    = resultado.ElementAt(i).BUDAT.ToString();  //ADD SF RSG 02.2023 v2.0
+                        string BUKRS    = resultado.ElementAt(i).BUKRS.ToString();  //ADD SF RSG 02.2023 v2.0
+                        string UUID     = resultado.ElementAt(i).UUID.ToString();   //ADD SF RSG 02.2023 v2.0
+                        string ICO_AUGP = resultado.ElementAt(i).ICO_AUGP.ToString();   //ADD SF RSG 02.2023 v2.0
+                        string ICO_DUE  = resultado.ElementAt(i).ICO_DUE.ToString();    //ADD SF RSG 02.2023 v2.0
+                        string SGTXT  = resultado.ElementAt(i).SGTXT.ToString();    //ADD SF RSG 02.2023 v2.0
+
                         objPabYPag.IDINSTANCIA = int.Parse(listaDiferentesInstancias[j][0]);
 
                         objPabYPag.ZUONR1 = ZUONR;
@@ -77,6 +87,14 @@ namespace PNegocio
 
                         objPabYPag.F_BASE = F_BASE;
                         objPabYPag.F_VENCIM = F_VENCIM;
+
+                        objPabYPag.AUGBL1   = AUGBL;    //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.BUDAT    = BUDAT;    //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.BUKRS    = BUKRS;    //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.UUID     = UUID;     //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.ICO_AUGP = ICO_AUGP;     //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.ICO_DUE  = ICO_DUE;      //ADD SF RSG 02.2023 v2.0
+                        objPabYPag.SGTXT  = SGTXT;      //ADD SF RSG 02.2023 v2.0
 
                         list.Add(objPabYPag);
                     }

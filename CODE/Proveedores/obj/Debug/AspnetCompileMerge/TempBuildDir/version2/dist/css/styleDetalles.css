@@ -1,0 +1,7 @@
+
+.table-responsive .table tr td > .btnCargar span {
+    color: #10CF00;
+    font-size: 30px;
+    /* margin-top: 25px; */
+    cursor: pointer;
+}

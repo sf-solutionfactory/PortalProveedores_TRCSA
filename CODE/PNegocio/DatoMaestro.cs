@@ -37,6 +37,7 @@ namespace PNegocio
                 tmpProveedor.HOUSE_NUM1 = resul.HOUSE_NUM1.ToString();// int
                 tmpProveedor.POST_CODE1 = resul.POST_CODE1;
                 tmpProveedor.ADDR1_DATA = resul.ADDR1_DATA;
+                tmpProveedor.ADDR2_DATA = resul.ADDR2_DATA;   //ADD SF RSG 02.2023 v2.0
                 tmpProveedor.COUNTRY = resul.COUNTRY;
                 tmpProveedor.NAMECOUNTRY = resul.NAMECOUNTRY;
                 tmpProveedor.REGION = resul.REGION;

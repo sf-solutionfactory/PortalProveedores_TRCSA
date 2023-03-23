@@ -11,7 +11,8 @@ namespace PNegocio
         public string error = "";
         public int setFacturascargadasNew(string bukrs, string correo, string ebeln, string lifnr, string msjsap, string msgsat, string estatus, string tipo,
             string werks, string xblnr, string fecha_xml, string xmlfile, string endpoint, string[] userPass, byte[] raw, string uuid, decimal total,
-            string numeroItem, string BELNR, string BWTAR, string KSCHL, string tipoarchivo, byte[] rawpdf, string pdffile, decimal retencion)
+            //string numeroItem, string BELNR, string BWTAR, string KSCHL, string tipoarchivo, byte[] rawpdf, string pdffile, decimal retencion)  //DELETE SF RSG 02.2023 v2.0
+            string numeroItem, string BELNR, string BWTAR, string KSCHL, string tipoarchivo, byte[] rawpdf, string pdffile, decimal retencion, string gjahr = "")  //ADD SF RSG 02.2023 v2.0
         {
 
             var result = "";
@@ -19,7 +20,7 @@ namespace PNegocio
             PEntidades.SrvSAPUProveedores.ZWS_UPROVEEDORESClient srv = new PPersistencia.WebServices().getZWS_UPROVEEDORESInstanceNew(endpoint, userPass);
             srv.Open();
             srv.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
-            result = srv.Z_UFAC_CARGADAS(BELNR, bukrs, BWTAR, correo, "", ebeln, numeroItem, fecha_xml, retencion, KSCHL, lifnr, msjsap, msgsat, pdffile, raw, rawpdf, estatus, tipo, tipoarchivo, null, werks, xblnr, xmlfile, uuid);
+            result = srv.Z_UFAC_CARGADAS(BELNR, bukrs, BWTAR, correo, "", ebeln, numeroItem, fecha_xml, retencion, KSCHL, lifnr, msjsap, msgsat, pdffile, raw, rawpdf, estatus, tipo, tipoarchivo, null, werks, xblnr, xmlfile, uuid, gjahr);  //MODIFY SF RSG 02.2023 v2.0
             srv.Close();
             if (result != "" && result != null)
             {
@@ -46,7 +47,7 @@ namespace PNegocio
                     );            
             srv.Open();
             srv.InnerChannel.OperationTimeout = new TimeSpan(0, 10, 0);
-            result = srv.Z_UFAC_CARGADAS("", "", "", "", "X", "", "", "", 0, "", "", "", "", "", null, null, "", "", "", objetoUui, "", "", "", "");
+            result = srv.Z_UFAC_CARGADAS("", "", "", "", "X", "", "", "", 0, "", "", "", "", "", null, null, "", "", "", objetoUui, "", "", "", "", "");              //MODIFY SF RSG 02.2023 v2.0
             srv.Close();
             if (result != "" && result != null)
             {

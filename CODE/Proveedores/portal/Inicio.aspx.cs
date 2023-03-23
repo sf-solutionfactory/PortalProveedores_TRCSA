@@ -28,7 +28,8 @@ namespace Proveedores.portal
                         idPantallas[i] == 2 ||
                         idPantallas[i] == 4 ||
                         idPantallas[i] == 8 ||
-                        idPantallas[i] == 16
+                        idPantallas[i] == 16 ||
+                        idPantallas[i] == 7    //ADD SF RSG 02.2023 v2.0
                         )
                     {
                         permiso = true;
@@ -106,7 +107,8 @@ namespace Proveedores.portal
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            Response.Redirect("Inicio.aspx");
+            //Response.Redirect("Inicio.aspx");     //DELETE SF RSG 02.2023 v2.0
+            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
         }
     }
 }

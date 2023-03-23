@@ -63,7 +63,8 @@ namespace Proveedores.administrator
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            Response.Redirect("config.aspx");
+            //Response.Redirect("config.aspx");     //DELETE SF RSG 02.2023 v2.0
+            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
         }
 
         private void limpiarCampos() {
@@ -109,6 +110,9 @@ namespace Proveedores.administrator
                             case "Control de usuarios":
                                 this.chkUsuarios.Checked =  true;
                                 break;
+                            case "Estado de cuenta":                    //ADD SF RSG 02.2023 v2.0
+                                this.chkCuenta.Checked = true;          //ADD SF RSG 02.2023 v2.0
+                                break;                                  //ADD SF RSG 02.2023 v2.0
                             default:
                                 break;
                         }
@@ -161,9 +165,10 @@ namespace Proveedores.administrator
             string verificar = this.hidVerificar.Value;
             //if (verificar == "si")
             //{ 
-            string[] pantallasSelected = { "0", "0", "0", "0", "0", "0" };
+            //string[] pantallasSelected = { "0", "0", "0", "0", "0", "0" };            //DELETE SF RSG 02.2023 v2.0
+            string[] pantallasSelected = { "0", "0", "0", "0", "0", "0", "0" };         //ADD SF RSG 02.2023 v2.0
 
-                if (chkFacturas.Checked)
+            if (chkFacturas.Checked)
                 {
                     pantallasSelected[0] = "1";
                 
@@ -189,6 +194,10 @@ namespace Proveedores.administrator
                 {
                     pantallasSelected[5] = "1";
                 }
+                if (chkCuenta.Checked)                  //ADD SF RSG 02.2023 v2.0
+                {
+                    pantallasSelected[6] = "1";
+                }
                 int esActivo = 0;
                 if(this.rdbEsActivo.Text == "Activo"){
                     esActivo = 1;
@@ -207,6 +216,7 @@ namespace Proveedores.administrator
                             this.lblDialog.Text = new PNegocio.Administrador.Roles().insertarRol(
                                     this.txtNombreRol.Text.Trim(), esActivo.ToString().Trim(),
                                     pantallasSelected[0], pantallasSelected[1], pantallasSelected[2], pantallasSelected[3], pantallasSelected[4], pantallasSelected[5]
+                                    ,pantallasSelected[6]                  //ADD SF RSG 02.2023 v2.0
                                     );
                             mostrarTablaRoles();
                         }
@@ -215,7 +225,8 @@ namespace Proveedores.administrator
                             this.lblDialog.Text = new PNegocio.Administrador.Roles().actualizaRol(
                                    this.txtNombreRol.Text.Trim(), esActivo.ToString().Trim(),
                                    pantallasSelected[0], pantallasSelected[1], pantallasSelected[2], pantallasSelected[3], pantallasSelected[4], pantallasSelected[5]
-                                   ,this.hidIdAnt.Value
+                                   , this.hidIdAnt.Value
+                                   , pantallasSelected[6]                  //ADD SF RSG 02.2023 v2.0
                                    );
                             mostrarTablaRoles();
                         }

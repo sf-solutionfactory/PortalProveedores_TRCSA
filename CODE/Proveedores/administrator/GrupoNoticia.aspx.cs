@@ -179,7 +179,8 @@ namespace Proveedores.administrator
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
             //se redirecciona al usuario a la pagina de login
-            Response.Redirect("config.aspx");
+            //Response.Redirect("config.aspx");     //DELETE SF RSG 02.2023 v2.0
+            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
         }
 
         private void cargarProveedores(){
@@ -188,7 +189,7 @@ namespace Proveedores.administrator
             Session["Tablas"] = tablas;
             if (this.lblTablaProveedores.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
+                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
 
                 //string html = "<table><tr><td><ul id='sortable2' class='droptrue'>" + "</ul>";
                 //html += "</ul></td></tr></table>";
@@ -214,7 +215,7 @@ namespace Proveedores.administrator
             Session["Tablas"] = tablas;
             if (this.lblTablaProveedores.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                //this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
+                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
             }
         }
 

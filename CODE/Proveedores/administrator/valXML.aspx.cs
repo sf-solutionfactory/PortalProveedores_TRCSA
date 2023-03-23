@@ -75,9 +75,10 @@ namespace Proveedores.administrator
         {
             //se borra la cookie de autenticacion
             System.Web.Security.FormsAuthentication.SignOut();
-            
+
             //se redirecciona al usuario a la pagina de login
-            Response.Redirect("config.aspx");
+            //Response.Redirect("config.aspx");     //DELETE SF RSG 02.2023 v2.0
+            Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
         }
 
         protected void btnNuevo_Click(object sender, EventArgs e)

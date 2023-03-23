@@ -82,6 +82,9 @@ namespace PEntidades
         public int ZCOUNT { get; set; }  //ADD SF RSG 02.2023 v2.0
         public string BUKRS { get; set; }  //ADD SF RSG 02.2023 v2.0
         public string UUID { get; set; }  //ADD SF RSG 02.2023 v2.0
+        public string BUDAT { get; set; }  //ADD SF RSG 02.2023 v2.0
+        public string ICO_AUGP { get; set; }  //ADD SF RSG 02.2023 v2.0
+        public string ICO_DUE { get; set; }  //ADD SF RSG 02.2023 v2.0
 
         public int IDINSTANCIA { get; set; }
 

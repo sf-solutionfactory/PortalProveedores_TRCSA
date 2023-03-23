@@ -170,7 +170,7 @@ namespace PNegocio
                                    "    <td>" + lstPAbiertas[i].BELNR1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].BLART1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
-                                   "    <td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>" +
+                                   "    <td class='columna-numerica'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>" +           //MODIFY SF RSG 02.2023 v2.0
                                    "    <td>" + lstPAbiertas[i].HWAER1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].ZUONR1 + "</td>" +
                                    "    <td>" + lstPAbiertas[i].XBLNR + "</td>" +
@@ -494,7 +494,7 @@ namespace PNegocio
                                 string msm = listFact[pos].msgVarios;
                                 popdesvincularXML(ref msm, ref desadjuntar);
                                 list_uuid.Clear();
-                                htmldesa += "<p>Pocision " + poci + " </p>" + desadjuntar;
+                                htmldesa += "<p>Posición " + poci + " </p>" + desadjuntar;
                                 pos++;
                                 poci++;
                             }
@@ -731,7 +731,7 @@ namespace PNegocio
             {
                 if (codehtml.Contains("<table>") == false)
                 {
-                    codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Seleccion</td></tr>";
+                    codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Selección</td></tr>";
                 }
                 if (msm.Contains("SAP: Error al guardar el") == false && msm.Contains("Valores de XML no coinciden") == false)
                 {
@@ -775,7 +775,7 @@ namespace PNegocio
                 {
                     if (codehtml.Contains("<table>") == false)
                     {
-                        codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Seleccion</td></tr>";
+                        codehtml += "<table><tr class=\"row_des_enca\"><td style=\"padding:5px\">Detalle de adjunto</td><td style=\"padding:5px\">Selección</td></tr>";
                     }
                     while (msm.Length > 0)
                     {
@@ -850,6 +850,7 @@ namespace PNegocio
 
         }
 
+        //---------------------BEGIN OF INSERT SF RSG 02.2023 V2.0--------------------------------------------//
         public string formatCurrency(float input)
         {
             return input.ToString("C", CultureInfo.CurrentCulture);
@@ -859,5 +860,86 @@ namespace PNegocio
             float temp = float.Parse(input);
             return temp.ToString("C", CultureInfo.CurrentCulture);
         }
+
+        public string convertListPAbiertasToTableInCodeEstado(List<PAbiertasYPago> lstPAbiertas)
+        {
+            string html = "";
+            html += "<table class='table table-striped table-bordered' id='tableToOrder'>"; //ADD SF RSG 02.2023 v2.0
+
+            html += "   <thead>" +
+                        "       <tr>" +
+                        //"         <th class='" + "tHide" + "'>Sociedad</th>" +
+                        "         <th>Est</th>" +
+                        "         <th>Nº doc.</th>" +
+                        "         <th>Referencia</th>" +
+                        "         <th>Clase</th>" +
+                        "         <th>Fecha doc.</th>" +
+                        "         <th>Fe.contab.</th>" +
+                        "         <th>Vencim</th>" +
+                        "         <th>Importe</th>" +
+                        "         <th>Mon.</th>" +
+                        "         <th>Doc. comp</th>" +
+                        "         <th>Texto</th>" +
+                        "       </tr>" +
+                        "   </thead>";
+            html += "   <tbody>";
+
+
+            for (int i = 0; i < lstPAbiertas.Count; i++)
+            {
+                html += "<tr>" +
+                        //"<td>" + lstPAbiertas[i].BUKRS + "</td>" +
+                        "<td style='text-align:center;'>" + statusAUGP(lstPAbiertas[i].ICO_AUGP) + "</td>" +
+                        "<td>" + lstPAbiertas[i].BELNR1 + "</td>" +
+                        "<td>" + lstPAbiertas[i].XBLNR + "</td>" +
+                        "<td>" + lstPAbiertas[i].BLART1 + "</td>" +
+                        "<td>" + lstPAbiertas[i].BUDAT + "</td>" +
+                        "<td>" + lstPAbiertas[i].BLDAT1 + "</td>" +
+                "<td style='text-align:center;'>" + statusDUE(lstPAbiertas[i].ICO_DUE) + "</td>";
+                if (lstPAbiertas[i].DMSHB1 < 0)
+                    html += "<td class='columna-numerica text-danger'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
+                else
+                    html += "<td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>";
+                html += "<td>" + lstPAbiertas[i].HWAER1 + "</td>" +
+                        "<td>" + lstPAbiertas[i].AUGBL1 + "</td>" +
+                        "<td>" + lstPAbiertas[i].SGTXT + "</td>" +
+                        "</tr>";
+            }
+            html += "</tbody>" +
+                    "</table>";
+            return html;
+        }
+
+        private string statusAUGP(string status)
+        {
+            string ret = "";
+            if (status == "OPEN")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='palevioletred' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><circle cx='12' cy='12' r='10'></circle><line x1='8' y1='12' x2='16' y2='12'></line></svg>";
+            if (status == "PARK")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='#edd636' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><path d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'></path><line x1='12' y1='9' x2='12' y2='13'></line><line x1='12' y1='17' x2='12.01' y2='17'></line></svg>";
+            if (status == "CLEAR")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='yellowgreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'></path><polyline points='22 4 12 14.01 9 11.01'></polyline></svg>";
+                //ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='yellowgreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><circle cx='12' cy='12' r='10'></circle></svg>";
+            if (status == "POST")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='yellowgreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'></path><polyline points='22 4 12 14.01 9 11.01'></polyline></svg>";
+
+            return ret;
+        }
+        private string statusDUE(string status)
+        {
+            string ret = "";
+            if (status == "BEFORE")
+                ret = "<div class='css-9a5dmo'><svg viewBox='0 0 24 24' width='20' height='20' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect><line x1='16' y1='2' x2='16' y2='6'></line><line x1='8' y1='2' x2='8' y2='6'></line><line x1='3' y1='10' x2='21' y2='10'></line></svg></div>";
+            if (status == "DUEDAY")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='currentColor' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><path d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'></path><path d='M13.73 21a2 2 0 0 1-3.46 0'></path></svg>";
+            if (status == "PAST")
+                ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='palevioletred' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><line x1='9' y1='9' x2='15' y2='15'></line><line x1='15' y1='9' x2='9' y2='15'></line></svg>";
+
+
+
+            return ret;
+        }
+        //---------------------END   OF INSERT SF RSG 02.2023 V2.0--------------------------------------------//
+
     }
 }
