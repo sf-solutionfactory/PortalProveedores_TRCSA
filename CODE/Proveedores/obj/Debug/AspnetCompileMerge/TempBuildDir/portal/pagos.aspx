@@ -222,7 +222,7 @@
                                             <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control"></asp:TextBox>
                                         </div>
                                     </div>
-                                        <asp:Button ID="btnActualizaX" runat="server" Text="Buscar" CssClass="btn btn-success ico-actualizarX" OnClick="Button1_Click" />
+                                    <asp:Button ID="btnActualizaX" runat="server" Text="Buscar" CssClass="btn btn-success ico-actualizarX" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>

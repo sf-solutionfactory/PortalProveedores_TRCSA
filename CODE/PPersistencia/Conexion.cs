@@ -6,18 +6,17 @@ using System.Web;
 using PPersistencia;
 using System.Data.SqlClient;
 using System.Security;
-using System.Web;
 
 
 namespace PPersistencia
 {
     public class Conexion
     {
-        private string direccionBD;
-        //private string puertoSrv;
-        private string nombreBD;
-        private string usuarioSrv;
-        private string contrasenaSrv;
+        //private string direccionBD;
+        ////private string puertoSrv;
+        //private string nombreBD;
+        //private string usuarioSrv;
+        //private string contrasenaSrv;
 
         private SqlConnection con;
 

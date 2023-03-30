@@ -122,6 +122,7 @@ namespace PNegocio.Administrador
             List<string[]> resultado = ejec.ejcPsdConsultaNOticia();
             if (resultado.Count > 1)
             {
+                resultado[0][1] = "Título";     //ADD SF RSG 02.2023 V2.0
                 for (int i = 1; i < resultado.Count; i++ )
                 {
                     if (resultado[i][6].ToString().Trim() == "True")
@@ -157,7 +158,8 @@ namespace PNegocio.Administrador
             //List<string[]> resultado = ejec.ejcPsdConsultaNOticia();
             if (resultado.Count > 1)
             {
-                return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue' style='width:" + ancho + ";");
+                //return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue' style='width:" + ancho + ";");
+                return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue list-group' style='width:" + ancho + ";");//ADD SF RSG 02.2023 v2.0
             }
             else
             {
@@ -263,11 +265,13 @@ namespace PNegocio.Administrador
                 List<int> listaEvitar = new List<int>();
                 if (especificacion == "dentro" && tipoTabla == "sort")
                 {
-                    return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable2", "droptrue' style='width:" + "auto" + ";", 1);
+                    //return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable2", "droptrue' style='width:" + "auto" + ";", 1);
+                    return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable2", "droptrue list-group' style='width:" + "auto" + ";", 1); //ADD SF RSG 02.2023 v2.0
                 }
                 else if (especificacion == "fuera" && tipoTabla == "sort")
                 {
-                    return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable1", "droptrue' style='width:" + "auto" + ";", 1);
+                    //return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable1", "droptrue' style='width:" + "auto" + ";", 1);
+                    return Gen.Util.CS.Gen.convertToHtmlTableSortGrupoNoticia(resultado, "sortable1", "droptrue list-group' style='width:" + "auto" + ";", 1); //ADD SF RSG 02.2023 v2.0
 
                 }
                 else
@@ -289,14 +293,14 @@ namespace PNegocio.Administrador
             if (especificacion == "dentro")
             {
 
-                sqlString += "select idnoticia as I,'<div>Titulo: </div>' + titulo as Titulo,'<div>Contenido: </div>' + (select SUBSTRING((select cuerpo),0,100)) as Contenido, " +
+                sqlString += "select idnoticia as I,'<div>Titulo: </div>' + titulo as Titulo,'<div>Contenido: </div>' + (select SUBSTRING((select cuerpo),0,8000)) as Contenido, " +
                 "'<div>Fecha de inicio: </div>' + cast(fechainicio as CHAR(12)) as Fecha_Inicio,'<div>Fecha de fin: </div>' + cast(fechafin as CHAR(12)) as Fecha_fin, " +
                 "'<div>URL de la imagen: </div>' + (select SUBSTRING((select urlImagen),0,100)) as URL_de_imagen from noticia " +
                               "where idNoticia in (";
             }
             else
             {
-                sqlString += "select idnoticia as I,'<div>Titulo: </div>' + titulo as Titulo,'<div>Contenido: </div>' + (select SUBSTRING((select cuerpo),0,100)) as Contenido, " +
+                sqlString += "select idnoticia as I,'<div>Titulo: </div>' + titulo as Titulo,'<div>Contenido: </div>' + (select SUBSTRING((select cuerpo),0,8000)) as Contenido, " +
                 "'<div>Fecha de inicio: </div>' + cast(fechainicio as CHAR(12)) as Fecha_Inicio,'<div>Fecha de fin: </div>' + cast(fechafin as CHAR(12)) as Fecha_fin, " +
                 "'<div>URL de la imagen: </div>' + (select SUBSTRING((select urlImagen),0,100)) as URL_de_imagen from noticia " +
                  "where idNoticia not in (";
@@ -321,12 +325,14 @@ namespace PNegocio.Administrador
                 List<int> listaEvitar = new List<int>();
                 if (especificacion == "dentro" && tipoTabla == "sort")
                 {
-                    return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue' style='width:" + "" + ";");
+                    //return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue' style='width:" + "" + ";");
+                    return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue list-group' style='width:" + "" + ";"); //ADD SF RSG 02.2023 v2.0
 
                 }
                 else if (especificacion == "fuera" && tipoTabla == "sort")
                 {
-                    return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue' style='width:" + "" + ";");
+                    //return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue' style='width:" + "" + ";");
+                    return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable1", "droptrue list-group' style='width:" + "" + ";"); //ADD SF RSG 02.2023 v2.0
                 }
                 else
                 {
@@ -337,7 +343,12 @@ namespace PNegocio.Administrador
             }
             else
             {
-                return "<strong>No se encontraron resultados para mostrar en la tabla</strong>";
+                //return "<strong>No se encontraron resultados para mostrar en la tabla</strong>";
+
+                if (especificacion == "dentro" && tipoTabla == "sort")
+                    return "<ul id='sortable2' class='droptrue list-group'>" + "</ul></ul>";
+                else
+                    return "<ul id='sortable1' class='droptrue list-group'>" + "</ul></ul>";
             }
         }
 

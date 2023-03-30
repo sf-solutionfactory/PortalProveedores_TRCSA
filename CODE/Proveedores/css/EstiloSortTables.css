@@ -66,8 +66,8 @@
             /* background: #EFF8FB; */
             /* margin-left:2%; */
             min-height:400px;
-            min-width: 600px; /*DELETE SF RSG 02.2023 V2.0*/
-            width:45%;
+            /*min-width: 600px;*/   /*DELETE SF RSG 02.2023 V2.0*/
+            /*width:45%;*/          /*DELETE SF RSG 02.2023 V2.0*/
             /*min-width: 312px;*/
         }
 

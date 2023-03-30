@@ -6,7 +6,7 @@
     <script src="../js/BusquedaTabla.js"></script>
 
     
-
+<%--    <style>.table th { font-weight:bolder;}  </style>--%>
     <script>
         $(function () {
 
@@ -54,6 +54,12 @@
                             <div style="background-color: rgba(0,0,0,.03);">
                                 <div class="card-body">
                                     <div class="row">
+                                        <asp:RadioButtonList ID="rdbTipo" runat="server" Style="margin-left:2rem">
+                                            <asp:ListItem Selected="True">Partidas abiertas</asp:ListItem>
+                                            <asp:ListItem>Todas las partidas</asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </div>
+                                    <div class="row">
                                         <div class="form-group col-md-4 col-lg-2">
                                             <label>Fecha inicio</label>
                                             <asp:TextBox ID="datepicker" runat="server" class="txtValidar form-control"></asp:TextBox>
@@ -63,7 +69,7 @@
                                             <asp:TextBox ID="datepicker2" runat="server" class="txtValidar form-control"></asp:TextBox>
                                         </div>
                                     </div>
-                                <asp:Button ID="btnActualizaX" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="Button1_Click" />
+                                    <asp:Button ID="btnActualizaX" runat="server" Text="Buscar" CssClass="btn btn-success" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>
@@ -80,6 +86,29 @@
             </div>
         </div>
     </div>
+
+    <div class="col">
+        <div class="row">
+<%--            <div class="col-md-6 col-lg-8" style="display:none;">
+                <div class="card">
+                    <div class="card-body"></div>
+                </div>
+            </div>--%>
+            <div class="col-md-6 col-lg-4  ml-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" style="font-size: 2.1rem;">Total</h4>
+
+                        <div class="form-group col-md-12">
+                            <%--<label>Importe</label>--%>
+                            <asp:TextBox ID="txtTotal" runat="server" class="txtValidar form-control" Enabled="false" Width="100%" Style="text-align: right; font-size: 2rem;"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <asp:Button ID="btnActualiza" runat="server" Text="" CssClass=".ico-actualizar" Visible="false"/>
 

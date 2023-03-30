@@ -58,7 +58,7 @@ namespace PNegocio
                         "         <th>Fecha</th>" +
                         "         <th>Monto</th>" +
                         "         <th>Moneda</th>" +
-                        "         <th>Nº asignacion</th>" +
+                        "         <th>Nº asignación</th>" +
 
                         "         <th>Factura</th>" +
                         "         <th class='icono'>Est</th>" +     //ADD SF RSG 02.2023 v2.0
@@ -219,7 +219,7 @@ namespace PNegocio
                         //"         <th>Fecha de pago</th>" +
                         "         <th>Monto</th>" +
                         "         <th>Moneda</th>" +
-                        "         <th>Nº asignacion</th>" +
+                        "         <th>Nº asignación</th>" +
 
                         "         <th>Factura</th>" +
                         "         <th>Proveedor</th>" +
@@ -280,7 +280,7 @@ namespace PNegocio
             nombres.Add(head = new HeaderList("Fecha de recepción"));
             nombres.Add(head = new HeaderList("Importe"));
             nombres.Add(head = new HeaderList("Material"));
-            nombres.Add(head = new HeaderList("Numero Material"));
+            nombres.Add(head = new HeaderList("Número Material"));
             //nombres.Add(head = new HeaderList("Imp. IVA"));
             //nombres.Add(head = new HeaderList("Retención"));
             nombres.Add(head = new HeaderList("Moneda"));
@@ -875,7 +875,7 @@ namespace PNegocio
                         "         <th>Clase</th>" +
                         "         <th>Fecha doc.</th>" +
                         "         <th>Fe.contab.</th>" +
-                        "         <th>Vencim</th>" +
+                        "         <th>Vencimiento</th>" +
                         "         <th>Importe</th>" +
                         "         <th>Mon.</th>" +
                         "         <th>Doc. comp</th>" +
@@ -899,14 +899,30 @@ namespace PNegocio
                 if (lstPAbiertas[i].DMSHB1 < 0)
                     html += "<td class='columna-numerica text-danger'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
                 else
-                    html += "<td class='columna-numerica'>" + lstPAbiertas[i].DMSHB1 + "</td>";
+                    html += "<td class='columna-numerica'>" + formatCurrency(lstPAbiertas[i].DMSHB1) + "</td>";
                 html += "<td>" + lstPAbiertas[i].HWAER1 + "</td>" +
                         "<td>" + lstPAbiertas[i].AUGBL1 + "</td>" +
                         "<td>" + lstPAbiertas[i].SGTXT + "</td>" +
                         "</tr>";
             }
-            html += "</tbody>" +
-                    "</table>";
+            html += "</tbody>";
+            //html += "   <tfoot>" +
+            //        "       <tr>" +
+            //        //"         <th class='" + "tHide" + "'>Sociedad</th>" +
+            //        "         <th>Est</th>" +
+            //        "         <th>Nº doc.</th>" +
+            //        "         <th>Referencia</th>" +
+            //        "         <th>Clase</th>" +
+            //        "         <th>Fecha doc.</th>" +
+            //        "         <th>Fe.contab.</th>" +
+            //        "         <th>Vencimiento</th>" +
+            //        "         <th class='columna-numerica'>1000</th>" +
+            //        "         <th>Mon.</th>" +
+            //        "         <th>Doc. comp</th>" +
+            //        "         <th>Texto</th>" +
+            //        "       </tr>" +
+            //        "   </tfoot>";
+            html += "</table>";
             return html;
         }
 

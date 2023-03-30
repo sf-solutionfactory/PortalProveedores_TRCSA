@@ -445,11 +445,11 @@
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <asp:Panel ID="Panel6" runat="server" GroupingText="Contenido Password">
         <div class="form-group">
-            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de letras</label>
+            <label for="ContentPlaceHolder1_txtAreaContenido">Número de letras</label>
             <asp:TextBox ID="txtNumeroLetras" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
         </div>
         <div class="form-group">
-            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de letras en Mayuscúla</label>
+            <label for="ContentPlaceHolder1_txtAreaContenido">Número de letras en Mayúscula</label>
             <asp:TextBox ID="txtNumeroLetrasM" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
         </div>
         <div class="form-group">
@@ -457,7 +457,7 @@
             <asp:TextBox ID="txtCantidadNumeros" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
         </div>
         <div class="form-group">
-            <label for="ContentPlaceHolder1_txtAreaContenido">Numero de caracteres</label>
+            <label for="ContentPlaceHolder1_txtAreaContenido">Número de caracteres</label>
             <asp:TextBox ID="txtNumeroCaracteres" runat="server" class="txtValidar soloNumeros2 form-control" MaxLength="3" onkeypress="return soloNumeros2(event)"></asp:TextBox>
         </div>
         <%-- <table class="tblFm tblFm3">

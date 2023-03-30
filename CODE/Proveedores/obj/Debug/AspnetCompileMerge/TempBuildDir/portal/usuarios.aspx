@@ -58,6 +58,9 @@
                 height:12px;
                 min-height:25px;
             }*/
+        .table-responsive{
+            overflow-x:auto;
+        }
              </style>
     <script>
 
@@ -159,9 +162,9 @@
                 <asp:TextBox ID="lblProveedorSelected1" runat="server" class="txtValidar form-control" Text="Proveedor..." ReadOnly></asp:TextBox>
                 <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px" Visible="false"></asp:Label>
             </div>
-            <div class="col mb-3">
-            <div class="busquedaProveedor link btn btn-light" style="height: 30px;margin-top: 24px;">Busqueda...</div> 
-                </div>
+<%--            <div class="col mb-3">
+            <div class="busquedaProveedor link btn btn-light" style="height: 30px;margin-top: 24px;">Búsqueda...</div> 
+                </div>--%>
         </div>
         <div class="validaMostrar">
             <div class="row">

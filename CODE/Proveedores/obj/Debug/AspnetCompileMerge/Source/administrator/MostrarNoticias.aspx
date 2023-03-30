@@ -88,7 +88,7 @@
     </script>
 
     <style>
-        #sortable1, #sortable2  {
+/*        #sortable1, #sortable2  {
             width: 480px;
             min-width: 480px;
             min-height: 20px;
@@ -103,11 +103,12 @@
         #sortable2 {
             min-height: 20px;
         }
-
+*/
 
          table {
-            display : inline-block;
-            vertical-align : top;
+            /*display : inline-block;
+            vertical-align : top;*/
+            overflow-x:auto;
         }
 
     </style>
@@ -121,21 +122,20 @@
     <div id="gettt" style="font-weight: bold; font-size: 17px;">Obtener</div>            <%--MODIFY SF RSG 02.2023 V2.0--%>
             <div class="col-md-4 col-sm-12" style="padding-left: 0px;">
             </div>
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-md-6 col-sm-12">
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-6 col-sm-6" style="max-width:50%;">
                         <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6" style="max-width:50%;">
                     </div>
                     <div class="col-md-12" style="text-align: right">
                         <asp:Button ID="btnSelectNoticia" runat="server" Text="Terminar" OnClick="btnSelectNoticia_Click" CssClass="btn btn-success" />             <%--MODIFY SF RSG 02.2023 V2.0--%>
                     </div>
                 </div>
             </div>
-        </div>
 
             <%--<table>
         <tr>
@@ -163,13 +163,13 @@
 <%--        <br />
         <br />--%>
         <div class="row">
-            <div class="col-lg-6">
-                <div id="scrolltable" class="tablauno">
+            <div class="col-sm-6" style="max-width:50%;">
+                <div id="scrolltable" class="tablauno1">
         <asp:Label ID="lblTablaNoticias" runat="server" Text=""></asp:Label>
         </div>
 
         </div>
-            <div class="col-lg-6">
+            <div class="col-sm-6" style="max-width:50%;">
                 <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
             </div>
         </div>
@@ -185,6 +185,6 @@
     <asp:HiddenField ID="hidCerrarSesion" runat="server" />
             </div>
             </div>
-            </div>
+            <%--</div>--%>
 
 </asp:Content>

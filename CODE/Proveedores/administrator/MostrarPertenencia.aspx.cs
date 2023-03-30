@@ -130,7 +130,7 @@ namespace Proveedores.administrator
             if (inde > -1)
             {
                 //this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "tblComun' style='width:" + "90%" + ";", listaEvitar, false, editable, false, false, 0, 1); //DELETE SF RSG 02.2023 V2.0
-                this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "table table-striped table-bordered' style='width:" + "100%" + ";", listaEvitar, false, editable, false, false, 0, 1);
+                this.lblResultado.Text = Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[inde].tabla, "tableToOrder", "tblComun2 table table-striped table-bordered' style='width:" + "100%" + ";cursor:pointer;", listaEvitar, false, editable, false, false, 0, 1);
             }
             else
             {

@@ -69,16 +69,18 @@ namespace Proveedores.administrator
                         this.lblTablaDos.Text = crearTablaNoticiasSeleccionadas(numeros);
                         if (this.lblTablaDos.Text == "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                         {
-                            this.lblTablaDos.Text = "<table><tr><td><ul id='sortable2' class='droptrue'>" + "</ul></ul></td></tr></table>";
-                                                
-                        }
+                            //this.lblTablaDos.Text = "<table><tr><td><ul id='sortable2' class='droptrue'>" + "</ul></ul></td></tr></table>";
+                            this.lblTablaDos.Text = "<table><tr><td><ul id='sortable2' class='droptrue list-group'>" + "</ul></ul></td></tr></table>"; //ADD SF RSG 02.2023 v2.0
+
+                            }
 
                         this.lblTablaNoticias.Text = crearTablaNoticiasNoSeleccionadas(numeros);
                         if (this.lblTablaNoticias.Text == "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
                         {
-                            this.lblTablaNoticias.Text = "<table><tr><td><ul id='sortable1' class='droptrue'>" + "</ul></ul></td></tr></table>";
+                            //this.lblTablaNoticias.Text = "<table><tr><td><ul id='sortable1' class='droptrue'>" + "</ul></ul></td></tr></table>";
+                            this.lblTablaNoticias.Text = "<table><tr><td><ul id='sortable1' class='droptrue list-group'>" + "</ul></ul></td></tr></table>";//ADD SF RSG 02.2023 v2.0
 
-                        }
+                            }
 
                         this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSortMostrarNoticias();
                         
@@ -123,7 +125,8 @@ namespace Proveedores.administrator
             {
                 this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSortMostrarNoticias();
 
-                string html = "<ul id='sortable2' class='droptrue'>" + "</ul>";
+                //string html = "<ul id='sortable2' class='droptrue'>" + "</ul>";
+                string html = "<ul id='sortable2' class='droptrue list-group'>" + "</ul>";//ADD SF RSG 02.2023 v2.0
                 html += "</ul>";
                 this.lblTablaDos.Text = html;
             }

@@ -115,7 +115,8 @@ namespace PNegocio
                 } // try
                 catch (Exception e)
                 {
-                    status[j] = "Error al cargar en la instancia: " + listaDiferentesInstancias[j][6];
+                    //status[j] = "Error al cargar en la instancia: " + listaDiferentesInstancias[j][6];
+                    status[j] = "Error al cargar en la instancia: " + listaDiferentesInstancias[j][6] + e.Message;  //ADD SF RSG 02.2023 v2.0
                 }
 
             } // for

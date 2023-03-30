@@ -2,6 +2,7 @@
 using PNegocio;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -48,6 +49,7 @@ namespace Proveedores.portal
 
                 string fecha1 = this.datepicker.Text;
                 string fecha2 = this.datepicker2.Text;
+                string ptAbiertas = this.rdbTipo.Text.Trim().Substring(0,1);
 
                 try
                 {
@@ -55,13 +57,14 @@ namespace Proveedores.portal
                     List<string[]> listaDiferentesInstancias = (List<string[]>)Session["listaDiferentesInstancias"];
                     n_instancias = listaDiferentesInstancias.Count;
 
-                    List<PAbiertasYPago> lstPAbiertas = res.getfacturasAbiertas(fecha1, fecha2, listaDiferentesInstancias, "E");
+                    List<PAbiertasYPago> lstPAbiertas = res.getfacturasAbiertas(fecha1, fecha2, listaDiferentesInstancias, ptAbiertas);
 
                     ConvertTittles conv = new ConvertTittles();
 
                     if (lstPAbiertas.Count > 0)
                     {
                         this.lblTabla.Text = conv.convertListPAbiertasToTableInCodeEstado(lstPAbiertas);
+                        this.txtTotal.Text = getTotal(lstPAbiertas);
                     }
                     else
                     {
@@ -86,6 +89,7 @@ namespace Proveedores.portal
                         }
 
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showFiltros()", true); //ADD SF RSG 02.2023 V2.0  
+                        this.txtTotal.Text = "0.00";
                     }
                     //if (this.lblTabla.Text  != "")
                     //{
@@ -112,6 +116,23 @@ namespace Proveedores.portal
             //se redirecciona al usuario a la pagina de login
             //Response.Redirect("Inicio.aspx");     //DELETE SF RSG 02.2023 v2.0
             Response.Redirect("Default.aspx");      //ADD SF RSG 02.2023 v2.0
+        }
+
+        private string getTotal(List<PAbiertasYPago> lstPAbiertas)
+        {
+            string ret = "";
+            float total = new float();
+            foreach(PAbiertasYPago p in lstPAbiertas)
+            {
+                total += p.DMSHB1;
+            }
+            ret = formatCurrency(float.Parse(Math.Truncate(total*100).ToString())/100);
+
+            return ret;
+        }
+        public string formatCurrency(float input)
+        {
+            return input.ToString("C", CultureInfo.CurrentCulture);
         }
     }
 }

@@ -40,9 +40,9 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 List<int> listaEvitar = new List<int>();
-                //tablas = PEntidades.Utiles.getTablasbyLetras(resultado, "tab");   //DELETE SF RSG 02.2023 V2.0
+                tablas = PEntidades.Utiles.getTablasbyLetras(resultado, "tab");   //DELETE SF RSG 02.2023 V2.0
                 //return Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[1].tabla, "tableToOrder", "tblComun' style='width:" + ancho + ";", listaEvitar, modificable, activable, desechable, false, evitar, 1);   //DELETE SF RSG 02.2023 V2.0
-                return Gen.Util.CS.Gen.convertToHtmlTableDelete(resultado, "tableToOrder", "tblComun2 table table-striped table-bordered' style='width:" + ancho + ";cursor:pointer;", listaEvitar, modificable, activable, desechable, false, evitar, 1);
+                return Gen.Util.CS.Gen.convertToHtmlTableDelete(tablas[1].tabla, "tableToOrder", "tblComun2 table table-striped table-bordered' style='width:" + ancho + ";cursor:pointer;", listaEvitar, modificable, activable, desechable, false, evitar, 1);   //MODIFY SF RSG 02.2023 V2.0
             }
             else
             {
@@ -57,7 +57,8 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 tablas = PEntidades.Utiles.getTablasbyLetras(resultado, "tab");
-                return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue' style='width:" + ancho + ";");
+                //return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue' style='width:" + ancho + ";");
+                return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue list-group' style='width:" + ancho + ";"); //ADD SF RSG 02.2023 v2.0
             }
             else
             {
@@ -72,7 +73,8 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
                 tablas = PEntidades.Utiles.getTablasbyLetras(resultado, "div");
-                return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue' style='width:" + ancho + ";");
+                //return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue' style='width:" + ancho + ";");
+                return Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[1].tabla, "sortable1", "droptrue list-group' style='width:" + ancho + ";"); //ADD SF RSG 02.2023 v2.0
             }
             else
             {
@@ -87,7 +89,8 @@ namespace PNegocio.Administrador
             if (resultado.Count > 1)
             {
 
-                return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue' style='width:" + ancho + ";");
+                //return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue' style='width:" + ancho + ";");
+                return Gen.Util.CS.Gen.convertToHtmlTableSort(resultado, "sortable2", "droptrue list-group' style='width:" + ancho + ";");  //ADD SF RSG 02.2023 v2.0
             }
             else
             {

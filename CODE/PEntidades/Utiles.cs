@@ -109,14 +109,14 @@ namespace PEntidades
                 case "Monto":
                     lista.Sort(delegate(PAbiertasYPago x, PAbiertasYPago y) // Sort funciona de acuerdo a resultados enteros, si es 0 termina, si es -1 continua comparando con los siguientes, si es -1 regresa a comparar los resultados que fueron guardados anteriormente para acoodarlo, cuando vuelve a ser 1, regresa donde se quedo 
                     {
-                        if (x.DMSHB1 == null && y.DMSHB1 == null) return 0;
-                        else if (x.DMSHB1 == null) return -1;
-                        else if (y.DMSHB1 == null) return 1;
-                        else
-                        {
+                        //if (x.DMSHB1 == null && y.DMSHB1 == null) return 0;
+                        //else if (x.DMSHB1 == null) return -1;
+                        //else if (y.DMSHB1 == null) return 1;
+                        //else
+                        //{
                             int compar = x.DMSHB1.CompareTo(y.DMSHB1);
                             return compar;
-                        }
+                        //}
                     });
                     break;
                 case "Moneda":

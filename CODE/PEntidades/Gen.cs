@@ -78,18 +78,25 @@ namespace Gen.Util.CS
             html += "<ul id='" + htmlId + "' class='" + cssClass + "'>";
             for (int i = 1; i < lista.Count; i++)
             {
-                html += "<li class='ui-state-default' class='moveIt'>";
+                //html += "<li class='ui-state-default' class='moveIt'>";
+                //html += "<li class='ui-state-default list-group-item d-flex justify-content-between align-items-center' class='moveIt'>"; //ADD SF RSG 02.2023 v2.0
+                html += "<li class='ui-state-default list-group-item justify-content-between align-items-center' class='moveIt'>"; //ADD SF RSG 02.2023 v2.0
                 for (int j = 0; j < tamcol; j++)
                 {
                     if (j == 0)
-                    {
-                        html += "<div class='idProv'>" + lista[i][j].Trim() + "</div>";
-                        //html += " <br>";
-                    }
-                    else
+                    //if (j == 2)
                     {
                         html += " <br>";
-                        html += "<div class='DivSort'>" + lista[i][j].Trim() + "</div>";
+                        html += "<div class='idProv'>" + lista[i][j].Trim() + "</div>";
+                        //html += "<span class='badge badge-primary badge-pill'>" + lista[i][j].Trim() + "</span>";
+                        //html += "<small>" + lista[i][j].Trim() + "</small>";
+                        //html += "<div>" + lista[i][j].Trim() + "</div>";
+                    }
+                    else //if(j==1)
+                    {
+                        //html += " <br>";
+                        //html += "<div class='DivSort'>" + lista[i][j].Trim() + "</div>";
+                        html += "<div>" + lista[i][j].Trim() + "</div>";
                         //html += " <br>";
                     }
                 }
@@ -148,7 +155,8 @@ namespace Gen.Util.CS
             html += "<ul id='" + htmlId + "' class='" + cssClass + "'>";
             for (int i = 1; i < lista.Count; i++)
             {
-                html += "<li class='ui-state-default' class='moveIt'>";
+                //html += "<li class='ui-state-default' class='moveIt'>";
+                html += "<li class='ui-state-default list-group-item d-flex justify-content-between align-items-center' class='moveIt'>"; //ADD SF RSG 02.2023 v2.0
                 for (int j = (0 + 0); j < tamcol-(evitarDerecha); j++)
                 {
                     if (j == 0)
@@ -195,7 +203,7 @@ namespace Gen.Util.CS
             string html = "";
             int tamcol = lista[0].Length - colEvitarDer;
             //html += "<table id='" + htmlId + "' class='" + cssClass + "'>" +                              //DELETE SF RSG 02.2023 V2.0
-            html += "<div class='table-responsive'><table id='" + htmlId + "' class='" + cssClass + "'>" +  //ADD SF RSG 02.2023 V2.0
+            html += "<div class='table-responsive' style='overflow-x:auto;'><table id='" + htmlId + "' class='" + cssClass + "'>" +  //ADD SF RSG 02.2023 V2.0
                             "<thead>";
             html += "<tr>";
             for (int i = 0; i < tamcol; i++)
@@ -238,7 +246,8 @@ namespace Gen.Util.CS
                         }
                         else
                         {
-                            if (activable) // si el activable quiere decir que trae informacion de bloqueo(esbloq)
+                            //if (activable) // si el activable quiere decir que trae informacion de bloqueo(esbloq)
+                            if (activable || lista[i][j] == "False") // si el activable quiere decir que trae informacion de bloqueo(esbloq)
                             {
                                 //html += "<td>" + "Inactivo" + "</td>";                                        //DELETE SF RSG 02.2023 V2.0
                                 html += "<td style='color:#E75353;font-weight: bold;'>" + "Inactivo" + "</td>"; //ADD SF RSG 02.2023 V2.0
@@ -286,22 +295,22 @@ namespace Gen.Util.CS
                         if (activable)// si Activar
                         {
                             //html += "<label class='btn plusBtn'onclick='workThis(this);'>" + ComplementoBoton + "</label>";    //DELETE SF RSG 02.2023 V2.0
-                            html += "<label id='btnActionActiDesacti' class='btn btn-warning' onclick='workThis(this);' title='Activar/Desactivar'>" + ComplementoBoton + "</label>";    //ADD SF RSG 02.2023 V2.0
+                            html += "<label id='btnActionActiDesacti' class='btn btn-warning' onclick='workThis(this);' title='Activar/Desactivar' style='min-width:100px'>" + ComplementoBoton + "</label>";    //ADD SF RSG 02.2023 V2.0
                         }
                         if (modificable) // editar
                         {
 
                             //html += "<label class='btn plusBtn' onclick='workThis(this);'>Modificar</label>";    //DELETE SF RSG 02.2023 V2.0
-                            html += "&nbsp<label id='btnActionModificar'class='btn btn-primary' onclick='workThis(this);'  title='Editar'><i id='btnModificar' class='fa-solid fa-pen-to-square' name='Modificar'></i></label>";    //ADD SF RSG 02.2023 V2.0
+                            html += "&nbsp<label id='btnActionModificar'class='btn btn-primary' onclick='workThis(this);' style='min-width:100px'  title='Editar'><i id='btnModificar' class='fa-solid fa-pen-to-square' name='Modificar'></i></label>";    //ADD SF RSG 02.2023 V2.0
                         }
                         if (desechable) // eliminar
                         {
                             //html += "<label class='btn plusBtn' onclick='workThis(this);'>Eliminar</label>";    //DELETE SF RSG 02.2023 V2.0
-                            html += "&nbsp<label class='btn btn-danger' onclick='workThis(this);' title='Eliminar'><i id='btnEliminar' class='fa-solid fa-trash' name='Eliminar'></i></label>";    //ADD SF RSG 02.2023 V2.0
+                            html += "&nbsp<label class='btn btn-danger' onclick='workThis(this);' title='Eliminar' style='min-width:100px'><i id='btnEliminar' class='fa-solid fa-trash' name='Eliminar'></i></label>";    //ADD SF RSG 02.2023 V2.0
                             if (detalles) // eliminar
                             {
                                 //html += "<label class='btn plusBtn' onclick='workThis(this);'>Ver más</label>";    //DELETE SF RSG 02.2023 V2.0
-                                html += "&nbsp<label class='btn btn-success' onclick='workThis(this);' title='Ver más información del usuario'><i id='btnVerMas' class='fa-solid fa-eye' name='Ver más'></i></label>";    //ADD SF RSG 02.2023 V2.0
+                                html += "&nbsp<label class='btn btn-success' onclick='workThis(this); style='min-width:100px'' title='Ver más información del usuario'><i id='btnVerMas' class='fa-solid fa-eye' name='Ver más'></i></label>";    //ADD SF RSG 02.2023 V2.0
                             }
                         }
                         html += "</center>";

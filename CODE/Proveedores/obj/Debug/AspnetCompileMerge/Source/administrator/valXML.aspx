@@ -30,6 +30,11 @@
          
         });
     </script>
+    <style>
+        #ContentPlaceHolder1_GridView1_wrapper{
+            overflow-x:auto;
+        }
+    </style>
     <script src="../js/BusquedaTabla.js"></script>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text=""></asp:Label>
@@ -180,7 +185,7 @@
     <div class="card col-md-12 col-lg-12">
         <div class="card-body">
             <h4 class="card-title"></h4>
-            <strong style="font-weight: bold; font-size: 17px;">Estos son las validaciones existentes: </strong><br /><br />   <%--MODIFY SF RSG 02.2023 V2.0--%>
+            <strong style="font-weight: bold; font-size: 17px;">Estas son las validaciones existentes: </strong><br /><br />   <%--MODIFY SF RSG 02.2023 V2.0--%>
     <%--END   OF INSERT SF RSG 02.2023 V2.0--%>
     <%--<asp:Button ID="btnNuevo" runat="server" CssClass="btn btn-primary" OnClick="btnNuevo_Click" Text="Nuevo" ToolTip="Agregar nuevo grupo de validación XML" />--%>   <%-- MODIFY SF RSG 02.2023 V2.0--%>
 

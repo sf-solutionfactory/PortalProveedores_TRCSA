@@ -177,6 +177,14 @@
             min-width: 600px;
             width:45%;
         }*/
+
+        .btn {
+            /*margin-left: 60%;*/
+            min-width:10px;
+        }
+        #ContentPlaceHolder1_lblTablaFiltro{
+            display:none;
+        }
     </style>
 
     <asp:Label ID="lblDialog" runat="server" title="Informe" Text="sssdd"></asp:Label>
@@ -274,11 +282,56 @@
                 <td><strong style="font-weight: bold; font-size: 18px;">Proveedores</strong></td>    <%--MODIFY SF RSG 02.2023 V2.0--%>
             </tr>
         </table>
-            <div class="row"><div class="col-md-4">
+            
+        <%--//BEGIN OF INSERT SF RSG 02.2023 V2.0--%>
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="Basic example"><input type="submit" name="letra" class="cls_mpletras btn" value="0 - 9" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="A" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="B" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="C" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="D" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="E" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="F" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="G" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="H" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="I" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="J" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="K" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="L" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="M" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="N" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="Ñ" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="O" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="P" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="Q" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="R" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="S" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="T" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="U" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="V" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="W" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="X" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="Y" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="Z" /></div>
+                    <div class="btn-group" role="group" aria-label="Second group"><input type="submit" name="letra" class="cls_mpletras btn" value="Otros" /></div>
+                    <div class="btn-group mr-3" role="group" aria-label="Second group">
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Filtrar</div>
+                        </div>
+                    <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <%--//END   OF INSERT SF RSG 02.2023 V2.0--%>
+<%--            <div class="row"><div class="col-md-4">
                     <asp:Label ID="lblTablaFiltro" runat="server" Text=""></asp:Label>
                 </div>
-                </div>
-        <table>
+            </div>--%>
+
+        <%--<table>
             <tr>
                 <td><input type="submit" name="letra" class="cls_mpletras" value="0 - 9"/></td>         
                 <td><input type="submit" name="letra" class="cls_mpletras" value="A"/></td>         
@@ -310,15 +363,15 @@
                 <td><input type="submit" name="letra" class="cls_mpletras" value="Z"/></td>         
                 <td><input type="submit" name="letra" class="cls_mpletras" value="Otros"/></td>         
             </tr>
-        </table>
+        </table>--%>
         <input id="procar" type="hidden" name="procargado" value="" />
         <br />
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-6" style="max-width:50%;">
             <asp:Label ID="lblTablaProveedores" runat="server" Text=""></asp:Label>
         </div>
-         <div class="col-lg-6">
+        <div class="col-sm-6" style="max-width:50%;">
         <asp:Label ID="lblTablaDos" runat="server" Text=""></asp:Label>
         </div>
     </div>

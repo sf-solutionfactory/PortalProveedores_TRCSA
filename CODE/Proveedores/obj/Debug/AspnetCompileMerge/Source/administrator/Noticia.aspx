@@ -112,7 +112,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label>Titulo</label>
+                            <label>Título</label>
                             <asp:TextBox ID="txtTitulo" runat="server" class="txtValidar form-control <%--ampliar--%>" MaxLength="100"></asp:TextBox>
                         </div>
                     </div>

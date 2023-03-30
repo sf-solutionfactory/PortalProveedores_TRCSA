@@ -9,8 +9,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />    <%--ADD SF RSG 02.2023 v2.0--%>
@@ -253,7 +253,7 @@
                             </a>
                             <div class="navbar-brand">
                                 <!-- Logo icon -->
-                                <a href="config.aspx">
+                                <a href="Inicio.aspx">
                                     <b class="logo-icon">
                                         <!-- Dark Logo icon -->
                                         <%--<img src="../images/logo_sicsa.png" alt="homepage" class="dark-logo" />--%>
@@ -399,7 +399,6 @@
                    <%-- </div>
                     </div>--%>
                 </div>
-            </div>
         <%-- Termina versión 2 --%>
         <div id="divHeader" style="display:none;">
             <div class="left">

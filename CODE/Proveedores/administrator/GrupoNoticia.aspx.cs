@@ -189,11 +189,12 @@ namespace Proveedores.administrator
             Session["Tablas"] = tablas;
             if (this.lblTablaProveedores.Text != "<strong>No se encontraron resultados para mostrar en la tabla</strong>")
             {
-                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort(); //DELETE SF RSG 02.2023 v2.0
+                this.lblTablaFiltro.Text = PNegocio.Administrador.TextoFiltro.textoTablaFiltroSort();
 
                 //string html = "<table><tr><td><ul id='sortable2' class='droptrue'>" + "</ul>";
                 //html += "</ul></td></tr></table>";
-                string html = "<ul id='sortable2' class='droptrue'>" + "</ul>";
+                //string html = "<ul id='sortable2' class='droptrue'>" + "</ul>";
+                string html = "<ul id='sortable2' class='droptrue list-group'>" + "</ul>"; //ADD SF RSG 02.2023 v2.0
                 //html += "</ul>";
 
                 this.lblTablaDos.Text = html;
@@ -372,7 +373,8 @@ namespace Proveedores.administrator
             List<int> listaEvitar = new List<int>();
             if (inde> - 1)
             {
-                this.lblTablaProveedores.Text = Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[inde].tabla, "sortable1", "droptrue' style='width:" + "" + ";");
+                //this.lblTablaProveedores.Text = Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[inde].tabla, "sortable1", "droptrue' style='width:" + "" + ";");
+                this.lblTablaProveedores.Text = Gen.Util.CS.Gen.convertToHtmlTableSort(tablas[inde].tabla, "sortable1", "droptrue list-group' style='width:" + "" + ";");   //ADD SF RSG 02.2023 v2.0
                 this.lblTablaDos.Text = conttabl2.Replace('[', '<').Replace(']', '>');
             }
             else

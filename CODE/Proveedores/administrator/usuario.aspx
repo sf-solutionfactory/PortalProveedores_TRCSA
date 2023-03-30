@@ -58,6 +58,10 @@
 /*            height: 12px;
             min-height: 25px;*/
         }
+
+        .table-responsive{
+            overflow-x:auto;
+        }
     </style>
     <script>
 
@@ -211,7 +215,7 @@
                 <asp:TextBox ID="lblProveedorSelected1" runat="server" class="txtValidar form-control" Text="Proveedor..." ReadOnly></asp:TextBox>
                 <asp:Label ID="lblProveedorSelected" CssClass="silverColor" runat="server" Text="Proveedor..." Width="310px" Visible="false"></asp:Label> <%--MODIFY SF RSG 02.2023 V2.0--%>
             </div>
-            <div class="busquedaProveedor link btn btn-light" style="height: 30px;margin-top: 24px;">Busqueda...</div>  <%--MODIFY SF RSG 02.2023 V2.0--%>
+            <div class="busquedaProveedor link btn btn-light" style="height: 30px;margin-top: 24px;">Búsqueda...</div>  <%--MODIFY SF RSG 02.2023 V2.0--%>
         </div>
 <%--        <br />
         <br />--%>

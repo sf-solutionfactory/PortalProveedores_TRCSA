@@ -257,7 +257,7 @@ button, hr, input {
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, legend, main, nav, section {
-    display: block
+    display: block;
 }
 
 progress, sub, sup {
@@ -10318,7 +10318,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .breadcrumb, .pagination {
     border-radius: 2px;
-    list-style: none
+    list-style: none;
 }
 
 .accordion > .card .card-header {
@@ -13729,7 +13729,7 @@ a.bg-purple:focus, a.bg-purple:hover, button.bg-purple:focus, button.bg-purple:h
 }
 
 .m-0 {
-    margin: 0 !important
+    margin: 0 !important;
 }
 
 .mt-0, .my-0 {
