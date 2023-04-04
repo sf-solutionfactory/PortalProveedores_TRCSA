@@ -56,7 +56,8 @@ namespace PNegocio
                         string BLDAT = resultado.ElementAt(i).BLDAT.ToString();
                         //float DMSHB = float.Parse(resultado.ElementAt(i).DMSHB.ToString());
                         string dmshb = resultado.ElementAt(i).DMSHB.ToString("0.00");
-                        float DMSHB = float.Parse(dmshb);
+                        //float DMSHB = float.Parse(dmshb);
+                        decimal DMSHB = decimal.Parse(dmshb);    //ADD SF RSG 02.2023 v2.0
                         string HWAER = resultado.ElementAt(i).HWAER.ToString();
 
                         string XBLNR = resultado.ElementAt(i).XBLNR.ToString();

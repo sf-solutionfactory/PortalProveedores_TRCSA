@@ -1,0 +1,463 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MtrProveedor.master.cs" Inherits="Proveedores.MtrProveedor" %>
+
+<!DOCTYPE html>
+<%
+    Response.CacheControl = "Private";
+    Response.Expires = 0;
+%> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />    <%--ADD SF RSG 02.2023 v2.0--%>
+    <title>Portal proveedores</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="../css/Estilo.css" rel="stylesheet" />
+    <link href="../css/EstiloTabla.css" rel="stylesheet" />
+
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../js/Estilo.js"></script>
+    <script src="../js/jquery.tablesorter.js"></script>
+
+    <%--<script src="../js/DeshabilitarClicDerecho.js"></script>--%>
+
+    <script src="../js/addStyle.js"></script>
+
+    <link href="../css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="../css/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+
+    <%-- BEGIN OF INSERT SF RSG 02.2023 V2.0 --%>
+    <link href="../version2/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>--%>
+    <link href="../version2/dist/css/style.min.css" rel="stylesheet" />
+    <link href="../version2/dist/css/styleDetalles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../version2/css/highlight.min.css" />
+    <%-- Termina css para versión 2 --%>
+
+    <%-- scripts para Versión 2 --%>
+    <%--<script src="../version2/assets/libs/jquery/dist/jquery.min.js" ></script>--%>
+
+    <script src="../version2/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../version2/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="../version2/dist/js/app-style-switcher.js"></script>
+    <script src="../version2/dist/js/feather.min.js"></script>
+    <script src="../version2/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../version2/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../version2/dist/js/custom.min.js"></script>
+    <%--<script src="../version2/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>--%>
+    <%--<script src="../version2/dist/js/pages/datatable/datatable-basic.init.js"></script>--%>
+    <script src="../version2/js/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://kit.fontawesome.com/0b14b51021.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+   <%-- <script>
+        $(document).ready(function () {
+            $('#tableToOrder').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+                }
+            });
+        });
+    </script>--%>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" /> <!-- PARA MOSTRAR LA VENTANITA AL MOMENTO DE HACER UNA ACCIÓN -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script><!-- PARA MOSTRAR LA VENTANITA AL MOMENTO DE HACER UNA ACCIÓN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+    <%-- scripts termina versión 2 --%>
+    <%-- END   OF INSERT SF RSG 02.2023 V2.0 --%>
+    <script>
+        $(function () {
+
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    return false;
+                }
+            });
+
+            var ancho = $(window).width();
+            var alto = $(window).height();
+
+            $('#cargaA').click(function () {
+                $('#ventana-flotante').show();
+            });
+
+            $(window).resize(function() {
+                ancho = $(window).width();
+                alto = $(window).height();
+                $('#ventana-flotante').css({'width': ancho, 'height':alto})
+            });
+
+            $("#ContentPlaceHolder1_datepicker, .datepicker ").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 3,
+                onClose: function (selectedDate) {
+                    $("#ContentPlaceHolder1_datepicker2, .datepicker2").datepicker("option", "minDate", selectedDate);
+                }
+            });
+            $("#ContentPlaceHolder1_datepicker2, .datepicker2").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 3,
+                onClose: function (selectedDate) {
+                    $("#ContentPlaceHolder1_datepicker, .datepicker").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+
+            $.fn.setMenuItemFocused = function () {
+                $(this).addClass("active");
+            }
+
+
+            $("#ContentPlaceHolder1_lblDialog").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 500
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 500
+                }
+            });
+
+            $("#dialog-confirm").hide();
+            $("#ContentPlaceHolder1_lblDialog").hide();
+
+            $("#btnCerrarSesion").click(function () {
+                $("#ContentPlaceHolder1_hidCerrarSesion").val("cerrar");
+            });
+
+                    $("table.sortTable").tablesorter({ debug: true });  
+      
+            setInterval('MantenSesion()', <%= (int) (0.9 * (Session.Timeout * 60000)) %>);
+        });
+
+        function mostrarDialog() {
+            //if ($("#ContentPlaceHolder1_lblDialog").text() != null && $("#ContentPlaceHolder1_lblDialog").text() != "") {
+            //    $("#ContentPlaceHolder1_lblDialog").dialog("open");
+            //}
+            //function cerrarventana(){
+            //    $('#ventana-flotante').hide();
+            //}
+    <%-- BEGIN OF INSERT SF RSG 02.2023 V2.0 --%>
+            if ($("#ContentPlaceHolder1_lblDialog").text() != null && $("#ContentPlaceHolder1_lblDialog").text() != "") {
+                //swal({
+                //    title: $("#ContentPlaceHolder1_lblDialog").text(),
+                //    text: '',
+                //    type: 'success',
+                //    timer: 2000,
+                //    showConfirmButton: true
+                //}, function () {
+                //});
+
+                Swal.fire({
+                    title: $("#ContentPlaceHolder1_lblDialog").text(),
+                    text: '',
+                    icon: 'success',
+                    confirmButtonColor: 'rgb(140, 212, 245)',
+                    confirmButtonText: 'OK'
+                })
+            }
+    <%-- END   OF INSERT SF RSG 02.2023 V2.0 --%>
+        }
+    </script>
+    <style>
+         #menu li ul {
+            display:none;
+            position:absolute;
+        }
+
+        #menu li a {
+            display:block;
+            
+        }
+
+        #menu li:hover > ul {
+            display:block;
+           
+        }
+
+        #menu li:hover > ul li {
+            display:block;
+            /*margin-left: -2em;*/
+            width:11em;
+  
+        }
+
+        div.ui-dialog {
+            min-height: 100px;
+        }
+
+        .ui-dialog .ui-dialog-title {
+            color: #58ACFA;
+            font-size: 14px;
+        }
+
+        .ui-dialog .ui-dialog-content {
+            color: #6E6E6E;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .ico-actualizar:hover {
+            cursor:pointer;
+        }
+
+        #divHeader img {
+            width: 150px;
+            height:63px;
+        }
+        .form-control {
+            font-size: 1.1rem;
+        }
+
+    </style>
+
+    
+</head>
+<body>
+
+
+
+    <form id="form1" runat="server">
+        <%-- versión 2 --%>
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+            <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+                <header class="topbar" data-navbarbg="skin6">
+                    <nav class="navbar top-navbar navbar-expand-md">
+                        <div class="navbar-header" data-logobg="skin6">
+                            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                                <i data-feather="align-left" class="feather-icon"></i>
+                            </a>
+                            <div class="navbar-brand">
+                                <!-- Logo icon -->
+                                <a href="Inicio.aspx">
+                                    <b class="logo-icon">
+                                        <!-- Dark Logo icon -->
+                                        <%--<img src="../images/logo_sicsa.png" alt="homepage" class="dark-logo" />--%>
+                                    </b>
+                                    <!--End Logo icon -->
+                                    <!-- Logo text -->
+                                    <span class="logo-text">
+                                        <!-- dark Logo text -->
+                                        <img src="../images/logo_sicsa.png" alt="homepage" class="dark-logo" style="width:100%;"/>
+                                        <!-- Light Logo text -->
+                                        <%--<img src="../src/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />--%>
+                                    </span>
+                                </a>
+                            </div>
+                            <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i data-feather="more-vertical" class="feather-icon"></i>
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                            <!-- ============================================================== -->
+                            <!-- toggle and nav items -->
+                            <!-- ============================================================== -->
+                            <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+                                <!-- ============================================================== -->
+                                <!-- create new -->
+                                <!-- ============================================================== -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" role="button"  style="font-size: 200%;">
+                                         <%-- AQUI SE MUESTRA EN AUTOMATICO EL MENÚ QUE SELECCIONA EL USUARIO --%>
+                                    </a>
+                                </li>
+                            </ul>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb m-0 p-0">
+                                        <li class="breadcrumb-item text-muted active" aria-current="page">
+                                            <label>
+                                                <asp:Label ID="lblUsuario" runat="server"></asp:Label>
+                                                <%--<div id="divImgUsuario"></div>--%>
+                                            </label>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted" aria-current="page">
+                                            <label>
+                                                <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesion_Click" CssClass="btnCerrarSesion" />
+                                                <%--<div id="divImgCandado"></div>--%>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                </nav>
+                        </div>
+                    </nav>
+                </header>
+                <aside class="left-sidebar" data-sidebarbg="skin6">
+                    <!-- Sidebar scroll-->
+                    <div class="scroll-sidebar" data-sidebarbg="skin6">
+                        <!-- Sidebar navigation-->
+                        <nav class="sidebar-nav">
+                            <ul id="sidebarnav">
+                                <asp:Literal ID="lblMenu" runat="server"></asp:Literal>
+                            </ul>
+                        </nav>
+                    </div>
+                </aside>
+                <div class="page-wrapper">
+                    <div class="page-breadcrumb" style="display:none;">
+                        <div class="d-flex align-items-center">
+                           <%--   <h4 class="page-title text-truncate text-dark font-weight-medium mb-0">En contrucción</h4>--%>
+                            <div class="ml-auto">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb m-0 p-0">
+                                        <li class="breadcrumb-item text-muted active" aria-current="page">
+                                            <label>
+                                                <%--<asp:Label ID="lblUsuario" runat="server"></asp:Label>--%>
+                                                <%--<div id="divImgUsuario"></div>--%>
+                                            </label>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted" aria-current="page">
+                                            <label>
+                                                <%--<asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesion_Click" CssClass="btnCerrarSesion" />--%>
+                                                <%--<div id="divImgCandado"></div>--%>
+                                            </label>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+<%--                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title"></h4>--%>
+								    <%--<hr>--%>
+                                        <div id="divContenido">
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                         </div>
+                                    </div>
+                                    <%--<div class="row justify-content-center bg-light p-3">
+                                        <div class="col-md-12">
+                                            <div class="card shadow-sm">
+                                                <div class="p-4 text-center">--%>
+                                                   
+                                                       <%-- <div id="divContenido">
+                                                            <p>PRIEBA</p>
+                                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+                                                         </div>--%>
+                                                    <%--</div>--%>
+                                                <%--</div>
+                                            </div>
+                                        </div>
+                                    </div>--%>
+                                    <%--<div class="card-body">
+                                        <h4 class="card-title"></h4>
+								        <hr>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>--%>
+                    <%--<div id="divFooter">
+                        <div style="height: auto;">
+                            <div id="left">
+                                Servicio Industrial de Comedores, S.A. de C.V.--%>
+                                <%--Soluction Factory--%>
+                                <%--<br/>
+                                General Jerónimo Treviño 629-B Ote.--%>
+                                 <%--Av. Hacienda del Rosario 117--%>
+                                <%--<br/>
+                                Centro, Monterrey, N.L. --%>
+                                 <%--Real de Bugambilias, León, Gto.--%>
+                                <%--<br/>--%>
+                                <%--Telefono: (+52) 477 718.6219--%>
+                               <%-- Teléfono: (81) 8375.2729 – (81) 8375.2730 – (81) 8372.2406--%>
+                            <%--</div>--%>
+                            <%--<div id="right">--%>
+                                <%--<img src="http://www.arcacontal.com/images/AC_footer.jpg">
+                                <img src="http://www.arcacontal.com/images/EmpresaSustentable_footer.jpg">
+                                <img src="http://www.arcacontal.com/images/SocialmenteResponsable_footer.jpg">--%>
+                           <%-- </div>--%>
+                   <%-- </div>
+                    </div>--%>
+                </div>
+        <%-- Termina versión 2 --%>
+        <div id="divHeader" style="display:none;">
+            <div class="left">
+                <%--<img src="http://www.arcacontal.com/images/arca_logo.jpg" />--%>
+                <%--<img src="../images/Solution_Logo.png" />--%>
+                <img src="../images/logo_tracusa.png" />
+                <%--<img src="http://sf-solutionfactory.com/support/images/Solution_Logo.png" />--%>
+                
+            </div>
+            <div id="wrapMenu" class="left">
+<%--                <ul id="menu">
+                    <asp:Literal ID="lblMenu" runat="server"></asp:Literal>
+                </ul>--%>
+            </div>
+            <div id="divInfSesion">
+                <%--<label>
+                    <asp:Label ID="lblUsuario" runat="server"></asp:Label><div id="divImgUsuario"></div>
+                </label>
+                <label>
+                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesión" OnClick="btnCerrarSesion_Click" CssClass="btnCerrarSesion" /><div id="divImgCandado"></div>
+                </label>--%>
+            </div>
+
+
+
+        </div>
+        <%--<div id="divContenido">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>--%>
+    </form>
+    <div id="divFooter" style="display:none;">
+        <div style="height: auto;">
+            <div id="left">
+                Tracusa
+                <%--Soluction Factory--%>
+                <br/>
+                Calle 6 S/N Lt. 9
+                 <%--Av. Hacienda del Rosario 117--%>
+                <br/>
+                Tultitlan De Mariano Escobedo C, Tultitlán, 54900 Hgo.
+                 <%--Real de Bugambilias, León, Gto.--%>
+                <br/>
+                <%--Telefono: (+52) 477 718.6219--%>
+                Teléfono:01 55 5888 1402
+            </div>
+            <div id="right">
+                <%--<img src="http://www.arcacontal.com/images/AC_footer.jpg">
+                <img src="http://www.arcacontal.com/images/EmpresaSustentable_footer.jpg">
+                <img src="http://www.arcacontal.com/images/SocialmenteResponsable_footer.jpg">--%>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-confirm" title="¿Está seguro de continuar?">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Esta acción es de consideración, debe de estar seguro de continuar</p>
+    </div>
+</body>
+
+
+</html>

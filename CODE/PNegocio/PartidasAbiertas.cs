@@ -54,7 +54,7 @@ namespace PNegocio
                         string BELNR = resultado.ElementAt(i).BELNR.ToString();
                         string BLART = resultado.ElementAt(i).BLART.ToString();
                         string BLDAT = resultado.ElementAt(i).BLDAT.ToString();
-                        float DMSHB = float.Parse(resultado.ElementAt(i).DMSHB.ToString());
+                        decimal DMSHB = decimal.Parse(resultado.ElementAt(i).DMSHB.ToString());    //MODIFY SF RSG 02.2023 v2.0
                         string HWAER = resultado.ElementAt(i).HWAER.ToString();
 
                         string XBLNR = resultado.ElementAt(i).XBLNR.ToString();

@@ -9,7 +9,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\proveedoresTracusav2</_PublishTargetUrl>
-    <History>True|2023-03-30T17:06:55.2811198Z;True|2023-03-28T16:27:13.1164995-06:00;False|2023-03-28T16:26:54.2089955-06:00;True|2023-03-27T15:55:41.8682021-06:00;True|2023-03-22T12:06:54.6812546-06:00;True|2023-03-13T16:14:12.0603737-06:00;True|2023-03-13T16:12:58.0434097-06:00;False|2023-03-13T16:12:29.3863347-06:00;False|2023-03-13T16:09:19.3379965-06:00;False|2023-03-13T16:06:23.5504714-06:00;True|2023-03-13T15:31:39.8728991-06:00;True|2023-03-03T17:09:39.3497842-06:00;True|2023-03-02T16:40:52.3215980-06:00;False|2023-03-02T16:39:56.3844201-06:00;</History>
+    <History>True|2023-03-30T23:02:19.0847931Z;True|2023-03-30T11:06:55.2811198-06:00;True|2023-03-28T16:27:13.1164995-06:00;False|2023-03-28T16:26:54.2089955-06:00;True|2023-03-27T15:55:41.8682021-06:00;True|2023-03-22T12:06:54.6812546-06:00;True|2023-03-13T16:14:12.0603737-06:00;True|2023-03-13T16:12:58.0434097-06:00;False|2023-03-13T16:12:29.3863347-06:00;False|2023-03-13T16:09:19.3379965-06:00;False|2023-03-13T16:06:23.5504714-06:00;True|2023-03-13T15:31:39.8728991-06:00;True|2023-03-03T17:09:39.3497842-06:00;True|2023-03-02T16:40:52.3215980-06:00;False|2023-03-02T16:39:56.3844201-06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="404.aspx">
@@ -82,10 +82,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>03/30/2023 11:06:51</publishTime>
+      <publishTime>03/30/2023 17:02:14</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>03/30/2023 11:06:51</publishTime>
+      <publishTime>03/30/2023 17:02:14</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.jQuery.dll">
       <publishTime>01/06/2014 09:14:10</publishTime>
@@ -148,34 +148,34 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/16/2023 16:42:46</publishTime>
     </File>
     <File Include="bin/PEntidades.dll">
-      <publishTime>03/28/2023 16:27:03</publishTime>
+      <publishTime>03/30/2023 12:15:23</publishTime>
     </File>
     <File Include="bin/PEntidades.dll.config">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="bin/PEntidades.pdb">
-      <publishTime>03/28/2023 16:27:03</publishTime>
+      <publishTime>03/30/2023 12:15:23</publishTime>
     </File>
     <File Include="bin/PNegocio.dll">
-      <publishTime>03/30/2023 11:06:48</publishTime>
+      <publishTime>03/30/2023 17:00:27</publishTime>
     </File>
     <File Include="bin/PNegocio.pdb">
-      <publishTime>03/30/2023 11:06:48</publishTime>
+      <publishTime>03/30/2023 17:00:27</publishTime>
     </File>
     <File Include="bin/PPersistencia.dll">
-      <publishTime>03/28/2023 16:27:03</publishTime>
+      <publishTime>03/30/2023 12:15:23</publishTime>
     </File>
     <File Include="bin/PPersistencia.dll.config">
       <publishTime>01/16/2023 16:42:44</publishTime>
     </File>
     <File Include="bin/PPersistencia.pdb">
-      <publishTime>03/28/2023 16:27:03</publishTime>
+      <publishTime>03/30/2023 12:15:23</publishTime>
     </File>
     <File Include="bin/Proveedores.dll">
-      <publishTime>03/30/2023 11:06:48</publishTime>
+      <publishTime>03/30/2023 17:00:28</publishTime>
     </File>
     <File Include="bin/Proveedores.pdb">
-      <publishTime>03/30/2023 11:06:48</publishTime>
+      <publishTime>03/30/2023 17:00:28</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>01/16/2023 16:42:46</publishTime>
@@ -967,7 +967,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/28/2023 10:58:13</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>03/30/2023 11:06:50</publishTime>
+      <publishTime>03/30/2023 17:02:12</publishTime>
     </File>
     <File Include="Properties/DataSources/PEntidades.SrvSATConsultaCFDI.Acuse.datasource">
       <publishTime>01/16/2023 16:42:44</publishTime>
@@ -1900,7 +1900,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/10/2023 17:00:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/28/2023 16:27:05</publishTime>
+      <publishTime>03/30/2023 12:16:28</publishTime>
     </File>
   </ItemGroup>
 </Project>

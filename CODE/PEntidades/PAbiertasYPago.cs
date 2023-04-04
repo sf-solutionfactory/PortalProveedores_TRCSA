@@ -37,9 +37,10 @@ namespace PEntidades
             set { BLDAT = value; }
         }
 
-        float DMSHB;
-
-        public float DMSHB1
+        //float DMSHB;  
+        //public float DMSHB1
+        decimal DMSHB;  //ADD SF RSG 02.2023 v2.0
+        public decimal DMSHB1  //ADD SF RSG 02.2023 v2.0
         {
             get { return DMSHB; }
             set { DMSHB = value; }

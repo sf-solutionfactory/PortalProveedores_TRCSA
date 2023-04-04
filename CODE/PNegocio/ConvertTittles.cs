@@ -855,6 +855,10 @@ namespace PNegocio
         {
             return input.ToString("C", CultureInfo.CurrentCulture);
         }
+        public string formatCurrency(decimal input)
+        {
+            return input.ToString("C", CultureInfo.CurrentCulture);
+        }
         public string formatCurrency(string input)
         {
             float temp = float.Parse(input);
@@ -938,6 +942,8 @@ namespace PNegocio
                 //ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='yellowgreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><circle cx='12' cy='12' r='10'></circle></svg>";
             if (status == "POST")
                 ret = "<svg viewBox='0 0 24 24' width='20' height='20' stroke='yellowgreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'></path><polyline points='22 4 12 14.01 9 11.01'></polyline></svg>";
+            if (status == "PEND")
+                ret = "<svg viewBox='0 0 24 24' width='24' height='24' stroke='limegreen' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'><polyline points='16 16 12 12 8 16'></polyline><line x1='12' y1='12' x2='12' y2='21'></line><path d='M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3'></path><polyline points='16 16 12 12 8 16'></polyline></svg>";
 
             return ret;
         }

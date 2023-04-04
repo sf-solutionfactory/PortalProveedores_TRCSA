@@ -121,16 +121,19 @@ namespace Proveedores.portal
         private string getTotal(List<PAbiertasYPago> lstPAbiertas)
         {
             string ret = "";
-            float total = new float();
+            decimal total = new decimal();
             foreach(PAbiertasYPago p in lstPAbiertas)
             {
                 total += p.DMSHB1;
             }
-            ret = formatCurrency(float.Parse(Math.Truncate(total*100).ToString())/100);
+            total = total * 100;
+            total = decimal.Parse(Math.Truncate(total).ToString());
+            total = total / 100;
+            ret = formatCurrency(total);
 
             return ret;
         }
-        public string formatCurrency(float input)
+        public string formatCurrency(decimal input)
         {
             return input.ToString("C", CultureInfo.CurrentCulture);
         }

@@ -181,7 +181,6 @@ D:\Users\rogel\Documents\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debu
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.dll.config
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.dll
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\bin\Debug\PEntidades.pdb
-C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.csproj.AssemblyReference.cache
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.csproj.CoreCompileInputs.cache
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.dll
 C:\Users\rogel\OneDrive\Documentos\GitHub\PortalProveedores_TRCSA\CODE\PEntidades\obj\Debug\PEntidades.pdb
